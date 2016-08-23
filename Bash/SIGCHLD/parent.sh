@@ -5,7 +5,7 @@
 set -o monitor
 
 # FAIL: Even trapping SIGCHLD or disabling the trap cannot eliminate this output:
-# ./killer.sh: line 25: 16209 Terminated              ./child.sh
+# ./parent.sh: line 25: 16209 Terminated              ./child.sh
 # Seems there's some built-in SIGCHLD handler or job control stuff that can't be disabled by these
 # means if at all.
 reaper() {
