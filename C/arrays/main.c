@@ -43,5 +43,12 @@ int main(void) {
 			printf("array[%i]: %i (out of bounds)\n", i, array[i]);
 		}
 	} // next array element
+	printf("\n");
+
+	// The address of an array is equal to the value of the array variable.
+	if (&array == (void*) array) {
+		// Hmmm, so the type of an address is void*.
+		printf("&array == (void*) array\n");
+	}
 } // main()
 
