@@ -1,0 +1,19 @@
+QT       += core gui network
+
+TARGET = LocalSocketIPC
+TEMPLATE = app
+
+
+SOURCES += \
+	main.cpp \
+    widget.cpp \
+    LocalSocketClient.cpp \
+	LocalSocketServer.cpp
+
+HEADERS  += \
+	widget.h \
+	LocalSocketClient.h \
+	LocalSocketServer.h
+
+	
+FORMS    += widget.ui
