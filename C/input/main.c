@@ -18,9 +18,14 @@ int main(void) {
 	// called.  So, you probably need to flush this between scanf calls.
 	scanf("%39s", name);
 
+	printf("Enter your name (fgets): ");
+	// This doesn't work if called after scanf.
+	// fgets includes the newline in what is read.  Maybe scanf pushes the newline back and fgets
+	// instantly reads it.  Again, probably need to flush stdin before reading it.	
+	fgets(name, sizeof(name), stdin); 
+
 	printf("How old are you? ");
 	scanf("%i", &age); // scanf wants a pointer, address, or array
-
 
 	printf("Hello, %s (age %i)!\n", name, age);
 
