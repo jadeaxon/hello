@@ -61,5 +61,10 @@ int main(void) {
 	mutable[0] = 'S';
 	printf("Mutated: %s\n", mutable);
 
+	// If you actually want a string literal, make it a const so that attempts to mod it are caught
+	// at compile-time.
+	const char* literal = "Closed for modification.  You cannot change pointee.";
+	const char* const literal2 = "You can neither mod pointer or pointee.";
+
 } // main()
 
