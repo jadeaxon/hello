@@ -50,5 +50,16 @@ int main(void) {
 		// Hmmm, so the type of an address is void*.
 		printf("&array == (void*) array\n");
 	}
+
+	// An array receives a *copy* of whatever it is initialized with (like a string literal).  The
+	// copy is mutable.
+	// Whereas, if you point to a string literal, you are pointing to read-only memory.
+	char* immutable = "You can't touch this!";
+	char mutable[] = "Do what you want with your copy of me.";
+
+	// immutable[0] = 'L'; // FAIL: segfaults.
+	mutable[0] = 'S';
+	printf("Mutated: %s\n", mutable);
+
 } // main()
 
