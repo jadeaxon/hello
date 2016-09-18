@@ -24,13 +24,17 @@
 // Some programs like grep return 1 for a non-error failure (no match found).
 int main() {
 	puts("Hello, C!"); // Put given string on stdout.
-	
+
+#ifdef __STDC_VERSION___
 	// Report which version of C is supported.
 	int version = __STDC_VERSION__;
 	printf("Version: %i\n", version);
 	if (version == 201112) {
 		puts("C11 is supported.");
 	}
+#else
+	printf("Unable to detect C version.  Probably running Cygwin gcc.\n");
+#endif
 
 	exit(0); // This would happen implicitly.
 } // main()
