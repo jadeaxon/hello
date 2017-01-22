@@ -15,9 +15,11 @@ void loop() {
 	if ( Serial.available() ) {
 		char c = Serial.read();
 		if (c == '0') {
+			Serial.println("Setting pin low.");
 			digitalWrite(PIN, LOW);
 		}
 		else if (c == '1') {
+			Serial.println("Setting pin high.");
 			digitalWrite(PIN, HIGH);
 		}
 		else {
