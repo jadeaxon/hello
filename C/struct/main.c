@@ -25,8 +25,12 @@ int main(int argc, char* argv[]) {
 	fish2.teeth = 2;
 	fish2.age = 1;
 
+	// Initializer syntax.
+	Fish fish3 = {"Nemo", "ocellaris", 4, 2};
+
 	Fish__describe(&fish1);
 	Fish__describe(&fish2);
+	Fish__describe(&fish3);
 
 
 } // main(...)
