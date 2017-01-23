@@ -13,12 +13,15 @@ int sum(int args, ...) {
 		int value = va_arg(ap, int);
 		sum += value;
 	}
+	va_end(ap); // This is a macro.  Likely so is va_start().
 	return sum;
 }
 
 
 int main() {
 	int total = sum(4, 1, 2, 3, 4);
+	printf("Total: %d\n", total);
+	total = sum(5, 3, 3, 3, 3, 3);
 	printf("Total: %d\n", total);
 
 } // main()
