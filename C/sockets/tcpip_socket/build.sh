@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# PRE: You are building this in Cygwin.
+# PRE: libnicethings.dll.a is deployed to /usr/local/lib
+# PRE: libnicethings' headers are deployed to /usr/local/include
+# PRE: Your PATH contains /usr/local/lib (when you try to run client or server).
+
 set -e 
 
 # This seems to be able to find the Nice Things headers in /usr/local/include.
