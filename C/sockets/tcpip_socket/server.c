@@ -16,6 +16,8 @@ int recv_line(int socket, char* buf, int len);
 void handle_shutdown(int sig);
 void bind_to_port(int socket, int port);
 void knock_knock_session(int socket);
+int say(int socket, char* s);
+int open_listener_socket(void);
 
 // Make e() alias for nt_error().
 void (*e)(int, char*) = nt_error; 
@@ -133,7 +135,7 @@ int recv_line(int socket, char* buf, int len) {
 
 
 // Opens a listener socket.
-int open_listener_socket() {
+int open_listener_socket(void) {
 	// PF_INET => protocol family Internet (aka, IP-based).
 	// SOCK_STREAM => TCP (a coherent stream of data unlike UDP)
 	int s = socket(PF_INET, SOCK_STREAM, 0);
