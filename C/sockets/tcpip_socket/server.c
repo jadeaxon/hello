@@ -1,21 +1,21 @@
 #include <sys/socket.h> // socket()
-#include <arpa/inet.h>
+#include <arpa/inet.h> // htons()
 #include <string.h> // strlen()
 #include <stdio.h> // puts()
 #include <stdlib.h> // exit()
-#include <unistd.h> // ???
+#include <unistd.h> // fork()
 #include <signal.h> // SIGINT
-
 
 // This is my Nice Things C library.
 // It currently is deployed to $HOME/lib/.
 #include <nt_error.h> // nt_error()
 #include <nt_signal.h> // nt_register_signal_handler()
 
+
 int recv_line(int socket, char* buf, int len);
 void handle_shutdown(int sig);
 void bind_to_port(int socket, int port);
-
+void knock_knock_session(int socket);
 
 // Make e() alias for nt_error().
 void (*e)(int, char*) = nt_error; 
@@ -23,6 +23,8 @@ void (*e)(int, char*) = nt_error;
 int listener_d; // The listener socket descriptor.
 
 
+// Acts as a multiprocess TCP/IP server that speaks a simple knock-knock joke
+// protocol on port 30000.
 int main(int argc, char** argv) {
 	// e(-1, "Fail test using alias"); // Works!
 	int r = 0; // Return value from future system calls.
@@ -35,7 +37,6 @@ int main(int argc, char** argv) {
 	bind_to_port(listener_d, 30000);
 	
 	puts("Listening for new connection");
-	char buf[255];
 	r = listen(listener_d, 10); // 10 is waiting queue length.  Others will be dropped.
 	e(r, "Can't listen");
 
@@ -49,34 +50,62 @@ int main(int argc, char** argv) {
 	struct sockaddr_storage client_addr;
 	unsigned int address_size = sizeof(client_addr);
 	
+	// Spawn a worker child process for each incoming connection.
+	// This allows us to service multiple connections at the same time.
+	//
+	// NOTE: This multiprocess server is horrendously slow in Cygwin because process creation is
+	// far more expensive on Windows than it is on Linux.  Multithreaded servers with a
+	// preinitialized worker thread pool are much more responsive.  As are select()-based
+	// architectures.
 	while (1) {
 		int connect_d = accept(listener_d, (struct sockaddr*) &client_addr, &address_size);
 		e(connect_d, "Can't open secondary socket");
+		if (!fork()) {
+			// Child worker processes handles the client.
+			close(listener_d); // Child doesn't care about the main socket for incoming connections.
+			// Q. Doesn't this affect the parent process at all?
+			// A. Probably not since copy of file descriptor.
+			knock_knock_session(connect_d);
 
-		// Tell the client what service you provide and what version of its protocol you speak.
-		char* msg = "Internet Knock-Knock Protocol Server\r\nVersion 1.0\r\nKnock! Knock!\r\n> ";
-		say(connect_d, msg);
-		recv_line(connect_d, buf, sizeof(buf));
-		if (strncasecmp("Who's there?", buf, 12)) {
-			say(connect_d, "You should say \"Who's there?\".");
+			// If you forget to exit, child will loop back and try to accept a new connection on
+			// a socket descriptor it has closed!  This fails generating an error message.
+			exit(0);
 		}
-		else { // Client asked "Who's there?".
-			say(connect_d, "Oscar\r\n> ");
-			recv_line(connect_d, buf, sizeof(buf));
-			if (strncasecmp("Oscar who?", buf, 10)) {
-				say(connect_d, "You should say \"Oscar who?\".\r\n");
-			}
-			else {
-				say(connect_d, "Oscar silly question, get a silly answer!\r\n");
-			}
-		} // else
-
-		// This knock-knock session is over.  Listen for a new connection.
-		close(connect_d);
+		else { // Parent.
+			close(connect_d); // Child is dealing with this now.
+		}
 	} // next connection
 	
 	return 0;
 } // main(...)
+
+
+// Executes a session of the knock knock protocol on the given socket.
+// This executes in its own child process.
+void knock_knock_session(int socket) {
+	// Tell the client what service you provide and what version of its protocol you speak.
+	char* msg = "Internet Knock-Knock Protocol Server\r\nVersion 1.0\r\nKnock! Knock!\r\n> ";
+	say(socket, msg);
+	
+	char buf[255]; // Message buffer.
+	recv_line(socket, buf, sizeof(buf));
+	if (strncasecmp("Who's there?", buf, 12)) {
+		say(socket, "You should say \"Who's there?\".");
+	}
+	else { // Client asked "Who's there?".
+		say(socket, "Oscar\r\n> ");
+		recv_line(socket, buf, sizeof(buf));
+		if (strncasecmp("Oscar who?", buf, 10)) {
+			say(socket, "You should say \"Oscar who?\".\r\n");
+		}
+		else {
+			say(socket, "Oscar silly question, get a silly answer!\r\n");
+		}
+	} // else
+
+	// This knock-knock session is over.  Listen for a new connection.
+	close(socket);
+} // knock_knock_session(int)
 
 
 // Receives/reads a line of text from a socket.  Stores it in given buffer as a C string.
