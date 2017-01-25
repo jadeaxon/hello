@@ -12,6 +12,7 @@ void (*e)(int, char*) = nt_error;
 
 int main(int argc, char** argv) {
 	// e(-1, "Fail test using alias"); // Works!
+	int r = 0; // Return value from future system calls.
 
 	// BLAB: bind listen accept begin
 
@@ -25,7 +26,14 @@ int main(int argc, char** argv) {
 	address.sin_family = PF_INET;
 	address.sin_port = (in_port_t)htons(30000); // The TCP port we listen on.
 	address.sin_addr.s_addr = htonl(INADDR_ANY);
-	int r = bind(listener_d, (struct sockaddr *) &address, sizeof(address));
+	
+	// Allow previously bound port to be reused quickly.  Like if the server stops and then starts
+	// again quickly.
+	int reuse = 1;
+	r = setsockopt(listener_d, SOL_SOCKET, SO_REUSEADDR, (char *)&reuse, sizeof(int));
+	e(r, "Can't set the reuse option on the socket");
+
+	r = bind(listener_d, (struct sockaddr *) &address, sizeof(address));
 	e(r, "Can't bind to socket");
 
 	puts("Listening for new connection");
