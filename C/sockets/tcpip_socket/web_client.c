@@ -55,6 +55,7 @@ int main(int argc, char** argv) {
 	while (bytes) {
 		e(bytes, "Can't read from server");
 		buf[bytes] = '\0';
+		// TO DO: Check 'Content Length:' HTTP header so we don't hang forever on recv().
 		printf("%s", buf);
 		// It seems if server does not close connection after all data sent, this call will hang forever.
 		bytes = recv(socket, buf, 255, 0);
