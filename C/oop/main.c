@@ -5,15 +5,17 @@
 
 
 // Let's create an object-like struct in C.
-typedef struct object {
+// Use a forward declaration so we can use Object in the definition of the struct.
+typedef struct object Object;
+struct object {
 	// A public member var.  We can only restrict access by convention in C.
 	int value; 
 	// A setter method.
 	// We can't use Object yet because we're in the middle of defining it.
 	// We have to explicitly pass an Object* arg when invoke since no C++ syntactic sugar.
-	void (*setValue)(struct object* this, int arg); 
+	void (*setValue)(Object* this, int arg); 
 
-} Object;
+};
 
 
 // The syntactic sugar in C++ is having a namespace for this struct, making the 'this' arg implicit, and
@@ -51,6 +53,8 @@ void main(void) {
 
 	object->setValue(object, 3);
 	printf("object->value = %d\n", object->value);
+	
+	free(object);
 } // main(void)
 
 
