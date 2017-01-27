@@ -2,9 +2,9 @@
 #include <db.h>
 
 void main(void) {
-	DB* dbp; /* DB structure handle */
-	u_int32_t flags; /* database open flags */
-	int ret; /* function return value */
+	DB* dbp = 0; /* DB structure handle */
+	u_int32_t flags = 0; /* database open flags */
+	int ret = 0; /* function return value */
 	
 	/* Initialize the structure. This
 	 * database is not opened in an environment,
@@ -27,10 +27,15 @@ void main(void) {
 		flags, /* Open flags */
 		0 /* File mode (using defaults) */
 	); 
-
 	if (ret != 0) {
 		/* Error handling goes here */
-	}	
+	}
+
+	// Do some stuff with the database . . .
+	
+	// Close the database.
+	if (dbp != NULL) dbp->close(dbp, 0);
+
 } // main(...)
 
 
