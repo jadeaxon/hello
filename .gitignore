@@ -1,3 +1,5 @@
+*.stackdump
+*.db
 C/hello/hello
 a.out
 *.exe
