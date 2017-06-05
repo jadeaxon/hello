@@ -5,7 +5,7 @@ set -o pipefail
 
 S=$(basename $0)
 
-if gcc hello_practical_c.c |& tee make.out; then
+if gcc -g hello_practical_c.c |& tee make.out; then
 	rm make.out
 	if [ -x a.out ]; then # Linux
 		./a.out
