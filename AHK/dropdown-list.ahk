@@ -16,3 +16,9 @@ Handler:
 return
 
 
+; This label is created by AHK.  Handles closing of the GUI.
+GuiClose:
+	Gui, Destroy
+return
+
+
