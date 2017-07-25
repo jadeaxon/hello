@@ -25,6 +25,16 @@ Send {Enter}
 ; The reason was that !{Enter} means <Ctrl + Enter>.
 Send I know that an exclamation point is a metachar{!}{Enter}Do you?{Enter}
 
+; Use a continuation section to send multiple lines.
+; LTrim allows us to indent the lines in the code.
+; You must use a comma here else AHK think you are invoking 'SendI'.
+Send,
+(LTrim
+	I can use a continuation section
+	to send multiple lines.
+	Can you?
+)
+
 ; This fails because alt key is pressed and released before F4 is pressed.
 ; This just triggers the application menu which then swallows the F4.
 ; Send {Alt}{F4}
