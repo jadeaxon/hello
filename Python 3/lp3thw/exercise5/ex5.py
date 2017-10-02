@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
 
-my_name = 'Jeff Anderson'
-my_age = 41 # The sad truth.
-my_height = 72 # inches
-my_weight = 195.4 # lbs
-my_eyes = 'hazel'
-my_teeth = 'white enough'
-my_hair = 'gone'
+# All the vars used to be prefixed with my_.
+# At some point, that will most likely be used to introduce OOP.
+name = 'Jeff Anderson'
+age = 41 # The sad truth.
+height = 72 # inches
+weight = 195.4 # lbs
+eyes = 'hazel'
+teeth = 'white enough'
+hair = 'gone'
 
-print(f"Let's talk about {my_name}.")
-print(f"He's {my_height} inches tall.")
-print(f"He weighs {my_weight} pounds.")
+print(f"Let's talk about {name}.")
+print(f"He's {height} inches tall.")
+print(f"He weighs {weight} pounds.")
 print(f"That's technically overweight for his height.")
-print(f"He's got {my_eyes} eyes and {my_hair} hair.")
-print(f"His teeth are usually {my_teeth} depending on the toothpaste.")
+print(f"He's got {eyes} eyes and {hair} hair.")
+print(f"His teeth are usually {teeth} depending on the toothpaste.")
 
 # This line is tricky, try to get it exactly right.
-total = my_age + my_height + my_weight
-print(f"If I add {my_age}, {my_height}, and {my_weight}, then I get {total}.")
+total = age + height + weight
+print(f"If I add {age}, {height}, and {weight}, then I get {total}.")
 
