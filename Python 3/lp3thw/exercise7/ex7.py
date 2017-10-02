@@ -3,36 +3,36 @@
 # Prints a string literal.
 print("Mary had a little lamb.")
 # Uses format() method to replace {} placeholder.
-print("Its fleece was white as {}.".format('snow'))
+print("Its fleece was white as {} {}.".format('yellow', 'snow'))
 # Prints a string literal.
 print("And everywhere that Mary went.")
 # Use * overload to print a string multiple times.
-print("." * 10) # What'd that do?
+print("." * 12) # What'd that do?
 
 # A one-character string.
-end1 = "C"
+end1 = "L"
 # A one-character string.
-end2 = "h"
+end2 = "e"
 # A one-character string.
-end3 = "e"
+end3 = "m"
 # A one-character string.
-end4 = "e"
+end4 = "o"
 # A one-character string.
-end5 = "s"
+end5 = "n"
 # A one-character string.
-end6 = "e"
+end6 = "a"
 # A one-character string.
-end7 = "B"
+end7 = "d"
 # A one-character string.
-end8 = "u"
+end8 = "e"
 # A one-character string.
 end9 = "r"
 # A one-character string.
-end10 = "g"
+end10 = "a"
 # A one-character string.
-end11 = "e"
+end11 = "d"
 # A one-character string.
-end12 = "r"
+end12 = "e"
 
 # Watch that comma at the end.  Try removing it to see what happens.
 # Append strings with + operator.  Use 'end' named arg to suppress default newline.
