@@ -1,0 +1,6 @@
+0. Review Mistakes.txt before each new exercise.  Avoid.
+1. Comment every line.
+2. Read thru the code backwards.  Look for mistakes.
+3. Add new mistakes to Mistakes.txt.
+4. Intentionally break your code to learn from errors.
+
