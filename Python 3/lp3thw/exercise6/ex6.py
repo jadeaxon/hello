@@ -10,7 +10,7 @@ binary = "binary"
 # Superfluous variable #2.
 do_not = "don't"
 # More var expansions inside f-strings.
-y = f"Those who know {binary} and those who {do_not}."
+y = f"Those who know {binary} and those who {do_not}." #1
 
 # Print first string.
 print(x)
@@ -18,16 +18,16 @@ print(x)
 print(y)
 
 # Use an f-string inside another f-string.
-print(f"I said: {x}")
+print(f"I said: {x}") #2
 # No, single quotes inside the string do not block substitution.
-print(f"I also said: '{y}'")
+print(f"I also said: '{y}'") #3
 
 # Boolean literal False.  The joke is slightly funny but not hilarious.
 hilarious = False
 # Correct evaluation of the joke.
 joke_evaluation = "Isn't that joke so funny?! {}"
 # Using the format method of a string instead of an f-string.
-print(joke_evaluation.format(hilarious))
+print(joke_evaluation.format(hilarious)) #4
 
 # Left operand.
 w = "This is the left side of..."
