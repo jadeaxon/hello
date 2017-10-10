@@ -26,6 +26,11 @@ I'll do a list:
 \t* Catnip\n\t* Grass
 '''
 
+# Create a more complex cat for drill 3.
+meta_cat = "*{}\n--\n* {}\n--\n* {}"
+# Expand the cat onto itself.
+meta_cat = meta_cat.format(tabby_cat, persian_cat, backslash_cat)
+
 # Print.
 print(tabby_cat)
 # Print.
@@ -36,5 +41,7 @@ print(backslash_cat)
 print(fat_cat)
 # Do drill #2.
 print(thin_cat)
+# Finish drill #3.
+print(meta_cat)
 
 
