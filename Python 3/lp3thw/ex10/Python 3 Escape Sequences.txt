@@ -1,0 +1,20 @@
+*	name	Python 3 Escape Sequences
+*	card-theme	Paper - Clear
+*	tsv	true
+Text 1	Text 2
+\\	backslash
+\#	Trick question. DNE.
+\'	single quote
+\""""	double quote
+\a	bell
+\b	backspace
+\f	form feed
+\n	newline (line feed)
+\N{name}	Unicode by name
+\r	carriage return
+\t	tab
+\uxxxx	Unicode 16-bit hex
+\Uxxxxxxxx	Unicode 32-bit hex
+\v	vertical tab
+\ooo	octal
+\xhh	hex
