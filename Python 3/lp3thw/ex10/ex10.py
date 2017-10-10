@@ -16,6 +16,16 @@ I'll do a list:
 \t* Catnip\n\t* Grass
 """
 
+# Try same thing with '''.
+# Note that ' does not suppress escapes as in Bash.
+# It only makes it easier to use literal "s.
+thin_cat = '''
+I'll do a list:
+\t* Cat food
+\t* Swedish "fish"
+\t* Catnip\n\t* Grass
+'''
+
 # Print.
 print(tabby_cat)
 # Print.
@@ -24,4 +34,7 @@ print(persian_cat)
 print(backslash_cat)
 # Print.
 print(fat_cat)
+# Do drill #2.
+print(thin_cat)
+
 
