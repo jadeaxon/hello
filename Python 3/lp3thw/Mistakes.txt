@@ -1,4 +1,6 @@
 Track all your mistakes here.
 
 Mismatched {}s.
-
+Tried to do 'import sys.argv'.
+Tried to do 'import sys from argv'.
+Tried to use sys.argv directly in script w/o proper import.
