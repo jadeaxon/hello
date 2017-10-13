@@ -1,0 +1,57 @@
+def -- define keyword; lets you define functions, classes, etc.
+return -- keyword that lets you return a value from a function
+<whitespace> -- require to indent function, class, loop bodies
+	you can use a tab or 4 spaces
+print -- built in print function; prints stuff to stdout; appends a newline
+input -- bulit in function to read stdin and return a string; can supply prompt
+len -- built in function that returns length of given string
+" -- double quote; starts/ends string literals
+' -- single quote; starts/ends string literals
+f"" -- format string (formatters)
+f'' -- format string
+''', """ -- multiline strings
+f''', f""" -- multiline format strings
+# -- hash; comment char
+#! -- shebang; let script be called more directly
+, -- comma; separate list elements (like function args)
++ -- binary addition operator; also unary plus
+- -- binary subtraction; also unary minus
+/ -- binary division
+% -- binary modulus (remainder)
+* -- binary multiplication
+> -- binary relational greater than operator
+< -- less than
+<= -- less than or equal to
+>= -- greater than or equal to
+() -- right/left paren; delimit param/arg lists; force operator order in expressions
+*<arg> -- vararg list parameter
+{} -- .format() placeholder
+{<number>} -- .format() ordered placeholder
+{<expression>} -- format string (f"") placeholder (expr eval)
+<symbol> -- name a variable, function, module, or package
+= -- assignment operator
+. -- floating point separator; method invocation
+<int literal> -- 365
+<float literal> -- 3.14
+<string literal> -- 'hello' or "hello"
+<boolean literal> -- False or True
+<character literal> -- \n \t \r etc.
+string.format() -- a string class method (older way of doing f"")
+<arg>=<value> -- keyword arg
+	end='' in print() to suppress newline
+from <module> import <symbol> -- import something from a module
+<var1>, <var2> = <list> -- unpack a list
+file = open(<filename>) -- open a file for reading
+contents = file.read() -- read entire contents of file into a string
+file.close() -- close file; flush buffers
+file.truncate() -- truncate the file to length 0
+file.write(string) -- write string at current seek location
+file.seek(location) -- seek file pointer to given location
+sys -- module representing Python interpreter (the system)
+sys.argv -- command-line args list passed to Python script
+os -- module dealing with the OS
+os.path -- class for dealing with filesystem paths
+os.path.exists -- method to check for file existence
+
+
+
