@@ -1,3 +1,4 @@
+*.pyc
 *.stackdump
 *.db
 C/hello/hello
