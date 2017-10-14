@@ -104,9 +104,39 @@ def go_west():
     else:
         print("I can't go any farther west.")
 
-# Describe room at given location.  Assumes the hero is in that room.
+# Describes room at given location.  Assumes the hero is in that room.
 def describe_room(location):
-    print(f"You are in room {location}.  Nothing interesting is here.")
+    print(f"You are in room {location}.")
+    describe_treasure()
+
+# Describes the treasure relative to current hero location.
+def describe_treasure():
+    loc = get_hero_location()
+    x, y = loc
+    room = world[x][y]
+    if "treasure" in room:
+        print("The forbidden treasure is here.")
+    try:
+        room = world[x - 1][y]
+        if "treasure" in room:
+            print("A yellow glow emanates from the west.")
+    except: pass
+    try:
+        room = world[x + 1][y]
+        if "treasure" in room:
+            print("A yellow glow emanates from the east.")
+    except: pass
+    try:
+        room = world[x][y - 1]
+        if "treasure" in room:
+            print("A yellow glow emanates from the north.")
+    except: pass
+    try:
+        room = world[x][y + 1]
+        if "treasure" in room:
+            print("A yellow glow emanates from the south.")
+    except: pass
+
 
 # Updates the game world.
 def update_world():
