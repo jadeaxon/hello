@@ -92,9 +92,17 @@ def go_south():
     else:
         print("I can't go any farther south.")
 
-
+# Moves the hero one room west if possible.
 def go_west():
-    pass
+    loc = get_hero_location()
+    x = loc[0]
+    y = loc[1]
+    x -= 1
+    if (x >= 0):
+        world[x + 1][y].remove("hero")
+        world[x][y].append("hero")
+    else:
+        print("I can't go any farther west.")
 
 # Describe room at given location.  Assumes the hero is in that room.
 def describe_room(location):
