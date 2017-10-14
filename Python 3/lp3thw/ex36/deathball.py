@@ -68,8 +68,17 @@ def go_north():
     else:
         print("I can't go any farther north.")
 
+# Moves the hero one room east if possible.
 def go_east():
-    pass
+    loc = get_hero_location()
+    x = loc[0]
+    y = loc[1]
+    x += 1
+    if (x < size):
+        world[x - 1][y].remove("hero")
+        world[x][y].append("hero")
+    else:
+        print("I can't go any farther east.")
 
 # Moves the hero one room south if possible.
 def go_south():
