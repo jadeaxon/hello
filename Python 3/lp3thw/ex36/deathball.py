@@ -107,6 +107,7 @@ def go_west():
 # Describes room at given location.  Assumes the hero is in that room.
 def describe_room(location):
     print(f"You are in room {location}.")
+    describe_deathballs() 
     describe_treasure()
 
 # Takes the treasure.
@@ -151,6 +152,39 @@ def describe_treasure():
                 room = world[x][y + d]
                 if "treasure" in room:
                     print(f"A {adjective} yellow glow emanates from the south.")
+            except: pass
+
+
+# Describes each death ball relative to current hero location.
+def describe_deathballs():
+    loc = get_hero_location()
+    x, y = loc
+    room = world[x][y]
+    if "death ball" in room:
+        print("A deadly death ball is here to kill you!")
+    else:
+        adjectives = ["", "strong", "pale"]
+        for d in [1, 2]:
+            adjective = adjectives[d]
+            try:
+                room = world[x - d][y]
+                if "death ball" in room:
+                    print(f"A {adjective} blue glow emanates from the west.")
+            except: pass
+            try:
+                room = world[x + d][y]
+                if "death ball" in room:
+                    print(f"A {adjective} blue glow emanates from the east.")
+            except: pass
+            try:
+                room = world[x][y - d]
+                if "death ball" in room:
+                    print(f"A {adjective} blue glow emanates from the north.")
+            except: pass
+            try:
+                room = world[x][y + d]
+                if "death ball" in room:
+                    print(f"A {adjective} blue glow emanates from the south.")
             except: pass
 
 
