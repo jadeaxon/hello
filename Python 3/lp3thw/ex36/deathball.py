@@ -135,7 +135,7 @@ def describe_treasure():
             adjective = adjectives[d]
             try:
                 room = world[x - d][y]
-                if "treasure" in room:
+                if "treasure" in room and ((x - d) >= 0):
                     print(f"A {adjective} yellow glow emanates from the west.")
             except: pass
             try:
@@ -145,7 +145,7 @@ def describe_treasure():
             except: pass
             try:
                 room = world[x][y - d]
-                if "treasure" in room:
+                if "treasure" in room and ((y - d) >= 0):
                     print(f"A {adjective} yellow glow emanates from the north.")
             except: pass
             try:
@@ -168,7 +168,7 @@ def describe_deathballs():
             adjective = adjectives[d]
             try:
                 room = world[x - d][y]
-                if "death ball" in room:
+                if "death ball" in room and ((x - d) >= 0):
                     print(f"A {adjective} blue glow emanates from the west.")
             except: pass
             try:
@@ -178,7 +178,7 @@ def describe_deathballs():
             except: pass
             try:
                 room = world[x][y - d]
-                if "death ball" in room:
+                if "death ball" in room and ((y - d) >= 0):
                     print(f"A {adjective} blue glow emanates from the north.")
             except: pass
             try:
