@@ -1,6 +1,7 @@
 # This module defines various parts of the game Death Ball.
 
 from random import randint
+from sys import exit
 
 world = [] # The game world.  An NxN grid of rooms.
 size = 10 # Size in rooms of one side of the world grid.
@@ -190,6 +191,13 @@ def describe_deathballs():
 
 # Updates the game world.
 def update_world():
-    pass
-
+    loc = get_hero_location()
+    x, y = loc
+    room = world[x][y]
+    if "death ball" in room:
+        print("A blazing blue death ball hurls itself toward you, killing you on impact.")
+        print("YOU LOSE!")
+        exit(0)
+    else:
+        pass
 
