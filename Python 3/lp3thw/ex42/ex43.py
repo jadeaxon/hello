@@ -102,7 +102,7 @@ class LaserWeaponArmory(Scene):
         while (guess != code) and (guesses < 10):
             print("BZZZZEDDD!")
             guesses += 1
-            guess = input("[keypad]> ")
+            guess = input(f"[keypad]{guesses}> ")
             guess = guess.strip()
 
             if guess == code:
@@ -114,6 +114,13 @@ class LaserWeaponArmory(Scene):
                 return 'the_bridge'
             elif guess == "007":
                 print(f"The code is {code}.") # James Bond skills.
+            elif guess == "joke":
+                print(dedent("""
+                    You are on a roll.  Your joke about there being only 10 kinds of people causes
+                    the AI in the pad control to malfunction and release the lock.  You grab the
+                    bomb and head for the bridge.
+                """))
+                return 'the_bridge'
         else:
             print(dedent("""
                 The lock buzzes one last time and then you hear a sickening melting sound as the
@@ -149,6 +156,12 @@ class TheBridge(Scene):
             bomb is placed, you run to the escape pod to get off this tin can.
             """))
             return 'escape_pod'
+        elif "joke" in action:
+            print(dedent("""
+                You should have been a comedian, not a doctor.  Your witty barb incapacitates the Gothon marauders
+                allowing you to easily place the bomb and make your way to the escape pods.
+            """))
+            return 'escape_pod'
         else:
             print("DOES NOT COMPUTE!")
             return "the_bridge"
@@ -170,7 +183,14 @@ class EscapePod(Scene):
                 print(f"The good pod is pod {good_pod}.")
             else:
                 break
-        if int(guess) != good_pod:
+        if guess == "joke":
+            print(dedent(f"""
+                You're right, it is a joke to determine which escape pod is still functional.  You
+                easly select pop {good_pod}.
+            """))
+            print("YOU WIN!")
+            return 'finished'
+        elif int(guess) != good_pod:
             print(dedent(f"""
                 You jump int pod {guess} and hit the eject button.  The pod escapes out into the
                 void of space and then implodes as the hull ruptures, crushing your body into jam
