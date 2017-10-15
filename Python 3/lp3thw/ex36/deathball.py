@@ -109,6 +109,18 @@ def describe_room(location):
     print(f"You are in room {location}.")
     describe_treasure()
 
+# Takes the treasure.
+def take_treasure():
+    loc = get_hero_location()
+    x, y = loc
+    room = world[x][y]
+    if "treasure" in room:
+        print("You take the treasure.")
+        world[x][y].remove("treasure")
+        inventory.append("treasure")
+    else:
+        print("The treasure is not here.")
+
 # Describes the treasure relative to current hero location.
 def describe_treasure():
     loc = get_hero_location()

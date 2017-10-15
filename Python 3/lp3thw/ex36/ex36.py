@@ -30,6 +30,8 @@ while True:
         go_south()
     elif action in "wW":
         go_west()
+    elif "treasure" in action:
+        take_treasure()
     elif action == "cheat":
         print(world)
     elif action == "exit" or action == "quit":
