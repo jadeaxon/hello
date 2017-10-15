@@ -116,26 +116,30 @@ def describe_treasure():
     room = world[x][y]
     if "treasure" in room:
         print("The forbidden treasure is here.")
-    try:
-        room = world[x - 1][y]
-        if "treasure" in room:
-            print("A yellow glow emanates from the west.")
-    except: pass
-    try:
-        room = world[x + 1][y]
-        if "treasure" in room:
-            print("A yellow glow emanates from the east.")
-    except: pass
-    try:
-        room = world[x][y - 1]
-        if "treasure" in room:
-            print("A yellow glow emanates from the north.")
-    except: pass
-    try:
-        room = world[x][y + 1]
-        if "treasure" in room:
-            print("A yellow glow emanates from the south.")
-    except: pass
+    else:
+        adjectives = ["", "bright", "faint"]
+        for d in [1, 2]:
+            adjective = adjectives[d]
+            try:
+                room = world[x - d][y]
+                if "treasure" in room:
+                    print(f"A {adjective} yellow glow emanates from the west.")
+            except: pass
+            try:
+                room = world[x + d][y]
+                if "treasure" in room:
+                    print(f"A {adjective} yellow glow emanates from the east.")
+            except: pass
+            try:
+                room = world[x][y - d]
+                if "treasure" in room:
+                    print(f"A {adjective} yellow glow emanates from the north.")
+            except: pass
+            try:
+                room = world[x][y + d]
+                if "treasure" in room:
+                    print(f"A {adjective} yellow glow emanates from the south.")
+            except: pass
 
 
 # Updates the game world.
