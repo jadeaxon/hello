@@ -59,21 +59,37 @@ class CentralCorridor(Scene):
         """))
         action = input("> ")
         if action in ["shoot", "attack", "kill"]:
-            print(dedent("""Quick on the draw, you yank out your blaster and fire it at the Gothon.
-            His clown costume is flowing and moving around his body, which throws off your aim.
-            Your laser hits his costume but misses him completely.  This entirely ruins his brand
-            new costume that his mother bought him, which makes him fly into an insane rage and
-            blast you repeately in the face until you disintegrate.  He then eats your ashes.
-            """))
-            return 'death'
+            counterattack = randint(1, 3) # Combat system.
+            if counterattack == 3:
+                print(dedent("""Quick on the draw, you yank out your blaster and fire it at the Gothon.
+                His clown costume is flowing and moving around his body, which throws off your aim.
+                Your laser hits his costume but misses him completely.  This entirely ruins his brand
+                new costume that his mother bought him, which makes him fly into an insane rage and
+                blast you repeately in the face until you disintegrate.  He then eats your ashes.
+                """))
+                return 'death'
+            else:
+                print(dedent("""
+                    You're quick on the draw but bad on the aim.  Luckily the Gothon can't hit the
+                    broad side of a transport either.  You are both still alive--for now.
+                """))
+                return 'central_corridor'
         elif action in ["dodge", "run", "evade"]:
-            print(dedent("""
-                Like a world-class boxer, you dodge, weave, slip, and slide right as the Gothon's
-                blaster cranks a laser past your head.  In the middle of your artful dodge, your
-                foot slips and you bang your head on the metal wall and pass out.  You wake up
-                shortly after only to die as the Gothon stomps on your head and eats you.
-            """))
-            return 'death'
+            attack = randint(1, 3) # Combat system.
+            if attack == 3:
+                print(dedent("""
+                    Like a world-class boxer, you dodge, weave, slip, and slide right as the Gothon's
+                    blaster cranks a laser past your head.  In the middle of your artful dodge, your
+                    foot slips and you bang your head on the metal wall and pass out.  You wake up
+                    shortly after only to die as the Gothon stomps on your head and eats you.
+                """))
+                return 'death'
+            else:
+                print(dedent("""
+                    Your amusing movements only seem to have angered the Gothon.  He tries to kill
+                    you but missed this time.
+                """))
+                return 'central_corridor'
         elif action in ['tell a joke', 'tell joke', 'joke']:
             print(dedent("""
                 Lucky for you they made you learn Gothon insults in the academy.  You tell the one
@@ -140,13 +156,22 @@ class TheBridge(Scene):
         """))
         action = input("> ")
         if action in ["throw the bomb", "throw bomb"]:
-            print(dedent("""
-                In a panic you throw the bomb at the group of Gothons and make a leap for the door.
-                Righth as you drop it a Gothon shouuts you right in the back, killing you.  As you
-                die you see another Gothon frantically try to disarm the bomb.  You die knowing at
-                least they will all get blown up soon.
-            """))
-            return 'death'
+            luck = randint(1, 3)
+            if luck == 3:
+                print(dedent("""
+                    In a panic you throw the bomb at the group of Gothons and make a leap for the door.
+                    Righth as you drop it a Gothon shouuts you right in the back, killing you.  As you
+                    die you see another Gothon frantically try to disarm the bomb.  You die knowing at
+                    least they will all get blown up soon.
+                """))
+                return 'death'
+            else:
+                print(dedent("""
+                    Despite your foolishness, luck saves the day.  The bomb bounces back into your
+                    hands giving you another chance to do something less likely to result in your
+                    death.
+                """))
+                return 'the_bridge'
         elif action in ["slowly place the bomb", "place bomb"]:
             print(dedent("""
                 You point your blaster at the bomb under your arm and the Gothons put their hands up and
