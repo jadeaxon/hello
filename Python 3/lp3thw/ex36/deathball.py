@@ -231,7 +231,7 @@ def move_deathball(x, y):
         print("YOU LOSE!")
         exit(0)
 
-    print(f"Moving death ball from ({x}, {y})", end=' ')
+    ## print(f"Moving death ball from ({x}, {y})", end=' ')
     direction = randint(0, 3)
     if direction == 0: # N
         if (y >= 1):
@@ -256,6 +256,6 @@ def move_deathball(x, y):
     else:
         print(f"ERROR: Unexpected direction: {direction}.")
 
-    print(f"to ({x}, {y}).")
+    ## print(f"to ({x}, {y}).")
 
 
