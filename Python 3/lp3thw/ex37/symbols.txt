@@ -1,0 +1,1 @@
+Dumping everything into my personal Python 3 notes.
