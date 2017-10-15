@@ -201,3 +201,57 @@ def update_world():
     else:
         pass
 
+    move_deathballs()
+
+# Moves each death ball.
+def move_deathballs():
+    for x in range(size):
+        for y in range(size):
+            room = world[x][y]
+            if "death ball" in room:
+                move_deathball(x, y)
+
+    for x in range(size):
+        for y in range(size):
+            room = world[x][y]
+            if "death ball (moved)" in room:
+                world[x][y].remove("death ball (moved)")
+                world[x][y].append("death ball")
+
+
+# Moves a particular death ball.
+def move_deathball(x, y):
+    room = world[x][y]
+    if "hero" in room:
+        print("A blazing blue death ball hurls itself toward you, killing you on impact.")
+        print("YOU LOSE!")
+        exit(0)
+
+    print(f"Moving death ball from ({x}, {y})", end=' ')
+    direction = randint(0, 3)
+    if direction == 0: # N
+        if (y >= 1):
+            world[x][y].remove("death ball")
+            y -= 1
+            world[x][y].append("death ball (moved)")
+    elif direction == 1: # E
+        if (x < (size - 1)):
+            world[x][y].remove("death ball")
+            x += 1
+            world[x][y].append("death ball (moved)")
+    elif direction == 2: # S
+        if (y < (size - 1)):
+            world[x][y].remove("death ball")
+            y += 1
+            world[x][y].append("death ball (moved)")
+    elif direction == 3: # W
+        if (x >= 1):
+            world[x][y].remove("death ball")
+            x -= 1
+            world[x][y].append("death ball (moved)")
+    else:
+        print(f"ERROR: Unexpected direction: {direction}.")
+
+    print(f"to ({x}, {y}).")
+
+

@@ -22,7 +22,10 @@ while True:
     location = get_hero_location()
     describe_room(location)
     action = input(f"{location}> ")
-    if action in "nN":
+    action = action.strip()
+    if action == "":
+        print("You wait for a while.")
+    elif action in "nN":
         go_north()
     elif action in "eE":
         go_east()
