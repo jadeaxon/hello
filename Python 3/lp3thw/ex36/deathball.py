@@ -202,6 +202,10 @@ def update_world():
         pass
 
     move_deathballs()
+    if (x == 0) and (y == 0) and ("treasure" in inventory):
+        print("You escaped with the treasure.")
+        print("YOU WIN!")
+        exit(0)
 
 # Moves each death ball.
 def move_deathballs():
