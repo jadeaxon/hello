@@ -25,6 +25,8 @@ while True:
     action = action.strip()
     if action == "":
         print("You wait for a while.")
+    elif action == "help":
+        help() # Looks like we're overriding a builtin.
     elif action in "nN":
         go_north()
     elif action in "eE":

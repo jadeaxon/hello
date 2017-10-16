@@ -2,6 +2,7 @@
 
 from random import randint
 from sys import exit
+from textwrap import dedent
 
 world = [] # The game world.  An NxN grid of rooms.
 size = 10 # Size in rooms of one side of the world grid.
@@ -257,5 +258,28 @@ def move_deathball(x, y):
         print(f"ERROR: Unexpected direction: {direction}.")
 
     ## print(f"to ({x}, {y}).")
+
+
+def help():
+    """Prints out the help message."""
+    msg = """
+    Your goal is to get the treasure and leave the dungeon without dying.
+    The treasure is put in a random location in the dungeon at the start of each game. 
+    When you find the treasure, type 'take treasure' to take it.
+    Once you have the treasure, make your way back to location (0, 0).
+    If you do that without dying, you win the game!
+
+    Other commands:
+    help - print this help message
+    n - go north
+    e - go east
+    s - go south
+    w - go west
+    <Enter> - wait a turn
+    """
+    msg = dedent(msg).strip()
+
+    print(msg)
+
 
 
