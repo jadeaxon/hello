@@ -271,6 +271,8 @@ def help():
 
     Other commands:
     help - print this help message
+    exit - exit the game
+    cheat - show the game world state
     n - go north
     e - go east
     s - go south
