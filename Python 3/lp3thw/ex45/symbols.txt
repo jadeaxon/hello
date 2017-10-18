@@ -1,0 +1,99 @@
+def -- define keyword; lets you define functions and methods
+docstring -- first """ string after defG sth; autogen source docs
+return -- keyword that lets you return a value from a function
+<whitespace> -- require to indent function, class, loop bodies
+	you can use a tab or 4 spaces
+print -- built in print function; prints stuff to stdout; appends a newline
+input -- bulit in function to read stdin and return a string; can supply prompt
+len -- built in function that returns length of given string
+" -- double quote; starts/ends string literals
+' -- single quote; starts/ends string literals
+f"" -- format string (formatters)
+f'' -- format string
+''', """ -- multiline strings
+f''', f""" -- multiline format strings
+# -- hash; comment char
+#! -- shebang; let script be called more directly
+, -- comma; separate list elements (like function args)
++ -- binary addition operator; also unary plus
+- -- binary subtraction; also unary minus
+/ -- binary division
+% -- binary modulus (remainder)
+* -- binary multiplication
+> -- binary relational greater than operator
+< -- less than
+<= -- less than or equal to
+>= -- greater than or equal to
+() -- right/left paren; delimit param/arg lists; force operator order in expressions
+*<arg> -- vararg list parameter
+{} -- .format() placeholder
+{<number>} -- .format() ordered placeholder
+{<expression>} -- format string (f"") placeholder (expr eval)
+<symbol> -- name a variable, function, module, or package
+= -- assignment operator
+. -- floating point separator; method invocation
+<int literal> -- 365
+<float literal> -- 3.14
+<string literal> -- 'hello' or "hello"
+<boolean literal> -- False or True
+<character literal> -- \n \t \r etc.
+string.format() -- a string class method (older way of doing f"")
+<arg>=<value> -- keyword arg
+	end='' in print() to suppress newline
+from <module> import <symbol> -- import something from a module
+<var1>, <var2> = <list> -- unpack a list
+file = open(<filename>) -- open a file for reading
+contents = file.read() -- read entire contents of file into a string
+file.close() -- close file; flush buffers
+file.truncate() -- truncate the file to length 0
+file.write(string) -- write string at current seek location
+file.seek(location) -- seek file pointer to given location
+sys -- module representing Python interpreter (the system)
+sys.argv -- command-line args list passed to Python script
+sys.exit -- exit(0)
+sys.version_info -> T -- Python version as a tuple
+T >= T -- yeah, you can compare tuples; good for checking version numbers
+os -- module dealing with the OS
+os.path -- class for dealing with filesystem paths
+os.path.exists -- method to check for file existence
+random -- module for RNG
+random.randint -- randint(0, 1) => 0 or 1
+textwrap -- text wrapping module
+textwrap.dedent -- deintdent sth (good for """ strings)
+tuple -- (0, 0, 0); immutable, fixed-length list
+class -- class Thing(object): pass
+__init__ -- def __init__(self): super(Thing, self).__init__()
+	constructor; the above shows superclass constructor chaining
+self -- the conventional name of an object's instance state var
+	explicit use nec Python 3 (unlike Java)
+None -- the literal for NoneType (like null)
+L.append(e) -- append e to list L
+L.remove(e) -- remove e from list L
+for e in L: pass -- for each list iteration
+self.__class__ -- the class object for this object
+@classmethod -- decorator used to mark a method as a class method
+ininstance(o, c) -- builtin; tells you if o is instance of c or any subclass
+_ -- used to prefix private members
+__ -- used to prefix system special members
+dict -- D = {'one': 1, 'two': 2}
++= -- addition and assignment shorthard op
+tuple(L) -- create a tuple from a list
+list(T) -- create a list from a tuple
+L2 = L[:] -- copy list
+pass -- do nothing; use to create an empty block
+try -- start exception handler
+except -- catch exceptions
+	try: pass; except: Exception as e; finally: pass
+x, y, z = (1, 2, 3) -- arg unpacking
+range(0, 3) -- (0, 1, 2); actual creates a generator that yields the seq
+break -- break out of innermost loop
+continue -- continue innermost loop (skip rest of current iter)
+C.method() -- call a class method
+D{T} -- dict using tuple as key (pretty useful for NxNxN grid)
+S.strip() -- strip whitespace
+S.lower() -- to lowercase
+S.upper() -- to uppercase
+for c in S: pass -- iterate over chars in a string
+elif -- if/elif/else branch/selection/decision
+class variable -- springs into existence when mentions (C.v to access)
+assert <bool exp> -- raise AssertionException if exp false
