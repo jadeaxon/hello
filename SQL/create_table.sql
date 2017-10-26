@@ -8,8 +8,8 @@ USE gregs_list; -- This is the db name Head First SQL used.
 -- A table representing contact info for various people.
 DROP TABLE my_contacts;
 CREATE TABLE my_contacts (
-	first_name VARCHAR(20),
-	last_name VARCHAR(30),
+	first_name VARCHAR(20) NOT NULL, -- Forbid nulls.
+	last_name VARCHAR(30) NOT NULL, -- Ditto.
 	email VARCHAR(50),
 	gender CHAR(1),
 	birthday DATE,
