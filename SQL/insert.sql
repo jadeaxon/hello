@@ -10,3 +10,9 @@ INSERT INTO my_contacts (last_name, first_name, email, gender, birthday, profess
 INSERT INTO my_contacts (last_name, first_name, email, gender, birthday, profession, location, status, interests, seeking)
 	VALUES ('Van Winkle', 'Rip', 'asleep@thewheel.org', 'M', '1023-04-05', 'sleeper', 'Europe', 'asleep', 'pillows', 'comfortable bed');
 
+-- Partial insert.  Unlisted columns will get their default values.
+INSERT INTO my_contacts (first_name, email, location, profession)
+	VALUES ('Patty', 'patty@postoffice.gov', 'Washington, DC', 'mail carrier');
+
+
+
