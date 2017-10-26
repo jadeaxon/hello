@@ -6,10 +6,11 @@
 USE gregs_list; -- This is the db name Head First SQL used.
 
 -- A table representing contact info for various people.
+DELETE FROM my_contacts;
 DROP TABLE my_contacts;
 CREATE TABLE my_contacts (
-	first_name VARCHAR(20) NOT NULL, -- Forbid nulls.
-	last_name VARCHAR(30) NOT NULL, -- Ditto.
+	first_name VARCHAR(20) NOT NULL,
+	last_name VARCHAR(30) NOT NULL DEFAULT 'Smith',
 	email VARCHAR(50),
 	gender CHAR(1),
 	birthday DATE,
@@ -21,5 +22,3 @@ CREATE TABLE my_contacts (
 );
 
 DESC my_contacts;
-
-
