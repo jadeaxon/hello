@@ -1,3 +1,4 @@
+#!/usr/bin/env groovy
 current = 1
 next = 1
 10.times {
