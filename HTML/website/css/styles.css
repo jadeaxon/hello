@@ -12,6 +12,13 @@ p.classy {
 
 }
 
+p.important {
+	/* The scale is 100 min to 900 max font weight. */
+	/* It's essentially how bold the font is. */
+	font-weight: 900;
+	font-size: 1.5em;
+}
+
 h1 {
   font-family: "Trebuchet MS", Helvetica, sans-senif;
   font-size: 2em;
