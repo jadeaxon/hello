@@ -4,6 +4,14 @@ p {
 
 }
 
+/* This is a custom paragraph class. */
+/* Usage: <p class="classy">I'm a classy paragraph.</p> */
+p.classy {
+	font-family: cursive;
+	font-size: 1.4em;
+
+}
+
 h1 {
   font-family: "Trebuchet MS", Helvetica, sans-senif;
   font-size: 2em;
