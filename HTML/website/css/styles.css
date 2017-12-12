@@ -30,3 +30,14 @@ h1 {
 }
 
 
+.naples {
+	font-style: italic;
+}
+
+/* We'll use this style in a <span>. */
+.spanish {
+	font-weight: bolder;
+}
+
+
+
