@@ -40,4 +40,14 @@ h1 {
 }
 
 
+/* Specify color by RGB hex value. */
+.colorful {
+	color: #cc0000;
+}
+
+/* Specify color by a color name. */
+.red {
+	color: red;
+}
+
 
