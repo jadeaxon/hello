@@ -58,6 +58,15 @@ p.centered {
 	text-align: center;
 }
 
+p.indented {
+	text-indent: 1em;
+}
+
+blockquote {
+	font-size: .7em;
+	color: gray;
+}
+
 h3 {
 	text-align: center;
 }
