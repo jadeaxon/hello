@@ -50,4 +50,16 @@ h1 {
 	color: red;
 }
 
+p.justified {
+	text-align: justify;
+}
+
+p.centered {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
 
