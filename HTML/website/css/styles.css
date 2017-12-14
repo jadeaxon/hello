@@ -75,4 +75,15 @@ p.margins {
 	margin: 1em;
 }
 
+/* A paragraph in a red box. */
+.redbox {
+	border: 5px solid red;
+}
+
+h2.uvuxmas {
+	border: 2px dashed red;
+	color: green;
+	font-family: cursive;
+}
+
 
