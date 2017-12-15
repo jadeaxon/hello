@@ -67,7 +67,8 @@ blockquote {
 	color: gray;
 }
 
-h3 {
+/* Use a grouping for elements that share style properties. */
+h3, h4 {
 	text-align: center;
 }
 
