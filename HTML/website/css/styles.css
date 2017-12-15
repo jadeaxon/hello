@@ -78,6 +78,7 @@ p.margins {
 /* A paragraph in a red box. */
 .redbox {
 	border: 5px solid red;
+	padding: .2em;
 }
 
 h2.uvuxmas {
