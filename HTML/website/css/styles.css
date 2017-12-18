@@ -88,4 +88,9 @@ h2.uvuxmas {
 	font-family: cursive;
 }
 
+/* A CSS id.  Can apply to just one element of a web page. */
+h2#citrus {
+	color: orange;
+}
+
 
