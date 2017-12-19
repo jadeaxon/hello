@@ -106,4 +106,11 @@ img.stackable {
 	display: block;
 }
 
+/* Make image a block element with a left margin to position it more exactly. */
+img.positioned {
+	margin-left: 10em;
+	display: block;
+}
+
+
 
