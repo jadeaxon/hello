@@ -118,3 +118,13 @@ img.centered {
 	margin-right: auto;
 }
 
+/* An image class that "floats"--text wraps around it. */
+img.floating {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+p.stop-wrapping {
+	clear: both; /* Stop wrapping around any floating elements. */
+}
+
