@@ -128,3 +128,12 @@ p.stop-wrapping {
 	clear: both; /* Stop wrapping around any floating elements. */
 }
 
+a {
+	color: grey;
+}
+
+/* Hovered over links become orange. */
+a:hover {
+	color: orange;
+}
+
