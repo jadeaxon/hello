@@ -137,3 +137,8 @@ a:hover {
 	color: orange;
 }
 
+/* Add space between list items. */
+li {
+	margin: .5em;
+}
+
