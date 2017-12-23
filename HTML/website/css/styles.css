@@ -100,6 +100,12 @@ div#topbar {
 	border: 1px solid green;
 }
 
+/* Make font in any paragraph in the topbar div twice as big. */
+/* This is an example of a more advanced CSS selector. */
+div#topbar p {
+	font-size: 2em;
+}
+
 /* Make an image class that acts as a block element. */
 /* Block elements always stack on top of each other, never side-by-side. */
 img.stackable {
