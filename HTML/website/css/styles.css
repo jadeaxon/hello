@@ -142,3 +142,8 @@ li {
 	margin: .5em;
 }
 
+/* Use square bullets for list items instead of round ones. */
+ul {
+	list-style-type: square;
+}
+
