@@ -153,3 +153,14 @@ ul {
 	list-style-type: square;
 }
 
+/* Add a border to all table cells. */
+th, td {
+	border: 1px solid black;
+}
+
+/* Make the borders of adjacent cells collapse into a single border. */
+table {
+	border-collapse: collapse;
+}
+
+
