@@ -156,6 +156,7 @@ ul {
 /* Add a border to all table cells. */
 th, td {
 	border: 1px solid black;
+	padding: .25em; /* Give each cell some breathing room. */
 }
 
 /* Make the borders of adjacent cells collapse into a single border. */
