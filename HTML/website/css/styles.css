@@ -157,11 +157,16 @@ ul {
 th, td {
 	border: 1px solid black;
 	padding: .25em; /* Give each cell some breathing room. */
+	width: 20%; /* Each cell is 20% of a table. */
 }
 
 /* Make the borders of adjacent cells collapse into a single border. */
 table {
 	border-collapse: collapse;
+}
+
+table#tools {
+	width: 75%; /* The table is 75% of the width of the page. */
 }
 
 
