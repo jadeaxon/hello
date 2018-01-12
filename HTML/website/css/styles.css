@@ -172,4 +172,10 @@ table#tools {
 	vertical-align: center;
 }
 
+/* You can use different row classes to alternate background color of table rows. */
+tr.alternate {
+	background-color: lightgray;
+}
+
+
 
