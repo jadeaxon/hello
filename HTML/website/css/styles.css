@@ -167,6 +167,9 @@ table {
 
 table#tools {
 	width: 75%; /* The table is 75% of the width of the page. */
+	/* Center align text in all table cells. */
+	text-align: center;
+	vertical-align: center;
 }
 
 
