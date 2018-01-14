@@ -10,7 +10,7 @@
 		<form action="process_form.groovy" method="post">
 			Subject: <input type="text" name="subject" size="25" maxlength="20">
 			<p>Message:<p>
-			<textarea name="message" rows="25" cols="80">Enter your message here.</textarea>
+			<textarea name="message" rows="10" cols="80">Enter your message here.</textarea>
 			<p>What is the priority of this message?</p>
 			<input type="radio" name="priority" value="meh" checked="checked">Meh
 			<input type="radio" name="priority" value="urgent">Urgent
@@ -19,6 +19,12 @@
 			<input type="checkbox" name="protocols" value="email" checked="checked">E-mail
 			<input type="checkbox" name="protocols" value="slack">Slack
 			<input type="checkbox" name="protocols" value="text">Text
+			<p>Department to send message to?</p>
+			<select name="department">
+				<option value="AIS">AIS</option>
+				<option value="APS" selected="selected">APS</option>
+				<option value="Finance">Finance</option>
+			</select>
 			<br><br>
 			<input type="submit" value="Send Message">
 		</form>
