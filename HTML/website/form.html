@@ -7,8 +7,10 @@
 	</head>
 	<body>
 		<!-- A simple HTML form. -->
-		<form action="process_form_submit.groovy" method="post">
-			User Input: <input type="text" name="user_input" size="25" maxlength="20">
+		<form action="process_form.groovy" method="post">
+			Subject: <input type="text" name="subject" size="25" maxlength="20">
+			<p>Message:<p>
+			<textarea name="message" rows="25" cols="80">Enter your message here.</textarea>
 		</form>
 	</body>
 </html>
