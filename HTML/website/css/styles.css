@@ -194,7 +194,7 @@ div#skinny {
 
 /* A left-floating div. */
 div#lefty {
-  width 48%;
+  width: 48%;
   float: left;
   /* border: 1px dotted green; */
 }
