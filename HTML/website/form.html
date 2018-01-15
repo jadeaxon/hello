@@ -16,9 +16,12 @@
 			<input type="radio" name="priority" value="urgent">Urgent
 			<input type="radio" name="priority" value="dire">Dire
 			<p>Message protocols?</p>
-			<input type="checkbox" name="protocols" value="email" checked="checked">E-mail
-			<input type="checkbox" name="protocols" value="slack">Slack
-			<input type="checkbox" name="protocols" value="text">Text
+			<input id="p1" type="checkbox" name="protocols" value="email" checked="checked">
+			<label for="p1">E-mail</label>
+			<input id="p2" type="checkbox" name="protocols" value="slack">
+			<label for="p2">Slack</label>
+			<input id="p3" type="checkbox" name="protocols" value="text">
+			<label for="p3">Text</label>
 			<p>Department to send message to?</p>
 			<select name="department">
 				<option value="AIS">AIS</option>
