@@ -215,4 +215,23 @@ div#righty {
 }
 
 
+/* The header at the top of the page. */
+div#header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: lightgrey;
+}
+
+/* Style links within the header div. */
+div#header a {
+  color: blue;
+  margin-left: .2em;
+}
+
+div#header a:hover {
+  color: orange;
+}
+
 
