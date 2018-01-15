@@ -191,3 +191,28 @@ div#skinny {
 	border: 1px dashed purple;
 }
 
+
+/* A left-floating div. */
+div#lefty {
+  width 48%;
+  float: left;
+  /* border: 1px dotted green; */
+}
+
+/* A right-floating div. */
+div#righty {
+  width: 48%;
+  float: right;
+  /* border: 1px dotted green; */
+}
+
+/* A generic class just to clear floatingness. */
+.anchor {
+  width: 0%;
+  margin: 0 0 0 0;
+  padding: 0;
+  clear: both;
+}
+
+
+
