@@ -184,4 +184,10 @@ input[type="text"], textarea {
 	padding: .5em;
 }
 
+/* A narrow, centered div. */
+div#skinny {
+	width: 20%; /* Narrow. */
+	margin: 0 auto 0 auto; /* Centered. */
+	border: 1px dashed purple;
+}
 
