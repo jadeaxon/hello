@@ -177,5 +177,11 @@ tr.alternate {
 	background-color: lightgray;
 }
 
+/* <element>[<attribute>="<value>"] is a new form of CSS selector we haven't seen yet. */
+/* It constrains the elements the style applies to to those that have the given attribute value. */
+input[type="text"], textarea {
+	font-size: 1.5em;
+	padding: .5em;
+}
 
 
