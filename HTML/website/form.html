@@ -11,17 +11,22 @@
 			Subject: <input type="text" name="subject" size="25" maxlength="20">
 			<p>Message:<p>
 			<textarea name="message" rows="10" cols="80">Enter your message here.</textarea>
-			<p>What is the priority of this message?</p>
-			<input type="radio" name="priority" value="meh" checked="checked">Meh
-			<input type="radio" name="priority" value="urgent">Urgent
-			<input type="radio" name="priority" value="dire">Dire
-			<p>Message protocols?</p>
-			<input id="p1" type="checkbox" name="protocols" value="email" checked="checked">
-			<label for="p1">E-mail</label>
-			<input id="p2" type="checkbox" name="protocols" value="slack">
-			<label for="p2">Slack</label>
-			<input id="p3" type="checkbox" name="protocols" value="text">
-			<label for="p3">Text</label>
+			
+			<fieldset>
+				<legend>Message Priority</legend>
+				<input type="radio" name="priority" value="meh" checked="checked">Meh
+				<input type="radio" name="priority" value="urgent">Urgent
+				<input type="radio" name="priority" value="dire">Dire
+			</fieldset>
+			<fieldset>
+				<legend>Message Protocol</legend>
+				<input id="p1" type="checkbox" name="protocols" value="email" checked="checked">
+				<label for="p1">E-mail</label>
+				<input id="p2" type="checkbox" name="protocols" value="slack">
+				<label for="p2">Slack</label>
+				<input id="p3" type="checkbox" name="protocols" value="text">
+				<label for="p3">Text</label>
+			</fieldset>
 			<p>Department to send message to?</p>
 			<select name="department">
 				<option value="AIS">AIS</option>
