@@ -234,4 +234,9 @@ div#header a:hover {
   color: orange;
 }
 
+div#header img {
+  float: left;
+  margin: 1em;
+}
+
 
