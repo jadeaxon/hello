@@ -218,10 +218,17 @@ div#righty {
 /* The header at the top of the page. */
 div#header {
   width: 100%;
-  position: absolute;
+  /* position: absolute; */
+  /* This will stay at the top of the page even as the rest of the page scrolls. */
+  position: fixed;
   top: 0;
   left: 0;
   background-color: lightgrey;
+}
+
+div#invisible-header {
+  width: 100%;
+  visibility: hidden;
 }
 
 /* Style links within the header div. */
@@ -230,13 +237,28 @@ div#header a {
   margin-left: .2em;
 }
 
+div#invisible-header a {
+  visibility: hidden;
+  margin-left: .2em;
+}
+
 div#header a:hover {
   color: orange;
+}
+
+div#invisible-header a:hover {
+  visibility: hidden;
 }
 
 div#header img {
   float: left;
   margin: 1em;
+}
+
+div#invisible-header img {
+  float: left;
+  margin: 1em;
+  visibility: hidden;
 }
 
 

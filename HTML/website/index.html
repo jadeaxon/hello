@@ -6,11 +6,16 @@
 		<link rel="stylesheet" type="text/css" href="css/styles.css">	
 	</head>	
 	<body>
+		<!-- Make an invisible duplicate header so normal flow HTML elements don't overlap. -->
+		<div id="invisible-header">
+			<img src="images/world.png" alt="world" width="50" height="50">
+			<h1><a name="invisible-top">Hello, HTML!</a></h1>
+		</div>
 		<div id="header">
 			<img src="images/world.png" alt="world" width="50" height="50">
 			<h1><a name="top">Hello, HTML!</a></h1>
 		</div>
-		<br>
+		<div class="anchor"></div>
 		<h2><a id="top2">Why isn't this working?</a></h2> 	
 		<a href="#bottom">To the bottom</a>
 		<p><a href="form.html">Would you like to fill out a form?</a> (Ctrl click the link)</p>
