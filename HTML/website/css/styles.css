@@ -261,4 +261,20 @@ div#invisible-header img {
   visibility: hidden;
 }
 
+/* Under the header, we'll have a navbar and content div side-by-side. */
+div#navbar {
+  float: left;
+  width: 10%;
+  background-color: #f0f0f0;
+  position: fixed;
+}
 
+div#content {
+  float: right;
+  width: 87%;
+}
+
+/* Make the navbar list have no bullets. */
+div#navbar ul {
+  list-style-type: none;
+}
