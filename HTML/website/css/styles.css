@@ -283,6 +283,11 @@ div#navbar ul {
   padding-left: 0;
 }
 
+/* Add some padding around the list items. */
+div#navbar ul li {
+  padding: 0 1em .3em 1em;
+}
+
 div#navbar ul li a {
   color: white;
 }
