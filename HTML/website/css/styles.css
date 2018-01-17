@@ -265,8 +265,10 @@ div#invisible-header img {
 div#navbar {
   float: left;
   width: 10%;
-  background-color: #f0f0f0;
+  /* background-color: #f0f0f0; */
+  background-color: blue;
   position: fixed;
+  display: inline-block; /* Shrink to fit content. */
 }
 
 div#content {
@@ -277,4 +279,15 @@ div#content {
 /* Make the navbar list have no bullets. */
 div#navbar ul {
   list-style-type: none;
+  /* Lists have some default left padding, so let's get rid of it. */
+  padding-left: 0;
 }
+
+div#navbar ul li a {
+  color: white;
+}
+
+div#navbar ul li a:hover {
+  color: yellow;
+}
+
