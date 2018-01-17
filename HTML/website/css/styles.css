@@ -265,8 +265,6 @@ div#invisible-header img {
 div#navbar {
   float: left;
   width: 10%;
-  /* background-color: #f0f0f0; */
-  background-color: blue;
   position: fixed;
   display: inline-block; /* Shrink to fit content. */
 }
@@ -285,11 +283,18 @@ div#navbar ul {
 
 /* Add some padding around the list items. */
 div#navbar ul li {
-  padding: 0 1em .3em 1em;
+  background-color: blue;
+  margin: 0 0 .25em 0;
 }
 
 div#navbar ul li a {
   color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  font-weight: 900;
+  text-decoration: none; /* Do not underline links. */
+  display: block;
+  padding: .35em;
 }
 
 div#navbar ul li a:hover {
