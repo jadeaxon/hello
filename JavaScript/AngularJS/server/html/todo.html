@@ -8,33 +8,38 @@
 
 		<!-- Use AngularJS. -->
 		<script src="angular.js"></script>
-	<script>
-		var model = {
-			user: "Jeff",
-			items: [
-				{ action: "Learn Node.js", done: false },
-				{ action: "LearnAngularJS", done: false },
-				{ action: "Learn PL/SQL", done: false },
-				{ action: "Implement JEBTRS", done: false }
-			]
-		};
-		var todoApp = angular.module("todoApp", []);
+		<script>
+			var model = {
+				user: "Jeff",
+				items: [
+					{ action: "Learn Node.js", done: false },
+					{ action: "LearnAngularJS", done: false },
+					{ action: "Learn PL/SQL", done: false },
+					{ action: "Implement JEBTRS", done: false }
+				]
+			};
+			var todoApp = angular.module("todoApp", []);
 
-		// Create an AngularJS controller.
-		// $scope is a special AngularJS var to expose some data to views.
-		todoApp.controller("ToDoCtrl", function ($scope) {
-			// The view can see the entire model via $scope.todo.
-			$scope.todo = model;
-			// Here we define a behavior on the scope--just a function really.
-			$scope.incompleteCount = function() {
-				var count = 0;
-				angular.forEach($scope.todo.items, function(item) {
-					if (!item.done) { count++; }
-				});
-				return count;
-			}
-		});
-	</script>
+			// Create an AngularJS controller.
+			// $scope is a special AngularJS var to expose some data to views.
+			todoApp.controller("ToDoCtrl", function($scope) {
+				// The view can see the entire model via $scope.todo.
+				$scope.todo = model;
+				// Here we define a behavior on the scope--just a function really.
+				$scope.incompleteCount = function() {
+					var count = 0;
+					angular.forEach($scope.todo.items, function(item) {
+						if (!item.done) { count++; }
+					});
+					return count;
+				};
+				// We'll use this function to dynamically determine what class of label to use.
+				// These are Bootstrap CSS class names.
+				$scope.warningLevel = function() {
+					return ($scope.incompleteCount() < 3) ? "label-success" : "label-warning";
+				};
+			});
+		</script>
 	</head>
 	<body ng-controller="ToDoCtrl">
 		<!-- This is essentially the view in the AngularJS app. -->
@@ -43,7 +48,8 @@
 			<h1>{{todo.user}}'s To Do List</h1>
 			<!-- Show just the count of incomplete todo list items. -->
 			<!-- Hide the count if there are no incomplete items. -->
-			<span class="label label-default" ng-hide="incompleteCount() == 0">
+			<!-- Note how we're calling controller functions in the ng-hide and ng-class directive values. -->
+			<span class="label" ng-hide="incompleteCount() == 0" ng-class="warningLevel()">
 				{{incompleteCount()}}
 			</span>
 		</div>
