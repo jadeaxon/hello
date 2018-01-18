@@ -9,20 +9,31 @@
 		<!-- Use AngularJS. -->
 		<script src="angular.js"></script>
 	<script>
+		var model = {
+			user: "Jeff",
+			items: [
+				{ action: "Learn Node.js", done: false },
+				{ action: "LearnAngularJS", done: false },
+				{ action: "Learn PL/SQL", done: false },
+				{ action: "Implement JEBTRS", done: false }
+			]
+		};
 		var todoApp = angular.module("todoApp", []);
 	</script>
 	</head>
 	<body>
 		<div class="page-header">
-			<h1>Jeff's To Do List</h1>
+			<h1>To Do List</h1>
 		</div>
 		<div class="panel">
+			<!-- The control to add a new todo list item. -->
 			<div class="input-group">
 				<input class="form-control">
 				<span class="input-group-btn">
 					<button class="btn btn-default">Add</button>
 				</span>
 			</div>
+			<!-- The table showing the todo list items. -->
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -31,10 +42,6 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr><td>Learn Node.js</td><td>No</td></tr>
-					<tr><td>Learn AngularJS</td><td>No</td></tr>
-					<tr><td>Learn PL/SQL</td><td>No</td></tr>
-					<tr><td>Implement JEBTRS</td><td>No</td></tr>
 				</tbody>
 			</table>
 		</div>
