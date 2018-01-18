@@ -25,6 +25,14 @@
 		todoApp.controller("ToDoCtrl", function ($scope) {
 			// The view can see the entire model via $scope.todo.
 			$scope.todo = model;
+			// Here we define a behavior on the scope--just a function really.
+			$scope.incompleteCount = function() {
+				var count = 0;
+				angular.forEach($scope.todo.items, function(item) {
+					if (!item.done) { count++; }
+				});
+				return count;
+			}
 		});
 	</script>
 	</head>
@@ -33,7 +41,11 @@
 		<div class="page-header">
 			<!-- Attributes of the $scope var are visible in template placeholder expressions. -->
 			<h1>{{todo.user}}'s To Do List</h1>
-			<span class="label label-default">{{todo.items.length}}</span>
+			<!-- Show just the count of incomplete todo list items. -->
+			<!-- Hide the count if there are no incomplete items. -->
+			<span class="label label-default" ng-hide="incompleteCount() == 0">
+				{{incompleteCount()}}
+			</span>
 		</div>
 		<div class="panel">
 			<!-- The control to add a new todo list item. -->
