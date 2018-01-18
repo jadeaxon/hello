@@ -54,6 +54,11 @@
 				<tbody>
 					<tr ng-repeat="item in todo.items">
 						<td>{{item.action}}</td>
+						<!-- Two-way data binding. -->
+						<td><input type="checkbox" ng-model="item.done"></td>
+						<!-- Notice that this does update as you toggle checkboxes. -->
+						<!-- So, the compilation does not merely generate static HTML. -->
+						<!-- However, the model as defined here does not preserve state across a page refresh. -->
 						<td>{{item.done}}</td>
 				</tbody>
 			</table>
