@@ -17,7 +17,7 @@
 					{ action: "Learn PL/SQL", done: false },
 					{ action: "Implement JEBTRS", done: false }
 				]
-			};
+			}; // model
 			var todoApp = angular.module("todoApp", []);
 
 			// Create an AngularJS controller.
@@ -38,7 +38,11 @@
 				$scope.warningLevel = function() {
 					return ($scope.incompleteCount() < 3) ? "label-success" : "label-warning";
 				};
-			});
+
+				$scope.addNewItem = function(actionText) {
+					$scope.todo.items.push({action: actionText, done: false});
+				};
+			}); // controller
 		</script>
 	</head>
 	<body ng-controller="ToDoCtrl">
@@ -56,9 +60,9 @@
 		<div class="panel">
 			<!-- The control to add a new todo list item. -->
 			<div class="input-group">
-				<input class="form-control">
+				<input class="form-control" ng-model="actionText">
 				<span class="input-group-btn">
-					<button class="btn btn-default">Add</button>
+					<button class="btn btn-default" ng-click="addNewItem(actionText)">Add</button>
 				</span>
 			</div>
 			<!-- The table showing the todo list items. -->
