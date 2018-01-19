@@ -20,6 +20,19 @@
 			}; // model
 			var todoApp = angular.module("todoApp", []);
 
+			// Define a custom data filter.
+			todoApp.filter("checkedItemsFilter", function() {
+				return function (items, showComplete) {
+					var resultArr = [];
+					angular.forEach(items, function(item) {
+						if (item.done == false || showComplete == true) {
+							resultArr.push(item);
+						}
+					});
+					return resultArr;
+				}
+			});
+
 			// Create an AngularJS controller.
 			// $scope is a special AngularJS var to expose some data to views.
 			todoApp.controller("ToDoCtrl", function($scope) {
@@ -74,7 +87,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="item in todo.items">
+					<!-- Filter and sort the todo list items. -->
+					<tr ng-repeat="item in todo.items | checkedItemsFilter: showComplete | orderBy: 'action'">
 						<td>{{item.action}}</td>
 						<!-- Two-way data binding. -->
 						<td><input type="checkbox" ng-model="item.done"></td>
@@ -84,7 +98,12 @@
 						<td>{{item.done}}</td>
 				</tbody>
 			</table>
+			<div class="checkbox-inline">
+				<!-- The boolean set here affects the custom filter "checkedItems" used above. -->
+				<label><input type="checkbox" ng-model="showComplete"> Show Complete</label>
+			</div>
 		</div>
 	</body>
 </html>
+
 
