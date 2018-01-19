@@ -10,15 +10,33 @@
 		<script src="angular.js"></script>
 		<script>
 			var model = {
-				user: "Jeff",
+				user: "Jeff"
+				// These have been factored out to todo.json.
+				/*
 				items: [
 					{ action: "Learn Node.js", done: false },
 					{ action: "LearnAngularJS", done: false },
 					{ action: "Learn PL/SQL", done: false },
 					{ action: "Implement JEBTRS", done: false }
 				]
+				*/
+
 			}; // model
 			var todoApp = angular.module("todoApp", []);
+
+			// Seems like 'run' is an AngularJS hook that runs when the page loads.
+			// We use that to load the data model from a JSON file.
+			todoApp.run(function ($http) {
+				// This is an Ajax call.
+				$http.get("todo.json").then(
+					function (success) {
+						model.items = success.data;
+					},
+					function (error) {
+						alert("ERROR: Failed to load todo.json!");
+					}
+				);
+			});
 
 			// Define a custom data filter.
 			todoApp.filter("checkedItemsFilter", function() {

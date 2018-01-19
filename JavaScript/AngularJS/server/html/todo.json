@@ -1,0 +1,5 @@
+[{"action": "Wake up", "done": false },
+{"action": "Drive to work", "done": false},
+{"action": "Take shower", "done": true},
+{"action": "Park car", "done": true}]
+
