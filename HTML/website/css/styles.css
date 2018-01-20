@@ -261,17 +261,22 @@ div#invisible-header img {
   visibility: hidden;
 }
 
+div#content {
+  float: right;
+  width: 82%;
+}
+
 /* Under the header, we'll have a navbar and content div side-by-side. */
 div#navbar {
   float: left;
+<<<<<<< Updated upstream
   width: 10%;
+=======
+  width: 15%;
+  background-color: #f0f0f0;
+>>>>>>> Stashed changes
   position: fixed;
   display: inline-block; /* Shrink to fit content. */
-}
-
-div#content {
-  float: right;
-  width: 87%;
 }
 
 /* Make the navbar list have no bullets. */
@@ -281,6 +286,7 @@ div#navbar ul {
   padding-left: 0;
 }
 
+<<<<<<< Updated upstream
 /* Add some padding around the list items. */
 div#navbar ul li {
   background-color: blue;
@@ -300,4 +306,41 @@ div#navbar ul li a {
 div#navbar ul li a:hover {
   color: yellow;
 }
+
+/* Under the header, we'll have a hnavbar and content div side-by-side. */
+div#hnavbar {
+  width: 100%;
+}
+
+/* Make the hnavbar list have no bullets. */
+div#hnavbar ul {
+  list-style-type: none;
+}
+
+div#hnavbar ul li {
+  background-color: blue;
+  text-align: center;
+  display: inline; /* Put elements side-by-side. */
+  width: 19%;
+  float: left;
+  margin-right: .5em;
+}
+
+/* Style the anchors (links) within the hnavbar.*/
+div#hnavbar ul li a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  font-weight: 900;
+  text-decoration: none; /* Remove underlining. */
+  display: block;
+  background-color: blue; 
+  color: purple;
+  padding: .75em;
+}
+
+div#hnavbar ul li a:hover {
+  color: orange;
+}
+
+
 
