@@ -326,6 +326,15 @@ div#hnavbar ul li {
   margin-right: .5em;
 }
 
+/* This don't quite work because the a blocks the li from going into hover state. */
+div#hnavbar ul li:hover {
+  background-color: lightblue;
+}
+
+div#hnavbar ul li:active {
+  background-color: darkblue;
+}
+
 /* Style the anchors (links) within the hnavbar.*/
 div#hnavbar ul li a {
   font-family: Arial, Helvetica, sans-serif;
@@ -342,5 +351,21 @@ div#hnavbar ul li a:hover {
   color: orange;
 }
 
+
+/* FAIL: These don't work.  Works on standalone li but not the ones in hnavbar. */
+/* Maybe the pathed hnavbar styling interferes with this. */
+/* A list item that changes background color when hovered over. */
+li.colorChanger {
+  background-color: green;
+}
+
+li.colorChanger:hover {
+  background-color: lightgreen;
+}
+
+/* I think this is the state of the element when it's clicked. */
+li.colorChanger:active {
+  background-color: darkgreen;
+}
 
 
