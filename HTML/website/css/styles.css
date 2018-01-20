@@ -189,6 +189,7 @@ div#skinny {
 	width: 20%; /* Narrow. */
 	margin: 0 auto 0 auto; /* Centered. */
 	border: 1px dashed purple;
+	background-image: url("images/tile.jpg");
 }
 
 
@@ -264,17 +265,15 @@ div#invisible-header img {
 div#content {
   float: right;
   width: 82%;
+  background-image: url("images/tile.jpg");
 }
 
 /* Under the header, we'll have a navbar and content div side-by-side. */
 div#navbar {
   float: left;
-<<<<<<< Updated upstream
   width: 10%;
-=======
   width: 15%;
   background-color: #f0f0f0;
->>>>>>> Stashed changes
   position: fixed;
   display: inline-block; /* Shrink to fit content. */
 }
@@ -286,7 +285,6 @@ div#navbar ul {
   padding-left: 0;
 }
 
-<<<<<<< Updated upstream
 /* Add some padding around the list items. */
 div#navbar ul li {
   background-color: blue;
