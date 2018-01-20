@@ -265,7 +265,9 @@ div#invisible-header img {
 div#content {
   float: right;
   width: 82%;
-  background-image: url("images/tile.jpg");
+  /* This path is relative to the location of this CSS file. */
+  background-image: url("../images/grid.png");
+  background-repeat: no-repeat;
 }
 
 /* Under the header, we'll have a navbar and content div side-by-side. */
