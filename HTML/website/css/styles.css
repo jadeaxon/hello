@@ -381,3 +381,11 @@ p.bottom {
   margin-right: auto;
   border: 1px solid blue;
 }
+
+div#butterfly {
+  position: fixed;
+  z-index: -1; /* Sit below everything. */
+  bottom: 0;
+  right: 0;
+}
+
