@@ -375,6 +375,15 @@ div.bottom {
   border: 1px solid darkblue;
 }
 
+/* Use a media query to contrain this style to a particular type of media. */
+/* This allows you to adjust your web page to mobile, laptop, printer, etc. */
+@media only screen and (min-device-width: 800px) {
+	p.laptop {
+		font-family: "Comic Sans MS", cursive, sans-serif;
+		color: orange;
+	}
+}
+
 p.bottom {
   width: 80%;	
   margin-left: auto;
