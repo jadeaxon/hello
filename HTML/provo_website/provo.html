@@ -1,0 +1,168 @@
+ <!-- 
+    The first two lines are standard boilerplate.
+    The first line says this is HTML5. The second
+    line says the document is in English. If you're
+    writing in another language, it'll be "it" for
+    "Italian," for example. See Chapter 88.
+     -->
+    <!DOCTYPE HTML>
+    <html lang="en">
+    <!-- 
+    The head section contains information that doesn't
+    appear on the page. But you've got to have it.
+     --> 
+       <head>
+    <!-- 
+    The next line is a boring technicality. See Chapter 88.
+     -->  
+        <meta charset="utf-8">
+    <!-- 
+    The title is the text that will appear in the browser
+    toolbar, in a bookmark list, and in search engine
+    results. Give each page a unique title that describes
+    its particular contents. See Chapter 88.
+     -->
+        <title>Provo, New Mexico - the most interesting spot in the Land of Enchantment</title>
+    <!-- 
+    Search engines display your meta name text in
+    search results, so do some selling here. Don't be
+    long-winded. They trim anything longer than about
+    160 characters. See Chapter 89.
+     -->
+        <meta name="description" content="Three cultures come together magically in this high-desert wonderland.">
+    <!-- 
+    This is where you tell the browser where to find
+    your CSS file. See Chapter 5.
+     -->
+        <link rel="stylesheet" type="text/css" href="css/provo.css">
+    <!-- 
+    And that's the end of the head section.
+     -->
+      </head>
+    <!-- 
+    The body section contains all of the page content.
+     -->
+      <body>
+    <!-- 
+    At the top of the page is a header. It comprises a
+    div and, inside the div, an image and a heading.
+    See Chapters 64-68.
+     -->
+          <div id="banner">
+              <img src="images/welcome_to_provo.jpg" alt="Welcome to Provo" width="200" height="141">
+              <h1>Hiking. Skiing. Rafting. Camping. Galleries. Restaurants.<br>Provo has it all.</h1> 
+          </div>
+    <!-- 
+    Next comes an invisible duplicate of the header.
+    Since the visible header is in fixed position, the 
+    elements that come after it after it ignores it, and
+    occupy the same real estate, under it. A
+    normally-positioned duplicate pushes the other
+    elements down where you want them. See
+    Chapter 68.
+     -->
+          <div id="spacer">
+              <img src="images/welcome_to_provo.jpg" alt="Welcome to Provo" width="200" height="141">
+              <h1>Hiking. Skiing. Rafting. Camping. Galleries. Restaurants.<br>Provo has it all.</h1> 
+          </div>
+    <!-- 
+    The header and footer stretch all the way across
+    the window. But I want the rest of the page to be
+    narrower. So I put everything inside a div with a
+    reduced width.
+     -->
+          <div id="main">
+    <!-- 
+    Since this isn't a real website, I'm doing a menu
+    with just three items on it. It's an unordered list
+    with links and some other styling, so it doesn't
+    wind up looking like a list. See Chapters 69-75.
+     -->
+            <div id="navbar">
+               <ul>
+                 <li class="changeBackground"><a href="provo.html">Home</a></li>
+                 <li class="changeBackground"><a href="hiking.html">Hiking</a></li>
+                 <li class="changeBackground"><a href="skiing.html">Skiing</a></li>
+               </ul>
+           </div>
+    <!-- 
+    The rest of the page (except for the footer) comprises
+    two side-by-side divs, a principal content section
+    and a sidebar. See Chapters 61-63.
+     -->
+             <div id="content">
+    <!-- 
+    Each div has a big heading. I went with an h1 heading
+    for the header. A site should have only one of these,
+    so it's logical to step down to h2. Of course, I can make
+    it as big as I want by styling it in the CSS. See Chapter 3.
+     -->            
+                 <h2>One of the most interesting towns in the world.</h2>
+    <!-- 
+    The bread and butter of any Web page, paragraphs.
+    See Chapter 2.
+     -->             
+                 <p>Take a moment to explore Provo and discover the beauty, the culture, the people that make Provo and Northern New Mexico the Land of Enchantment.</p>
+                 <p>Seated on the high-desert mesa at the foot of the Sangre de Cristo Mountains, Provo is rich with art and steeped in history. Home to Provo Pueblo, the Village of Provo Ski Valley and a colorful array of surrounding communities, Provo County has something for everyone.</p>
+                 <p>Step into the history of Provo, New Mexico - this storied land has seen amazing people and events.</p>
+                 <p>The Enchanted Circle is an 86 mile drive through gorgeous mountain peaks and valleys.  This Enchanted Circle links the towns of Provo, Questa, Red River, Eagle Nest, Angel Fire and back to Provo!  Take a picnic lunch to enjoy the beauty and serenity of Bobcat Pass or while fishing at one of the lakes around Eagle Nest or Angel Fire.</p>
+                 <p>You could spend a month exploring Provo and never see the same thing twice.</p>
+             </div>
+    <!-- 
+    The secondary content div is narrower and sits
+    on the right.
+     -->         
+             <div id="sidebar">
+                 <h2>Restaurants</h2>
+    <!-- 
+    A third style of heading. I styled it so it's about
+    the same size as the h2 heading, but in a
+    different color and font-family.
+     -->             
+                 <h3>Doc Martin's Restaurant</h3>
+    <!-- 
+    These are working links. I hope you use some
+    on your page. See Chapter 29.
+     -->             
+                 <p><a href="http://www.docmartinsrestaurant.com">docmartinsrestaurant.com</a><br>
+    <!-- 
+    I'm using some breaks rather than separate
+    paragraphs because i don't want a lot of space
+    between these lines. See Chapter 3.
+     -->             
+                 575-758-1977<br>
+                 located at The Provo Inn, 125 Paseo del Pueblo Norte, Provo, NM 87571</p>
+                 <h3>Los Vaqueros Steak House</h3>
+                 <p><a href="http://www.sagebrushinn.com">sagebrushinn.com</a><br>
+                 575-758-2254<br>
+                 1508 Paseo del Pueblo Sur, (in the Sagebrush Inn), Provo, NM 87571/p>
+                 <h3>Mosaic Fine Dining</h3>
+                 <p><a href="http://www.mosaicfinedining.com">mosaicfinedining.com</a><br>
+                 575-751-3438<br>
+                 108A South Plaza, Provo, NM 87571</p>
+                 <h3>Sabroso Restaurant & Bar</h3>
+                 <p><a href="http://www.sabrosoprovo.com">sabrosoprovo.com</a><br>
+                 575-776-3333<br>
+                 470 State Highway 150, PO Box 505, Arroyo Seco, NM 87514</p>                                       
+             </div>
+        </div>
+    <!-- 
+    I'm using normal (i.e. static) positioning for the
+    footer, because I'm not concerned about the
+    browser adding a little extra space around it as
+    I am in the header. Otherwise, it works like the
+    header.
+     -->         
+        <div id="footer">
+          <ul>
+             <li><a href="https://www.google.com/maps/d/viewer?msa=0&mid=zEh51dOo9RKA.kkUGFqtDLTSY" target="_blank">Map</a></li>
+             <li><a href="http://bookprovo.com/" target="_blank">Hotel reservations</a></li>
+             <li><a href="http://www.skiprovo.org/weather" target="_blank">Ski conditions</a></li>
+             <li><a href="http://www.realtor.com/realestateandhomes-search/Provo_NM" target="_blank">Real estate</a></li>
+             <li><a href="http://www.city-data.com/city/Provo-New-Mexico.html" target="_blank">Statistics</a></li>
+             <li><a href="http://www.weather.com/weather/tenday/l/Provo+NM+87571:4:US" target="_blank">Weather</a></li>                                             
+          </ul>
+       </div>
+  </body>
+</html>
+
