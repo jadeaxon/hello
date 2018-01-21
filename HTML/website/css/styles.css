@@ -398,3 +398,11 @@ div#butterfly {
   right: 0;
 }
 
+/* A paragraph constrained to 100x100 pixels.  Will have scrollbars on overflow. */
+p.scroller {
+  max-width: 200px;
+  max-height: 100px;
+  overflow: scroll;
+  color: brown;
+}
+
