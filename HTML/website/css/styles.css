@@ -369,6 +369,8 @@ li.colorChanger:active {
 }
 
 div.bottom {
+  position: relative;
+  left: 10%;
   width: 80%;
   border: 1px solid darkblue;
 }
