@@ -12,7 +12,16 @@
 		<!-- An inline event handler for the onClick event. -->
 		<a href="JavaScript:void(0)" onClick="alert('Clicked')">Click Me</a><br>
 		<a href="JavaScript:void(0)" onClick="helloEvents()">Call a Function</a><br>
-		<img src="images/unchecked.png" onMouseover="src='images/checked.png'" onMouseout="src='images/unchecked.png'">	
+
+		<!-- An image that changes its source when the mouse hovers over it. -->
+		<img src="images/unchecked.png" onMouseover="src='images/checked.png'" onMouseout="src='images/unchecked.png'"><br>
+
+		<!-- An input text field that changes its background color when it has the focus. -->
+		<label>Input <input
+						type="text" size="20"
+						onFocus="this.style.backgroundColor='yellow'"
+						onBlur="this.style.backgroundColor='white'">
+		</label>
 	</body>
 </html>
 
