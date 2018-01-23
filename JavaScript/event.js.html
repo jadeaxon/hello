@@ -6,6 +6,24 @@
 			function helloEvents() {
 				alert("Hello, events!");
 			}
+
+			// This gets called when the zip code field loses focus.
+			function fillCity() {
+				var cityName;
+				var zipEntered = document.getElementById("zip").value;
+				switch (zipEntered) {
+					case "60608":
+						cityName = "Chicago"; break;
+					case "84601":
+						cityName = "Provo"; break;
+					case "90210":
+						cityName = "Beverly Hills"; break;
+					default:
+						cityName = "unknown";
+				} // switch
+				// Set the value of the city element.
+				document.getElementById("city").value = cityName;
+			} // fillCity()
 		</script>
 	</head>
 	<body>
@@ -14,7 +32,7 @@
 		<a href="JavaScript:void(0)" onClick="helloEvents()">Call a Function</a><br>
 
 		<!-- An image that changes its source when the mouse hovers over it. -->
-		<img src="images/unchecked.png" onMouseover="src='images/checked.png'" onMouseout="src='images/unchecked.png'"><br>
+		<img src="images/unchecked.png" alt="checkbox" onMouseover="src='images/checked.png'" onMouseout="src='images/unchecked.png'"><br>
 
 		<!-- An input text field that changes its background color when it has the focus. -->
 		<label>Input <input
@@ -22,6 +40,14 @@
 						onFocus="this.style.backgroundColor='yellow'"
 						onBlur="this.style.backgroundColor='white'">
 		</label>
+
+		<!-- This form automatically fills in the city based on the zip code. -->
+		<form action="noop.py">
+			ZIP:<br>
+			<input type="text" id="zip" onBlur="fillCity()"><br>
+			City:<br>
+			<input type="text" id="city">
+		</form>
 	</body>
 </html>
 
