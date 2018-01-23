@@ -9,12 +9,21 @@ var util = require("util");
 var http = require("http");
 var url = require("url");
 var path = require("path");
-var fs = require("fs");
+var fs = require("fs"); // Filesystem
 
-http.createServer(
+var port = 8181; // The TCP port to listen on.
+
+console.log("Creating HTTP server.");
+
+// An HTTP server gives responses to requests.
+var server = http.createServer(
 	function(request, response) {
+		console.log("Request: " + request.url);
+		// Parse the path out of the URL.
 		var uri = url.parse(request.url).pathname;
+		// Interpret the paths as relative to where this server process is running.
 		var filename = path.join(process.cwd(), uri);
+		// Check if the desired file exists.
 		fs.exists(filename,
 			function(exists) {
 				if (!exists) {
@@ -25,6 +34,7 @@ http.createServer(
 					response.end("404 Not Found\n");
 					return;
 				}
+				// If the file exists, respond with it as binary output.
 				fs.readFile(
 					filename,
 					"binary",
@@ -44,7 +54,8 @@ http.createServer(
 			}
 		); // file exists
 	}
-).listen(8080);
-console.log("Server running at http://localhost:8080/");
+);
+server.listen(port);
+console.log("Server running at http://localhost:" + port + "/");
 
 
