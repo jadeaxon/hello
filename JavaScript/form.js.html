@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <script>
+      function validateLastName() {
+        var field = document.getElementById("lastName");
+        if (field.value.length === 0) {
+          alert("Last name required");
+          field.focus();
+          return false;
+        }
+      }   
+
+    </script>
+  </head>
+  <body>
+    <form onSubmit="return validateLastName()">
+      Last Name:
+      <input 
+        type="text" id="lastName"
+        onFocus="this.style.backgroundColor='yellow'" 
+        onBlur="this.style.backgroundColor='white'"
+      >
+      <input type="submit" value="Submit">
+  </body>
+</html>
+
+
