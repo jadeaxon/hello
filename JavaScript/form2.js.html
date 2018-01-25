@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <script>
+      // Validates that a required string field is not empty.
+      function validateRequiredField(id) {
+        var field = document.getElementById(id);
+        if (field.value.length === 0) {
+          // We need something that translates id to human readable name. 
+          alert(id + " is required.");
+          field.focus();
+          return false;
+        }
+      }   
+
+    </script>
+  </head>
+  <body>
+    <form onSubmit="return validateRequiredField('state');">
+      <select id="state">
+        <option value="" selected="selected">
+        <option value="CA">California</option>
+        <option value="NM">New Mexico</option>
+        <option value="UT">Utah</option>
+      </select>
+      <br>
+      <input type="submit" value="Submit">
+  </body>
+</html>
+
+
