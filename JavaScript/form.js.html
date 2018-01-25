@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title>Form</title>
     <script>
-      function validateLastName() {
-        var field = document.getElementById("lastName");
+      function validateRequiredField(id) {
+        var field = document.getElementById(id);
         if (field.value.length === 0) {
-          alert("Last name required");
+          alert(id + " is required.");
           field.focus();
           return false;
         }
@@ -16,7 +16,7 @@
     </script>
   </head>
   <body>
-    <form onSubmit="return validateLastName()">
+    <form onSubmit="return validateRequiredField('lastName')">
       Last Name:
       <input 
         type="text" id="lastName"
