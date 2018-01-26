@@ -5,3 +5,4 @@ C/hello/hello
 a.out
 *.exe
 *.o
+node_modules/
