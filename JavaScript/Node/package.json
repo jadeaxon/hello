@@ -1,0 +1,15 @@
+{
+  "name": "hellonode",
+  "version": "1.0.0",
+  "description": "A hello world Node.js package",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jeff Anderson",
+  "license": "ISC",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
