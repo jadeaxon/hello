@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // A static file server using Node.js.
 // PRE: Node.js has been installed.
 // Run this using the following:
