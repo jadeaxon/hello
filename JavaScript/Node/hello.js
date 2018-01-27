@@ -4,11 +4,11 @@
 console.log("Hello, Node.js!");
 
 // Use a local package.
-var mypackage = require("./mypackage");
-mypackage.helloWorld();
+var mymodule = require("./mymodule");
+mymodule.helloWorld();
 
 // Use a class from the local packages.
-var greeter = new mypackage.Greeter();
+var greeter = new mymodule.Greeter();
 greeter.greet();
 
 

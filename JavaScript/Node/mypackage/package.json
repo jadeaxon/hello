@@ -2,7 +2,7 @@
   "name": "mypackage",
   "version": "1.0.0",
   "description": "A hello world package.",
-  "main": "mypackage.js",
+  "main": "mymodule.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
