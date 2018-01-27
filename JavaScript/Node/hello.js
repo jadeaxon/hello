@@ -7,4 +7,8 @@ console.log("Hello, Node.js!");
 var mypackage = require("./mypackage");
 mypackage.helloWorld();
 
+// Use a class from the local packages.
+var greeter = new mypackage.Greeter();
+greeter.greet();
+
 
