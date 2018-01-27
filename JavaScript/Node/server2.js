@@ -15,6 +15,8 @@ var server = http.createServer(
 );
 
 // Listen for requests on TCP port 3000.
-server.listen(3000);
+var port = 3000;
+server.listen(port);
+console.log("Server listening for requests at http://localhost:" + port + ".");
 
 
