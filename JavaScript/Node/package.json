@@ -1,0 +1,15 @@
+{
+  "name": "hellonodejs",
+  "version": "1.0.0",
+  "description": "Hello world programs for Node.js.",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jeff Anderson",
+  "license": "ISC",
+  "dependencies": {
+    "mime": "^2.2.0"
+  }
+}
