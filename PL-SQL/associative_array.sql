@@ -22,6 +22,11 @@ BEGIN
 		key := myaarray.next(key);
 	end loop;
 
+	-- Trying to access an undefined entry raises an exception.  You have to use exists().
+	if not myaarray.exists(90210) then
+		dbms_output.put_line('No entry exists for 90210');
+	end if;
+
 END;
 /
 
