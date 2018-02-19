@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" type="text/css" href="hello2.css" />
+    <!-- Load jQuery. -->
+    <!-- I just downloaded jQuery directly, but you can also use npm to get it. -->
+    <script src="jquery-3.3.1.js"></script>
+  </head>
+  <body>
+    <!-- When user submits form, a personalized greeting will be displayed below. -->
+    <form id="userName" method="post" action="">
+      First Name: <input type="text" id="firstName"><br>
+      Last Name: <input type="text" id="lastName"><br>
+      <input type="submit" id="b1" value="Say Hello">
+    </form>
+    <button id="ego">Boost Ego</button>
+    <h4 id="greeting"></h4>
+
+    <!-- Load some other code that uses jQuery. -->
+    <!-- Note that if you load this code in <head>, it won't work. -->
+    <!-- You are trying to attach code to DOM elements that don't exist yet. -->
+    <!-- Also, loading all JavaScript last lets pages load faster. -->
+    <script src="hello2.js"></script>
+  </body>
+</html>
+
+
