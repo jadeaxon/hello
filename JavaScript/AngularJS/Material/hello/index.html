@@ -1,0 +1,40 @@
+<!-- To run this:
+  # From Cygwin.
+  npm install -g live-server
+  live-server # In this directory.
+  # Live Server autorefreshes the browser as you change pages.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Use Angular Material stylesheet. -->
+    <link rel="stylesheet"
+          href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.7/angular-material.min.css">
+    <title>Hello, Angular Material!</title>
+  </head>
+  <body ng-app="helloAngularMaterial" layout="column">
+  <script>
+    // This loads our app with Angular Material as a dep.
+    angular.module("helloAngularMaterial", ["ngMaterial"]);
+  </script>
+
+    <!-- Create a title toolbar. -->
+    <md-toolbar layout-padding>
+      <div class="md-toolbar-tools">
+        <h2>Welcome to Angular Material!</h2>
+      </div>
+    </md-toolbar>
+
+    <!-- Angular Material requires some of the AngularJS libraries. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+    <!-- Use the Angular Material library now that we have all its deps. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.7/angular-material.min.js"></script>
+  </body>
+</html>
+
+
+
