@@ -20,7 +20,7 @@
     -->
     <title>Hello, Angular Material!</title>
   </head>
-  <body ng-app="helloAngularMaterialApp" layout="column">
+  <body ng-app="helloAngularMaterialApp" ng-controller="appController" layout="column">
 
     <!-- Create a title toolbar. -->
     <md-toolbar layout-padding>
@@ -28,6 +28,8 @@
         <h2>Welcome to Angular Material!</h2>
       </div>
     </md-toolbar>
+
+    <p>{{message}}</p>
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-animate/angular-animate.min.js"></script>
@@ -57,12 +59,17 @@
     -->
 
     <!-- Finally, load the AngularJS app itself. -->
+    <script src="app/main.js"></script>
+    <script src="app/controller.js"></script>
+
+    <!--
     <script>
       // This loads our app with Angular Material as a dep.
       // This has to come last or the necessary JavaScript lib deps and page
       // elements won't have loaded yet.
       angular.module("helloAngularMaterialApp", ["ngMaterial"]);
     </script>
+    -->
 
   </body>
 </html>
