@@ -1,0 +1,19 @@
+{
+  "name": "hello-angular-material",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hello world app for Angular Material",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeff Anderson",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-aria": "^1.6.9",
+    "angular-material": "^1.1.7",
+    "angular-messages": "^1.6.9"
+  }
+}
