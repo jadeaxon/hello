@@ -1,0 +1,16 @@
+<!-- This uses Bootstrap CSS.  The dep is included in index.html which includes this view view ng-view. -->
+<!-- "row" is a Bootstrap CSS class. -->
+<!-- This replaces whatever element is tagged by ng-view (if the URL causes the router to select this "page"/view. -->
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h4>City to Get Weather Forecast For</h4>
+    <div class="form-group">
+      <!-- User types in city for desired weather forecast here. -->
+      <input type="text" class="form-control" />
+    </div>
+    <!-- Button to submit the form. -->
+    <!-- This requested URL will get routed to our forecast.html view. -->
+    <a href="#/forecast" class="btn btn-primary">Get Forecast</a>
+  </div>
+</div>
+
