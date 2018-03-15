@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- It looks like if you put any comments above DOCTYPE it causes an error. -->
+<!-- PRE: npm install -g live-server -->
+<!-- Use live-server to server this page from a local web server. -->
+<html>
+  <head>
+    <title>JavaScript Demo</title>
+  </head>
+  <body>
+    <p>Simple example of using JavaScript.</p>
+
+    <!-- PRE: npm init -->
+    <!-- PRE: npm install angular -->
+    <!-- Load a 3rd-party JavaScript library from a local file brought down by npm. -->
+    <!-- You may want to instead load this file over the net from a CDN. -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!-- Embed JavaScript directly in this HTML file.  Generally a bad idea. -->
+    <script type="text/javascript">
+      // Press <F12> in your browser and select console tab after this page loads.
+      // You should see the message below printed and no errors.
+      // live-server will also say that live page reload is enabled.
+      console.log("Hello, JavaScript!");
+    </script>
+  </body>
+</html>
+
