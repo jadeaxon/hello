@@ -7,6 +7,10 @@
 // module.  The combination of this JavaScript module and all .html files becomes the whole app.
 var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
+appModule.config(['$locationProvider', function($locationProvider) {
+	$locationProvider.hashPrefix('');
+}]);
+
 // Models -- just a single variable wrapped by a service
 // Views -- pages/*.html
 // View Models -- $scope injected into controllers

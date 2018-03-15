@@ -2,7 +2,8 @@
 // Uses the minification-friendly version of DI.
 // We inject $scope into our controller.  Each controller gets its own scope.  This is the view model.
 // We also inject our service into the controllers.
-weatherApp.controller('homeController', ['$scope', 'cityService', function ($scope, cityService) {
+// The $window service lets us control the browser window.
+weatherApp.controller('homeController', ['$scope', '$location', 'cityService', function ($scope, $location, cityService) {
 	// Get the initial city value from the service.
 	$scope.city = cityService.city;
 
@@ -11,6 +12,27 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function ($sco
 		cityService.city = $scope.city;
 	});
 
+	// Make the query submit on hitting enter in the input field.
+	$scope.submitOnEnter = function (keyEvent) {
+		if (keyEvent.which === 13) {
+			// alert("The Enter key was pressed.");
+			// cityService.city = $scope.city; // This gets set if we click the button, but not if we leave page from here.
+			// $scope.$apply(function () { }); /// Does not help.  See below.
+			// alert(document.getElementById("city").value); // Does this update as user types?  Yes.
+			// The problem is, this call has the same as a refresh.  Entire new request, so all
+			// controller state is lost.  How do we just do a client-side redirect?
+			// $window.open("#/weather");
+			// Goddam AngularJS now wants a ! after the #: // https://stackoverflow.com/questions/41211875/angularjs-1-6-0-latest-now-routes-not-working.
+			// Nope, we're using 1.3 from back in 2014 in this app since that's when the Udemy course was recorded.
+			// $location.path("#/weather"); // Goddam AngularJS bullshit API: // https://stackoverflow.com/questions/20201860/why-is-angular-replacing-my-hashtag-into-23.
+			// FUCKING FUCK!!!  API version hell plus bad documentation plus dynamic language plus OS/browser versions plus character encodings plus request, session, and
+			// five billion other scopes plus client and server MV* pattern plus Daylight Fucking Savings Time!  I should have been a brain surgeon with rocket science as
+			// a side hobby to relax--much easier.  Fuck.
+			var path = $location.path() + "weather"; // This is bullshit.
+			$location.path(path);
+			$location.replace();
+		}
+	};
 }]);
 
 
