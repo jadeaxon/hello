@@ -1,6 +1,11 @@
 <!-- This uses a different controller than the home page view. -->
 <!-- But, they both link back to the same city value in the shared service. -->
 
+<!-- Use our custom directive to show the temperature navbar. -->
+
+<temperature-navbar my-label='Select Temperature'></temperature-navbar>
+
+<!--
 <div>>
 Temperature:  <a href="#/weather/current_temp">Current</a> |
               <a href="#/weather/min_temp">Min</a> |
@@ -9,6 +14,7 @@ Temperature:  <a href="#/weather/current_temp">Current</a> |
 </div>
 <hr />
 <hr />
+-->
 
 <h3>Weather for {{ city }}</h3>
 

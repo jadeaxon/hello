@@ -31,6 +31,36 @@ weatherApp.service('cityService', function () {
 
 });
 
+
+// Directives
+// Custom directives let you make your own HTML tags and attributes.
+// The camel case directive name gets converted to <temperature-navbar> for the tag.
+weatherApp.directive("temperatureNavbar", function () {
+	var directive = {};
+	directive.restrict = 'E';
+	directive.templateUrl = 'directives/temperatureNavbar.html';
+	directive.scope = {
+		myLabel: '@'
+	};
+	return directive;
+});
+
+
+/*
+return {
+	restrict: 'E', // This directive can only be used as an HTML element.
+	templateUrl: 'directives/temperatureNavbar.html', // The contents.
+	replace: true // , // Completely replace our custom tag with its contents.
+	// Poke a hole in the isolated scope to see external vars.
+	/*
+	scope: {
+		// These attributes also get camel-case-to-dashes conversion as the default mapping.
+		// You can override this mapping by using a specific name after the data type symbol.
+		myLabel: '@' // This is the label of the navbar.  @ => string.
+	}
+};
+*/
+
 // Views
 // These are in the pages/ subdir.
 
@@ -134,5 +164,6 @@ weatherApp.config(function ($routeProvider) {
 	;
 
 });
+
 
 
