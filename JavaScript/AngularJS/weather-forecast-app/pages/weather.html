@@ -1,0 +1,29 @@
+<!-- This uses a different controller than the home page view. -->
+<!-- But, they both link back to the same city value in the shared service. -->
+
+<div>>
+Temperature:  <a href="#/weather/current_temp">Current</a> |
+              <a href="#/weather/min_temp">Min</a> |
+              <a href="#/weather/max_temp">Max</a>
+
+</div>
+<hr />
+<hr />
+
+<h3>Weather for {{ city }}</h3>
+
+<!-- It takes a while to fetch the weather data from the weather service. -->
+<!-- WARNING: It appears that interpolation of {{ }} expressions happens within comments! -->
+<!-- Using ng-cloak prevenst this div from displaying until {{ }} has an actual value. -->
+<!-- Without this you'll see it glitch with the {{ }} string as a literal value. -->
+<!-- This does not seem to be working though. -->
+<div ng-if="temp_type === 'current_temp'" ng-cloak>
+  The current temperature is {{ weatherResult.main.temp }}°F.
+</div>
+<div ng-if="temp_type === 'min_temp'" ng-cloak>
+  The current temperature is {{ weatherResult.main.temp_min }}°F.
+</div>
+<div ng-if="temp_type === 'max_temp'" ng-cloak>
+  The current temperature is {{ weatherResult.main.temp_max }}°F.
+</div>
+
