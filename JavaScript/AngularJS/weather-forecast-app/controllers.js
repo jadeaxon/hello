@@ -13,6 +13,8 @@ weatherApp.controller('homeController', ['$scope', '$location', 'cityService', f
 	});
 
 	// Make the query submit on hitting enter in the input field.
+	// No longer use this since we've converted the previous mechanism to an actual form.
+	/*
 	$scope.submitOnEnter = function (keyEvent) {
 		if (keyEvent.which === 13) {
 			// alert("The Enter key was pressed.");
@@ -32,6 +34,12 @@ weatherApp.controller('homeController', ['$scope', '$location', 'cityService', f
 			$location.path(path);
 			$location.replace();
 		}
+	};
+	*/
+
+	// Submit the weather forcast request/query/form.
+	$scope.submit = function () {
+		$location.path("/weather");
 	};
 }]);
 

@@ -4,18 +4,23 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h4>City to Get Weather Forecast For</h4>
-    <div class="form-group">
-      <!-- User types in city for desired weather forecast here. -->
-      <!-- We don't have ng-controller anywhere because the router provides that for us. -->
-      <!-- $scope.city exists in the controller bound to this view by the router. -->
-      <!-- So, we have two-way data binding from this HTML input field back to the scope (view model) in the controller. -->
-      <!-- The logic in the controllers further sync this back to our service which wraps (part of) the overall system/application model. -->
-      <!-- In this case, the model itself is just a single variable in the service. -->
-      <input id="city" type="text" ng-model="city" class="form-control" ng-keypress="submitOnEnter($event)" />
-    </div>
-    <!-- Button to submit the form. -->
-    <!-- This requested URL will get routed to our weather.html view. -->
-    <a href="#/weather" class="btn btn-primary">Get Forecast</a>
+
+    <!-- Turn this into an actual form.  This will make it so we don't have to use ng-keypress to get the submit-on-enter behavior. -->
+    <form ng-submit="submit()">
+      <div class="form-group">
+        <!-- User types in city for desired weather forecast here. -->
+        <!-- We don't have ng-controller anywhere because the router provides that for us. -->
+        <!-- $scope.city exists in the controller bound to this view by the router. -->
+        <!-- So, we have two-way data binding from this HTML input field back to the scope (view model) in the controller. -->
+        <!-- The logic in the controllers further sync this back to our service which wraps (part of) the overall system/application model. -->
+        <!-- In this case, the model itself is just a single variable in the service. -->
+        <input id="city" type="text" ng-model="city" class="form-control" ng-keypress="submitOnEnter($event)" />
+        <!-- Button to submit the form. -->
+        <!-- This requested URL will get routed to our weather.html view. -->
+        <!-- <a href="#/weather" class="btn btn-primary">Get Forecast</a> -->
+        <input type="submit" class="btn btn-primary" value="Get Forecast" />
+      </div>
+    </form>
   </div>
 </div>
 
