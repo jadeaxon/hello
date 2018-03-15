@@ -6,7 +6,12 @@
     <h4>City to Get Weather Forecast For</h4>
     <div class="form-group">
       <!-- User types in city for desired weather forecast here. -->
-      <input type="text" class="form-control" />
+      <!-- We don't have ng-controller anywhere because the router provides that for us. -->
+      <!-- $scope.city exists in the controller bound to this view by the router. -->
+      <!-- So, we have two-way data binding from this HTML input field back to the scope (view model) in the controller. -->
+      <!-- The logic in the controllers further sync this back to our service which wraps (part of) the overall system/application model. -->
+      <!-- In this case, the model itself is just a single variable in the service. -->
+      <input type="text" ng-model="city" class="form-control" />
     </div>
     <!-- Button to submit the form. -->
     <!-- This requested URL will get routed to our forecast.html view. -->
