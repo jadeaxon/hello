@@ -2,20 +2,52 @@
 <!-- It looks like if you put any comments above DOCTYPE it causes an error. -->
 <!-- PRE: npm install -g live-server -->
 <!-- Use live-server to server this page from a local web server. -->
-<html>
+<html ng-app="demo">
   <head>
     <title>JavaScript Demo</title>
   </head>
-  <body>
+  <body ng-controller="demoController">
     <p>Simple example of using JavaScript.</p>
+
+    <!-- The controller loads todo.json into the $scope.todos object. -->
+    <!-- We can then use ng-repeat and {{ }} interpolation to display the list of todo tasks here. -->
+    <div class="panel">
+      <h1>To Do</h1>
+      <table class="table">
+        <tr><td>Action</td><td>Done</td></tr>
+        <tr ng-repeat="task in todos">
+          <td>{{ task.action }}</td>
+          <td>{{ task.done }}</td>
+        </tr>
+      </table>
+    </div>
 
     <!-- PRE: npm init -->
     <!-- PRE: npm install angular -->
     <!-- Load a 3rd-party JavaScript library from a local file brought down by npm. -->
     <!-- You may want to instead load this file over the net from a CDN. -->
     <script src="node_modules/angular/angular.min.js"></script>
+
     <!-- Embed JavaScript directly in this HTML file.  Generally a bad idea. -->
+    <!-- It's horrible because you lose syntax highlighting, formatting settings, and get extra indent layer. -->
     <script type="text/javascript">
+      var myApp = angular.module("demo", []); // This gets used with ng-app directive in <html> tag.
+
+      // This controller gets bound to <body> via ng-controller directive.
+      myApp.controller("demoController", function ($scope, $http) {
+        // AJAX call (except fetching JSON not XML).
+        // WARNING: promise.success() is deprecated and not even present in latest AngularJS.
+        var promise = $http.get("todo.json").then(
+          function successCallback(response) {
+            console.log(response);
+            $scope.todos = response.data; // The overall response has all the HTTP headers and other crap we don't care about.
+          },
+          function errorCallback(response) {
+            alert("AJAX error.");
+          }
+        );
+      });
+
       // Press <F12> in your browser and select console tab after this page loads.
       // You should see the message below printed and no errors.
       // live-server will also say that live page reload is enabled.
