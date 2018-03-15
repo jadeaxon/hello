@@ -20,8 +20,14 @@ var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 // we get session, account, and system persistence.
 //
 // Daily forecast URL: http://api.openweathermap.org/data/2.5/forecast/daily?APPID=d48a9c26f43f66550ea09daea8feae43
+// http://api.openweathermap.org/data/2.5/forecast/daily?q={city name},{country code}&cnt={cnt}
+// http://api.openweathermap.org/data/2.5/forecast/daily?q=Provo,us&cnt=7&APPID=d48a9c26f43f66550ea09daea8feae43
+// The daily stuff is now paid access only.  We can get current weather using this on the free
+// account:
+// http://api.openweathermap.org/data/2.5/weather?q=Provo,us&APPID=d48a9c26f43f66550ea09daea8feae43
+// The API docs are here: https://openweathermap.org/current
 weatherApp.service('cityService', function () {
-	this.city = "Provo, UT";
+	this.city = "Provo";
 
 });
 
@@ -44,9 +50,27 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function ($sco
 }]);
 
 
-weatherApp.controller('forecastController', ['$scope', 'cityService', function ($scope, cityService) {
+weatherApp.controller('forecastController', ['$scope', '$resource', 'cityService', function ($scope, $resource, cityService) {
 	// Get the initial city value from the service.
 	$scope.city = cityService.city;
+
+	// There's a slight bit of voodoo happening here.
+	$scope.weatherAPI = $resource(
+		'http://api.openweathermap.org/data/2.5/weather',
+		{ callback: 'JSON_CALLBACK' },
+		{ get: { method: 'JSONP' } }
+	);
+
+	// Once we define this resource getter, we can use it to get the resource.
+	// Pass in request params as a JavaScript object.
+	var result = $scope.weatherAPI.get({
+		q: $scope.city + ',us', // Provo,us
+		units: 'imperial', // For Farenheit temps.
+		APPID: 'd48a9c26f43f66550ea09daea8feae43'
+	});
+	$scope.weatherResult = result; // Try to prevent UI glitch.
+
+	console.log($scope.weatherResult);
 
 	// Whenever $scope.city changes, update the value in the service.
 	$scope.$watch('city', function () {

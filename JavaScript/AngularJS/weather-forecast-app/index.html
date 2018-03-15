@@ -10,10 +10,15 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 
     <!-- This is just to make things bigger in the instructor's Udemy video. -->
+    <!-- Also, we need the ng-cloak blurb because somehow Bootstrap messes it up otherwise. -->
     <style>
       html, body, input, select, textarea
       {
         font-size: 1.05em !important;
+      }
+
+      [ng\:cloak], [ng-cloak], .ng-cloak {
+        display: none !important;
       }
     </style>
   </head>

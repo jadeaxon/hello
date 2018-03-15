@@ -1,4 +1,12 @@
 <!-- This uses a different controller than the home page view. -->
 <!-- But, they both link back to the same city value in the shared service. -->
-Forecast for {{city}}.
+<h3>Forecast for {{ city }}</h3>
+
+<!-- It takes a while to fetch the weather data from the weather service. -->
+<!-- Using ng-cloak prevenst this div from displaying until {{ weatherResult.main.temp }} has an actual value. -->
+<!-- Without this you'll see it glitch with the {{ ... }} string as a literal value. -->
+<!-- This does not seem to be working though. -->
+<div ng-cloak>
+  The current temperature is <span ng-cloak>{{ weatherResult.main.temp }}</span>°F.
+</div>
 
