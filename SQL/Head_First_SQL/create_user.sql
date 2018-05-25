@@ -1,0 +1,20 @@
+-- PRE: You are using Oracle 11gR2 XE.
+-- PRE: Connected as SYSTEM user.
+
+-- Create the user hf.  This also creates the hf schema.
+-- In the book, they call the user/schema gregs_list.
+CREATE USER hf IDENTIFIED BY headfirstsql;
+GRANT CONNECT TO hf;
+GRANT CONNECT, RESOURCE, DBA TO hf;
+GRANT CREATE SESSION TO hf;
+GRANT UNLIMITED TABLESPACE TO hf;
+
+GRANT CREATE SESSION TO hf;
+GRANT CREATE TABLE TO hf;
+GRANT CREATE VIEW TO hf;
+GRANT CREATE ANY TRIGGER TO hf;
+GRANT CREATE ANY PROCEDURE TO hf;
+GRANT CREATE SEQUENCE TO hf;
+GRANT CREATE SYNONYM TO hf;
+
+COMMIT;

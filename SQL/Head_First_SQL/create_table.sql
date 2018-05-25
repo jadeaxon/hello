@@ -1,16 +1,22 @@
--- PRE: MySQL database connected to in MySQL Shell.
+-- PRE: Connected to Oracle 11gR2 XE.
 
--- In MySQL Shell:
--- \source C:\Users\jadeaxon\projects\hello\SQL\create_table.sql
-
-USE gregs_list; -- This is the db name Head First SQL used.
+CONNECT hf; -- This is the db name Head First SQL used.
+ALTER SESSION SET CURRENT_SCHEMA = hf;
 
 -- A table representing contact info for various people.
-DELETE FROM my_contacts;
-DROP TABLE my_contacts;
+-- Drop table only if it does not exist.
+BEGIN
+   EXECUTE IMMEDIATE 'DROP TABLE my_contacts';
+EXCEPTION
+   WHEN OTHERS THEN
+      IF SQLCODE != -942 THEN
+         RAISE;
+      END IF;
+END;
+
 CREATE TABLE my_contacts (
 	first_name VARCHAR(20) NOT NULL,
-	last_name VARCHAR(30) NOT NULL DEFAULT 'Smith',
+	last_name VARCHAR(30) NOT NULL,
 	email VARCHAR(50),
 	gender CHAR(1),
 	birthday DATE,
@@ -21,4 +27,5 @@ CREATE TABLE my_contacts (
 	seeking VARCHAR(100)
 );
 
+COMMIT;
 DESC my_contacts;
