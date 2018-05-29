@@ -1,7 +1,7 @@
 # PRE: Install Visual Studio 2017 Build Tools (?)
 # PRE: pip install pycryptodome
 # PRE: You've used ssh-keygen to create an public/private RSA key pair.
-# PRE: The keypair is not passphrase protected.
+# PRE: The key pair is not passphrase protected.
 
 import os
 from Crypto.PublicKey import RSA
@@ -35,6 +35,10 @@ test_file = open("test.txt", "w")
 test_file.write(encoded_encrypted_message_utf8)
 test_file.write("\n")
 test_file.close()
+print()
+print("*** base64 UTF8:")
+print(encoded_encrypted_message_utf8)
+print()
 
 test_file = open("test.txt")
 encoded_encrypted_message_from_file_utf8 = test_file.readline().rstrip()
@@ -48,6 +52,8 @@ decoded_decrypted_message = decrypted_message.decode("utf-8")
 
 decrypted_message_from_file = decryption_cipher.decrypt(encrypted_message_from_file) # bytes -> bytes.
 decoded_decrypted_message_from_file = decrypted_message_from_file.decode("utf-8") # bytes -> UTF8.
+test_file.close()
+os.remove("test.txt")
 
 print(message)
 print(encrypted_message)
