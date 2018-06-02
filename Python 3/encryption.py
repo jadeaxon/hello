@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+
+# PRE: We're using Windows Python 3, not the Cygwin one here.
+# cd /cygdrive/c/Users/10845493/AppData/Local/Programs/Python/Python36
+# cp python.exe python3.exe
+
 # PRE: Install Visual Studio 2017 Build Tools (?)
 # PRE: pip install pycryptodome
 # PRE: You've used ssh-keygen to create an public/private RSA key pair.
@@ -22,6 +28,7 @@ private_key_object = RSA.importKey(private_key)
 public_key_object =  RSA.importKey(public_key)
 
 message = b"Hello, encryption!" # Yes, this has to be bytes.
+
 encryption_cipher = PKCS1_OAEP.new(public_key_object)
 encrypted_message = encryption_cipher.encrypt(message)
 print("encrypted_message.length() = " + str(len(encrypted_message)))
