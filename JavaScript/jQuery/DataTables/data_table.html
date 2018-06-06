@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <!-- DataTables requires jQuery. -->
+    <!-- These extra attributes allow checking that the 3rd-party file hasn't been tampered with. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+
+    <!-- DataTables also supports the Bootstrap CSS library. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
+    <!-- The main DataTables library from their CDN. -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <script>
+      // Turn the HTML table into a DataTable instance.
+      // Use jQuery to run this only after the entire HTML document has loaded.
+      $(document).ready(function () {
+        // You can construct a DataTable using a bunch of options.  We're staying minimal here.
+        $('table#mytable').DataTable();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- You can turn any HTML table into a DataTable instance. -->
+    <table id="mytable" class="display">
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Row 1 Data 1</td>
+          <td>Row 1 Data 2</td>
+          <td>Row 1 Data 3</td>
+        </tr>
+        <tr>
+          <td>Row 2 Data 1</td>
+          <td>Row 2 Data 2</td>
+          <td>Row 2 Data 3</td>
+        </tr>
+        <tr>
+          <td>Row 3 Data 1</td>
+          <td>Row 3 Data 2</td>
+          <td>Row 3 Data 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+
