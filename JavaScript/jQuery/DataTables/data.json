@@ -1,0 +1,165 @@
+[
+	{
+		"name": "Oregano",
+		"antiviral": false,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Thyme",
+		"antiviral": true,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Lavendar",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": true
+	},
+	{
+		"name": "Orange",
+		"antiviral": true,
+		"antibacterial": false,
+		"antifungal": true
+	},
+	{
+		"name": "Peppermint",
+		"antiviral": true,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Tea Tree",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Eucalyptus",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": true
+	},
+	{
+		"name": "Lemongrass",
+		"antiviral": false,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Cinnamon",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Vanilla",
+		"antiviral": true,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Spearmint",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": true
+	},
+	{
+		"name": "Rose",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Marigold",
+		"antiviral": false,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Mankua",
+		"antiviral": false,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Dill",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Black Pepper",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": true
+	},
+	{
+		"name": "Red Pepper",
+		"antiviral": false,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Basil",
+		"antiviral": false,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Sea Salt",
+		"antiviral": true,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Himalayan Pink Salt",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Coriander",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Cilantro",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": true
+	},
+	{
+		"name": "Cumin",
+		"antiviral": false,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Rosemary",
+		"antiviral": false,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Parsley",
+		"antiviral": true,
+		"antibacterial": false,
+		"antifungal": false
+	},
+	{
+		"name": "Sesame Seed",
+		"antiviral": true,
+		"antibacterial": true,
+		"antifungal": false
+	},
+	{
+		"name": "Marjoram",
+		"antiviral": false,
+		"antibacterial": true,
+		"antifungal": false
+	}
+]
+
