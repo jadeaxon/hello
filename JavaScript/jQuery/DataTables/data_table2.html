@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- DataTables requires jQuery. -->
+    <!-- These extra attributes allow checking that the 3rd-party file hasn't been tampered with. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+
+    <!-- DataTables also supports the Bootstrap CSS library. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
+    <!-- The main DataTables library from their CDN. -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <script>
+      // Not sure how to load this from external file when not using a web server.
+      var data = [
+        {
+          "name": "Oregano",
+          "antiviral": false,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Thyme",
+          "antiviral": false,
+          "antibacterial": true,
+          "antifungal": true
+        },
+        {
+          "name": "Lavendar",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": false
+        },
+        {
+          "name": "Orange",
+          "antiviral": false,
+          "antibacterial": false,
+          "antifungal": true
+        },
+        {
+          "name": "Peppermint",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Tea Tree",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Eucalyptus",
+          "antiviral": false,
+          "antibacterial": true,
+          "antifungal": true
+        },
+        {
+          "name": "Lemongrass",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": false
+        },
+        {
+          "name": "Cinnamon",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Vanilla",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": true
+        },
+        {
+          "name": "Spearmint",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": false
+        },
+        {
+          "name": "Rose",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Marigold",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": false
+        },
+        {
+          "name": "Mankua",
+          "antiviral": false,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Dill",
+          "antiviral": false,
+          "antibacterial": false,
+          "antifungal": true
+        },
+        {
+          "name": "Black Pepper",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": false
+        },
+        {
+          "name": "Red Pepper",
+          "antiviral": false,
+          "antibacterial": true,
+          "antifungal": true
+        },
+        {
+          "name": "Basil",
+          "antiviral": false,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Sea Salt",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": false
+        },
+        {
+          "name": "Himalayan Pink Salt",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": true
+        },
+        {
+          "name": "Coriander",
+          "antiviral": false,
+          "antibacterial": false,
+          "antifungal": false
+        },
+        {
+          "name": "Cilantro",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Cumin",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": true
+        },
+        {
+          "name": "Rosemary",
+          "antiviral": false,
+          "antibacterial": true,
+          "antifungal": false
+        },
+        {
+          "name": "Parsley",
+          "antiviral": true,
+          "antibacterial": true,
+          "antifungal": true
+        },
+        {
+          "name": "Sesame Seed",
+          "antiviral": false,
+          "antibacterial": false,
+          "antifungal": true
+        },
+        {
+          "name": "Marjoram",
+          "antiviral": true,
+          "antibacterial": false,
+          "antifungal": false
+        }
+      ];
+
+      // Custom renderer shared by multiple columns.
+      var yn = function (data, type, row) {
+        return data ? "Yes" : "No";
+      }
+
+      // Turn the HTML table into a DataTable instance.
+      // Use jQuery to run this only after the entire HTML document has loaded.
+      $(document).ready(function () {
+        // You can construct a DataTable using a bunch of options.  We're staying minimal here.
+        $('table#mytable').DataTable({
+          // apex: {
+            // Can a locally loaded file include another local file?  Seems like it can't.
+            // url: 'data.json'
+          // },
+          data: data, // Is this visible from the other <script> tag?
+          // Map table columns to object properties.
+          columns: [
+            {
+              data: 'name',
+              // You can have custom renderers for each cell.
+              render: function (data, type, row) {
+                var rendered = data;
+                if (row.antiviral && row.antibacterial && row.antifungal) {
+                  rendered += '!';
+                }
+                return rendered;
+              }
+            },
+            { data: 'antiviral', render: yn },
+            { data: 'antibacterial', render: yn },
+            { data: 'antifungal', render: yn }
+          ]
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <!-- You can turn any HTML table into a DataTable instance. -->
+    <table id="mytable" class="display">
+      <thead>
+        <tr>
+          <!-- The # of columns here must match the # in your DataTable constructor call. -->
+          <th>Name</th>
+          <th>Antiviral?</th>
+          <th>Antibacterial?</th>
+          <th>Antifungal?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gummy Berry</td>
+          <td>true</td>
+          <td>true</td>
+          <td>true</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+
