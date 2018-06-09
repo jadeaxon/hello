@@ -12,7 +12,10 @@ word_type = {
     'princess': 'noun',
     'to': 'preposition',
     'from': 'preposition',
-    'into': 'preposition'
+    'into': 'preposition',
+    'a': 'article',
+    'an': 'article',
+    'the': 'article'
 }
 
 def get_command():
