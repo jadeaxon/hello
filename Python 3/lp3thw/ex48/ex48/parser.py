@@ -1,3 +1,4 @@
+# Maps word to word type.
 word_type = {
     'go': 'verb',
     'kill': 'verb',
@@ -18,20 +19,28 @@ word_type = {
     'the': 'article'
 }
 
+
+# Prompts user for a command.
 def get_command():
     command = input('> ')
     tokens = tokenize(command)
 
+
+# Turns space-separated list of words into list of (<word type>, <word>) tokens.
 def tokenize(command):
     words = command.split()
     tokens = []
+    token = (None, None)
     n = "NaN"
     for w in words:
         try:
             n = int(w)
         except ValueError:
             n = "NaN"
-        token = (word_type[w] if (n == "NaN") else "number", w if (n == "NaN") else n)
+        try:
+            token = (word_type[w] if (n == "NaN") else "number", w if (n == "NaN") else n)
+        except KeyError:
+            token = ("error", w)
         tokens.append(token)
 
     return tokens
