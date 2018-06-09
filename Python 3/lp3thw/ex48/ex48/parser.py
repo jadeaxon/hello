@@ -17,7 +17,7 @@ def tokenize(command):
     tokens = []
     for w in words:
         token = (word_type[w], w)
-        tokens.push(token)
+        tokens.append(token)
 
     return tokens
 
