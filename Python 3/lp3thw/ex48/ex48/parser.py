@@ -19,8 +19,13 @@ def get_command():
 def tokenize(command):
     words = command.split()
     tokens = []
+    n = "NaN"
     for w in words:
-        token = (word_type[w], w)
+        try:
+            n = int(w)
+        except ValueError:
+            n = "NaN"
+        token = (word_type[w] if (n == "NaN") else "number", w if (n == "NaN") else n)
         tokens.append(token)
 
     return tokens
