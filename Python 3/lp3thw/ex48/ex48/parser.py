@@ -7,7 +7,9 @@ word_type = {
     'south': 'direction',
     'west': 'direction',
     'up': 'direction',
-    'down': 'direction'
+    'down': 'direction',
+    'bear': 'noun',
+    'princess': 'noun'
 }
 
 def get_command():
