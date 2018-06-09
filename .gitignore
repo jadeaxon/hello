@@ -1,3 +1,4 @@
+*.out
 **/.pytest_cache/
 *.pyc
 *.stackdump
