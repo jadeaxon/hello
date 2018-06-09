@@ -9,7 +9,10 @@ word_type = {
     'up': 'direction',
     'down': 'direction',
     'bear': 'noun',
-    'princess': 'noun'
+    'princess': 'noun',
+    'to': 'preposition',
+    'from': 'preposition',
+    'into': 'preposition'
 }
 
 def get_command():
