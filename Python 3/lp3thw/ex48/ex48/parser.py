@@ -1,5 +1,7 @@
 word_type = {
     'go': 'verb',
+    'kill': 'verb',
+    'eat': 'verb',
     'north': 'direction',
     'east': 'direction',
     'south': 'direction',
