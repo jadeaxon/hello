@@ -21,6 +21,13 @@ def assert_equal(a, b):
 # Parser Module
 #==============================================================================
 
+def test__peek():
+    words = [("direction", "north"), ("noun", "bear")]
+    words2 = [("direction", "north"), ("noun", "bear")]
+    word = parser.peek(words)
+    assert_equal(("direction", "north"), word)
+    assert_equal(words, words2)
+
 def test__tokenize__directions():
     assert_equal(parser.tokenize("north"), [("direction", "north")])
     result = parser.tokenize("north south east")

@@ -31,6 +31,14 @@ word_type = {
 }
 
 
+# Returns the top word duple of a word duple list.
+def peek(word_list):
+    word = None
+    if word_list:
+        word = word_list[0]
+    return word
+
+
 # Prompts user for a command.
 def get_command():
     command = input('> ')
