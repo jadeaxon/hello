@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!-- You can't just load this file in a browser like the other examples. -->
+<!-- You need to serve it up from a web server.  Use the following: -->
+<!-- python3 -m http.server & -->
+<!-- http://localhost:8080/ -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- DataTables requires jQuery. -->
+    <!-- These extra attributes allow checking that the 3rd-party file hasn't been tampered with. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+
+    <!-- DataTables also supports the Bootstrap CSS library. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
+    <!-- The main DataTables library from their CDN. -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <!-- Use the Select extension of DataTables.  Allows user to multiselect rows. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script>
+
+    <script>
+      var data = [];
+      // var selected_cell_index = null;
+
+      // Turn the HTML table into a DataTable instance.
+      // Use jQuery to run this only after the entire HTML document has loaded.
+      $(document).ready(function () {
+        // You can construct a DataTable using a bunch of options.  We're staying minimal here.
+        var dt = $('table#mytable').DataTable({
+          // Use the Select extension.
+          // Anything that is selected gets tagged with the 'selected' DOM class.
+          select: {
+            items: 'cell',
+            style: 'single',
+            // Only allow cells in the 2nd column to be selected.
+            selector: 'tr>td:nth-child(2)'
+          },
+          // Map table columns to object properties.
+          columns: [
+            {
+              data: 'name'
+            },
+            {
+              data: 'notes',
+              render: function (data, type, row, meta) {
+                rendered = data;
+                var rdt = $('table#mytable').DataTable();
+                // var rdt = new $.fn.dataTable.Api(meta.settings); // Same thing.
+                var cell = rdt.cell(meta.row, meta.col);
+                var es = cell.node(); // This gives you a jQuery selector, not the DOM element itself.
+                if ($(es).hasClass('selected')) {
+                  rendered = '(' + rendered + ')';
+                  // Yes, the contents can be HTML, not just pure data.
+                  rendered = '<input type="text" id="edited_cell" style="width:100%" name="edited_cell">';
+                }
+
+                return rendered;
+              }
+            }
+          ]
+        });
+
+        // These selection events fire when you are using the Select extension.
+        dt.on('select', function(e, edt, type, indexes) {
+          // Determine index of selected cell.
+          var si = edt.cell('.selected', 0).index();
+          if (si) {
+            console.log(si.row + " " + si.col);
+          }
+          // console.log(indexes);
+
+          selected_cell_index = indexes[0];
+          // $(edt.cell(selected_cell_index).node()).css("color", "green");
+          // $(edt.cell(selected_cell_index).node()).addClass("selected");
+          console.log(selected_cell_index);
+          console.log(type + " selected");
+          // This is the key.  Table rendering doesn't automatically happen in full after a new cell is selected.
+          edt.rows().invalidate();
+          edt.draw();
+        });
+
+        dt.on('deselect', function(e, edt, type, indexes) {
+          console.log("Deselected cell.");
+          // selected_cell_index = null;
+        });
+
+        // Async fetch the JSON data from the local file.
+        $.getJSON("restaurant_data.json", function(json) {
+          console.log(json);
+          dt.rows.add(json); // This is how you bulk add new data.
+          dt.draw(); // Redraw the DataTable (now that we have data).
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- You can turn any HTML table into a DataTable instance. -->
+    <table id="mytable" class="display">
+      <thead>
+        <tr>
+          <!-- The # of columns here must match the # in your DataTable constructor call. -->
+          <th>Restaurant</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <!-- You don't need the <tbody>.  DataTable will create it for you. -->
+      </table>
+  </body>
+</html>
+
+
