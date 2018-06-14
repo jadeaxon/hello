@@ -26,7 +26,8 @@
 
     <script>
       var data = [];
-      // var selected_cell_index = null;
+      var selected_cell_index = null;
+      var edited_cell_node = null;
 
       // Turn the HTML table into a DataTable instance.
       // Use jQuery to run this only after the entire HTML document has loaded.
@@ -53,11 +54,11 @@
                 var rdt = $('table#mytable').DataTable();
                 // var rdt = new $.fn.dataTable.Api(meta.settings); // Same thing.
                 var cell = rdt.cell(meta.row, meta.col);
-                var es = cell.node(); // This gives you a jQuery selector, not the DOM element itself.
-                if ($(es).hasClass('selected')) {
-                  rendered = '(' + rendered + ')';
+                edited_cell_node = cell.node(); // This gives you a jQuery selector, not the DOM element itself.
+                if ($(edited_cell_node).hasClass('selected')) {
                   // Yes, the contents can be HTML, not just pure data.
-                  rendered = '<input type="text" id="edited_cell" style="width:100%" name="edited_cell">';
+                  rendered = '<input type="text" id="cell_editor" onFocus="this.select();" style="width:100%" name="cell_editor" value=';
+                  rendered += '"' + data + '">';
                 }
 
                 return rendered;
@@ -66,15 +67,19 @@
           ]
         });
 
+
         // These selection events fire when you are using the Select extension.
         dt.on('select', function(e, edt, type, indexes) {
           // Determine index of selected cell.
-          var si = edt.cell('.selected', 0).index();
-          if (si) {
-            console.log(si.row + " " + si.col);
-          }
+          // var si = edt.cell('.selected', 0).index();
+          // if (si) {
+            // console.log(si.row + " " + si.col);
+          // }
           // console.log(indexes);
 
+          if (!indexes) {
+            return;
+          }
           selected_cell_index = indexes[0];
           // $(edt.cell(selected_cell_index).node()).css("color", "green");
           // $(edt.cell(selected_cell_index).node()).addClass("selected");
@@ -83,11 +88,52 @@
           // This is the key.  Table rendering doesn't automatically happen in full after a new cell is selected.
           edt.rows().invalidate();
           edt.draw();
+
+          $("#cell_editor").focus();
+
+          // Register blur handler on new cell editor to update data model on loss of focus.
+          // $("#cell_editor").off("change");
+          $("#cell_editor").on("change", function() {
+            dt.cell(selected_cell_index).data($(this).val());
+            // selected_cell_index = null;
+            // dt.rows().invalidate();
+            // dt.draw();
+          });
+
+
+          $("#cell_editor").on("focus", function() {
+            if (! $(this).parent().hasClass("selected")) {
+              alert("Not selected.");
+            }
+          });
+
+          // Otherwise click propagates to table cell causing unwanted deselection.
+          $("#cell_editor").on("click", function(event) {
+            event.stopPropagation();
+          });
+
+
+          $("#cell_editor").on("keypress", function(event) {
+            // event.preventDefault();
+            if (event.keyCode === 13) {
+              // alert("Enter pressed!");
+              // dt.cell(selected_cell_index.row + 2, selected_cell_index.column).select();
+              // dt.rows().invalidate();
+              // dt.draw();
+              // $(dt.cell(1, selected_cell_index.column).node()).click();
+            }
+
+          });
         });
 
         dt.on('deselect', function(e, edt, type, indexes) {
           console.log("Deselected cell.");
-          // selected_cell_index = null;
+          // Clicking in the edit control actually deselects the cell!
+          // edt.cell(selected_cell_index).data('barf');
+          // selected_cell_index = null; // Nope, can't do this.  Deselection happens before cell editor blur.
+          // $(edited_cell_node).text($("cell_editor").val());
+          dt.rows().invalidate();
+          dt.draw();
         });
 
         // Async fetch the JSON data from the local file.
