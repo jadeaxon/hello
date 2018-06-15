@@ -87,19 +87,21 @@
           console.log(type + " selected");
           // This is the key.  Table rendering doesn't automatically happen in full after a new cell is selected.
           edt.rows().invalidate();
-          edt.draw();
+          edt.draw(false);
 
+          // Put the focus on the cell editor (text input), not the table cell itself.
           $("#cell_editor").focus();
 
           // Register blur handler on new cell editor to update data model on loss of focus.
           // $("#cell_editor").off("change");
           $("#cell_editor").on("change", function() {
-            dt.cell(selected_cell_index).data($(this).val());
+            // WARNING: This ends up editing the next cell using the enter keystroke handler.
+            // Instead, I do the model updates in just the blur and enter keystroke handles.
+            // dt.cell(selected_cell_index).data($(this).val());
             // selected_cell_index = null;
             // dt.rows().invalidate();
-            // dt.draw();
+            // dt.draw(false);
           });
-
 
           $("#cell_editor").on("focus", function() {
             if (! $(this).parent().hasClass("selected")) {
@@ -107,20 +109,42 @@
             }
           });
 
+          $("#cell_editor").on("blur", function() {
+            dt.cell(selected_cell_index).data($(this).val());
+          });
+
           // Otherwise click propagates to table cell causing unwanted deselection.
           $("#cell_editor").on("click", function(event) {
             event.stopPropagation();
           });
 
-
           $("#cell_editor").on("keypress", function(event) {
             // event.preventDefault();
-            if (event.keyCode === 13) {
+            if (event.keyCode === 13) { // Enter
               // alert("Enter pressed!");
               // dt.cell(selected_cell_index.row + 2, selected_cell_index.column).select();
               // dt.rows().invalidate();
-              // dt.draw();
+              // dt.draw(false);
               // $(dt.cell(1, selected_cell_index.column).node()).click();
+
+              // The filtered rows are the visible rows.
+              // Figuring out what the internal unfiltered index is is the key.
+              // That index value is the one that is stored in selected_cell_index.
+              var filteredRows = dt.rows({filter: 'applied'})[0];
+              var i = filteredRows.indexOf(selected_cell_index.row);
+              var nextVisibleRowIndex = filteredRows[i + 1];
+
+              // This just hard-codes the visible column.
+              // I'm guessing you could easily get next visible column doing something like done above for rows.
+              // THIS WORKS!
+              dt.cell(selected_cell_index).data($(this).val());
+              dt.cell(nextVisibleRowIndex, 1).select();
+
+              console.log(filteredRows);
+              console.log(nextVisibleRowIndex);
+            }
+            if (event.keyCode === 27) { // Escape
+              dt.cell(selected_cell_index).deselect();
             }
 
           });
@@ -133,7 +157,7 @@
           // selected_cell_index = null; // Nope, can't do this.  Deselection happens before cell editor blur.
           // $(edited_cell_node).text($("cell_editor").val());
           dt.rows().invalidate();
-          dt.draw();
+          dt.draw(false); // Passing false keeps you on the same page.
         });
 
         // Async fetch the JSON data from the local file.
