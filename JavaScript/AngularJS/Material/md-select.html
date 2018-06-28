@@ -10,14 +10,20 @@
       <p>{{greeting}}</p>
 
       <!-- Fixed set of options to choose from, directly embedded in the HTML.  -->
-      <span>Choose the type of pizza crust you want: </span>
-      <md-select ng-model="crust" placeholder="Type of crust">
+      <span>Choose the type of pizza crust and topping you want: </span>
+      <md-select ng-model="selectedCrust" placeholder="Type of crust">
         <md-option value="thin">Thin</md-option>
         <md-option value="normal">Normal</md-option>
         <md-option value="pan">Pan</md-option>
       </md-select>
 
-      <p ng-if="crust">You have chosen {{crust}} crust.</p>
+      <!-- Use a set of options that can be dynamically loaded. -->
+      <md-select ng-model="selectedTopping" ng-model-options="{trackBy: '$value.id'}" placeholder="Topping of choice">
+        <md-option ng-value="topping" ng-repeat="topping in toppings">{{topping.name|capitalize}}</md-option>
+      </md-select>
+
+      <p ng-if="selectedCrust">You have chosen {{selectedCrust}} crust.</p>
+      <p ng-if="selectedTopping">Your topping of choice is {{selectedTopping.name}}.</p>
 
     </div>
 
@@ -33,13 +39,28 @@
     <!-- My app. -->
     <script type="text/javascript">
       var app = angular.module('SimpleApp', ['ngMaterial', 'ngMessages']);
+
+      // Filter to capitalize the first letter of string.
+      app.filter('capitalize', function() {
+        return function(input) {
+          return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+        }
+      });
+
       app.controller("SimpleController", function($scope) {
         $scope.greeting = "Hello, AngularJS Material <md-select>!";
-        $scope.crust = null;
+        $scope.selectedCrust = null;
+        $scope.selectedTopping = null;
+
+        $scope.toppings = [
+          { id: 1, name: "olives" },
+          { id: 2, name: "pepperoni" },
+          { id: 3, name: "pineapple" },
+          { id: 4, name: "bacon" }
+        ];
 
       });
     </script>
-
   </body>
 </html>
 
