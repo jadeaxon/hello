@@ -7,7 +7,18 @@
   <body ng-app="SimpleApp" ng-cloak>
     <!-- My HTML. -->
     <div ng-controller="SimpleController">
-      {{greeting}}
+      <p>{{greeting}}</p>
+
+      <!-- Fixed set of options to choose from, directly embedded in the HTML.  -->
+      <span>Choose the type of pizza crust you want: </span>
+      <md-select ng-model="crust" placeholder="Type of crust">
+        <md-option value="thin">Thin</md-option>
+        <md-option value="normal">Normal</md-option>
+        <md-option value="pan">Pan</md-option>
+      </md-select>
+
+      <p ng-if="crust">You have chosen {{crust}} crust.</p>
+
     </div>
 
     <!-- AngularJS. -->
@@ -24,6 +35,7 @@
       var app = angular.module('SimpleApp', ['ngMaterial', 'ngMessages']);
       app.controller("SimpleController", function($scope) {
         $scope.greeting = "Hello, AngularJS Material <md-select>!";
+        $scope.crust = null;
 
       });
     </script>
