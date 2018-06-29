@@ -9,8 +9,9 @@
     <!-- AngularJS assigns class ng-invalid and ng-valid to valid/invalid form inputs. -->
     <!-- The entire form itself is also assigned one of these two classes. -->
     <style>
-      .ng-invalid { background-color: lightpink; }
-      .ng-valid { background-color: lightgreen; }
+      form.ng-invalid { background-color: lightgray; }
+      input.ng-invalid { background-color: lightpink; }
+      input.ng-valid { background-color: lightgreen; }
       div.error { color: red; font-weight: bold; }
     </style>
 
@@ -31,7 +32,8 @@
         <div class="error" ng-show="myForm.requiredField.$error.required">
           Please enter a value in the required input field.
         </div>
-        <button ng-click="submitForm();" id="submitButton">Do it!</button>
+        <!-- Disable the button if any part of the form is invalid. -->
+        <button ng-disabled="myForm.$invalid" ng-click="submitForm();" id="submitButton">Do it!</button>
       </form>
 
     </div>
