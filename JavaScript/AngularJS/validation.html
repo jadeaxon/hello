@@ -9,6 +9,11 @@
     <div ng-controller="ValidationController">
       <p>{{greeting}}</p>
 
+      <form name="myForm">
+        <label>Required: <input ng-model="requiredField" name="requiredField" type="text" required></label><br>
+        <label>Optional: <input ng-model="optionalField" name="optionalField" type="text"></label>
+      </form>
+
     </div>
 
     <!-- AngularJS. -->
@@ -23,6 +28,8 @@
 
       app.controller("ValidationController", function($scope) {
         $scope.greeting = "Hello, AngularJS validation!";
+        $scope.requiredField = null;
+        $scope.optionalField = null;
       });
     </script>
   </body>
