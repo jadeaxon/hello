@@ -26,6 +26,8 @@
         <!-- The span.error styling is defined above. -->
         <!-- AngularJS sets the special $error attribute of a form input on validation failure. -->
         <!-- Thus, ng-show causes this message to only show on validation failure. -->
+        <!-- Note that AngularJS implicitly defines $scope.<form name>.<input name>.$error.<validation type> -->
+        <!-- properties for each kind of validation being done on an input field. -->
         <div class="error" ng-show="myForm.requiredField.$error.required">
           Please enter a value in the required input field.
         </div>
@@ -49,9 +51,10 @@
         $scope.requiredField = null;
         $scope.optionalField = null;
 
-        $scope.submitForm = function($scope) {
-          alert("Form sumbitted!");
+        $scope.submitForm = function() {
+          alert("Form sumbitted!  Error = " + $scope.myForm.requiredField.$error.required + ".");
         };
+
       });
     </script>
   </body>
