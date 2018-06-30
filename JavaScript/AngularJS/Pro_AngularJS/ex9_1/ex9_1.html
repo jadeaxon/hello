@@ -36,6 +36,7 @@
       <!-- {{<JavaScript expression>}} evals as if each var was $scope.<var> for controller's scope. -->
 		  <!-- Thus, day is $scope.day of controller Ex9_1Controller. -->
       <h4>Today is {{day || "(unknown)"}}.</h4>
+      <h4>Tomorrow is {{tomorrow}}.</h4>
 		</div>
 
     <!-- jQuery. -->
@@ -66,6 +67,7 @@
         $scope.greeting = "Hello, Pro AngularJS exercise 9.1!";
         var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         $scope.day = dayNames[new Date().getDay()];
+        $scope.tomorrow = dayNames[(new Date().getDay() + 1) % 7];
 
       });
     </script>
