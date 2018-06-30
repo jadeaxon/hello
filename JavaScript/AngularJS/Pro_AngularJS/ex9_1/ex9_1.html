@@ -4,32 +4,44 @@
 -->
 <html lang="en">
   <head>
+		<title>AngularJS Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-      <!-- AngularJS Material CSS. -->
-      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
-  </head>
+		<!-- AngularJS Material CSS. -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+
+		<!-- Bootstrap. -->
+    <!-- Latest compiled and minified CSS. -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+			crossorigin="anonymous">
+
+		<!-- Optional theme. -->
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+			integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+			crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript. -->
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+			crossorigin="anonymous">
+		</script>
+
+	</head>
   <body ng-app="Ex9_1App" ng-cloak>
     <!-- My HTML. -->
-    <div ng-controller="Ex9_1Controller">
+		<div class="panel" ng-controller="Ex9_1Controller">
       <p>{{greeting}}</p>
-
-      <!-- The $index service returns the zero-based index of each ng-repeat element. -->
-      <p ng-repeat="thing in things">{{$index}}</p>
-      <br>
-
-      <!-- ng-repeat blows up if there are duplicates in the list.  Get around it as follows. -->
-      <p ng-repeat="duplicate in duplicates track by $index">{{duplicate}}</p>
-      <br>
-
-      <!-- Loop over some objects.  Note that duplicate objects don't blow up ng-repeat. -->
-      <!-- Use event service to pass event to handler so we can act on specific paragraph clicked. -->
-      <!-- The data-id attribute is not necessary.  Just shows you can add custom metadata to any element via data-* attributes. -->
-      <p data-id="$index" ng-repeat="object in objects" ng-click="handleClick($event);">
-        {{$index}} {{object.name}} {{object.id}}
-      </p>
-
-    </div>
+			<div class="page-header">
+				<h3>AngularJS App</h3>
+			</div>
+			<h4>Today is {{day || "(unknown)"}}</h4>
+		</div>
 
     <!-- jQuery. -->
     <script
@@ -51,23 +63,9 @@
       app.controller("Ex9_1Controller", function($scope) {
         $scope.greeting = "Hello, Pro AngularJS exercise 9.1!";
 
-        $scope.things = ['foo', 'bar', 'baz'];
-        $scope.duplicates = ['foo', 'foo', 'foo'];
-        $scope.objects = [
-          { name: 'Fred', id: 0 },
-          { name: 'Fred', id: 0 },
-          { name: 'Barney', id: 1 }
-        ];
-
-        // Turn each object paragraph green when you click it.
-        $scope.handleClick = function (e) {
-          var id = $(e.target).data('id'); // Retrieve custom metadata.
-          // This is the equivalent of 'this' in jQuery event handlers.
-          $(e.target).css("color", "green");
-        };
-
       });
     </script>
   </body>
 </html>
+
 
