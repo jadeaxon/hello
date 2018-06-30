@@ -25,13 +25,6 @@
 			integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
 			crossorigin="anonymous">
 
-		<!-- Latest compiled and minified JavaScript. -->
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-			crossorigin="anonymous">
-		</script>
-
 	</head>
   <body ng-app="Ex9_1App" ng-cloak>
     <!-- My HTML. -->
@@ -40,13 +33,22 @@
 			<div class="page-header">
 				<h3>AngularJS App</h3>
 			</div>
-			<h4>Today is {{day || "(unknown)"}}</h4>
+      <!-- {{<JavaScript expression>}} evals as if each var was $scope.<var> for controller's scope. -->
+		  <!-- Thus, day is $scope.day of controller Ex9_1Controller. -->
+      <h4>Today is {{day || "(unknown)"}}.</h4>
 		</div>
 
     <!-- jQuery. -->
     <script
 			src="https://code.jquery.com/jquery-3.3.1.min.js"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous">
+		</script>
+
+    <!-- Latest compiled and minified Bootstrap JavaScript. -->
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 			crossorigin="anonymous">
 		</script>
 
@@ -62,6 +64,8 @@
 
       app.controller("Ex9_1Controller", function($scope) {
         $scope.greeting = "Hello, Pro AngularJS exercise 9.1!";
+        var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        $scope.day = dayNames[new Date().getDay()];
 
       });
     </script>
