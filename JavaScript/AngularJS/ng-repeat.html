@@ -23,9 +23,20 @@
       <br>
 
       <!-- Loop over some objects.  Note that duplicate objects don't blow up ng-repeat. -->
-      <p ng-repeat="object in objects">{{$index}} {{object.name}} {{object.id}}</p>
+      <!-- Use event service to pass event to handler so we can act on specific paragraph clicked. -->
+      <!-- The data-id attribute is not necessary.  Just shows you can add custom metadata to any element via data-* attributes. -->
+      <p data-id="$index" ng-repeat="object in objects" ng-click="handleClick($event);">
+        {{$index}} {{object.name}} {{object.id}}
+      </p>
 
     </div>
+
+    <!-- jQuery. -->
+    <script
+			src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous">
+		</script>
 
     <!-- AngularJS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -47,6 +58,13 @@
           { name: 'Fred', id: 0 },
           { name: 'Barney', id: 1 }
         ];
+
+        // Turn each object paragraph green when you click it.
+        $scope.handleClick = function (e) {
+          var id = $(e.target).data('id'); // Retrieve custom metadata.
+          // This is the equivalent of 'this' in jQuery event handlers.
+          $(e.target).css("color", "green");
+        };
 
       });
     </script>
