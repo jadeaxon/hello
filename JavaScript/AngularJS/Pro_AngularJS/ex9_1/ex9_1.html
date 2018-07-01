@@ -35,7 +35,8 @@
 			</div>
       <!-- {{<JavaScript expression>}} evals as if each var was $scope.<var> for controller's scope. -->
 		  <!-- Thus, day is $scope.day of controller Ex9_1Controller. -->
-      <h4>Today is {{day || "(unknown)"}}.</h4>
+      <!-- We use a custom directive to create the highlight attribute. -->
+      <h4 highlight="Saturday">Today is {{day || "(unknown)"}}.</h4>
       <h4>Tomorrow is {{tomorrow}}.</h4>
 		</div>
     <div class="panel" ng-controller="yesterdayController">
@@ -77,7 +78,15 @@
         var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         $scope.day = dayNames[new Date().getDay()];
         $scope.yesterday = dayNames[(new Date().getDay() - 1) % 7];
-
+      });
+      // Custom directive to highlight a particular day red.
+      // <p highlight="Monday">{{day}}</p>
+      app.directive("highlight", function () {
+        return function (scope, element, attrs) {
+          if (scope.day == attrs["highlight"]) {
+            element.css("color", "red");
+          }
+        }
       });
     </script>
   </body>
