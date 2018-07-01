@@ -61,9 +61,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="item in todos">
-            <td>{{item.action}}</td>
-            <td>{{item.complete}}</td>
+          <tr ng-repeat="todo in todos">
+            <td ng-repeat="field in todo">{{field}}</td>
           </tr>
         </tbody>
       </table>
