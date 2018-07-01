@@ -29,7 +29,14 @@
     <div ng-controller="demoController">
       <p>{{greeting}}</p>
     </div>
-      <div id="todoPanel" class="panel" ng-controller="demoController">
+    <div id="todoPanel" class="panel" ng-controller="demoController">
+      <div class="well">
+        <div>The first item is: {{todos[0].action}}</div>
+      </div>
+      <div class="form-group well">
+        <label for="firstItem">Set First Item:</label>
+        <input name="firstItem" class="form-control" ng-model="todos[0].action" />
+      </div>
       <h3 class="panel-header">To Do List</h3>
       <!-- Useful one-way data binding. -->
       <div>There are {{todos.length}} items</div>
