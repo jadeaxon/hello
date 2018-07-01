@@ -29,6 +29,13 @@
         {{$index}} {{object.name}} {{object.id}}
       </p>
 
+      <!-- Nested ng-repeat loop including looping over fields of an object. -->
+      <table border>
+        <tr ng-repeat="object in objects">
+          <td ng-repeat="field in object">{{field}}</td>
+        </tr>
+      <table>
+
     </div>
 
     <!-- jQuery. -->
@@ -54,9 +61,9 @@
         $scope.things = ['foo', 'bar', 'baz'];
         $scope.duplicates = ['foo', 'foo', 'foo'];
         $scope.objects = [
-          { name: 'Fred', id: 0 },
-          { name: 'Fred', id: 0 },
-          { name: 'Barney', id: 1 }
+          { name: 'Fred', id: 0, age: 42 },
+          { name: 'Fred', id: 0, age: 42 },
+          { name: 'Barney', id: 1, age: 43 }
         ];
 
         // Turn each object paragraph green when you click it.
