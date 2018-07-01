@@ -1,0 +1,44 @@
+<!-- To run:
+  python -m http.server # Assumes Python 3.
+  E http://localhost:8000/ng-switch.html # Open in web browser.  Uses my E alias for Cygwin.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <!-- AngularJS Material CSS. -->
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  </head>
+  <body ng-app="demoApp" ng-cloak>
+    <!-- My HTML. -->
+    <div ng-controller="demoController">
+      <p>{{greeting}}</p>
+
+      <label>Switch Case: <input type="text" ng-model="switchCase"></label>
+
+      <!-- You can switch among different HTML elements based on the value of a scope variable. -->
+      <ng-switch on="switchCase">
+        <p ng-switch-when="p">Switched to a paragraph.</p>
+        <div ng-switch-when="div">Switched to a div.</div>
+        <h1 ng-switch-when="h1">Switched to heading h1.</h1>
+        <h2 ng-switch-when="h2">Switched to heading h2.</h2>
+        <div ng-switch-default>Switch default case.</div>
+      </ng-switch>
+
+    </div>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- My app. -->
+    <script>
+      var app = angular.module('demoApp', []);
+
+      app.controller("demoController", function($scope) {
+        $scope.greeting = "Hello, AngularJS ng-switch!";
+        $scope.switchCase = "p";
+      });
+
+    </script>
+  </body>
+</html>
+
