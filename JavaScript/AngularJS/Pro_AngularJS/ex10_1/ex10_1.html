@@ -31,7 +31,20 @@
     </div>
       <div id="todoPanel" class="panel" ng-controller="demoController">
       <h3 class="panel-header">To Do List</h3>
-      Data items will go here.
+      <!-- Useful one-way data binding. -->
+      <div>There are {{todos.length}} items</div>
+      <!-- Pointless. -->
+      <div>
+        There are <span ng-bind="todos.length"></span> items
+      </div>
+      <!-- Also pointless. -->
+      <div ng-bind-template=
+        "First: {{todos[0].action}}. Second: {{todos[1].action}}">
+      </div>
+      <!-- Use the double curly braces without triggering expression eval. -->
+      <div ng-non-bindable>
+        AngularJS uses {{ and }} characters for templates
+      </div>
     </div>
 
     <!-- jQuery JavaScript. -->
