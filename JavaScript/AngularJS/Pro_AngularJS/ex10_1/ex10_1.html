@@ -52,6 +52,21 @@
       <div ng-non-bindable>
         AngularJS uses {{ and }} characters for templates
       </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Done</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in todos">
+            <td>{{item.action}}</td>
+            <td>{{item.complete}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- jQuery JavaScript. -->
