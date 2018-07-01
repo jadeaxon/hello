@@ -31,6 +31,9 @@
 
       <!-- Nested ng-repeat loop including looping over fields of an object. -->
       <table border>
+        <tr>
+          <!-- You can get the field name and value from objects. -->
+          <th ng-repeat="(key, value) in objects[0]">{{key}}</th>
         <tr ng-repeat="object in objects">
           <td ng-repeat="field in object">{{field}}</td>
         </tr>
