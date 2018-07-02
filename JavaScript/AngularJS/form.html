@@ -1,0 +1,122 @@
+<!-- To run:
+  python -m http.server # Assumes Python 3.
+  E http://localhost:8000/form.html # Open in web browser.  Uses my E alias for Cygwin.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Bootstrap CSS. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+    <!-- Bootstrap CSS theme. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+
+    <!-- AngularJS Material CSS. -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  </head>
+  <body ng-app="demoApp" ng-cloak>
+    <!-- My HTML. -->
+    <div ng-controller="demoController">
+      <p>{{greeting}}</p>
+    </div>
+    <div id="todoPanel" class="panel" ng-controller="demoController">
+      <h3 class="panel-header">
+        To Do List:
+        <span class="label label-info">
+          {{(todos | filter: {complete: 'false'}).length}} incomplete
+        </span>
+      </h3>
+
+      <!-- Ability to add new to do list item. -->
+      <div class="well">
+        <div class="form-group row">
+          <label for="actionText">Action:</label>
+          <input id="actionText" class="form-control"
+                                  ng-model="newTodo.action">
+        </div>
+        <div class="form-group row">
+          <label for="actionLocation">Location:</label>
+          <select id="actionLocation" class="form-control"
+                                      ng-model="newTodo.location">
+            <option>Home</option>
+            <option>Office</option>
+            <option>Mall</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block"
+                ng-click="addNewItem(newTodo)">
+          Add
+        </button>
+      </div>
+
+      <!-- Table listing all the to do items. -->
+      <table class="table">
+        <thead>
+          <tr><th>#</th><th>Action</th><th>Done</th></tr>
+        </thead>
+        <tr ng-repeat="item in todos">
+          <td>{{$index + 1}}</td>
+          <td>{{item.action}}</td>
+          <td>{{item.complete}}</td>
+          <td><input type="checkbox" ng-model="item.complete"</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- Bootstrap JavaScript. -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous">
+    </script>
+
+    <!-- My app. -->
+    <script>
+      var app = angular.module('demoApp', []);
+
+      app.controller("demoController", function($scope) {
+        $scope.greeting = "Hello, AngularJS forms!";
+
+        // We don't have to define newTodo here.  AngularJS implicitly creates it.
+
+        // The initial to do list.
+        $scope.todos = [
+          { action: "Get groceries", complete: false },
+          { action: "Call plumber", complete: false },
+          { action: "Buy running shoes", complete: true },
+          { action: "Buy flowers", complete: false },
+          { action: "Call family", complete: false }
+        ];
+
+        // Add another to do list item.
+        $scope.addNewItem = function (newItem) {
+          $scope.todos.push({
+            action: newItem.action + " (" + newItem.location + ")",
+            complete: false
+          });
+        };
+
+      });
+    </script>
+  </body>
+</html>
+
