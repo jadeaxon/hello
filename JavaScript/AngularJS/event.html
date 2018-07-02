@@ -1,0 +1,63 @@
+<!-- To run:
+  python -m http.server # Assumes Python 3.
+  E http://localhost:8000/event.html # Open in web browser.  Uses my E alias for Cygwin.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+      <!-- AngularJS Material CSS. -->
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  </head>
+  <body ng-app="demoApp" ng-cloak>
+    <!-- My HTML. -->
+    <div ng-controller="demoController">
+      <p>{{greeting}}</p>
+
+      <!-- Use the $event service to pass the event to the event handler. -->
+      <button id="theButton"
+        ng-click="handleEvent($event)"
+        ng-dblclick="handleEvent($event)"
+        ng-mouseenter="handleEvent($event)"
+        ng-mouseout="handleEvent($event)"
+        ng-keypress="handleEvent($event)"
+      >
+        Do it!
+      </button>
+      <button id="theOtherButton" ng-click="handleEvent($event)">Click me!</button>
+
+      <br>
+      {{eventType}}
+      {{targetId}}
+    </div>
+
+    <!-- jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- My app. -->
+    <script>
+      var app = angular.module('demoApp', []);
+
+      app.controller("demoController", function($scope) {
+        $scope.greeting = "Hello, AngularJS events!";
+        $scope.eventType = null;
+
+        // Event handler.
+        $scope.handleEvent = function(e) {
+          $scope.eventType = e.type;
+          var target = $(e.target); // The event target.
+          var id = target.attr('id');
+          $scope.targetId = id;
+        };
+
+      });
+    </script>
+  </body>
+</html>
+
