@@ -102,7 +102,12 @@
 
           <div class="checkbox">
             <label>
-              <input name="agreed" type="checkbox" ng-model="newUser.agreed" required>
+              <!-- ng-true/false-value are *expressions*, so be careful. -->
+              <input
+                name="agreed" type="checkbox"
+                ng-model="newUser.agreed" ng-true-value="'agree'" ng-false-value="'disagree'"
+                required
+              >
               I agree to the terms and conditions
             </label>
           </div>
