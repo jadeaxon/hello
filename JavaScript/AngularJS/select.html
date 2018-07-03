@@ -1,0 +1,88 @@
+<!-- To run:
+  python -m http.server # Assumes Python 3.
+  E http://localhost:8000/select.html # Open in web browser.  Uses my E alias for Cygwin.
+-->
+<!DOCTYPE html>
+<html ng-app="demoApp">
+  <head>
+    <title>Select</title>
+    <meta charset="utf-8" />
+
+    <!-- Bootstrap CSS. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+    <!-- Bootstrap CSS theme. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+
+    <!-- AngularJS Material CSS. -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+
+    <!-- jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- Bootstrap JavaScript. -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous">
+    </script>
+
+    <!-- My app. -->
+    <script>
+      var app = angular.module('demoApp', []);
+
+      app.controller("demoController", function($scope) {
+        $scope.greeting = "Hello, AngularJS <select>!";
+        $scope.selected = null;
+        $scope.drinks = [
+          {id: 0, name: "Pepsi"},
+          {id: 1, name: "Coke"},
+          {id: 2, name: "RC Cola"},
+          {id: 3, name: "Tab"},
+          {id: 4, name: "Beverly"},
+          {id: 5, name: "Nuka Cola"},
+          {id: 6, name: "Vim!"},
+          {id: 7, name: "Sunset Sarsaparilla"},
+          {id: 8, name: "purified water"}
+        ];
+
+      });
+    </script>
+  </head>
+  <body>
+    <div id="todoPanel" class="panel" ng-controller="demoController">
+      <form name="myForm" novalidate>
+        {{greeting}}
+        <br>
+        <select required name="drinkSelector" ng-model="selected" ng-options="drink.id as drink.name for drink in drinks">
+          <option value="">Choose a drink</option>
+        </select>
+      </form>
+      Valid selection: {{myForm.drinkSelector.$valid}}<br>
+      Selection: {{selected}}
+      <p ng-if="myForm.drinkSelector.$valid && selected != 4">
+        Ah, nothing like a refreshing {{drinks[selected].name}} on a hot July day in the Mojave.
+      </p>
+      <p ng-if="selected == 4">
+        Blech! &nbsp;I'd rather die of heat stroke than drink another drop of Beverly!
+      </p>
+
+    </div>
+  </body>
+</html>
+
