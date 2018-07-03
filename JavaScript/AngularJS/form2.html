@@ -45,6 +45,8 @@
       app.controller("demoController", function($scope) {
         $scope.greeting = "Hello, AngularJS forms!";
         $scope.message = "Ready";
+        // Use this for regular expression validation via ng-pattern.
+        $scope.nameRegex = new RegExp("^[A-Z][a-z]*$");
 
         $scope.addUser = function (userDetails) {
           $scope.message = userDetails.name
@@ -78,7 +80,9 @@
             <!-- If any form input is invalid, then myForm.$invalid is true. -->
             <!-- AngularJS creates scope vars for form and its inputs based on their name attribute. -->
             <!-- AngularJS implicitly creates newUser in this view's controller's scope. -->
-            <input name="userName" type="text" class="form-control" required ng-model="newUser.name">
+            <input
+              name="userName" type="text" class="form-control"
+              ng-pattern="nameRegex" required ng-model="newUser.name">
           </div>
 
           <div class="form-group">
