@@ -54,7 +54,9 @@
       });
     </script>
     <!-- Give feedback on validation state.  AngularJS sets these classes automatically. -->
+    <!-- This CSS syntax matches both classes. -->
     <style>
+      form .ng-invalid.ng-pristine { background-color: lightgray; }
       form .ng-invalid.ng-dirty { background-color: lightpink; }
       form .ng-valid.ng-dirty { background-color: lightgreen; }
       span.summary.ng-invalid { color: red; font-weight: bold; }
