@@ -50,16 +50,17 @@
         $scope.greeting = "Hello, AngularJS <select>!";
         $scope.selected = null;
         $scope.drinks = [
-          {id: 0, name: "Pepsi"},
-          {id: 1, name: "Coke"},
-          {id: 2, name: "RC Cola"},
-          {id: 3, name: "Tab"},
-          {id: 4, name: "Beverly"},
-          {id: 5, name: "Nuka Cola"},
-          {id: 6, name: "Vim!"},
-          {id: 7, name: "Sunset Sarsaparilla"},
-          {id: 8, name: "purified water"}
+          {id: 0, name: "Pepsi", world: "Real"},
+          {id: 1, name: "Coke", world: "Real"},
+          {id: 2, name: "RC Cola", world: "Canada"},
+          {id: 3, name: "Tab", world: "Real"},
+          {id: 4, name: "Beverly", world: "Real"},
+          {id: 5, name: "Nuka Cola", world: "Fallout"},
+          {id: 6, name: "Vim!", world: "Fallout"},
+          {id: 7, name: "Sunset Sarsaparilla", world: "Fallout"},
+          {id: 8, name: "purified water", world: "Fallout"}
         ];
+        $scope.worldCity = {Real: "Provo", Canada: "Toronto", Fallout: "Shady Sands"};
 
       });
     </script>
@@ -69,14 +70,15 @@
       <form name="myForm" novalidate>
         {{greeting}}
         <br>
-        <select required name="drinkSelector" ng-model="selected" ng-options="drink.id as drink.name for drink in drinks">
+        <select required name="drinkSelector" ng-model="selected"
+          ng-options="drink.id as drink.name group by drink.world for drink in drinks">
           <option value="">Choose a drink</option>
         </select>
       </form>
       Valid selection: {{myForm.drinkSelector.$valid}}<br>
       Selection: {{selected}}
       <p ng-if="myForm.drinkSelector.$valid && selected != 4">
-        Ah, nothing like a refreshing {{drinks[selected].name}} on a hot July day in the Mojave.
+        Ah, nothing like a refreshing {{drinks[selected].name}} on a hot July day in {{worldCity[drinks[selected].world]}}.
       </p>
       <p ng-if="selected == 4">
         Blech! &nbsp;I'd rather die of heat stroke than drink another drop of Beverly!
