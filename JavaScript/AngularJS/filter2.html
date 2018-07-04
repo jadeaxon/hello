@@ -40,21 +40,25 @@
     <script>
       angular.module("exampleApp", []) .controller("defaultCtrl", function ($scope) {
         $scope.products = [
-          { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
-          { name: "Oranges", category: "Fruit", price: 2.42, expiry: 7 },
-          { name: "Pears", category: "Fruit", price: 2.02, expiry: 6 },
-          { name: "Ribeye", category: "Meat", price: 20.45, expiry: 3 },
-          { name: "Filet", category: "Meat", price: 17.93, expiry: 2 },
-          { name: "New York Strip", category: "Meat", price: 12.93, expiry: 4 },
-          { name: "Milk", category: "Drinks", price: 2.99, expiry: 14 },
-          { name: "Egg Nog", category: "Drinks", price: 8.99, expiry: 7 },
-          { name: "Coco Lopez", category: "Drinks", price: 3.99, expiry: 365 }
+          { name: "Apples", category: "fruit", price: 1.20, expiry: 10 },
+          { name: "Oranges", category: "fruit", price: 2.42, expiry: 7 },
+          { name: "Pears", category: "fruit", price: 2.02, expiry: 6 },
+          { name: "Ribeye", category: "meat", price: 20.45, expiry: 3 },
+          { name: "Filet", category: "meat", price: 17.93, expiry: 2 },
+          { name: "New York Strip", category: "meat", price: 12.93, expiry: 4 },
+          { name: "Milk", category: "drinks", price: 2.99, expiry: 14 },
+          { name: "Egg Nog", category: "drinks", price: 8.99, expiry: 7 },
+          { name: "Coco Lopez", category: "drinks", price: 3.99, expiry: 365 }
         ];
 
         $scope.getExpiryDate = function (days) {
           var now = new Date();
           return now.setDate(now.getDate() + days);
         };
+
+        $scope.ucfirst = function (s) {
+          return s.charAt(0).toUpperCase() + s.slice(1);
+        }
 
         // User can limit table to only showing one of these #s of objects.
         $scope.maxProductsDisplayLimit = "2";
@@ -76,6 +80,22 @@
         $scope.selectedCategory = ""; // Null filter out all categories.
 
       });
+
+      // Define a custom filter.
+      // The invert argument to the filter lowercases the first letter and uppercases the rest.
+      // | ucfirst: true
+      angular.module("exampleApp") .filter("ucfirst", function () {
+        return function (value, invert) {
+          if (angular.isString(value)) {
+            var intermediate = invert ? value.toUpperCase() : value.toLowerCase();
+            return (invert ? intermediate[0].toLowerCase() :
+              intermediate[0].toUpperCase()) + intermediate.substr(1);
+          }
+          else {
+            return value;
+          }
+        };
+      });
     </script>
   </head>
   <body ng-controller="defaultCtrl">
@@ -94,7 +114,7 @@
 
       <!-- Let user filter by product category. -->
       <div class="panel-body">
-        Category: <select ng-model="selectedCategory" ng-options="category for category in categories"></select>
+        Category: <select ng-model="selectedCategory" ng-options="ucfirst(category) for category in categories"></select>
       </div>
 
       <div class="panel-body">
@@ -116,7 +136,7 @@
               filter: {category: selectedCategory} |
               orderBy: 'price'">
               <td>{{p.name}}</td>
-              <td>{{p.category}}</td>
+              <td>{{p.category | ucfirst}}</td>
               <td>{{getExpiryDate(p.expiry) | date}}</td>
               <td class="text-right">{{p.price | currency}}</td>
             </tr>
