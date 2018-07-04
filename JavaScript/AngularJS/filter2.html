@@ -50,6 +50,11 @@
           { name: "Egg Nog", category: "Drinks", price: 8.99, expiry: 7 },
           { name: "Coco Lopez", category: "Drinks", price: 3.99, expiry: 365 }
         ];
+
+        $scope.getExpiryDate = function (days) {
+          var now = new Date();
+          return now.setDate(now.getDate() + days);
+        }
       });
     </script>
   </head>
@@ -75,7 +80,7 @@
             <tr ng-repeat="p in products">
               <td>{{p.name}}</td>
               <td>{{p.category}}</td>
-              <td>{{p.expiry}}</td>
+              <td>{{getExpiryDate(p.expiry) | date}}</td>
               <td class="text-right">{{p.price | currency}}</td>
             </tr>
           </tbody>
