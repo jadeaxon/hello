@@ -84,16 +84,25 @@
       // Define a custom filter.
       // The invert argument to the filter lowercases the first letter and uppercases the rest.
       // | ucfirst: true
-      angular.module("exampleApp") .filter("ucfirst", function () {
-        return function (value, invert) {
-          if (angular.isString(value)) {
-            var intermediate = invert ? value.toUpperCase() : value.toLowerCase();
+      angular.module("exampleApp").filter("ucfirst", function () {
+        return function (data, invert) {
+          if (angular.isString(data)) {
+            var intermediate = invert ? data.toUpperCase() : data.toLowerCase();
             return (invert ? intermediate[0].toLowerCase() :
               intermediate[0].toUpperCase()) + intermediate.substr(1);
           }
           else {
-            return value;
+            return data;
           }
+        };
+      });
+
+      // Define a filter in terms of another filter.
+      angular.module("exampleApp").filter("weird", function ($filter) {
+        return function (data) {
+          data = $filter("ucfirst")(data, true);
+          data = '_' + data + '_';
+          return data;
         };
       });
     </script>
@@ -122,6 +131,7 @@
           <thead>
             <tr>
               <td>Name</td>
+              <td>Weird Name</td>
               <td>Category</td>
               <td>Expiry</td>
               <td class="text-right">Price</td>
@@ -136,6 +146,7 @@
               filter: {category: selectedCategory} |
               orderBy: 'price'">
               <td>{{p.name}}</td>
+              <td>{{p.name | weird}}</td>
               <td>{{p.category | ucfirst}}</td>
               <td>{{getExpiryDate(p.expiry) | date}}</td>
               <td class="text-right">{{p.price | currency}}</td>
