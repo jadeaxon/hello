@@ -1,0 +1,87 @@
+<html ng-app="exampleApp">
+  <head>
+    <meta charset="utf-8" />
+    <title>Filters</title>
+
+    <!-- Bootstrap CSS. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+    <!-- Bootstrap CSS theme. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+
+    <!-- AngularJS Material CSS. -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+
+    <!-- jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- Bootstrap JavaScript. -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous">
+    </script>
+
+    <script>
+      angular.module("exampleApp", []) .controller("defaultCtrl", function ($scope) {
+        $scope.products = [
+          { name: "Apples", category: "Fruit", price: 1.20, expiry: 10 },
+          { name: "Oranges", category: "Fruit", price: 2.42, expiry: 7 },
+          { name: "Pears", category: "Fruit", price: 2.02, expiry: 6 },
+          { name: "Ribeye", category: "Meat", price: 20.45, expiry: 3 },
+          { name: "Filet", category: "Meat", price: 17.93, expiry: 2 },
+          { name: "New York Strip", category: "Meat", price: 12.93, expiry: 4 },
+          { name: "Milk", category: "Drinks", price: 2.99, expiry: 14 },
+          { name: "Egg Nog", category: "Drinks", price: 8.99, expiry: 7 },
+          { name: "Coco Lopez", category: "Drinks", price: 3.99, expiry: 365 }
+        ];
+      });
+    </script>
+  </head>
+  <body ng-controller="defaultCtrl">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3>
+          Products
+          <span class="label label-primary">{{products.length}}</span>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Category</td>
+              <td>Expiry</td>
+              <td class="text-right">Price</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in products">
+              <td>{{p.name}}</td>
+              <td>{{p.category}}</td>
+              <td>{{p.expiry}}</td>
+              <td class="text-right">{{p.price}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
