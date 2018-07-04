@@ -111,7 +111,10 @@
             <!-- If selectedCategory is null here, no products match. -->
             <!-- If selectedCategory is "" here, it partially matches all categories. -->
             <!-- You can use a strict option with the filter filter to force exact matches. -->
-            <tr ng-repeat="p in products | limitTo: maxProductsDisplayLimit | filter: {category: selectedCategory}">
+            <tr ng-repeat="p in products |
+              limitTo: maxProductsDisplayLimit |
+              filter: {category: selectedCategory} |
+              orderBy: 'price'">
               <td>{{p.name}}</td>
               <td>{{p.category}}</td>
               <td>{{getExpiryDate(p.expiry) | date}}</td>
