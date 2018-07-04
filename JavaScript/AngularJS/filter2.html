@@ -85,6 +85,19 @@
             </tr>
           </tbody>
         </table>
+        <!-- Show the JSON for each product. -->
+        <table class="table table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <td>JSON<td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="p in products">
+              <td>{{p | json}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </body>
