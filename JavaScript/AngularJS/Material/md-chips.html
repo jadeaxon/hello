@@ -1,0 +1,74 @@
+<!-- To run:
+  python -m http.server # Assumes Python 3.
+  E http://localhost:8000/md-chips.html # Open in web browser.  Uses my E alias for Cygwin.
+-->
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+      <!-- AngularJS Material CSS. -->
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+  </head>
+  <body ng-app="demoApp" ng-cloak>
+    <!-- My HTML. -->
+    <div ng-controller="demoCtrl">
+      <p>{{greeting}}</p>
+
+      <form name="pizza">
+        <span>Choose the pizza toppings you want: </span>
+        <md-chips
+          ng-model="selectedToppings"
+          md-require-match="true"
+          name="selectedToppingsChips"
+          placeholder="Choose a topping.">
+            <!-- If you include an md-autocomplete in md-chips,
+            it will be used to select only predefined chip values. -->
+            <md-autocomplete
+              md-selected-item="selectedTopping"
+              md-search-text="toppingSearch"
+              md-items="topping in validToppings">
+              {{topping}} <!-- This shows up in popup list. -->
+            </md-autocomplete>
+
+          <md-chip-template>
+            <span css="color:brown">{{$chip}}</span>
+          </md-chip-template>
+        </md-chips>
+      </form>
+    </div>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+    <!-- AngularJS Material. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+
+    <!-- My app. -->
+    <script type="text/javascript">
+      var app = angular.module('demoApp', ['ngMaterial', 'ngMessages']);
+
+      app.controller("demoCtrl", function($scope) {
+        $scope.greeting = "Hello, AngularJS Material <md-chips>!";
+        $scope.selectedToppings = [];
+        $scope.selectedTopping = null;
+        $scope.toppingSearch = null;
+
+        $scope.validToppings = [
+          "olives",
+          "pepperoni",
+          "pineapple",
+          "bacon",
+          "sausage",
+          "onion",
+          "green peppers",
+          "extra cheese",
+        ];
+        $scope.selectedToppings = [];
+
+      });
+    </script>
+  </body>
+</html>
+
