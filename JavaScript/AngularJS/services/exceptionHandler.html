@@ -13,8 +13,14 @@
         $scope.handleClick = function () {
           throw new Error("Exception");
         };
-
       });
+
+			// The main thing you can do is override the default exception handler.
+			app.factory("$exceptionHandler", function ($log) {
+				return function (exception, cause) {
+					$log.error("Message: " + exception.message + " (Cause: " + cause + ")");
+				}
+			});
     </script>
   </head>
   <body ng-controller="defaultCtrl">
