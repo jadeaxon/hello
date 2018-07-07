@@ -1,6 +1,34 @@
 // This file contains all the services for this app.
 // I'm going to use the convention of prefixing custom services with $$.
 
+//=============================================================================
+// Classes
+//=============================================================================
+
+// Logger base class (constructor).
+var baseLogger = function () {
+  this.messageCount = 0;
+  this.log = function (msg) {
+    console.log(this.msgType + ": " + (this.messageCount++) + " " + msg);
+  }
+};
+
+// Debug logger subclass using prototype-based inheritance.
+var debugLogger = function () { };
+debugLogger.prototype = new baseLogger();
+debugLogger.prototype.msgType = "Debug";
+
+
+// Error logger subclass using prototype-based inheritance.
+var errorLogger = function () { };
+errorLogger.prototype = new baseLogger();
+errorLogger.prototype.msgType = "Error";
+
+
+//=============================================================================
+// Module
+//=============================================================================
+
 var module = angular.module("customServices", []);
 module.factory("$$log", function () {
   // This object is only created once (it is a singleton).
@@ -15,5 +43,8 @@ module.factory("$$log", function () {
   };
   return serviceSingleton; // This will be accessible as $$log elsewhere.
 });
+module.service("$$debug", debugLogger)
+module.service("$$error", errorLogger);
+
 
 
