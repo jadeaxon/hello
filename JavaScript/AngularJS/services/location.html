@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+  <head>
+    <title>$location service</title>
+    <meta charset="utf-8" />
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script>
+      var app = angular.module("exampleApp", []);
+      app.controller("defaultCtrl", function ($scope, $location) {
+        $scope.absUrl = $location.absUrl();
+        // This one does not seem to work.
+        $scope.hash = $location.hash();
+        $scope.host = $location.host();
+        $scope.path = $location.path();
+        $scope.port = $location.port();
+        $scope.protocol = $location.protocol();
+
+        // Handle location change events.
+        $scope.$on("$locationChangeStart", function (event, newUrl) {
+          alert("Going to " + newUrl);
+        });
+
+        $scope.$on("$locationChangeSuccess", function (event, newUrl) {
+          alert("Arrived at " + newUrl);
+        });
+
+        $scope.changeLocation = function () {
+          // This actually sends you to http://localhost:8000/location.html#!#newplace
+          $location.hash("newplace");
+        };
+
+      });
+    </script>
+  </head>
+  <body ng-controller="defaultCtrl">
+    <div ng-cloak>
+      <button ng-click="changeLocation();">Change Location</button>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>Expression</td>
+            <td>Result</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$location.absUrl()</td>
+            <td>{{absUrl}}</td>
+          </tr>
+          <tr>
+            <td>$location.hash()</td>
+            <td>{{hash}}</td>
+          </tr>
+          <tr>
+            <td>$location.host()</td>
+            <td>{{host}}</td>
+          </tr>
+          <tr>
+            <td>$location.path()</td>
+            <td>{{path}}</td>
+          </tr>
+          <tr>
+            <td>$location.port()</td>
+            <td>{{port}}</td>
+          </tr>
+          <tr>
+            <td>$location.protocol()</td>
+            <td>{{protocol}}</td>
+          </tr>
+        </tbody>
+    </div>
+  </body>
+</html>
+
+
