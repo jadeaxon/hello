@@ -55,7 +55,8 @@ app.controller("defaultCtrl", function ($scope, $http, baseUrl) {
 
   // Adds a new product to the product list.
   $scope.createProduct = function (product) {
-    $http.post(baseUrl, product).then(
+    var deferred = $http.post(baseUrl, product);
+    deferred.then(
       function (response) {
         // Update list in browser if server update succeeds.
         $scope.products.push(response.data);
@@ -67,16 +68,30 @@ app.controller("defaultCtrl", function ($scope, $http, baseUrl) {
     );
   }
 
-  // Replaces an existing product by id.
+  // Updates an existing product.
   $scope.updateProduct = function (product) {
-    for (var i = 0; i < $scope.products.length; i++) {
-      if ($scope.products[i].id == product.id) {
-        $scope.products[i] = product;
-        break;
+    var deferred = $http({
+      url: baseUrl + product.id,
+      method: "PUT",
+      data: product
+    });
+    deferred.then(
+      function (response) {
+        // Update product in browser after server update succeeds.
+        var modifiedProduct = response.data;
+        for (var i = 0; i < $scope.products.length; i++) {
+          if ($scope.products[i].id == modifiedProduct.id) {
+            $scope.products[i] = modifiedProduct;
+            break;
+          }
+        } // next product
+        $scope.displayMode = "list";
+      },
+      function (error) {
+        $scope.error = error;
       }
-    }
-    $scope.displayMode = "list";
-  };
+    ); // then
+  }; // updateProduct
 
   // Creates a new product or edits an existing product.
   // Uses a copy of the product when editing existing so cancel works.
