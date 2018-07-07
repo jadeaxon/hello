@@ -39,12 +39,22 @@ app.controller("defaultCtrl", function ($scope, $http, baseUrl) {
 
   // Deletes a product.  There's a delete button in each row that triggers this.
   $scope.deleteProduct = function (product) {
-    $scope.products.splice($scope.products.indexOf(product), 1);
-  };
+    $http({
+      method: "DELETE",
+      url: baseUrl + product.id
+    }).then(
+      function (response) {
+        // Delete in browser after deleting from server.
+        $scope.products.splice($scope.products.indexOf(product), 1);
+      },
+      function (error) {
+        $scope.error = error;
+      }
+    ); // then
+  }; // deleteProduct
 
   // Adds a new product to the product list.
-  $scope.createProduct
-    = function (product) {
+  $scope.createProduct = function (product) {
     $scope.products.push(product);
     $scope.displayMode = "list";
   };
