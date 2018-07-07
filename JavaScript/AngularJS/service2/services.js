@@ -46,5 +46,66 @@ module.factory("$$log", function () {
 module.service("$$debug", debugLogger)
 module.service("$$error", errorLogger);
 
+// A (service) provider also returns a service but more indirectly.
+// The $get function is called.  This can be used to configure the service.
+// For example, you might want a dev/test/production database connection.
+// For DI, $$plog is the service name while $$plogProvider is the service provider name.
+// module.config(function ($$plogProvider) {}) is used to configure the service provider.
+module.provider("$$plog", function() {
+  // These act as private instance vars of the provider via closure.
+	var counter = true;
+	var debug = true;
+
+  // The provider object is used to configure the service.
+  // Its $get() method returns the actual service object.
+  var provider = {
+    // These config methods are chainable.
+    // If you pass in a value, they return the provider.
+    // If you pass in nothing, they return the config value.
+		messageCounterEnabled: function (setting) {
+			if (angular.isDefined(setting)) {
+				counter = setting;
+				return this;
+			}
+      else {
+				return counter;
+			}
+		},
+		debugEnabled: function(setting) {
+			if (angular.isDefined(setting)) {
+				debug = setting;
+				return this;
+			}
+      else {
+				return debug;
+			}
+		},
+    // $get() returns the actual service singleton.
+    $get: function () {
+      var serviceSingleton = {
+        messageCount: 0,
+        log: function (msg) {
+          if (debug) {
+            console.log("(DEBUG_PLOG" + (counter ? " + " + this.messageCount++ + ") " : ") ") + msg);
+          }
+          else {
+            console.log("(PLOG + " + this.messageCount++ + ") " + msg);
+          }
+        } // log()
+      }; // serviceSingleton
+      return serviceSingleton;
+    } // $get()
+  }; // provider
+  return provider;
+});
+
+// Configure the service via the provider.
+// What you are passing config is a function that configures the service provider.
+// The provider is injected into this configurator by adding Provider suffix to service name.
+module.config(function ($$plogProvider) {
+  $$plogProvider.debugEnabled(true).messageCounterEnabled(false);
+  // Now you can use the configured $$plog service anywhere in your app.
+});
+
 
 

@@ -1,6 +1,6 @@
 // This file stores all the AngularJS directives for the app.
 var module = angular.module("customDirectives", []);
-module.directive("customMultiButton", function ($$log, $$debug, $$error) {
+module.directive("customMultiButton", function ($$log, $$debug, $$error, $$plog) {
   return {
     scope: { counter: "=counter" },
     link: function (scope, element, attrs) {
@@ -8,6 +8,7 @@ module.directive("customMultiButton", function ($$log, $$debug, $$error) {
         $$log.log("Button click: " + event.target.innerText);
         $$debug.log("Button clicked.");
         $$error.log("Button clicked.");
+        $$plog.log("The button was clicked.");
         scope.$apply(function () {
           scope.counter++;
         });
