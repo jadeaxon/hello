@@ -1,18 +1,40 @@
 var app = angular.module("exampleApp", []);
-app.controller("defaultCtrl", function ($scope) {
+
+// Calling constant() actually creates a service you have to inject.
+app.constant("baseUrl", "http://localhost:2403/products/");
+
+app.controller("defaultCtrl", function ($scope, $http, baseUrl) {
   // Choose whether we show the product listing or product edit view.
   $scope.displayMode = "list";
 
   // This holds a newly created product or copy of product being edited.
   $scope.currentProduct = null;
 
+  // Did we have an Ajax error?
+  $scope.error = null;
+
   // Creates the list of dummy products.
+  /*
   $scope.listProducts = function () {
     $scope.products = [
       { id: 0, name: "Dummy1", category: "Test", price: 1.25 },
       { id: 1, name: "Dummy2", category: "Test", price: 2.45 },
       { id: 2, name: "Dummy3", category: "Test", price: 4.25 }
     ];
+  };
+  */
+
+  // Makes an Ajax call to load the product data.
+  // Your Deployd server needs to be running at the given port in baseUrl.
+  $scope.listProducts = function () {
+    $http.get(baseUrl).then(
+      function (response) {
+        $scope.products = response.data;
+      },
+      function (error) {
+        $scope.error = error;
+      }
+    );
   };
 
   // Deletes a product.  There's a delete button in each row that triggers this.
@@ -21,7 +43,8 @@ app.controller("defaultCtrl", function ($scope) {
   };
 
   // Adds a new product to the product list.
-  $scope.createProduct = function (product) {
+  $scope.createProduct
+    = function (product) {
     $scope.products.push(product);
     $scope.displayMode = "list";
   };
@@ -41,8 +64,7 @@ app.controller("defaultCtrl", function ($scope) {
   // Uses a copy of the product when editing existing so cancel works.
   // Switches the UI to edit view.
   $scope.editOrCreateProduct = function (product) {
-    $scope.currentProduct =
-      product ? angular.copy(product) : {};
+    $scope.currentProduct = product ? angular.copy(product) : {};
     $scope.displayMode = "edit";
   };
 
@@ -50,7 +72,8 @@ app.controller("defaultCtrl", function ($scope) {
   $scope.saveEdit = function (product) {
     if (angular.isDefined(product.id)) {
       $scope.updateProduct(product);
-    } else {
+    }
+    else {
       $scope.createProduct(product);
     }
   };

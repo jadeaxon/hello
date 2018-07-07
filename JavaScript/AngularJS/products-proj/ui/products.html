@@ -39,6 +39,7 @@
     <script src="products.js"></script>
   </head>
   <body ng-controller="defaultCtrl">
+    <div style="color: red" ng-if="error">{{error}}</div>
     <div class="panel panel-primary">
       <h3 class="panel-heading">Products</h3>
       <ng-include src="'tableView.html'" ng-show="displayMode == 'list'"></ng-include>
