@@ -21,16 +21,9 @@
 
     <!-- My app. -->
     <script>
-      angular.module("exampleApp", []).controller("defaultCtrl", function ($scope) {
-        $scope.data = {
-          cities: ["London", "New York", "Paris"],
-          totalClicks: 0
-        };
-        $scope.$watch('data.totalClicks', function (newVal) {
-          console.log("Total click count: " + newVal);
-        });
-      });
+      angular.module("exampleApp", []); // Contruct the app module.
     </script>
+    <script src="controllers.js"></script>
     <script src="directives.js"></script>
   </head>
   <body ng-controller="defaultCtrl">
