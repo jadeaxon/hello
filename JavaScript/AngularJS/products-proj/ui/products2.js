@@ -20,7 +20,7 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
   // Your Deployd server needs to be running at the given port in baseUrl.
   $scope.listProducts = function () {
     $scope.products = $scope.productsResource.query();
-  }
+  };
 
   // Deletes a product.  There's a delete button in each row that triggers this.
   $scope.deleteProduct = function (product) {
@@ -35,53 +35,25 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
 
   // Adds a new product to the product list.
   $scope.createProduct = function (product) {
-    var deferred = $http.post(baseUrl, product);
-    deferred.then(
-      function (response) {
-        // Update list in browser if server update succeeds.
-        $scope.products.push(response.data);
-        $scope.displayMode = "list";
-      },
-      function (error) {
-        $scope.error = error;
-      }
-    );
-  }
-
-  // Updates an existing product.
-  $scope.updateProduct = function (product) {
-    var deferred = $http({
-      url: baseUrl + product.id,
-      method: "PUT",
-      data: product
+    new $scope.productsResource(product).$save().then(function(newProduct) {
+      $scope.products.push(newProduct);
+      $scope.displayMode = "list";
     });
-    deferred.then(
-      function (response) {
-        // Update product in browser after server update succeeds.
-        var modifiedProduct = response.data;
-        for (var i = 0; i < $scope.products.length; i++) {
-          if ($scope.products[i].id == modifiedProduct.id) {
-            $scope.products[i] = modifiedProduct;
-            break;
-          }
-        } // next product
-        $scope.displayMode = "list";
-      },
-      function (error) {
-        $scope.error = error;
-      }
-    ); // then
-  }; // updateProduct
+  };
 
-  // Creates a new product or edits an existing product.
-  // Uses a copy of the product when editing existing so cancel works.
-  // Switches the UI to edit view.
+  // Updates a product.
+  $scope.updateProduct = function (product) {
+    product.$save();
+    $scope.displayMode = "list";
+  };
+
+  // Edits or creates a product.
   $scope.editOrCreateProduct = function (product) {
-    $scope.currentProduct = product ? angular.copy(product) : {};
+    $scope.currentProduct = product ? product : {};
     $scope.displayMode = "edit";
   };
 
-  // Saves new/edit product to products list.
+  // Saves product edit.
   $scope.saveEdit = function (product) {
     if (angular.isDefined(product.id)) {
       $scope.updateProduct(product);
@@ -91,8 +63,11 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
     }
   };
 
-  // Cancels edit.  Goes back to products listing view.
+  // Cancels product edit.
   $scope.cancelEdit = function () {
+    if ($scope.currentProduct && $scope.currentProduct.$get) {
+      $scope.currentProduct.$get();
+    }
     $scope.currentProduct = {};
     $scope.displayMode = "list";
   };
