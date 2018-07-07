@@ -14,12 +14,21 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
   $scope.error = null;
 
   // Define products resource.
+  // The 2nd : separates the variable part of the URL from the fixed part.
+  // The 2nd arg says to bind the id part of the URL to the id property of the object.
+  // In a more complex API, you might need to bind multiple URL parts to object properties.
   $scope.productsResource = $resource(baseUrl + ":id", { id: "@id" });
 
   // Uses $resource service to load the product data.
   // Your Deployd server needs to be running at the given port in baseUrl.
   $scope.listProducts = function () {
     $scope.products = $scope.productsResource.query();
+
+    // If you need to do something immediately when the data loads, use the $promise property.
+    $scope.products.$promise.then(function (data) {
+      // This happens before the scope data binding events fire.
+      console.log("Just got the data.");
+    });
   };
 
   // Deletes a product.  There's a delete button in each row that triggers this.
