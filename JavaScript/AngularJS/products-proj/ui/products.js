@@ -55,9 +55,17 @@ app.controller("defaultCtrl", function ($scope, $http, baseUrl) {
 
   // Adds a new product to the product list.
   $scope.createProduct = function (product) {
-    $scope.products.push(product);
-    $scope.displayMode = "list";
-  };
+    $http.post(baseUrl, product).then(
+      function (response) {
+        // Update list in browser if server update succeeds.
+        $scope.products.push(response.data);
+        $scope.displayMode = "list";
+      },
+      function (error) {
+        $scope.error = error;
+      }
+    );
+  }
 
   // Replaces an existing product by id.
   $scope.updateProduct = function (product) {
