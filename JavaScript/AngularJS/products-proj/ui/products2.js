@@ -24,19 +24,14 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
 
   // Deletes a product.  There's a delete button in each row that triggers this.
   $scope.deleteProduct = function (product) {
-    $http({
-      method: "DELETE",
-      url: baseUrl + product.id
-    }).then(
-      function (response) {
-        // Delete in browser after deleting from server.
+    // Why does this work?
+    product.$delete().then(
+      function () {
         $scope.products.splice($scope.products.indexOf(product), 1);
-      },
-      function (error) {
-        $scope.error = error;
       }
-    ); // then
-  }; // deleteProduct
+    );
+    $scope.displayMode = "list";
+  };
 
   // Adds a new product to the product list.
   $scope.createProduct = function (product) {
