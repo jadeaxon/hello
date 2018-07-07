@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Products</title>
+    <!-- Bootstrap CSS. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+    <!-- Bootstrap CSS theme. -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+
+    <!-- AngularJS Material CSS. -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+
+    <!-- jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous">
+    </script>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- AngularJS Resource. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.min.js"></script>
+
+    <!-- Bootstrap JavaScript. -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous">
+    </script>
+
+    <script src="increment.js"></script>
+    <script src="products2.js"></script>
+  </head>
+  <body ng-controller="defaultCtrl">
+    <div style="color: red" ng-if="error">{{error}}</div>
+    <div class="panel panel-primary">
+      <h3 class="panel-heading">Products</h3>
+      <ng-include src="'tableView.html'" ng-show="displayMode == 'list'"></ng-include>
+      <ng-include src="'editorView.html'" ng-show="displayMode == 'edit'"></ng-include>
+    </div>
+  </body>
+</html>
+
