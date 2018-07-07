@@ -21,14 +21,20 @@
 
     <!-- My app. -->
     <script>
-      angular.module("exampleApp", ["customDirectives"]); // Contruct the app module.
+      // It should not matter what order you put the deps in.
+      angular.module("exampleApp",
+        ["customControllers", "customDirectives", "customServices"]
+      ); // Contruct the app module.
     </script>
+
+    <!-- Should not matter what order you include this files in. -->
     <script src="controllers.js"></script>
     <script src="directives.js"></script>
+    <script src="services.js"></script>
   </head>
   <body ng-controller="defaultCtrl">
     <div class="well">
-      <div class="btn-group" tri-button counter="data.totalClicks" source="data.cities">
+      <div class="btn-group" custom-multi-button counter="data.totalClicks" source="data.cities">
         <button class="btn btn-default" ng-repeat="city in data.cities">
           {{city}}
         </button>

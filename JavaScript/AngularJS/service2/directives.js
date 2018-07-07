@@ -1,6 +1,6 @@
 // This file stores all the AngularJS directives for the app.
 var module = angular.module("customDirectives", []);
-module.directive("triButton", function () {
+module.directive("customMultiButton", function () {
   return {
     scope: { counter: "=counter" },
     link: function (scope, element, attrs) {
