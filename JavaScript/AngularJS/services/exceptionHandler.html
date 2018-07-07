@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+  <head>
+    <title>$exceptionHandler service</title>
+    <meta charset="utf-8" />
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script>
+      var app = angular.module("exampleApp", []);
+      app.controller("defaultCtrl", function ($scope) {
+        $scope.handleClick = function () {
+          throw new Error("Exception");
+        };
+
+      });
+    </script>
+  </head>
+  <body ng-controller="defaultCtrl">
+    <div ng-cloak>
+      <button ng-click="handleClick();">Throw Exception</button>
+    </div>
+  </body>
+</html>
+
+
