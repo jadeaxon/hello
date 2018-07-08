@@ -6,7 +6,7 @@
 </head>
 <body>
   <div class="container-fluid">
-    <h1>Unraveling AngularJS 1.5</h1>
+    <h1>Unraveling AngularJS 1.5+</h1>
     <div class="row" ng-controller="welcomeCtrl">
       <div class="col-sm-12">
         <h2>{{message}}</h3>
@@ -21,7 +21,7 @@
       .controller('welcomeCtrl', WelcomeCtrl);
 
     function WelcomeCtrl($scope) {
-      $scope.message = "Welcome to the test page.";
+      $scope.message = "Welcome to the test page!";
       $scope.details = "If you can read this message, "
        + "live-server is ready to run your exercises."
     }
