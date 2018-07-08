@@ -17,9 +17,12 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
   // The 2nd : separates the variable part of the URL from the fixed part.
   // The 2nd arg says to bind the id part of the URL to the id property of the object.
   // In a more complex API, you might need to bind multiple URL parts to object properties.
+  // The 3rd arg maps resource actions to HTTP methods.
+  // The use here makes it more compatible with Deployd REST APIs.
   $scope.productsResource = $resource(
     baseUrl + ":id",
-    { id: "@id" }
+    { id: "@id" },
+    { create: { method: "POST" }, save: { method: "PUT" }}
   );
 
   // Uses $resource service to load the product data.
@@ -57,7 +60,8 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
     //
     // This turns any plain product objects that get added to the collection into resource
     // objects so that all the special $save(), $delete(), etc. methods can be called on them.
-    new $scope.productsResource(product).$save().then(
+    // Since $save() uses PUT by default, we had to map new resource action $create() to POST.
+    new $scope.productsResource(product).$create().then(
       function (newProduct) {
         // Hmmm, are we getting back a plain product here or a product resource?
         $scope.products.push(newProduct);
