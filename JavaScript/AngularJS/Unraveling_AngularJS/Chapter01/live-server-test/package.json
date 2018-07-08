@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This project contains the samples of the book",
   "scripts": {
-    "live": "live-server",
+    "live": "live-server --port=9000",
     "start": "npm run live"
   },
   "keywords": [],
