@@ -4,10 +4,32 @@ var app = angular.module("exampleApp", deps);
 // Calling constant() actually creates a service you have to inject.
 app.constant("baseUrl", "http://localhost:2403/products/");
 
-app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
-  // Choose whether we show the product listing or product edit view.
-  $scope.displayMode = "list";
+// Route URLs to views.
+// The $routeProvider provides/configs the $route service.
+// The $locationProvider provides/configs the $location service.
+// The route mappings determine what is displayed by <ng-view>.
+app.config(function ($routeProvider, $locationProvider) {
+  // This allows cleaner URLs in modern browsers.
+  $locationProvider.html5Mode(true);
 
+  $routeProvider.when("/list", {
+    templateUrl: "/tableView.html"
+  });
+
+  $routeProvider.when("/edit", {
+    templateUrl: "/editorView.html"
+  });
+
+  $routeProvider.when("/create", {
+    templateUrl: "/editorView.html"
+  });
+
+  $routeProvider.otherwise({
+    templateUrl: "/tableView.html"
+  });
+});
+
+app.controller("defaultCtrl", function ($scope, $http, $resource, $location, baseUrl) {
   // This holds a newly created product or copy of product being edited.
   $scope.currentProduct = null;
 
@@ -50,7 +72,8 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
         $scope.products.splice($scope.products.indexOf(product), 1);
       }
     );
-    $scope.displayMode = "list";
+    // This will cause <ng-view> to change base on the $route config.
+    $location.path("/list");
   };
 
   // Adds a new product to the product list.
@@ -66,7 +89,9 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
       function (newProduct) {
         // Hmmm, are we getting back a plain product here or a product resource?
         $scope.products.push(newProduct);
-        $scope.displayMode = "list";
+
+        // This will cause <ng-view> to change base on the $route config.
+        $location.path("/list");
       }
     );
   };
@@ -75,13 +100,17 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
   $scope.updateProduct = function (product) {
     // The product resource object has a special $save() method.
     product.$save();
-    $scope.displayMode = "list";
+
+    // This will cause <ng-view> to change base on the $route config.
+    $location.path("/list");
   };
 
   // Edits or creates a product.
   $scope.editOrCreateProduct = function (product) {
     $scope.currentProduct = product ? product : {};
-    $scope.displayMode = "edit";
+
+    // This will cause <ng-view> to change base on the $route config.
+    $location.path("/edit");
   };
 
   // Saves product edit.
@@ -92,6 +121,7 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
     else {
       $scope.createProduct(product);
     }
+    $scope.currentProduct = {};
   };
 
   // Cancels product edit.
@@ -102,7 +132,9 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, baseUrl) {
     // Shouldn't this be in an else clause?
     // No, currentProduct is acting as an object ref.
     $scope.currentProduct = {};
-    $scope.displayMode = "list";
+
+    // This will cause <ng-view> to change base on the $route config.
+    $location.path("/list");
   };
 
   // Create the initial list of products.

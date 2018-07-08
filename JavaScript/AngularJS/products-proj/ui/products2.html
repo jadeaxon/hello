@@ -2,6 +2,11 @@
 <html ng-app="exampleApp">
   <head>
     <meta charset="utf-8">
+
+    <!-- Required by $location when using HTML5 History API. -->
+
+    <base href="/">
+
     <title>Products</title>
     <!-- Bootstrap CSS. -->
     <link
@@ -50,8 +55,8 @@
     <div style="color: red" ng-if="error">{{error}}</div>
     <div class="panel panel-primary">
       <h3 class="panel-heading">Products</h3>
-      <ng-include src="'tableView.html'" ng-show="displayMode == 'list'"></ng-include>
-      <ng-include src="'editorView.html'" ng-show="displayMode == 'edit'"></ng-include>
+      <!-- What gets displayed here depends on how $route is configured. -->
+      <ng-view></ng-view>
     </div>
   </body>
 </html>
