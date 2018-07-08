@@ -108,4 +108,33 @@ module.config(function ($$plogProvider) {
 });
 
 
+// Decorate the $$log service.
+module.config(
+  function ($provide) {
+    $provide.decorator("$$log", function ($delegate) {
+      // Looks like the delegate is just a copy of the original service.
+      // We then redefine log() in terms of original log().
+      $delegate.originalLog = $delegate.log;
+      $delegate.log = function (message) {
+        $delegate.originalLog("Decorated: " + message);
+      }
+      return $delegate;
+    });
+  }
+);
+
+// Lets chain decorators together.
+// The last added decorator is executed first.
+module.config(
+  function ($provide) {
+    $provide.decorator("$$log", function ($delegate) {
+      // If you try to use originalLog you get infinite recursion.
+      $delegate.originalLog2 = $delegate.log;
+      $delegate.log = function (message) {
+        $delegate.originalLog2("Redecorated: " + message);
+      }
+      return $delegate;
+    });
+  }
+);
 
