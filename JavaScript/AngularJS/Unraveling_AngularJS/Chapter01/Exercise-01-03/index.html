@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- The ng-app tag associates this page with a generic AngularJS app module.  -->
 <html ng-app>
 <head>
   <title>Dive Log (AngularJS)</title>
@@ -7,6 +8,9 @@
 <body>
   <div class="container-fluid">
     <h1>My Latest Dives (AngularJS)</h1>
+    <!-- Using the ng-init attribute, we can initialize the scope an element runs in. -->
+    <!-- Not ideal since it embeds a bunch of JavaScript in an HTML file. -->
+    <!-- Interesting that we don't have to explicitly use ng-controller here.  -->
     <div class="row"
       ng-init="dives=[
         {
@@ -19,7 +23,7 @@
           site: 'Ponte Mahoon',
           location: 'Maehbourg, Mauritius',
           depth: 54,
-          time: 38
+          time: 39
         },
         {
           site: 'Molnar Cave',
@@ -27,14 +31,20 @@
           depth: 98,
           time: 62
         }]">
-      <div class="col-sm-4"
-        ng-repeat="dive in dives">
+      <!-- Use dives as if it was $scope.dives defined in a controller. -->
+      <!-- ng-repeat lets you generate HTML for a collection. -->
+      <!-- It's not merely static HTML generation from a template. -->
+      <!-- The {{}} expressions set up one-way data bindings that update whenever the scope changes. -->
+      <div class="col-sm-4" ng-repeat="dive in dives">
         <h3>{{dive.site}}</h3>
         <h4>{{dive.location}}</h4>
         <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
       </div>
     </div>
   </div>
+  <!-- You can include AngularJS first or last.  Doesn't matter that much. -->
   <script src="./lib/angular/angular.min.js"></script>
 </body>
 </html>
+
+
