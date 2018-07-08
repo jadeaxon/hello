@@ -16,6 +16,6 @@ describe("First Test", function () {
     // Act (attempt the operation)
     counter--;
     // Assert (verify the result)
-    expect(counter).toEqual(0);
+    expect(counter).toEqual(-1);
   });
 });
