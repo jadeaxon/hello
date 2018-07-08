@@ -106,7 +106,7 @@ app.controller("defaultCtrl", function ($scope, $http, $resource, $location, bas
   };
 
   // Edits or creates a product.
-  $scope.editOrCreateProduct = function (product) {
+  $scope.editProduct = function (product) {
     $scope.currentProduct = product ? product : {};
 
     // This will cause <ng-view> to change base on the $route config.

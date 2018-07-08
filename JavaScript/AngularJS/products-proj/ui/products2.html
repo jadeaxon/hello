@@ -53,13 +53,20 @@
 
     <script src="increment.js"></script>
     <script src="products2.js"></script>
+
+    <!-- Use ngAnimate to fade in the view. -->
+    <style type="text/css">
+      .ngFade.ng-enter { transition: 0.1s linear all; opacity: 0; }
+      .ngFade.ng-enter-active { opacity: 1; }
+    </style>
+
   </head>
   <body ng-controller="defaultCtrl">
     <div style="color: red" ng-if="error">{{error}}</div>
     <div class="panel panel-primary">
       <h3 class="panel-heading">Products</h3>
       <!-- What gets displayed here depends on how $route is configured. -->
-      <ng-view></ng-view>
+      <ng-view class="ngFade"></ng-view>
     </div>
   </body>
 </html>
