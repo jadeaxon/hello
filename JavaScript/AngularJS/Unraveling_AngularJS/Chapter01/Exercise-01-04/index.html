@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html ng-app="diveLog">
+<!-- Let the AngularJS app module we define below govern this webpage. -->
+<html ng-app="diveLogApp">
 <head>
   <title>Dive Log (ng-controller)</title>
   <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
@@ -7,10 +8,13 @@
 <body>
   <div class="container-fluid">
     <h1>My Latest Dives (ng-contoller)</h1>
+    <!-- Let the controller we define below govern this div. -->
     <div class="row"
       ng-controller="diveLogCtrl">
+      <!-- dives is really $scope.dives. -->
       <div class="col-sm-4"
         ng-repeat="dive in dives">
+        <!-- One-way data bindings via {{}}. -->
         <h3>{{dive.site}}</h3>
         <h4>{{dive.location}}</h4>
         <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
@@ -18,14 +22,24 @@
     </div>
   </div>
   <script src="./lib/angular/angular.min.js"></script>
+  <!-- Our data comes from this file for now. -->
   <script src="dives.js"></script>
   <script>
-    angular.module('diveLog', [])
-      .controller('diveLogCtrl', DiveLogCtrl);
+    // You might factor this code out into an app.js and/or controllers.js file.
+    // The top-level module is the app.  This gets bound to a webpage via ng-app directive.
+    // Of course, the app consists of everything, so let's say its the app module.
+    var app = angular.module('diveLogApp', [])
+    app.controller('diveLogCtrl', DiveLogCtrl); // Pass it a controller constructor.
 
+    // A controller constructor.
     function DiveLogCtrl($scope) {
+      // The scope contains all data visible to the HTML view element the controller governs.
+      // A controller is bound to an HTML view element via ng-controller directive.
+      // Also, AngularJS is away of scope vars allowing it to do data binding with them.
       $scope.dives = dives;
     }
   </script>
 </body>
 </html>
+
+
