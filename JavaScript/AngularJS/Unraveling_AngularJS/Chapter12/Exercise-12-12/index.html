@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Top dives</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Top dives</h2>
+    <div ng-init="dive={
+         site: 'El Aroukh',
+         location: 'Giftun, Egypt',
+         depth: 14.2,
+         time: 56}">
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        The best dive of this month
+      </div>
+      <div class="panel-body">
+        <h3>{{dive.site}}</h3>
+        <h4>{{dive.location}}</h4>
+        <h2>{{dive.depth}}m | {{dive.time}}min</h2>
+      </div>
+      <div class="panel-footer">
+        Stay tuned!
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

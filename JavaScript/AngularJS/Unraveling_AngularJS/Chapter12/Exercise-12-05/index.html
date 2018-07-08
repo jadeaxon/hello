@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="fish">
+<head>
+  <title>Isolated Scope</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <script type="text/ng-template"
+          id="otherName">
+    <h3>{{language}} name:</h3>
+    <h2>{{fishName}}</h2>
+    <button class="btn btn-primary"
+            ng-click="reveal()">
+      Reveal
+    </button>
+  </script>
+</head>
+<body style="margin-top: 12px;">
+  <div class="container-fluid">
+    <div class="row" ng-init="fishName='Lionfish'">
+      <div class="col-sm-3">
+        <img src="images/Lionfish.JPG" 
+             class="img-responsive"/>
+      </div>
+      <div class="col-sm-9">
+        <h3>English name:</h3>
+        <h2>{{fishName}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <section other-name
+             language="Latin"
+             orig-name="[English: {{fishName}}]"
+             real-name="Pterolis volitans" />
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('fish', [])
+      .directive('otherName', OtherName);
+
+    function OtherName($templateCache) {
+      return {
+        scope: {
+          fishName: '@origName'
+        },
+        template: function () {
+          return $templateCache.get('otherName');
+        },
+        link: function (scope, element, attrs) {
+          scope.language = attrs['language'];
+          scope.reveal = function () {
+            scope.fishName = attrs['realName'];
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

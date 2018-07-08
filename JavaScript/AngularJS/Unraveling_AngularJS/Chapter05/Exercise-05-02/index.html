@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dive Buddy</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:24px;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="buddyEdit">Buddy Name:</label>
+        <input id="buddyEdit" class="form-control"
+               ng-model="buddy" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <p>
+          Your dive buddy is
+          <strong>{{buddy}}</strong>
+        </p>
+      </div>
+    </div>
+    </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.bootstrap(document);
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Loop</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top: 24px;">
+  <div class="container-fluid">
+    <button class="btn btn-primary" 
+            onclick="clicked()">
+      Click and see the console log
+    </button>
+  </div>
+  <script>
+    function clicked() {
+      console.log('Enter: clicked');
+      setTimedTask();
+      console.log('Exit: clicked');
+    }
+
+    function setTimedTask() {
+      console.log('Enter: setTimedTask');
+      setTimeout(function () {
+        console.log('Timed task runs');
+      }, 1000);
+      console.log('Exit: setTimedTask');
+    }
+  </script>
+</body>
+</html>

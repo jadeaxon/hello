@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>ng-model-options</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <form name="regform">
+      <div class="form-group">
+        <label class="control-label">User name</label>
+        <input class="form-control"
+               autofocus
+               name="userName"
+               ng-model="userName"
+               ng-model-options="{updateOn: 'blur'}" />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input class="form-control"
+               type="email"
+               name="email"
+               ng-model="email" />
+      </div>
+    </form>
+    <hr />
+    <p>User name: {{userName}}</p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

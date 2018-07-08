@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="scopes">
+<head>
+  <title>Scope Hierarchy</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1 ng-init="name='Younderwater'">
+      Application: {{name}}
+    </h1>
+    <div ng-controller="locationCtrl">
+      <h3>
+        Location: {{name}}
+      </h3>
+      <div ng-controller="siteCtrl">
+        <h4>Dive Site: {{name}}</h4>
+        <div ng-controller="buddiesCtrl">
+          <h5>Buddies:</h5>
+          <h5 ng-repeat="name in buddies">
+            <strong>{{$index+1}}. {{name}}</strong>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('scopes', [])
+      .controller('locationCtrl',
+        function ($scope) {
+          $scope.name = "Sharm El Sheikh, Egypt";
+        })
+      .controller('siteCtrl',
+        function ($scope) {
+          $scope.name = "Shark-Yolanda Reef";
+        })
+      .controller('buddiesCtrl',
+        function ($scope) {
+          $scope.buddies = [
+            "Neil Cod",
+            "Anne Lionfish",
+            "Jack Travely"
+          ];
+        });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="maintenance">
+<head>
+  <title>Dive Sites</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .oddRow {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid" ng-controller="siteEditCtrl">
+    <h1>Dive Sites Maintenance</h1>
+    <div ng-show="view=='list'">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-primary btn-lg">
+            Add new dive
+          </button>
+        </div>
+      </div>
+      <h2>List of Dive Sites</h2>
+      <div class="row" ng-repeat="site in sites"
+        ng-class="{oddRow: $index % 2 == 0}">
+        <div class="col-sm-8">
+          <h4>{{$index + 1}}: {{site}}</h4>
+        </div>
+        <div class="col-sm-4" style="margin-top: 5px;">
+          <div class="pull-right">
+            <button class="btn btn-warning btn-sm">
+              Edit
+            </button>
+            <button class="btn btn-danger btn-sm">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="sites.js"></script>
+  <script>
+    angular.module('maintenance', [])
+      .controller('siteEditCtrl', SiteEditCtrl);
+
+    function SiteEditCtrl($scope) {
+      $scope.sites = sites;
+      setView('list');
+
+      function setView(view) {
+        $scope.view = view;
+      }
+    }
+  </script>
+</body>
+</html>

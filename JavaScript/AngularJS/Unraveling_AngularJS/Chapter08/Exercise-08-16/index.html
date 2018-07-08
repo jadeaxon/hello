@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Form Submit</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container" ng-init="answer=''">
+    <form name="simple"
+          ng-submit="answer=userName">
+      <div class="form-group">
+        <label class="control-label">User name</label>
+        <input class="form-control"
+               autofocus
+               name="userName"
+               ng-model="userName"
+               required />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input class="form-control"
+               autofocus
+               name="email"
+               ng-model="email"
+               type="email"
+               required />
+      </div>
+    </form>
+    <hr />
+    <p>The submitted user name is: 
+      <strong>{{answer}}</strong>
+    </p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

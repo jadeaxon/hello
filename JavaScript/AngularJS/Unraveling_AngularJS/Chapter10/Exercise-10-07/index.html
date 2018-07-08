@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Hungarian locale</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>
+          Floating point number: 
+          <strong>{{1234.567 | number}}</strong>
+        </h3>
+        <h3>
+          Hungarian currency format:
+          <strong>{{2996.48 | currency}}</strong>
+        </h3>
+        <h3>
+          Hungarian date format:
+          <strong>
+          {{'2015-02-09T08:34:00.000Z' | date: 'medium'}}
+          </strong>
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="angular-locale_hu-hu.js"></script>
+</body>
+</html>

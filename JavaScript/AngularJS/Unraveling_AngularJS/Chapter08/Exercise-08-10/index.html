@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>ng-model</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <label class="control-label">Type in a value</label>
+    <input class="form-control"
+           ng-model="myObj.prop.subprop" />
+    <hr />
+    <p>You typed: {{myObj.prop.subprop}}</p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

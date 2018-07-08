@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="controls">
+<head>
+  <title>Top dives</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Top dives</h2>
+    <div ng-init="dive={
+         site: 'El Aroukh',
+         location: 'Giftun, Egypt',
+         depth: 14.2,
+         time: 56}">
+    </div>
+    <div top-dive
+         header="The best dive of this month"
+         footer="Stay tuned!">
+      <h3>{{dive.site}}</h3>
+      <h4>{{dive.location}}</h4>
+      <h2>{{dive.depth}}m | {{dive.time}}min</h2>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('controls', [])
+      .directive('topDive', function () {
+        return {
+          restrict: 'A',
+          link: function (scope, element, attrs) {
+            var headerText = attrs.header;
+            var footerText = attrs.footer;
+            var children = element.children();
+            element.children().remove();
+            var panel = angular.element('<div>');
+            panel.addClass('panel panel-primary');
+            var header = angular.element('<div>')
+            header.addClass('panel-heading');
+            header.text(headerText);
+            panel.append(header);
+            var body = angular.element('<div>')
+            body.addClass('panel-body');
+            panel.append(body);
+            for (var i = 0; i < children.length; i++) {
+              body.append(children[i]);
+            }
+            element.append(panel);
+            var footer = angular.element('<div>');
+            footer.addClass('panel-footer');
+            footer.text(footerText);
+            panel.append(footer);
+          }
+        }
+      });
+  </script>
+</body>
+</html>

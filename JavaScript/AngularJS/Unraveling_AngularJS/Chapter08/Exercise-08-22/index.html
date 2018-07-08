@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="validation">
+<head>
+  <title>Overriding number</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    input.ng-invalid-number {
+      border: 2px solid maroon;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <form name="simple" novalidate>
+      <div class="form-group">
+        <label class="control-label">Original "number"</label>
+        <input class="form-control"
+               autofocus
+               type="number"
+               name="number1"
+               ng-model="number1"
+               required />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Modified "number"</label>
+        <input class="form-control"
+               type="number"
+               name="number2"
+               ng-model="number2"
+               my-number
+               required />
+      </div>
+      <input class="btn btn-primary" 
+             type="submit" 
+             ng-disabled="simple.$invalid"
+             value="Save" />
+    </form>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('validation', [])
+    .directive('myNumber', function () {
+      return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function (scope, element,
+          attrs, ctrl) {
+          ctrl.$validators.number = function(value) {
+            return ctrl.$isEmpty(value)
+             || (angular.isNumber(value)
+                && value >= 0.0);
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

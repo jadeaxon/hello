@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="dropdown">
+<head>
+  <title>Dropdown list (ng-options)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container"
+       ng-controller="sitesCtrl">
+    <select class="form-control"
+            ng-model="selected"
+            ng-options="'#' + site.id as site.name for site in sites">
+    </select>
+    <hr />
+    <button class="btn btn-primary"
+            ng-click="selected='#4'">
+      Select item #4
+    </button>
+    <hr />
+    <p>Selected item: {{selected}}</p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('dropdown', [])
+      .controller('sitesCtrl',
+        function ($scope) {
+          $scope.sites = [
+            { id: 1, name: 'El Arouk', loc: 'Hurghada' },
+            { id: 2, name: 'Fanadir', loc: 'Hurghada' },
+            { id: 3, name: 'Shab El Erg', loc: 'Hurghada' },
+            { id: 4, name: 'Jackfish Allee', loc: 'Ras Mohamed' },
+            { id: 5, name: 'Shark-Yolanda', loc: 'Ras Mohamed' },
+            { id: 6, name: 'Shark Observatory', loc: 'Ras Mohamed' },
+          ];
+      });
+  </script>
+</body>
+</html>

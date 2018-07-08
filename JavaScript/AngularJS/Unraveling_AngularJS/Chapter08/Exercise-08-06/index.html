@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Dropdown list</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container" ng-init="selected='2'">
+    <select class="form-control">
+      <option ng-repeat="value in [1, 2, 3]"
+              ng-value="value"
+              ng-selected="value==selected">
+        Value #{{value}}
+      </option>
+    </select>
+    <hr />
+    <p>Selected value: {{selected}}</p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

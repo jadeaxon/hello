@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log with Templates</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>My Latest Dives</h1>
+    <div class="row" style="margin-bottom: 12px;">
+      <div class="col-sm-4 col-sm-offset-8">
+        <input class="form-control input-lg" 
+               placeholder="Search" 
+               ng-model="searchKey" />
+      </div>
+    </div>
+    <div class="row" ng-controller="diveLogCtrl">
+      <div class="col-sm-4"
+           ng-repeat="dive in dives | filter:searchKey">
+        <dive-log-card></dive-log-card>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .controller('diveLogCtrl', DiveLogCtrl)
+      .directive('diveLogCard', DiveLogCard);
+
+    function DiveLogCtrl($scope) {
+      $scope.dives = dives;
+    }
+
+    function DiveLogCard() {
+      return {
+        restrict: 'E',
+        templateUrl: 'diveEntry.html'
+      }
+    }
+  </script>
+</body>
+</html>

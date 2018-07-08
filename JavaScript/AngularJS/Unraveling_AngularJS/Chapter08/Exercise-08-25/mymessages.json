@@ -1,0 +1,12 @@
+[{
+    "expr": "required",
+    "text": "You must specify an email address"
+  }, 
+  {
+    "expr": ["minlength", "maxlength"],
+    "text": "Your email must be between 8 and 32 characters long"
+  }, 
+  {
+    "expr": "email",
+    "text": "Hey, this is not a valid email!"
+  }]

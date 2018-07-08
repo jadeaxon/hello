@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Form</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .invalidField {
+      border: 2px solid maroon;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <form name="simple" novalidate>
+      <div class="form-group">
+        <label class="control-label">User name</label>
+        <input class="form-control"
+               autofocus
+               name="userName"
+               ng-model="userName"
+               ng-class="{invalidField: simple.userName.$invalid}"
+               required />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input class="form-control"
+               name="email"
+               ng-model="email"
+               type="email"
+               ng-class="{invalidField: simple.email.$invalid 
+                 && simple.email.$touched}"
+               required />
+      </div>
+      <input class="btn btn-primary" 
+             type="submit" 
+             ng-disabled="simple.$invalid"
+             value="Save" />
+    </form>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

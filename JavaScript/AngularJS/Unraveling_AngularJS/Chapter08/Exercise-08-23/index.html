@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="validation">
+<head>
+  <title>Overriding number</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    input.ng-invalid-dividable {
+      border: 2px solid maroon;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <form name="simple" novalidate>
+      <div class="form-group">
+        <label class="control-label">A number dividable with 5</label>
+        <div ng-init="useThis=5"></div>
+        <input class="form-control"
+               autofocus
+               type="number"
+               name="myNumber"
+               ng-model="myNumber"
+               dividable="useThis"
+               required />
+      </div>
+    </form>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('validation', [])
+    .directive('dividable', function () {
+      return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function (scope, element,
+          attrs, ctrl) {
+          var expr = attrs['dividable'];
+          var divider = scope.$eval(expr);
+          ctrl.$validators.dividable = function(value) {
+            return ctrl.$isEmpty(value) || angular.isNumber(value)
+              && value % divider == 0;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

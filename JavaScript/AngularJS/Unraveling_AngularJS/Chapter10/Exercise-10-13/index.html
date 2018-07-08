@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>My Latest Dives</h1>
+    <div class="row" ng-controller="diveLogCtrl">
+      <div class="col-sm-4"
+           ng-repeat="dive in dives | orderBy: avgSpeed: true">
+          <h3>{{dive.site}}</h3>
+          <h4>{{dive.location}}</h4>
+          <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+        </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .controller('diveLogCtrl', DiveLogCtrl);
+
+    function DiveLogCtrl($scope) {
+      $scope.dives = dives;
+      $scope.avgSpeed = function (item) {
+        return item.time != 0
+          ? item.depth / item.time
+          : 0;
+      }
+    }
+  </script>
+</body>
+</html>

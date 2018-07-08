@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html ng-app="welcome">
+<head>
+  <title>Welcome</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Unraveling AngularJS 1.5</h1>
+    <div class="row" ng-controller="welcomeCtrl">
+      <div class="col-sm-12">
+        <h2>{{message}}</h3>
+        <h4>{{details}}</h4>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('welcome', [])
+      .controller('welcomeCtrl', WelcomeCtrl);
+
+    function WelcomeCtrl($scope) {
+      $scope.message = "Welcome to the test page.";
+      $scope.details = "If you can read this message, "
+       + "live-server is ready to run your exercises."
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="watcher">
+<head>
+  <title>Change detection</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="divesCtrl">
+  <div class="container-fluid">
+    <h2>Dives</h2>
+    <pre>{{dives | json}}</pre>
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-primary"
+                ng-click="clone()">
+          Clone collection
+        </button>
+        <button class="btn btn-primary"
+                     ng-click="swapItems()">
+          Swap dives[0] and dives[1]
+        </button>
+        <button class="btn btn-primary"
+                ng-click="changeItemProp()">
+          Increment dives[0].depth
+        </button>
+        <button class="btn btn-default"
+                ng-click="reset()">
+          Reset
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Detection Mode</th>
+              <th>Detected?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>By reference</td>
+              <td>
+                <span class="label"
+                      ng-class="detected(byRef)">
+                  {{byRef}}
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>By collection contents</td>
+              <td>
+                <span class="label"
+                      ng-class="detected(byColl)">
+                  {{byColl}}
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>By value</td>
+              <td>
+                <span class="label"
+                      ng-class="detected(byVal)">
+                  {{byVal}}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="watch.js"></script>
+</body>
+</html>

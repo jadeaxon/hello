@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="maintenance">
+<head>
+  <title>Dive Sites</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .oddRow {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid" ng-controller="siteEditCtrl">
+    <h1>Dive Sites Maintenance</h1>
+    <div ng-show="view=='list'">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-primary btn-lg"
+            ng-click="startAdd()">
+            Add new dive
+          </button>
+        </div>
+      </div>
+      <h2>List of Dive Sites</h2>
+      <div class="row" ng-repeat="site in sites"
+        ng-class="{oddRow: $index % 2 == 0}">
+        <div class="col-sm-8">
+          <h4>{{$index + 1}}: {{site}}</h4>
+        </div>
+        <div class="col-sm-4" style="margin-top: 5px;">
+          <div class="pull-right">
+            <button class="btn btn-warning btn-sm"
+              ng-click="startEdit($index)">
+              Edit
+            </button>
+            <button class="btn btn-danger btn-sm">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div ng-show="view=='add'">
+      <h3>Specify the name of the dive site:</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <input class="form-control input-lg" type="text" 
+            placeholder="site name" 
+            ng-model="siteBox" />
+        </div>
+      </div>
+      <div class="row" style="margin-top: 12px;">
+        <div class="col-sm-6">
+          <button class="btn btn-success btn"
+            ng-disabled="siteBox==''"
+            ng-click="add()">
+            Add
+          </button>
+          <button class="btn btn-warning btn"
+            ng-click="cancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="sites.js"></script>
+  <script>
+    angular.module('maintenance', [])
+      .controller('siteEditCtrl', SiteEditCtrl);
+
+    function SiteEditCtrl($scope) {
+      $scope.sites = sites;
+      $scope.startAdd = startAdd;
+      $scope.cancel = cancel;
+      $scope.add = add;
+
+      setView('list');
+
+      function setView(view) {
+        $scope.view = view;
+      }
+
+      function startAdd() {
+        $scope.siteBox = '';
+        setView('add');
+      }
+
+      function cancel() {
+        setView('list');
+      }
+
+      function add() {
+        $scope.sites.push($scope.siteBox);
+        setView('list');
+      }
+    }
+  </script>
+</body>
+</html>

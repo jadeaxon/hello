@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html ng-app="messages">
+<head>
+  <title>Using ng-messages</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .validation {
+      color: maroon;
+    }
+  </style>
+</head>
+<body style="margin-top:12px;" 
+      ng-controller="MainCtrl">
+  <div class="container">
+    <h3>Using ng-message</h3>
+    <form name="version1">
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input class="form-control"
+          type="email" 
+          ng-model="email1" 
+          name="email1" 
+          required 
+          ng-minlength="8" 
+          ng-maxlength="32" />
+        <div ng-messages="version1.email1.$error" 
+             class="validation">
+          <div ng-message="required">
+            Please enter your email address
+          </div>
+          <div ng-message="minlength, maxlength">
+            Your email must be between 8 and 32 characters long
+          </div>
+          <div ng-message="email">
+            This is not a valid email
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary"
+        ng-click="save()" 
+        ng-disabled="version1.$invalid">Save
+      </button>
+    </form>
+
+    <h3>Using static ng-message-exp</h3>
+    <form name="version2">
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input class="form-control"
+          type="email" 
+          ng-model="email2" 
+          name="email2" 
+          required 
+          ng-minlength="8" 
+          ng-maxlength="32" />
+        <div ng-messages="version2.email2.$error" 
+             class="validation">
+          <div ng-message-exp="reqExpr">
+            Please enter your email address
+          </div>
+          <div ng-message-exp="minMaxExpr">
+            Your email must be between 8 and 32 characters long
+          </div>
+          <div ng-message-exp="emailExpr">
+            This is not a valid email
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary"
+        ng-click="save()" 
+        ng-disabled="version2.$invalid">Save
+      </button>
+    </form>
+
+    <h3>Using dynamic ng-message-exp</h3>
+    <form name="version3">
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input class="form-control"
+          type="email" 
+          ng-model="email3" 
+          name="email3" 
+          required 
+          ng-minlength="8" 
+          ng-maxlength="32" />
+        <div ng-messages="version3.email3.$error" 
+             class="validation">
+          <div ng-repeat="m in myMessages">
+            <div ng-message-exp="m.expr">
+              {{m.text}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary"
+        ng-click="save()" 
+        ng-disabled="version3.$invalid">Save
+      </button>
+    </form>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="./lib/angular/angular-messages.min.js"></script>
+  <script>
+    angular.module('messages', ['ngMessages'])
+      .controller("MainCtrl", MainCtrl);
+    
+    function MainCtrl($scope, $http){
+      $scope.myMessages = [];
+      $scope.reqExpr = 'required';
+      $scope.minMaxExpr = ['minlength', 'maxlength'];
+      $scope.emailExpr = 'email';
+      $scope.save = function() {
+        alert('Your email has been saved.');
+      };
+      
+      $http.get("myMessages.json")
+        .then(function(response){
+          $scope.myMessages = response.data;
+        });
+    }
+  </script>
+</body>
+</html>

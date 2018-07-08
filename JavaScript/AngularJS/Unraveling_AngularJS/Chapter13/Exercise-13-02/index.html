@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log (component)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>My Latest Dive (component)</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <dive-log-entry></dive-log-entry>
+      </div>
+    </div>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .component('diveLogEntry', {
+        template: 
+          '<h3>{{$ctrl.dive.site}}</h3>' +
+          '<h4>{{$ctrl.dive.location}}</h4>' +
+          '<h2>{{$ctrl.dive.depth}} feet | {{$ctrl.dive.time}} min</h2>',
+        controller: function() {
+          this.dive = dives[0];
+        }
+      });
+  </script>
+</body>
+</html>

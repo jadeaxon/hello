@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="services">
+<head>
+  <title>Constant Service</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="statsCtrl">
+  <div class="container">
+    <h2>The number of your dives: {{diveNum}}</h2>
+    <h2>Hours spent underwater: {{hours}}</h2>
+    <h2>
+      Average dive time: {{avgTime | number:2}} 
+      minutes
+    </h2>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('services', [])
+    .constant('diveNum', 449)
+    .constant('hours', 403.9)
+    .controller('statsCtrl',
+      function ($scope, diveNum, hours) {
+        $scope.diveNum = diveNum;
+        $scope.hours = hours;
+        $scope.avgTime = hours / diveNum * 60;
+      });
+  </script>
+</body>
+</html>

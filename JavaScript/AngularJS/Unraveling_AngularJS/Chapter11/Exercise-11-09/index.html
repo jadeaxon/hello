@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log with Templates</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid"
+       ng-controller="diveLogCtrl">
+    <h1>My Latest Dives</h1>
+    <div class="row" style="margin-bottom: 12px;">
+      <div class="col-sm-4">
+        <button class="btn btn-default"
+                ng-click="style=1">
+          Colorful
+        </button>
+        <button class="btn btn-default"
+                ng-click="style=2">
+          Grayscale
+        </button>
+      </div>
+      <div class="col-sm-4 col-sm-offset-4">
+        <input class="form-control input-lg"
+               placeholder="Search"
+               ng-model="searchKey" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"
+           ng-repeat="dive in dives | filter:searchKey">
+        <dive-log-card 
+          ng-show="style==1"
+          display-mode="1">
+        </dive-log-card>
+        <dive-log-card 
+           ng-show="style==2"
+           display-mode="2">
+        </dive-log-card>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .controller('diveLogCtrl', DiveLogCtrl)
+      .directive('diveLogCard', DiveLogCard);
+
+    function DiveLogCtrl($scope) {
+      $scope.dives = dives;
+      $scope.style = 1;
+    }
+
+    function DiveLogCard() {
+      return {
+        restrict: 'E',
+        templateUrl: function (element, attrs) {
+          return attrs['displayMode'] == "1"
+            ? 'diveEntry1.html'
+            : 'diveEntry2.html';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

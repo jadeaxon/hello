@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="multi">
+<head>
+  <title>Multiple Scopes</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .ng-scope {
+      border: 1px solid blue;
+      border-left: 8px solid blue;
+      margin: 4px 12px;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Type in Your Dive Buddies</h2>
+    <div ng-repeat="n in [1, 2]">
+      <div class="row" ng-controller="buddyCtrl">
+        <div class="col-sm-12"
+             ng-init="index=n;buddy='Buddy #' + n">
+          <label>Buddy #{{index}}:</label>
+          <input class="form-control"
+                 ng-model="buddy" />
+          <span class="help-block">{{getMessage()}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('multi', [])
+      .controller('buddyCtrl',
+        function ($scope) {
+          $scope.getMessage = function () {
+            return "You typed: " + $scope.buddy;
+          }
+  });
+  </script>
+</body>
+</html>

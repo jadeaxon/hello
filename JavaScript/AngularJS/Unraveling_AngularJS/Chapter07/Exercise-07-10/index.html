@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="digest">
+<head>
+  <title>Digest Loop</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .ng-scope {
+      border: 1px solid blue;
+      border-left: 8px solid blue;
+      margin: 4px 12px;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body style="margin-top: 24px;">
+  <div class="container-fluid"
+       ng-controller="doubler as ctrl">
+    <label>Word to double:</label>
+    <input class="form-control" ng-model="ctrl.word"/>
+    <span class="help-block">{{ctrl.doubled()}}</span>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('digest', [])
+      .controller('doubler', function () {
+        this.word = "";
+        this.doubled = function () {
+          return this.word + ' ' + this.word;
+        }
+      })
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Form Submit</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container" 
+       ng-init="answer='';ctrl=''">
+    <form name="simple"
+          ng-submit="ctrl='Form'">
+      <div class="form-group">
+        <label class="control-label">User name</label>
+        <input class="form-control"
+               autofocus
+               name="userName"
+               ng-model="userName"
+               ng-model-options="{updateOn:'blur'}"
+               required />
+      </div>
+      <input class="btn btn-primary"
+             ng-click="answer=userName;ctrl='Save'"
+             type="submit"
+             value="Save" />
+    </form>
+    <hr />
+    <p>The submitted user name is: 
+      <strong>{{answer}}</strong>
+    </p>
+    <p>
+      Submitted by:
+      <strong>{{ctrl}}</strong>
+    </p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

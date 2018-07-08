@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log with Templates</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .logEntry {
+      background-color: navy;
+      padding: 2px 16px;
+    }
+      .logEntry > h2 {
+        color: yellow;
+      }
+      .logEntry > h3 {
+        color: cyan;
+      }
+      .logEntry > h4 {
+        color: white;
+      }
+
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>My Latest Dives</h1>
+    <div class="row" style="margin-bottom: 12px;">
+      <div class="col-sm-4 col-sm-offset-8">
+        <input class="form-control input-lg" 
+               placeholder="Search" 
+               ng-model="searchKey" />
+      </div>
+    </div>
+    <div class="row" ng-controller="diveLogCtrl">
+      <div class="col-sm-4"
+           ng-repeat="dive in dives | filter:searchKey">
+        <div class="logEntry">
+          <h3>{{dive.site}}</h3>
+          <h4>{{dive.location}}</h4>
+          <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .controller('diveLogCtrl', DiveLogCtrl);
+
+    function DiveLogCtrl($scope) {
+      $scope.dives = dives;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿.current-spot {
+  margin-top: 50px;
+  background-color: #fbbf69;
+}
+
+.current-spot h3 {
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+.main-content {
+  background-color: #eeeeee;
+  padding-top: 16px;
+  padding-bottom: 12px;
+}
+
+.oddRow {
+  background-color: #dddddd;
+}
+
+.list-name {
+  margin-top: 13px;
+  margin-bottom: 14px;
+}
+
+.button-space {
+  margin-top: 8px;
+}

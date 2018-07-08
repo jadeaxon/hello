@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="traveling">
+<head>
+  <title>Traveling with Scope</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .ng-scope {
+      border: 1px solid blue;
+      border-left: 8px solid blue;
+      margin: 4px 12px;
+      padding: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" ng-init="greeting='Welcome'">
+      <div class="col-sm-12">
+        <h1>{{greeting}}, you are in the USA.</h1>
+      </div>
+    </div>
+    <div class="row" my-welcome>
+      <div class="col-sm-12">
+        <button class="btn btn-primary"
+                ng-click="sayHello('Willkommen')">
+          Travel to Germany
+        </button>
+        <h2>{{greeting}}, you are in Germany.</h2>
+        <div class="row" my-welcome>
+          <div class="col-sm-12">
+            <button class="btn btn-primary"
+                    ng-click="sayHello('Grüss Gott')">
+              Travel to Bayern
+            </button>
+            <h3>{{greeting}}, you are in Bayern.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('traveling', [])
+      .directive('myWelcome', MyWelcome);
+
+    function MyWelcome() {
+      return {
+        scope: false,
+        link: function (scope, element, attrs) {
+          scope.sayHello = function (greeting) {
+            scope.greeting = greeting;
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

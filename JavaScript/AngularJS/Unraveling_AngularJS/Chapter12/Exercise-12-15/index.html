@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="controls">
+<head>
+  <title>Top dives</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Top dives</h2>
+    <div class="panel panel-primary"
+         ng-controller="diveCtrl">
+      <div class="panel-heading">
+        The best dives of this month
+      </div>
+      <div class="panel-body">
+        <div top-dives
+             collection="dives"
+             top-count="3">
+          <h3 class="text-success">
+            #{{$index + 1 }}: {{$dive.site}}
+          </h3>
+          <h5>{{$dive.location}}</h5>
+          <h4>{{$dive.depth}}m | {{$dive.time}}min</h4>
+        </div>
+      </div>
+      <div class="panel-footer">
+        Stay tuned!
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('controls', [])
+      .controller('diveCtrl', function ($scope) {
+        $scope.dives = dives;
+      })
+      .directive('topDives', function () {
+        return {
+          transclude: 'element',
+          priority: 1000,
+          link: function (scope, element, attrs, ctrl, transclude) {
+            var topCount = scope.$eval(attrs.topCount);
+            var coll = scope.$eval(attrs.collection);
+            var prev = element;
+            for (var i = 0; i < topCount; i++) {
+              var childScope = scope.$new();
+              childScope.$index = i;
+              childScope.$dive = coll[i];
+              transclude(childScope, function (clone) {
+                prev.after(clone);
+                prev = clone;
+              });
+            }
+          }
+        }
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log (component)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>My Latest Dive (component)</h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <dive-log-entry entry-style="1"></dive-log-entry>
+      </div>
+      <div class="col-sm-6">
+        <dive-log-entry entry-style="2"></dive-log-entry>
+      </div>
+    </div>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .component('diveLogEntry', {
+        templateUrl: function($attrs) {
+          return 'diveLogEntry-template' + $attrs['entryStyle'] + '.html'
+        },
+        controller: function() {
+          this.dive = dives[0];
+        }
+      });
+  </script>
+</body>
+</html>

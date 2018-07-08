@@ -1,0 +1,14 @@
+<h1>My Latest Dives (component tree)</h1>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-8">
+    <input class="form-control input-lg"
+      placeholder="Search" 
+      ng-model="searchKey" />
+  </div>
+</div>
+<div class="row">
+  <dive-log-entry 
+    ng-repeat="entry in $ctrl.dives | filter:searchKey"
+    dive="entry">
+  </dive-log-entry>
+</div>

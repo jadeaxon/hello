@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log (ng-class)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .card {
+      border: 2px solid darkgray;
+      padding: 8px 16px;
+      padding-top: 0;
+      margin-top: 12px;
+    }
+    .blue {
+      border: 2px solid navy;
+      background-color: navy;
+      color: white;
+    }
+    .red {
+      border: 2px solid darkred;
+      background-color: darkred;
+      color: white;
+    }
+  </style>
+</head>
+<body ng-controller="diveLogCtrl">
+  <div class="container-fluid">
+    <h1>My Latest Dives (ng-class)</h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <select class="form-control" 
+                ng-model="selection" 
+                ng-options="item.id as item.name for item in options">
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div ng-class="{'col-sm-4': isSmall(), 'col-sm-6': isBig()}"
+           ng-repeat="dive in dives">
+        <div class="card"
+             ng-class="{blue: isBlue(), red: isRed()}">
+          <h3>{{dive.site}}</h3>
+          <h4>{{dive.location}}</h4>
+          <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+</body>
+</html>

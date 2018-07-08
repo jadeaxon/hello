@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-12">
+    <a href='#/add'
+      class="btn btn-primary btn-lg">
+      Add new dive
+    </a>
+  </div>
+</div>
+<h2>List of Dive Sites</h2>
+<div class="row" ng-repeat="site in $ctrl.editor.sites"
+  ng-class="{oddRow: $index % 2 == 0}">
+  <div class="col-sm-8">
+    <h4>{{$index + 1}}: {{site}}</h4>
+  </div>
+  <div class="col-sm-4" style="margin-top: 5px;">
+    <div class="pull-right">
+      <a ng-href="#/edit/{{$index}}" class="btn btn-warning btn-sm">
+        Edit
+      </a>
+      <a ng-href="#/delete/{{$index}}" class="btn btn-danger btn-sm">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

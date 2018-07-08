@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="controls">
+<head>
+  <title>Switch control</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .switch {
+      padding: 4px;
+      width: 40px;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+    }
+      .switch.yes {
+        border: 2px solid green;
+        background-color: green;
+        color: white;
+      }
+      .switch.no {
+        border: 2px solid red;
+        color: red;
+      }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Switch Control</h2>
+    <form name="diveForm">
+        <label class="control-label">
+          Switch #1
+        </label>
+        <div my-switch-control
+             name="switch1"
+             ng-model="switch1Value">
+        </div>
+        <label class="control-label">
+          Switch #2
+        </label>
+        <div my-switch-control
+             name="switch2"
+             ng-model="switch2Value">
+        </div>
+    </form>
+    <hr />
+    <h3>
+      The value of Switch #1:
+      {{switch1Value}}
+    </h3>
+    <h3>
+      The value of Switch #2:
+      {{switch2Value}}
+    </h3>
+    <h3>
+      This form has
+      {{diveForm.switchCount}}
+      switches
+    </h3>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('controls', [])
+      .directive('mySwitchControl', MySwitchControl);
+
+    function MySwitchControl() {
+      return {
+        require: ['ngModel', '^form'],
+        scope: {},
+        link: function (scope, element, attrs, ctrls) {
+          var ctrl = ctrls[0];
+          var formCtrl = ctrls[1];
+          element.on('click', function () {
+            scope.stateValue = !scope.stateValue;
+            scope.$apply(function () {
+              ctrl.$setViewValue(scope.stateValue);
+            });
+            ctrl.$render();
+          });
+
+          ctrl.$render = function () {
+            if (scope.stateValue) {
+              element.removeClass('no');
+              element.addClass('yes');
+              element.text("Yes");
+            } else {
+              element.removeClass('yes');
+              element.addClass('no');
+              element.text("No");
+            }
+          }
+
+          scope.stateValue = false;
+          element.addClass('switch');
+          ctrl.$setViewValue(scope.stateValue);
+          ctrl.$render();
+          if (angular.isDefined(formCtrl)){
+            if (angular.isDefined(formCtrl.switchCount)) {
+              formCtrl.switchCount++;
+            } else {
+              formCtrl.switchCount = 1;
+            }
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

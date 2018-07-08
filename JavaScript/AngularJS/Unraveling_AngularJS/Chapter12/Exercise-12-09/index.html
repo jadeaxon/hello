@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="controls">
+<head>
+  <title>Switch control</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .switch {
+      padding: 4px;
+      width: 40px;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+    }
+      .switch.yes {
+        border: 2px solid green;
+        background-color: green;
+        color: white;
+      }
+      .switch.no {
+        border: 2px solid red;
+        color: red;
+      }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Is this an open water dive? </h2>
+    <div my-switch-control 
+         ng-model="switchValue">
+    </div>
+    <h3>
+      The value of the switch control is: 
+      {{switchValue}}
+    </h3>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('controls', [])
+      .directive('mySwitchControl', MySwitchControl);
+
+    function MySwitchControl() {
+      return {
+        require: 'ngModel',
+        scope: {},
+        link: function (scope, element, attrs, ctrl) {
+          element.on('click', function () {
+            scope.stateValue = !scope.stateValue;
+            scope.$apply(function () {
+              ctrl.$setViewValue(scope.stateValue);
+            });
+            ctrl.$render();
+          });
+
+          ctrl.$render = function () {
+            if (scope.stateValue) {
+              element.removeClass('no');
+              element.addClass('yes');
+              element.text("Yes");
+            } else {
+              element.removeClass('yes');
+              element.addClass('no');
+              element.text("No");
+            }
+          };
+
+          scope.stateValue = false;
+          element.addClass('switch');
+          ctrl.$setViewValue(scope.stateValue);
+          ctrl.$render();
+        }
+      }
+    }
+  </script>
+</body>
+</html>

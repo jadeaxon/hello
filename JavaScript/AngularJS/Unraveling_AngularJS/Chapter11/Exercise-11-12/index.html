@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log with Templates</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .logEntry1 {
+      background-color: navy;
+      padding: 2px 16px;
+      margin-bottom: 12px;
+    }
+
+      .logEntry1 > h2 {
+        color: yellow;
+      }
+
+      .logEntry1 > h3 {
+        color: cyan;
+      }
+
+      .logEntry1 > h4 {
+        color: white;
+      }
+
+    .logEntry2 {
+      background-color: #eeeeee;
+      border: 2px solid darkgray;
+      padding: 2px 16px;
+      margin-bottom: 12px;
+    }
+
+      .logEntry2 > h2 {
+        color: black;
+      }
+
+      .logEntry2 > h3 {
+        color: gray;
+      }
+
+      .logEntry2 > h4 {
+        color: darkgray;
+      }
+  </style>
+</head>
+<body>
+  <div class="container-fluid"
+       ng-controller="diveLogCtrl">
+    <h1>My Latest Dives</h1>
+    <div class="row" style="margin-bottom: 12px;">
+      <div class="col-sm-4">
+        <button class="btn btn-default"
+                ng-click="style=1">
+          Colorful
+        </button>
+        <button class="btn btn-default"
+                ng-click="style=2">
+          Grayscale
+        </button>
+      </div>
+      <div class="col-sm-4 col-sm-offset-4">
+        <input class="form-control input-lg"
+               placeholder="Search"
+               ng-model="searchKey" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <dive-log-card 
+          dive-entry="{
+              site: 'Fake site',
+              location: 'Fake location',
+              depth: 0,
+              time: 0
+            }" />
+      </div>
+      <div class="col-sm-4"
+           ng-repeat="dive in dives | filter:searchKey">
+        <dive-log-card dive-entry="dive" />
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .controller('diveLogCtrl', DiveLogCtrl)
+      .directive('diveLogCard', DiveLogCard);
+
+    function DiveLogCtrl($scope) {
+      $scope.dives = dives;
+      $scope.style = 1;
+    }
+
+    function DiveLogCard() {
+      function createCard(scope, element, diveEntry) {
+        var div = angular.element('<div>');
+        div.addClass(scope.style == 1
+          ? 'logEntry1' : 'logEntry2');
+        var site = angular.element('<h3>');
+        site.text(diveEntry.site);
+        var location = angular.element('<h4>');
+        location.text(diveEntry.location);
+        var diveData = angular.element('<h2>');
+        diveData.text(diveEntry.depth
+          + ' feet | '
+          + diveEntry.time
+          + ' min');
+        if (scope.style == 1) {
+          div.append(site);
+          div.append(location);
+          div.append(diveData);
+        } else {
+          div.append(diveData);
+          div.append(site);
+          div.append(location);
+        }
+        return div;
+      }
+      return {
+        restrict: 'E',
+        link: function (scope, element, attrs) {
+          var dive = scope.$eval(attrs['diveEntry']);
+          var div = createCard(scope, element, dive);
+          element.append(div);
+          var watcherFn = function (watchScope) {
+            return watchScope.$eval('style');
+          }
+          scope.$watch(watcherFn, function () {
+            element.children().remove();
+            var div = createCard(scope, element, dive);
+            element.append(div);
+          });
+        }
+      }
+    }
+  </script>
+</body>
+</html>

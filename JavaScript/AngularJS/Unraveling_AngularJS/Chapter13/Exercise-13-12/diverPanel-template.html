@@ -1,0 +1,17 @@
+<div class="row" 
+  style="padding-top: 4px;">
+  <div class="col-sm-2">
+    {{$ctrl.diver}}: {{$ctrl.tokensFound}}
+  </div>
+  <div class="col-sm-4">
+    <button class="btn btn-xs btn-success"
+      ng-click="$ctrl.found()">
+      Found
+    </button>
+    <button class="btn btn-xs btn-danger"
+      ng-click="$ctrl.lost()"
+      ng-disabled="$ctrl.tokensFound <= 0">
+      Lost
+    </button>
+  </div>
+</div>

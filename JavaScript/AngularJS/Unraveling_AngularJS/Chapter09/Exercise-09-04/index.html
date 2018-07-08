@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="services">
+<head>
+  <title>Value Service</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="versionCtrl">
+  <div class="container">
+    <h2>This is Younderwater v{{getVersion()}}</h2>
+    <button class="btn btn-primary"
+            ng-click="incMinor()">
+      Increment minor number
+    </button>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('services', [])
+    .value('version', {major: 1, minor: 3})
+    .controller('versionCtrl',
+      function ($scope, version) {
+        $scope.getVersion = function () {
+          return version.major + "." + version.minor;
+        }
+        $scope.incMinor = function () {
+          version.minor++;
+        }
+      });
+
+    angular.module('services')
+    .config(function ($provide) {
+      $provide.decorator('version', function () {
+        return {major: 2, minor: 0};
+      })
+    });
+  </script>
+</body>
+</html>

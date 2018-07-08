@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="token">
+<head>
+  <title>Token Game</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid"
+       ng-controller="tokenGameCtrl">
+    <h2>Find Underwater Tokens Game</h2>
+    <h4>Tokens to collect: {{toCollect}}</h4>
+    <div>
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>
+            Tokens collected: {{collected}}
+            <span ng-show="hasEnough()">
+              [Done!]
+            </span>
+          </h4>
+          <h3>
+            <span ng-repeat="value in tokens track by $index">
+              <span>{{value > 0 ? '+' : '-'}}</span>
+            </span>
+          </h3>
+        </div>
+      </div>
+      <div ng-repeat="diver in divers"
+           diver-panel
+           diver-name="{{diver}}"
+           change="$parent.change(found)">
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="tokens.js"></script>
+</body>
+</html>

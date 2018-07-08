@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Dive Log (AngularJS)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>My Latest Dives (AngularJS)</h1>
+    <div class="row"
+      ng-init="dives=[
+        {
+          site: 'Abu Gotta Ramada',
+          location: 'Hurghada, Egypt',
+          depth: 72,
+          time: 54
+        },
+        {
+          site: 'Ponte Mahoon',
+          location: 'Maehbourg, Mauritius',
+          depth: 54,
+          time: 38
+        },
+        {
+          site: 'Molnar Cave',
+          location: 'Budapest, Hungary',
+          depth: 98,
+          time: 62
+        }]">
+      <div class="col-sm-4"
+        ng-repeat="dive in dives">
+        <h3>{{dive.site}}</h3>
+        <h4>{{dive.location}}</h4>
+        <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+      </div>
+    </div>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

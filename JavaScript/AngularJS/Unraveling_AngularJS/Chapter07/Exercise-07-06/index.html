@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="token">
+<head>
+  <title>Token Game</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid"
+       ng-controller="tokenGoalCtrl">
+    <h2>Find Underwater Tokens Game</h2>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Tokens to collect: {{tokens}}</h4>
+        <button class="btn btn-sm"
+                ng-click="increment()"
+                ng-disabled="tokens >= 100">
+          +
+        </button>
+        <button class="btn btn-sm"
+                ng-click="decrement()"
+                ng-disabled="tokens <= 0">
+          -
+        </button>
+      </div>
+    </div>
+    <div ng-controller="tokenCollCtrl">
+      <div class="row">
+        <div class="col-sm-12">
+          <h4>
+            Tokens collected: {{collected}}
+            <span ng-show="hasEnough()">
+              [Done!]
+            </span>
+          </h4>
+        </div>
+      </div>
+      <div class="row" 
+           ng-controller="diverCtrl"
+           ng-repeat="diver in divers"
+           style="padding-top: 4px;">
+        <div class="col-sm-2">
+          {{diver}}: {{tokensFound}}
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-xs btn-success"
+                  ng-click="found()">
+            Found
+          </button>
+          <button class="btn btn-xs btn-danger"
+                  ng-click="lost()"
+                  ng-disabled="tokensFound <= 0">
+            Lost
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="tokens.js"></script>
+</body>
+</html>

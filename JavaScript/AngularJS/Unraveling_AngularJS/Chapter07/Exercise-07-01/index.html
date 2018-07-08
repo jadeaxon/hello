@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="root">
+<head>
+  <title>Root Scope</title>
+  <link href="/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1 ng-init="evidence='Yes!'">
+      Is There a Root Scope?
+    </h1>
+    <h2 ng-controller="simpleCtrl">
+    {{answer}}
+    </h2>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('root', [])
+      .controller('simpleCtrl',
+        function ($scope, $rootScope) {
+          $scope.answer = $rootScope.evidence;
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<h3>Confirm delete</h3>
+<div class="row">
+  <div class="col-sm-8">
+    <p>
+      Are you sure you want to delete dive 
+      site '{{$ctrl.editor.getSite($ctrl.id)}}'?
+    </p>
+  </div>
+</div>
+<div class="row" style="margin-top: 12px;">
+  <div class="col-sm-6">
+    <a href='#/list' class="btn btn-success btn">
+      No
+    </a>
+    <button class="btn btn-danger btn"
+      ng-click="$ctrl.editor.delete($ctrl.id)">
+      Yes
+    </button>
+  </div>
+</div>

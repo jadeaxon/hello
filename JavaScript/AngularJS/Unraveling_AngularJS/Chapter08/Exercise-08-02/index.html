@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Text input</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container" ng-init="changeCount=0">
+    <form name="simple">
+      <label class="control-label">Type in a value</label>
+      <input class="form-control"
+             name="myVal"
+             ng-model="myValue"
+             ng-change="changeCount=changeCount+1"
+             ng-required="true"
+             ng-minlength="3"
+             ng-maxlength="9"
+             ng-trim="true" />
+    </form>
+    <hr />
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td>Value:</td>
+          <td>[{{myValue}}]</td>
+        </tr>
+        <tr>
+          <td>Changes:</td>
+          <td>{{changeCount}}</td>
+        </tr>
+        <tr>
+          <td>Is valid?</td>
+          <td>{{simple.myVal.$valid}}</td>
+        </tr>
+        <tr>
+          <td>Issue with required?</td>
+          <td>{{simple.myVal.$error.required}}</td>
+        </tr>
+        <tr>
+          <td>Issue with minlength?</td>
+          <td>{{simple.myVal.$error.minlength}}</td>
+        </tr>
+        <tr>
+          <td>Issue with maxlength?</td>
+          <td>{{simple.myVal.$error.maxlength}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

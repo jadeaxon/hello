@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="validation">
+<head>
+  <title>Overriding $empty</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    input.ng-invalid-required {
+      border: 2px solid maroon;
+      background-color: lightpink;
+    }
+  </style>
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <form name="simple" novalidate>
+      <div class="form-group">
+        <label class="control-label">Original "empty"</label>
+        <input class="form-control"
+               autofocus
+               name="empty1"
+               ng-model="empty1"
+               required />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Modified "Empty"</label>
+        <input class="form-control"
+               name="empty2"
+               ng-model="empty2"
+               my-empty
+               required />
+      </div>
+      <input class="btn btn-primary" 
+             type="submit" 
+             ng-disabled="simple.$invalid"
+             value="Save" />
+    </form>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('validation', [])
+    .directive('myEmpty', function () {
+      return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function (scope, element,
+          attrs, ctrl) {
+          ctrl.$isEmpty = function (value) {
+            return !angular.isDefined(value)
+            || value==null
+            || value==''
+            || value==NaN
+            || value=='-';
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

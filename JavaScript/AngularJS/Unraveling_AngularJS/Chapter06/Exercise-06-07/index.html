@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="events">
+<head>
+  <title>Dive Buddy</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h1>Drag any dive log item</h1>
+    <div class="row">
+      <div class="col-sm-12"
+           yw-draggable>
+        Dive Log Entry #1
+      </div>
+      <div class="col-sm-12"
+           yw-draggable>
+        Dive Log Entry #2
+      </div>
+      <div class="col-sm-12"
+           yw-draggable>
+        Dive Log Entry #3
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="drag.js"></script>
+</body>
+</html>

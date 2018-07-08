@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log (ng-controller)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body  ng-controller="diveLogCtrl">
+  <div class="container-fluid">
+    <h1>My Latest Dives (with API service)</h1>
+    <div class="row" >
+      <div class="col-sm-8" >
+        <button class="btn btn-lg btn-primary"
+          ng-click="refreshDives()">
+          Refresh
+        </button>
+        <img ng-show="isLoading()" src="images/progressring.gif" />
+      </div>
+      <div class="col-sm-4">
+        <input class="form-control input-lg"
+          placeholder="Search"
+          ng-model="searchKey" />
+      </div>
+    </div>
+    <div class="row" ng-show="errorMessage != ''">
+      <div class="col-sm-12">
+        <h3 class="text-danger">{{errorMessage}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"
+           ng-repeat="dive in dives | filter:searchKey">
+        <h3>{{dive.site}}</h3>
+        <h4>{{dive.location}}</h4>
+        <h2>{{dive.depth}} feet | {{dive.time}} min</h2>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+</body>
+</html>

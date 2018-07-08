@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Radio button</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container" ng-init="gasType='air'">
+    <form name="diveProps">
+      <div class="radio">
+        <label>
+          <input type="radio"
+                 name="gasType"
+                 ng-model="gasType"
+                 ng-value="'air'" />
+          Air
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio"
+                 name="gasType"
+                 ng-model="gasType"
+                 ng-value="'nitrox'" />
+          Enriched air
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio"
+                 name="gasType"
+                 ng-model="gasType"
+                 ng-value="'trimix'" />
+          Technical gas mix
+        </label>
+      </div>
+      <hr />
+      <p>The selected gas is: {{gasType}}</p>
+    </form>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

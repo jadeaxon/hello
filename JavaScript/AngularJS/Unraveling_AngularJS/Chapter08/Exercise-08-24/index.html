@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="validation">
+<head>
+  <title>Async validator</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    input.ng-invalid-domain {
+      border: 2px solid maroon;
+      background-color: lightpink;
+    }
+    .checking {
+      border: 4px dotted darkgray;
+    }
+  </style>
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <form name="simple" novalidate>
+      <div class="form-group">
+        <label class="control-label">A valid domain name</label>
+        <input class="form-control"
+               autofocus
+               name="domainName"
+               ng-model="domainName"
+               domain />
+      </div>
+    </form>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('validation', [])
+    .directive('domain', function ($q) {
+      return {
+        require: 'ngModel',
+        restrict: 'A',
+        link: function (scope, element,
+          attrs, ctrl) {
+          ctrl.$asyncValidators.domain = function (value) {
+            var defer = $q.defer();
+            if (ctrl.$isEmpty(value)) {
+              defer.resolved();
+            } else {
+              element.addClass('checking');
+              setTimeout(function () {
+                if (value.length > 0
+                  && value.toUpperCase().charAt(0) == 'M') {
+                  defer.resolve();
+                  element.removeClass('checking');
+                }
+                else {
+                  defer.reject();
+                  element.removeClass('checking');
+                }
+              }, 2000);
+            }
+            return defer.promise;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

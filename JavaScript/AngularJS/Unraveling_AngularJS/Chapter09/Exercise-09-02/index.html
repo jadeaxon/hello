@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="services">
+<head>
+  <title>Text input</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container"
+       ng-controller="depthCtrl">
+    <label class="control-label">
+      Planned Maximum Depth (feet)
+    </label>
+    <input class="form-control"
+           type="number"
+           ng-model="maxDepth"/>
+    <p class="text-danger">
+      You need {{cert()}} certification for this dive.
+    </p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('services', [])
+    .constant('isDeepFunc', function (depth) {
+      return depth > 120;
+    })
+    .controller('depthCtrl', 
+      function ($scope, isDeepFunc) {
+        $scope.cert = function () {
+          return isDeepFunc($scope.maxDepth)
+            ? "Advanced Open Water"
+            : "Open Water"
+        }
+      });
+  </script>
+</body>
+</html>

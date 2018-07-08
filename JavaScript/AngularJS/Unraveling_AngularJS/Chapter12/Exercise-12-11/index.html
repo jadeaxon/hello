@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="controls">
+<head>
+  <title>Pickup control</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+    <h2>Select a value (click the button)</h2>
+    <div my-pickup-list
+         ng-init="selected='Alain'"
+         ng-model="selected"
+         values="Joe;Cecile;Alain">
+    </div>
+    <h3>The selected value is {{selected}}</h3>
+    <button class="btn btn-primary"
+            ng-click="selected='Jack'">
+      Change to Jack
+    </button>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('controls', [])
+      .directive('myPickupList', MyPickupList);
+
+    function MyPickupList() {
+      function MyPickupListCtrl($scope) {
+        $scope.editing = false;
+
+        $scope.startEdit = function () {
+          $scope.editing = true;
+        }
+
+        $scope.selectValue = function (value) {
+          $scope.selectedValue = value;
+          $scope.editing = false;
+        }
+      }
+
+      return {
+        require: 'ngModel',
+        scope: {},
+        controller: MyPickupListCtrl,
+        templateUrl: 'pickuplist.html',
+        link: function (scope, element, attrs, ctrl) {
+          var valueAttr = attrs['values'];
+          if (angular.isDefined(valueAttr)) {
+            scope.values = valueAttr.split(';')
+          } else {
+            scope.values = [];
+          }
+
+          ctrl.$render = function () {
+            scope.selectedValue = ctrl.$modelValue
+          }
+
+          var watcherFn = function (watchScope) {
+            return watchScope.$eval('selectedValue');
+          }
+          scope.$watch(watcherFn, function () {
+            ctrl.$setViewValue(scope.selectedValue);
+          });
+        }
+      }
+    }
+  </script>
+</body>
+</html>

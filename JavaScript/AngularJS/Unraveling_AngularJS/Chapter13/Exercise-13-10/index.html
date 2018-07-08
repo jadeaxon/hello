@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log (component)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+
+  <dive-log></dive-log>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .component('diveLogEntry', {
+        templateUrl: 'diveLogEntry-template.html',
+        bindings: {
+          dive: '<',
+          selectLabel: '@',
+          onSelect: '&'
+        }
+      })
+      .component('diveLog', {
+        templateUrl: 'diveLog-template.html',
+        controller: function() {
+          this.dives = dives;
+          this.selectedDive = {}
+          this.selectDive = function(par) {
+            this.selectedDive = par;
+          }
+        }
+      });
+  </script>
+</body>
+</html>

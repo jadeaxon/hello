@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="diveLog">
+<head>
+  <title>Dive Log (component)</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container-fluid">
+  <token-game></token-game>
+  <script src="./lib/angular/angular.min.js"></script>
+  <script src="dives.js"></script>
+  <script>
+    angular.module('diveLog', [])
+      .constant('initialGoal', 8)
+      .component('tokenGame', {
+        templateUrl: 'tokenGame-template.html',
+        controller: function(initialGoal) {
+          this.divers = [
+            "Bob", "Cecile", "Jake"
+          ];
+          this.tokens = initialGoal;
+          this.collected = 0;
+          this.increment = function () {
+            this.tokens++;
+          }
+          this.decrement = function () {
+            this.tokens--;
+          }
+          this.changed = function(diff) {
+            this.collected += diff;
+          }
+        }
+      })
+      .component('collectedTokens', {
+        templateUrl: 'collectedTokens-template.html',
+        bindings: {
+          toGet: '<',
+          collected: '<'
+        },
+        controller: function () {
+          this.hasEnough = function () {
+            return this.toGet <= this.collected;
+          }
+        }
+      })
+      .component('diverPanel', {
+        templateUrl: 'diverPanel-template.html',
+        bindings: { 
+          diver: '<',
+          onChanged: '&'
+        },
+        controller: function() {
+          this.tokensFound = 0;
+          this.found = function () {
+            this.tokensFound++;
+            this.onChanged({diff: 1});
+          }
+          this.lost = function () {
+            this.tokensFound--;
+            this.onChanged({diff: -1});
+          }
+        }
+      });
+  </script>
+</body>
+</html>

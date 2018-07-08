@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Form Errors</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:12px;">
+  <div class="container">
+    <form name="simple" novalidate>
+      <div class="form-group">
+        <label class="control-label">User name</label>
+        <input class="form-control"
+               autofocus
+               name="userName"
+               ng-model="userName"
+               required />
+      </div>
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input class="form-control"
+               name="email"
+               ng-model="email"
+               type="email"
+               required />
+      </div>
+    </form>
+    <hr />
+    <h4>"Required" errors:</h4>
+    <p ng-repeat="issue in simple.$error.required">
+      {{issue.$name}}
+    </p>
+    <h4>"Email" errors:</h4>
+    <p ng-repeat="issue in simple.$error.email">
+      {{issue.$name}}
+    </p>
+  </div>
+  <script src="./lib/angular/angular.min.js"></script>
+</body>
+</html>

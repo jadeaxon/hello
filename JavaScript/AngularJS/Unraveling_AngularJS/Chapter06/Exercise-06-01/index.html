@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="yw.interesting">
+<head>
+  <title>Interesting Dives</title>
+  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="interestingCtrl">
+  <div class="container-fluid">
+    <h1>Interesting dives</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <select class="form-control"
+                ng-model="selectedLoc"
+                ng-options="loc for loc in locations"></select>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 24px;">
+      <div class="col-sm-6">
+        <div class="alert alert-info"
+             ng-show="selectedLoc==locations[0]">
+          The most colorful flora and fauna, ever!
+        </div>
+        <div class="alert alert-warning"
+             ng-show="selectedLoc==locations[1]">
+          Beautiful terraform underwater...
+        </div>
+        <div class="alert alert-danger"
+             ng-show="selectedLoc==locations[2]">
+          Very strong changes in the current
+          during a single dive
+        </div>
+        <div class="alert alert-success"
+             ng-show="selectedLoc==locations[3]">
+          The best cave diving experience...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./lib/angular/angular.min.js"></script>
+  <script>
+    angular.module('yw.interesting', [])
+  .controller('interestingCtrl', function ($scope) {
+    $scope.locations = [
+      'Egypt',
+      'Cyprus',
+      'Cuba',
+      'Hungary'
+    ]
+    $scope.selectedLoc = $scope.locations[0];
+  });
+  </script>
+</body>
+</html>

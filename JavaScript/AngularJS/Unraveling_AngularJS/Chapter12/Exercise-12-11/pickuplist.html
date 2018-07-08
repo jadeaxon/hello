@@ -1,0 +1,17 @@
+﻿<div>
+  <div ng-show="!editing">
+    <button class="btn btn-success"
+            ng-click="startEdit()">
+      {{selectedValue}}
+    </button>
+  </div>
+  <div ng-show="editing">
+    <span ng-repeat="value in values">
+      <button class="btn btn-default"
+              ng-click="selectValue(value)">
+        {{value}}
+      </button>
+      &nbsp;
+    </span>
+  </div>
+</div>
