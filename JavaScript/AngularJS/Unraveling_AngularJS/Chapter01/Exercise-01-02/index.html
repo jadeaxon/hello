@@ -11,9 +11,15 @@
     </div>
   </div>
 
+  <!-- Include the jQuery library. -->
   <script src="./lib/jquery/jquery.min.js"></script>
+
+  <!-- Include our own JavaScript. -->
   <script src="dives.js"></script>
   <script>
+    // After the document has loaded, use jQuery to dynamically add
+    // HTML for each dive defined in dives.js.
+    // This works, but the intermix of HTML and JavaScript is ugly.
     $(document).ready(function () {
       for (var i = 0; i < dives.length; i++) {
         var dive = dives[i];
@@ -29,3 +35,5 @@
   </script>
 </body>
 </html>
+
+
