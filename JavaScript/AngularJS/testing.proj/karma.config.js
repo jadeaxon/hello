@@ -15,6 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js",
       '*.js',
       'tests/*.js'
     ],
