@@ -8,7 +8,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "karma": "^2.0.4"
+    "karma": "^2.0.4",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
