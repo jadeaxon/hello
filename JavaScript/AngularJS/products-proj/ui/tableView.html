@@ -18,7 +18,7 @@
           <button class="btn btn-xs btn-primary" ng-click="deleteProduct(item)">
             Delete
           </button>
-          <button class="btn btn-xs btn-primary" ng-click="editOrCreateProduct(item)">
+          <button class="btn btn-xs btn-primary" ng-click="editProduct(item)">
             Edit
           </button>
           <!-- This directive now works with $resource service to save via REST API. -->
@@ -29,7 +29,7 @@
   </table>
   <div>
     <button class="btn btn-primary" ng-click="listProducts()">Refresh</button>
-    <button class="btn btn-primary" ng-click="editOrCreateProduct()">New</button>
+    <a href="create" class="btn btn-primary">New</a>
   </div>
 </div>
 
