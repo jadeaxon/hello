@@ -21,7 +21,8 @@
           <button class="btn btn-xs btn-primary" ng-click="editOrCreateProduct(item)">
             Edit
           </button>
-          <increment value="item.price" />
+          <!-- This directive now works with $resource service to save via REST API. -->
+          <increment item="item" property-name="price" restful="true" method-name="$save" />
         </td>
       </tr>
     </tbody>
