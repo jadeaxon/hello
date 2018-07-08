@@ -1,4 +1,5 @@
-var app = angular.module("exampleApp", ["ngResource", "increment"]);
+var deps = ["ngResource", "ngRoute", "increment"];
+var app = angular.module("exampleApp", deps);
 
 // Calling constant() actually creates a service you have to inject.
 app.constant("baseUrl", "http://localhost:2403/products/");
