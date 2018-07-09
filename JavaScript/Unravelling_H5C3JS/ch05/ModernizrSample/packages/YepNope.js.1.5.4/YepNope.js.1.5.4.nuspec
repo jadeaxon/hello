@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>YepNope.js</id>
+    <version>1.5.4</version>
+    <title>yepnope.js</title>
+    <authors>Alex Sexton,  Ralph Holzmann</authors>
+    <owners>Alex Sexton,  Ralph Holzmann</owners>
+    <licenseUrl>http://sam.zoy.org/wtfpl/</licenseUrl>
+    <projectUrl>http://yepnopejs.com/</projectUrl>
+    <iconUrl>http://yepnopejs.com/img/yepnope-logo.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>yepnope is an asynchronous conditional resource loader that's super-fast, and allows you to load only the scripts that your users need.</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>JavaScript loader HTML HTML5 CSS CSS3 SVG</tags>
+  </metadata>
+</package>

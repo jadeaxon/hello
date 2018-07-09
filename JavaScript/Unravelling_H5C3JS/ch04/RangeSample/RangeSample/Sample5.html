@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Range Sample #4</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="Scripts/changeby.js"></script>
+</head>
+<body>
+  <form action="javascript:changeBy(1)">
+    <label>
+      Number of Machines:
+      <input id="noMachines"
+             type="range" min="1" max="8" value="2" />
+    </label>
+    <br />
+    <input type="reset" value="Reset" />
+    <button>
+      <img src="Images/plus.png" />
+      <br />
+      Increment
+    </button>
+    <button formaction="javascript:changeBy(-1)">
+      <img src="Images/minus.png" />
+      <br />
+      Decrement
+    </button>
+    <button formaction="javascript:changeBy(2)">
+      <img src="Images/right.png" />
+      <br />
+      Add 2
+    </button>
+    <button formaction="javascript:changeBy(-2)">
+      <img src="Images/left.png" />
+      <br />
+      Subract 2
+    </button>
+  </form>
+</body>
+</html>

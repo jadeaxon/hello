@@ -1,0 +1,13 @@
+﻿body {
+  font-family: Verdana, Arial, sans-serif
+}
+
+input {
+  font-size: 1.2em;
+}
+
+button {
+  padding: 8px 16px;
+  border: 2px dotted dimgray;
+  border-radius: 12px;
+}

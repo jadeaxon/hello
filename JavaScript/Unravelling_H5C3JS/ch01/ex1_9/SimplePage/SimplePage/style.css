@@ -1,0 +1,22 @@
+﻿body
+{
+    font-family: Verdana, Arial, sans-serif;
+}
+
+h1
+{
+    color: white;
+    background-color: navy;
+    cursor: pointer;
+}
+
+h1 .node {
+    font-family: monospace;
+}
+
+h2
+{
+    color: green;
+    margin-left: 40px;
+    border-bottom: 4px dotted black;
+}

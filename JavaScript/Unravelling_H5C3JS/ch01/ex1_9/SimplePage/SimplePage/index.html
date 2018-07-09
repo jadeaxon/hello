@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Table of Contents</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <h1>Introduction</h1>
+  <div>
+    <h2>Whom this book is for?</h2>
+    <h2>Errata</h2>
+  </div>
+  <h1>Chapter 1</h1>
+  <div>
+    <h2>What you will learn in this chapter</h2>
+    <h2>Summary</h2>
+  </div>
+  <h1>Chapter 2</h1>
+  <div>
+    <h2>Recap</h2>
+    <h2>Conclusion</h2>
+  </div>
+  <script src="Scripts/jquery-2.0.3.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('h1').prepend('<span class="node">-</span>');
+      $('h1').click(
+          function () {
+            var node = $(this).children('.node');
+            $(this).next().fadeToggle(500, 'swing',
+                function () {
+                  var mark = node.text();
+                  mark = mark === '-' ? '+' : '-';
+                  node.text(mark);
+                });
+          })
+    });
+  </script>
+</body>
+</html>

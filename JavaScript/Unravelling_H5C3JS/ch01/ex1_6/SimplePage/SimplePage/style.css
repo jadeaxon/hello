@@ -1,0 +1,24 @@
+﻿body {
+  font-family: Verdana, Arial, sans-serif;
+}
+
+h1 {
+  color: white;
+  background-color: navy;
+}
+
+  h1:hover {
+    color: navy;
+    background-color: lightgray;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  }
+
+h2 {
+  color: green;
+  margin-left: 40px;
+  border-bottom: 4px dotted black;
+}

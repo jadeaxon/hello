@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Modernizr Sample</title>
+  <style>
+    li {
+      margin-left: 40px;
+    }
+  </style>
+  <script src="Scripts/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+  <p>
+    By default, Internet Explorer does not support
+    the <code>reversed</code> attribute of the
+    &lt;ol&gt; tag.
+  </p>
+  <p>With Modernizer and 'olreversed' polyfill, it works.</p>
+  <ol start="48" type="I" reversed>
+    <li>Roman 48</li>
+    <li>Roman 47</li>
+    <li>Roman 46</li>
+  </ol>
+  <script>
+    Modernizr.load({
+      test: 'reversed' in document.createElement('ol'),
+      nope: 'Scripts/olreversed-polyfill.js'
+    });
+  </script>
+</body>
+</html>

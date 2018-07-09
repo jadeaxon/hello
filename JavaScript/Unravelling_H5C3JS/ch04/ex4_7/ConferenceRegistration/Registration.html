@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Conference Registration</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <h2>
+    Fill in this form to register to Visual Studio
+    Smarts Conference
+  </h2>
+  <form action="FormProcessor.aspx" method="post">
+    <fieldset>
+      <legend>Personal Data</legend>
+      <datalist id="salutationlist">
+        <option label="Mr." value="mrval" />
+        <option label="Mrs." value="mrsval" />
+        <option label="Ms." value="Ms." />
+        <option label="Dr." value="Dr." />
+      </datalist>
+      <label for="salutation">Salutation</label>
+      <input id="salutation" type="text"
+        list="salutationlist"
+        name="salutation" autofocus />
+      <br />
+      <label for="fname">First Name:</label>
+      <input id="fname" type="text" name="fname" />
+      <br />
+      <label for="lname">Last Name:</label>
+      <input id="lname" type="text" name="lname" />
+      <br />
+    </fieldset>
+    <input type="hidden" name="caller" value="Registration.html" />
+    <input type="submit" value="Register" />
+  </form>
+</body>
+</html>

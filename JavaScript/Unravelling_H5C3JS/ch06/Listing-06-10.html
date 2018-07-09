@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Add new elements</title>
+  <base href="http://www.w3schools.com" />
+</head>
+<body onload="decorateLinks()">
+  <p>
+    In this chapter you already met with many DOM
+    manipulation methods including
+    <a href="/jsref/met_node_appendchild.asp">
+      appendChild()
+    </a>,
+    <a href="/jsref/met_node_insertbefore.asp">
+      insertBefore()
+    </a>, and
+    <a href="/jsref/met_element_setattribute.asp">
+      setAttribute().
+    </a>
+  </p>
+  <script>
+    function decorateLinks() {
+      for (var i = 0; i < document.links.length; i++) {
+        var link = document.links[i];
+        var span = document.createElement('span');
+        span.appendChild(document.createTextNode('['));
+        span.appendChild(link.cloneNode(true));
+        span.appendChild(document.createTextNode(']'));
+        link.parentNode.replaceChild(span, link);
+      }
+    }
+  </script>
+</body>
+</html>
