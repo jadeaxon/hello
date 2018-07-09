@@ -9,13 +9,17 @@
     <h1>My Latest Dives (ng-contoller)</h1>
     <div class="row">
       <div class="col-sm-4 col-sm-offset-8">
+        <!-- This input gives us the arg to pass to the filter filter. -->
         <input class="form-control input-lg"
-          placeholder="Search" 
+          placeholder="Search"
           ng-model="searchKey" />
       </div>
     </div>
     <div class="row"
       ng-controller="diveLogCtrl">
+      <!-- The filter starts with a |. -->
+      <!-- You can pass 1 or more args to a filter using :s. -->
+      <!-- This filter does a partial match on all properties of a dive for searchKey. -->
       <div class="col-sm-4"
         ng-repeat="dive in dives | filter:searchKey">
         <h3>{{dive.site}}</h3>
@@ -36,3 +40,5 @@
   </script>
 </body>
 </html>
+
+
