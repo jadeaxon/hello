@@ -10,6 +10,8 @@
     <div class="row">
       <div class="col-sm-4 col-sm-offset-8">
         <!-- This input gives us the arg to pass to the filter filter. -->
+        <!-- Note that searchKey is defined in the root scope. -->
+        <!-- Since other controllers chain back to the root scope, the value can still be found. -->
         <input class="form-control input-lg"
           placeholder="Search"
           ng-model="searchKey" />
