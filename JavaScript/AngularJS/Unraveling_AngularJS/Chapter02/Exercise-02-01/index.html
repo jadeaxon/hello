@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<!-- An administrative data maintenance CRUD app. -->
 <html ng-app="maintenance">
 <head>
   <title>Dive Sites</title>
   <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <!-- Give UI a striped table look. -->
   <style>
     .oddRow {
       background-color: #dddddd;
@@ -19,9 +21,12 @@
         </button>
       </div>
     </div>
+
     <h2>List of Dive Sites</h2>
-    <div class="row" ng-repeat="site in sites"
-         ng-class="{oddRow: $index % 2 == 0}">
+    <!-- ng-class can apply CSS classes to an HTML element based on boolean expressions. -->
+    <!-- You could just use ng-odd-class="oddRow" here too. -->
+    <!-- Inside an ng-repeat, $index gives you the 0-based index of the element.  -->
+    <div class="row" ng-repeat="site in sites | filter:'El' " ng-class="{oddRow: $index % 2 == 0}">
       <div class="col-sm-8">
         <h4>{{$index + 1}}: {{site}}</h4>
       </div>
@@ -39,6 +44,8 @@
   </div>
 
   <script src="./lib/angular/angular.min.js"></script>
+
+  <!-- Data model is in this file. -->
   <script src="sites.js"></script>
   <script>
     angular.module('maintenance', [])
@@ -50,3 +57,5 @@
   </script>
 </body>
 </html>
+
+
