@@ -5,11 +5,13 @@
   <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="container-fluid"
-      ng-controller="diveLogCtrl">
+  <div class="container-fluid" ng-controller="diveLogCtrl">
     <h1>My Latest Dives (ng-contoller)</h1>
     <div class="row">
       <div class="col-sm-5">
+        <!-- Use ng-disabled to disable the button. -->
+        <!-- Use ng-click to handle each button click. -->
+        <!-- The functions are defined in the controller's scope. -->
         <button class="btn btn-primary btn-lg"
           ng-click="addDive()"
           ng-disabled="!enableAdd()">
@@ -22,7 +24,7 @@
       </div>
       <div class="col-sm-4 col-sm-offset-3">
         <input class="form-control input-lg"
-          placeholder="Search" 
+          placeholder="Search"
           ng-model="searchKey" />
       </div>
     </div>
@@ -41,21 +43,25 @@
     angular.module('diveLog', [])
       .controller('diveLogCtrl', DiveLogCtrl);
 
+    // Controller constructor.
     function DiveLogCtrl($scope) {
       var index = 0;
       $scope.dives = [];
 
+      // Handles clicking of the add button.
       $scope.addDive = function () {
         if ($scope.enableAdd()) {
           $scope.dives.push(dives[index++]);
         }
       }
 
+      // Handles clicking of the clear button.
       $scope.clearDives = function () {
         $scope.dives = [];
         index = 0;
       }
 
+      // Tells whether add button should be enabled.
       $scope.enableAdd = function () {
         return index < dives.length;
       }
