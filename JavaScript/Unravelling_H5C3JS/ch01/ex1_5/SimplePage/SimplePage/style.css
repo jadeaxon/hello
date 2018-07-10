@@ -1,7 +1,10 @@
-﻿body {
+﻿/* The styles are factored out into their own .css file here. */
+/* A CSS selector selects HTML elements on the page.  The given style attributes are applied to those elements. */
+body {
   font-family: Verdana, Arial, sans-serif;
 }
 
+/* All <h1> elements will have these two style attributes applied. */
 h1 {
   color: white;
   background-color: navy;
