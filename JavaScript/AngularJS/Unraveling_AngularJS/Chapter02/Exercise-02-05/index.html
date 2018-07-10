@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="maintenance">
+<!-- Bind AngularJS app module called "diveSiteApp" to this HTML page. -->
+<html ng-app="diveSiteApp">
 <head>
   <title>Dive Sites</title>
+  <!-- Include Bootstrap CSS library. -->
   <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <!-- Create table striping effect. -->
   <style>
     .oddRow {
       background-color: #dddddd;
@@ -10,11 +13,16 @@
   </style>
 </head>
 <body>
+  <!-- Use the controller sideEditCtrl to control the main div. -->
   <div class="container-fluid" ng-controller="siteEditCtrl">
-    <h1>Dive Sites Maintenance</h1>
+    <h1>Dive Sites App</h1>
+
+    <!-- View that lists all the dives. -->
+    <!-- Use ng-show to make only the active view visible. -->
     <div ng-show="view=='list'">
       <div class="row">
         <div class="col-sm-12">
+          <!-- Transition to the add dive view. -->
           <button class="btn btn-primary btn-lg"
             ng-click="startAdd()">
             Add new dive
@@ -29,10 +37,13 @@
         </div>
         <div class="col-sm-4" style="margin-top: 5px;">
           <div class="pull-right">
+            <!-- Transition to the edit dive view. -->
+            <!-- Special $index service provided by ng-repeat lets us know which dive we're editing. -->
             <button class="btn btn-warning btn-sm"
               ng-click="startEdit($index)">
               Edit
             </button>
+            <!-- Transition to the delete confirmation view. -->
             <button class="btn btn-danger btn-sm"
               ng-click="startRemove($index)">
               Delete
@@ -42,46 +53,25 @@
       </div>
     </div>
 
+    <!-- View that lets user add a new dive. -->
     <div ng-show="view=='add'">
       <h3>Specify the name of the dive site:</h3>
       <div class="row">
         <div class="col-sm-6">
-          <input class="form-control input-lg" type="text" 
-            placeholder="site name" 
+          <input class="form-control input-lg" type="text"
+            placeholder="site name"
             ng-model="siteBox" />
         </div>
       </div>
       <div class="row" style="margin-top: 12px;">
         <div class="col-sm-6">
+          <!-- Add new dive to the model. -->
           <button class="btn btn-success btn"
             ng-disabled="siteBox==''"
             ng-click="add()">
             Add
           </button>
-          <button class="btn btn-warning btn"
-            ng-click="cancel()">
-            Cancel
-          </button>
-        </div>
-      </div>
-    </div>
-  
-    <div ng-show="view=='edit'">
-      <h3>Edit the name of the dive site:</h3>
-      <div class="row">
-        <div class="col-sm-6">
-          <input class="form-control input-lg" type="text" 
-            placeholder="site name" 
-            ng-model="siteBox" />
-        </div>
-      </div>
-      <div class="row" style="margin-top: 12px;">
-        <div class="col-sm-6">
-          <button class="btn btn-success btn"
-            ng-disabled="siteBox==''"
-            ng-click="save()">
-            Save
-          </button>
+          <!-- Cancel adding new dive to the model. -->
           <button class="btn btn-warning btn"
             ng-click="cancel()">
             Cancel
@@ -90,22 +80,52 @@
       </div>
     </div>
 
+    <!-- View that lets user edit an existing dive. -->
+    <div ng-show="view=='edit'">
+      <h3>Edit the name of the dive site:</h3>
+      <div class="row">
+        <div class="col-sm-6">
+          <input class="form-control input-lg" type="text"
+            placeholder="site name"
+            ng-model="siteBox" />
+        </div>
+      </div>
+      <div class="row" style="margin-top: 12px;">
+        <div class="col-sm-6">
+          <!-- Save changes to edited dive. -->
+          <button class="btn btn-success btn"
+            ng-disabled="siteBox==''"
+            ng-click="save()">
+            Save
+          </button>
+          <!-- Cancel pending changes to dive being edited. -->
+          <button class="btn btn-warning btn"
+            ng-click="cancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- View that lets user delete an existing dive. -->
     <div ng-show="view=='delete'">
       <h3>Confirm delete</h3>
       <div class="row">
         <div class="col-sm-8">
           <p>
-            Are you sure you want to delete dive 
+            Are you sure you want to delete dive
             site '{{getSelected()}}'?
           </p>
         </div>
       </div>
       <div class="row" style="margin-top: 12px;">
         <div class="col-sm-6">
+          <!-- Cancel deletion of dive. -->
           <button class="btn btn-success btn"
                   ng-click="cancel()">
             No
           </button>
+          <!-- Delete the dive from the model. -->
           <button class="btn btn-danger btn"
                   ng-click="remove()">
             Yes
@@ -116,7 +136,12 @@
 
   </div>
 
+  <!-- Include AngularJS. -->
   <script src="./lib/angular/angular.min.js"></script>
+  <!-- Include the data model. -->
   <script src="sites.js"></script>
+  <!-- Include the controller implementation. -->
   <script src="controller.js"></script></body>
 </html>
+
+
