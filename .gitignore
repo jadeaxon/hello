@@ -7,6 +7,10 @@ C/hello/hello
 a.out
 *.exe
 *.o
+bin/
+obj/
+.vs/
+*.csproj.user
 node_modules/
 JavaScript/AngularJS/Material/book/
 JavaScript/AngularJS/udemy/
