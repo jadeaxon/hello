@@ -20,12 +20,18 @@
     <h2>Recap</h2>
     <h2>Conclusion</h2>
   </div>
+  <!-- jQuery was brought down via the NuGet package manager. -->
   <script src="Scripts/jquery-2.0.3.min.js"></script>
   <script>
-    $(document).ready(function () {
+    // This only executes after the HTML document is fully loaded.
+      $(document).ready(function () {
+      // Add a - before each heading to show it is not expanded.
       $('h1').prepend('<span class="node">-</span>');
+      // When user clicks heading, fade in/out the div below it and toggle +/-.
       $('h1').click(
           function () {
+            // The node class is set above.
+            // It's nothing special.  It's just marking each +/- span.
             var node = $(this).children('.node');
             $(this).next().fadeToggle(500, 'swing',
                 function () {
