@@ -7,10 +7,11 @@ h1 {
   background-color: navy;
 }
 
-  h1:hover {
+/* 'hover' is a pseudo class.  It's like an element state. */
+/* When the mouse is hovering over an h1 element, this style will be applied. */
+h1:hover {
     color: navy;
     background-color: lightgray;
-    
     /* Animate all style attributes over 500 milliseconds. */
     /* These are browser-specific attributes.. */
     -webkit-transition: all 500ms ease-in-out;
@@ -19,7 +20,7 @@ h1 {
     -ms-transition: all 500ms ease-in-out;
     /* This is a CSS3 attributes. */
     transition: all 500ms ease-in-out;
-  }
+}
 
 h2 {
   color: green;
