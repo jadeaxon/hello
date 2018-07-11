@@ -10,10 +10,14 @@ h1 {
   h1:hover {
     color: navy;
     background-color: lightgray;
+    
+    /* Animate all style attributes over 500 milliseconds. */
+    /* These are browser-specific attributes.. */
     -webkit-transition: all 500ms ease-in-out;
     -moz-transition: all 500ms ease-in-out;
     -o-transition: all 500ms ease-in-out;
     -ms-transition: all 500ms ease-in-out;
+    /* This is a CSS3 attributes. */
     transition: all 500ms ease-in-out;
   }
 
