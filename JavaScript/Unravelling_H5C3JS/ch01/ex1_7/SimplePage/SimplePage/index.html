@@ -5,6 +5,8 @@
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
+  <!-- Register an event handler function. -->
+  <!-- Passing 'this' passes it the <h1> HTML node. -->
   <h1 onclick="handleClick(this);">
     Introduction
   </h1>
@@ -18,6 +20,7 @@
   <h2>Conclusion</h2>
 
   <script>
+    // Applies the clicked class when clicked.
     function handleClick(node) {
       var value = node.getAttribute('class') || "";
       value = value === "" ? "clicked" : "";
