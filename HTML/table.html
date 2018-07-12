@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />
-    <title>Hello, &lt;table&gt;</title>
+    <title>Hello, &lt;table&gt;!</title>
 
     <!-- Style the table. -->
     <style>
@@ -20,6 +20,11 @@
       td {
         color: darkblue;
         border: 1px solid gray;
+      }
+      /* Change background color of every other row. */
+      /* This doesn't quite work with cells that span multiple rows. */
+      tr:nth-child(odd) {
+        background-color: lightblue;
       }
     </style>
   </head>
