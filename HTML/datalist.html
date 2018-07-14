@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, &lt;datalist&gt;!</title>
+  </head>
+  <body>
+    <p>Hello, &lt;datalist&gt;!</p>
+    <form name="nameForm" action="" method="POST">
+      <fieldset>
+        <legend>Name</legend>
+        <!-- These options are recommended to the user, but user can enter any value. -->
+        <!-- User has to start typing one of the values before recommendation appears. -->
+        <datalist id="namelist">
+          <option value="Jeff">Jeff</option>
+          <option value="Steven">Steven</option>
+        </datalist>
+        <label for="firstName">First name: </label>
+        <!-- Use the list attribute to link this to the datalist above. -->
+        <input list="namelist" id="firstName" name="firstName" value="default" autofocus onfocus="this.select()" />
+        <br />
+        <label for="lastName">Last name: </label>
+        <input id="lastName" name="lastName" value="default" />
+        <br />
+      </fieldset>
+      <fieldset>
+        <legend>Action Buttons</legend>
+        <input type="submit" value="HTTP POST to Same Page" />
+        <input type="reset" value="Reset Input Field Values" />
+      </fieldset>
+    </form>
+  </body>
+</html>
+
+
