@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, checkbox!</title>
+  </head>
+  <body>
+    <p>Hello, checkbox!</p>
+    <!-- Using # as the action submits the form back to this page. -->
+    <!-- By default, an HTTP GET request is sent by form submission. -->
+    <!-- This page would be able to see firstName and lastName set in the request. -->
+    <!-- This would allow it to respond differently. -->
+    <form name="checkboxForm" action="#">
+      <fieldset>
+        <legend>Toppings</legend>
+        <label for="cb1">Caramel</label>
+        <!-- The checked attribute defaults the checkbox's value to "on". -->
+        <input id="cb1" type="checkbox" name="caramel" checked />
+
+        <label for="cb2">Hot Fudge</label>
+        <input id="cb2" type="checkbox" name="fudge" />
+
+        <label for="cb3">Nuts</label>
+        <input id="cd3" type="checkbox" name="nuts" />
+
+      </fieldset>
+      <input type="submit" value="Submit Order" />
+      <!-- When you press this button, it sends an HTTP GET like this: -->
+      <!-- input-checkbox.html?caramel=on&nuts=on#  -->
+      <!-- Interestingly, if a checkbox isn't checked, no value is passed at all. -->
+      <!-- If you need to know the unchecked field names, do something like this: -->
+      <!-- https://stackoverflow.com/questions/1809494/post-unchecked-html-checkboxes -->
+    </form>
+  </body>
+</html>
+
+
