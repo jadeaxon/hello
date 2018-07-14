@@ -26,6 +26,9 @@
         <label for="lastName">Last name: </label>
         <input id="lastName" name="lastName" value="default" />
         <br />
+        <!-- Best to use hidden fields with HTTP POST. -->
+        <!-- As you can see, this value gets tacked to URL on submit even though hidden. -->
+        <input id="secret" type="hidden" name="secret" value="TheSecretValue" />
       </fieldset>
       <fieldset>
         <legend>Action Buttons</legend>
