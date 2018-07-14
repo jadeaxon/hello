@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, &lt;form&gt;!</title>
+  </head>
+  <body>
+    <p>Hello, &lt;form&gt;!</p>
+    <!-- Using # as the action submits the form back to this page. -->
+    <!-- By default, an HTTP GET request is sent by form submission. -->
+    <!-- This page would be able to see firstName and lastName set in the request. -->
+    <!-- This would allow it to respond differently. -->
+    <form name="nameForm" action="#">
+      <!-- Use a field set to group related input fields. -->
+      <!-- This draws a box around them. -->
+      <fieldset>
+        <legend>Name</legend>
+        First name: <input name="firstName" value="default" />
+        <br />
+        Last name: <input name="lastName" value="default" />
+        <br />
+      </fieldset>
+      <fieldset>
+        <legend>Action Buttons</legend>
+        <input type="submit" value="Submit to Same Page" />
+        <!-- When you press this button, it sends an HTTP GET like this: -->
+        <!-- form2.html?firstName=Joe&lastName=User# -->
+
+        <!-- A button to reset input field values to their defaults. -->
+        <input type="reset" value="Reset Input Field Values" />
+      </fieldset>
+    </form>
+  </body>
+</html>
+
+
