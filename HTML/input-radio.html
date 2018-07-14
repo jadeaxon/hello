@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, radio buttons!</title>
+  </head>
+  <body>
+    <p>Hello, radio buttons!</p>
+    <form name="radioForm" action="#">
+      <fieldset>
+        <legend>Sauce</legend>
+        <!-- The checked attribute defaults the radio button's value to "on". -->
+        <!-- The buttons all have the same name since they collectively pick one value. -->
+        <label for="rb1">Tomato</label>
+        <input id="rb1" type="radio" name="sauce" value="tomato" />
+
+        <label for="rb2">BBQ</label>
+        <input id="rb2" type="radio" name="sauce" value="bbq" checked />
+
+        <label for="rb3">Ranch</label>
+        <input id="rb3" type="radio" name="sauce" value="ranch" />
+
+      </fieldset>
+      <input type="submit" value="Submit Order" />
+      <!-- When you press this button, it sends an HTTP GET like this: -->
+      <!-- input-radio.html?sauce=bbq#  -->
+      <!-- As with checkboxes, if no radio button is checked, no value is passed at all. -->
+    </form>
+  </body>
+</html>
+
+
