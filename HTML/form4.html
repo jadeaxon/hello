@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, &lt;form&gt;!</title>
+  </head>
+  <body>
+    <p>Hello, &lt;form&gt;!</p>
+    <!-- Using # as the action submits the form back to this page. -->
+    <!-- By default, an HTTP GET request is sent by form submission. -->
+    <!-- This page would be able to see firstName and lastName set in the request. -->
+    <!-- This would allow it to respond differently. -->
+
+    <!-- The default HTTP method for form submission is GET. -->
+    <!-- Using the method attribute, you can set it to something else like POST.  -->
+    <form name="nameForm" action="" method="POST">
+      <!-- Use a field set to group related input fields. -->
+      <!-- This draws a box around them. -->
+      <fieldset>
+        <legend>Name</legend>
+        <!-- The label's for attribute corresponds to the input's id attribute. -->
+        <!-- An input's name attribute determines the arg name send via the HTTP request. -->
+        <!-- An input's value attribute assigns a default value for the field. -->
+        <!-- The autofocus attribute causes the input field to get the keyboard focus when the page loads. -->
+        <!-- The onfocus handler selects all text in the field when it gets the keyboard focus. -->
+        <label for="firstName">First name: </label>
+        <input id="firstName" name="firstName" value="default" autofocus onfocus="this.select()" />
+        <br />
+        <label for="lastName">Last name: </label>
+        <input id="lastName" name="lastName" value="default" />
+        <br />
+      </fieldset>
+      <fieldset>
+        <legend>Action Buttons</legend>
+        <input type="submit" value="HTTP POST to Same Page" />
+        <!-- When you press this button, it sends an HTTP POST request. -->
+        <!-- You should not see values embedded in the URL in a POST request.  -->
+
+        <!-- A button to reset input field values to their defaults. -->
+        <input type="reset" value="Reset Input Field Values" />
+      </fieldset>
+    </form>
+  </body>
+</html>
+
+
