@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Hello, &lt;select&gt;!</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Location</legend>
+        <label for="stateSelect">Select State</label>
+        <!-- Here's the dropdown box to select a state. -->
+        <select id="stateSelect" name="state" value="UT">
+          <optgroup label="Western States">
+            <option value="CA">California</option>
+            <option value="UT" selected="selected">Utah</option>
+            <option value="WA">Washington</option>
+            <option value="OR">Oregon</option>
+          </optgroup>
+          <optgroup label="Eastern States">
+            <!-- The label attribute does not display. -->
+            <option label="New York" value="NY">New York</option>
+            <option label="Florida" value="FL">Florida</option>
+          </optgroup>
+        </select>
+      </fieldset>
+    </form>
+  </body>
+</html>
+
