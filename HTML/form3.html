@@ -17,10 +17,14 @@
         <legend>Name</legend>
         <!-- The label's for attribute corresponds to the input's id attribute. -->
         <!-- An input's name attribute determines the arg name send via the HTTP request. -->
-        <!-- An input's value attribute assigns a default value for the field.  -->
-        <label for="firstName">First name: </label><input id="firstName" name="firstName" value="default" />
+        <!-- An input's value attribute assigns a default value for the field. -->
+        <!-- The autofocus attribute causes the input field to get the keyboard focus when the page loads. -->
+        <!-- The onfocus handler selects all text in the field when it gets the keyboard focus. -->
+        <label for="firstName">First name: </label>
+        <input id="firstName" name="firstName" value="default" autofocus onfocus="this.select()" />
         <br />
-        <label for="lastName">Last name: </label><input id="lastName" name="lastName" value="default" />
+        <label for="lastName">Last name: </label>
+        <input id="lastName" name="lastName" value="default" />
         <br />
       </fieldset>
       <fieldset>
