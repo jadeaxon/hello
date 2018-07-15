@@ -1,0 +1,42 @@
+<html lang="en-us">
+  <head>
+    <title>Hello, &lt;canvas&gt;!</title>
+    <meta charset="utf-8">
+
+    <style>
+      canvas {
+        border: 2px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- You can do custom graphics on a canvas. -->
+    <canvas id="theCanvas" width="500" height="250">
+    </canvas>
+    <script>
+      var c = null; // The drawing context.
+      var x = 20; // The x coordinate.
+      var y = 20; // The y coordinate.
+      var w = 10; // The width of the circle.
+      var color = '#EC3732';
+
+      function initCanvas(canvasId) {
+        // Get the drawing context of our canvas.
+        c = document.getElementById(canvasId).getContext('2d');
+        // Draw a filled circle on it.
+        draw();
+      }
+
+      function draw() {
+        c.fillStyle = color;
+        c.beginPath();
+        c.arc(x, y, w, 0, Math.PI * 2); // Draw a circle.
+        c.closePath();
+        c.fill(); // Fill the circle.
+      }
+
+      initCanvas('theCanvas');
+    </script>
+  </body>
+</html>
+
