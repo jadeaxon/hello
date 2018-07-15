@@ -16,9 +16,21 @@
     <script>
       var c = null; // The drawing context.
       var x = 20; // The x coordinate.
+      var vX = 0.1; // x velocity.
       var y = 20; // The y coordinate.
+      var vY = 0.1; // y velocity.
       var w = 10; // The width of the circle.
-      var color = '#EC3732';
+      var color = '#00843D';
+
+      function quantum() {
+        updateWorld();
+        draw();
+      }
+
+      function updateWorld() {
+        x += vX;
+        y += vY;
+      }
 
       function initCanvas(canvasId) {
         // Get the drawing context of our canvas.
@@ -28,14 +40,24 @@
       }
 
       function draw() {
+        // Draw background.
+        c.fillStyle = '#FFFFFF';
+        c.beginPath();
+        c.rect(0, 0, 500, 250);
+        c.fill();
+
+        // Draw object.
         c.fillStyle = color;
         c.beginPath();
-        c.arc(x, y, w, 0, Math.PI * 2); // Draw a circle.
+        c.arc(x, y, 2 * w, 0, Math.PI * 2); // Draw a circle.
         c.closePath();
         c.fill(); // Fill the circle.
       }
 
       initCanvas('theCanvas');
+
+      // Animate the canvas.  Execute a quatum of world time every 10ms.
+      setInterval(quantum, 10);
     </script>
   </body>
 </html>
