@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, event!</title>
+    <script>
+      // Not sure how it knows to pass the event, but it does.
+      function handleClick(event) {
+        // The currentTarget property gives you the element this event targets.
+        alert("You clicked " + event.currentTarget.id + ".");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- You can also pass 'this' instead of 'event' to just pass the target element. -->
+    <button id="firstButton" onclick="handleClick(event)">Button 1</button>
+    <button id="secondButton" onclick="handleClick(event)">Button 2</button>
+  </body>
+</html>
+
+
