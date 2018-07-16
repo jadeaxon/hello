@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Hello, context menu!</title>
+    <meta charset="utf-8" />
+    <script>
+      // Sets the color of
+      function setColor(e) {
+        var target = document.getElementById("target"); // The paragraph element.
+        // Using e.dataColor did not work even though it seems like it should.
+        var color = e.getAttribute("data-color");
+        target.style.color = color;
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Define a context menu. -->
+    <menu type="context" id="popup">
+      <!-- These are added to the top of the default context menu items. -->
+      <menuitem onclick="setColor(this)" label="Make red" data-color="red"></menuitem>
+      <menuitem onclick="setColor(this)" label="Make blue" data-color="blue"></menuitem>
+      <menuitem onclick="setColor(this)" label="Make green" data-color="green"></menuitem>
+    </menu>
+
+    <!-- Associate the context menu above with this paragraph element. -->
+    <p id="target" contextmenu="popup">Right click me!</p>
+  </body>
+</html>
+
+
