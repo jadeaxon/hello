@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Hello, CSS!</title>
+    <meta charset="utf-8" />
+
+    <style>
+      .blink {
+        /* Firefox ignores this. */
+        text-decoration: blink;
+      }
+    </style>
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <p id="blinker" class="blink">Hello, CSS!</p>
+    <script>
+      var count = 0;
+      function blink() {
+        var value = (count % 2 == 0) ? "visible" : "hidden";
+        $("#blinker").css("visibility", value);
+        count++;
+      }
+      setInterval(blink, 500);
+    </script>
+
+  </body>
+</html>
+
+
