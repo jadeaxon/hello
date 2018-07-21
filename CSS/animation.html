@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Animation</title>
+    <meta charset="utf-8" />
+
+    <!-- It turns out to be a pain to access style properties in regular JavaScript. -->
+    <!-- So, we'll use jQuery. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+  </head>
+  <body id="everything">
+    <!-- Makes the background color change every n milliseconds. -->
+    <script>
+      function rgb2hex(rgb) {
+        rgbL = rgb.match(/^rgba\((\d+),\s*(\d+),\s*(\d+),\s*(\d+)\)$/);
+        if (!rgbL) {
+          rgbL = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+          /// console.log(rgb);
+        }
+
+        function hex(x) {
+          return ("0" + parseInt(x).toString(16)).slice(-2);
+        }
+        return "0x" + hex(rgbL[1]) + hex(rgbL[2]) + hex(rgbL[3]);
+      }
+
+      function changeColor() {
+        var value = $("#everything").css("background-color");
+        /// console.log(value);
+        value = rgb2hex(value);
+        /// console.log(value);
+        value = Number(value); // hex -> dec
+        value += 100;
+        /// console.log(value);
+        value = value.toString(16); // dec -> hex
+        // Left zero pad the hex string.
+        // Without the padding, it doesn't work.  Ends up stuck on the first color if the increment is too small.
+        var pad = "000000"
+        value = pad.substring(0, pad.length - value.length) + value;
+        // Add the leading # CSS wants.
+        value = "#" + value;
+        /// console.log(value);
+        $("#everything").css("background-color", value);
+      }
+      setInterval(changeColor, 20);
+    </script>
+  </body>
+</html>
+
+
