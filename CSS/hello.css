@@ -1,0 +1,13 @@
+/* Factor the CSS out of the HTML file. */
+
+p {
+  color: green;
+}
+
+/* Define styling for paragraphs of class "special". */
+p.special {
+  color: white;
+  background-color: green;
+}
+
+
