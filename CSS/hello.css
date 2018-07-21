@@ -10,4 +10,9 @@ p.special {
   background-color: green;
 }
 
+/* Select an element by id using #. */
+#sadParagraph {
+  color: blue;
+}
+
 
