@@ -4,9 +4,9 @@
   .constant('apiUrl',
     'http://unraveling-ng.azurewebsites.net/api/dive/location/')
   .constant('userId',
-    '1569c635-614d-46b9-bbeb-44fa1c5abcde')
+    'eaf6ac65-9055-4ee9-bfd8-a70617c05f24')
   .constant('userSecret',
-    'a7bcc9beada3468c8e1ba8b142494ef4cdce198d0c904f91a643839e4a69fa17ceedffb28e3e4328abd026b6dbfabcde');
+    '7515b02b0e4c4fe6a982b638a56ec23b6facea62dd47477ea051469e874047d89fdcfbb163504d1d91b44c58fdcd023b');
 
 function locationsApi($http, apiUrl,
   userId, userSecret) {
