@@ -1,13 +1,14 @@
 angular.module('diveLog', [])
   .controller('diveLogCtrl', DiveLogCtrl)
-  .factory('diveLogApi', diveLogApi);
+  .factory('$$diveLogApi', DiveLogApi);
 
-function DiveLogCtrl($scope, diveLogApi) {
+function DiveLogCtrl($scope, $$diveLogApi) {
   $scope.dives = [];
   $scope.errorMessage = '';
   $scope.isLoading = isloading;
   $scope.refreshDives = refreshDives;
 
+  // Show the spinny progress wheel if this is true.
   var loading = false;
 
   function isloading() {
@@ -18,7 +19,11 @@ function DiveLogCtrl($scope, diveLogApi) {
     loading = true;
     $scope.dives = [];
     $scope.errorMessage = '';
-    diveLogApi.getDives().then(
+
+    // Injected service that simulates an Ajax call.
+    // getDives() starts an async operation and returns a promise.
+    // We use then() to register functions to deal with promise resolution or rejection.
+    $$diveLogApi.getDives().then(
       function (data) {
         // --- Resolved handler
         $scope.dives = data;
@@ -32,7 +37,10 @@ function DiveLogCtrl($scope, diveLogApi) {
   }
 }
 
-function diveLogApi($q) {
+// Factory function for a service that uses the $q service to run
+// async code and return promises.
+function DiveLogApi($q) {
+  // The data model.  In the future, we'll load this async from the server.
   var dives = [
     {
       site: 'Abu Gotta Ramada',
@@ -55,19 +63,29 @@ function diveLogApi($q) {
 
   var counter = 0;
 
+  // The service singleton.
   return {
     getDives: function () {
-      var deferred = $q.defer();
+      var deferred = $q.defer(); // Create a promise.
       counter++;
+      // Run some async code once.
       setTimeout(function () {
+        // Simulate an error every 3rd time the Refresh button is pressed.
         if (counter % 3 == 0) {
-          deferred.reject('Error: Call counter is '
-            + counter);
-        } else {
+          // This signals the rejection function we register with promise.then().
+          deferred.reject('Error: Call counter is ' + counter);
+        }
+        else {
+          // This signals the resolution function we register with promise.then().
           deferred.resolve(dives);
         }
       }, 1000);
+      // The deferred task has a promise we can return so that we can register rejection/resolution
+      // handlers via promise.then().
       return deferred.promise;
-    }
-  };
-}
+    } // getDrives()
+  }; // service singleton
+} // DriveLogApi() service factory
+
+
+
