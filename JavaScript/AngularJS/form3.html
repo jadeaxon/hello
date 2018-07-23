@@ -25,6 +25,12 @@
         id="greetingInput" name="myField" type="text"
         ng-model="greeting" ng-trim="true" ng-pattern="/^Hello, .*!$/"
       />
+      <!-- Disable the submit button if the form is not valid. -->
+      <!-- Have to use onlcick below since alert() is not visible in $rootScope context. -->
+      <input type="submit" value="Click Me!"
+        ng-disabled="myForm.$invalid"
+        onclick="alert('Submitted.');"
+      />
       <!-- Show validation error message. -->
       <!-- Note that invalid input is not synced back to $rootScope. -->
       <!-- Note how the validation field is based on the name attribute of the form and input element. -->
