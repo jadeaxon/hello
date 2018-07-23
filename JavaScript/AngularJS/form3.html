@@ -17,11 +17,22 @@
       <!-- The extra space keeps the paragraph from going away when greeting is "". -->
       <p>{{greeting}}&nbsp;</p>
     </div>
-    <form>
+    <form name="myForm">
       <label for="greetingInput">Greeting: </label>
       <!-- ng-trim trims all leading/trailing whitespace. -->
-      <input id="greetingInput" type="text" ng-model="greeting" ng-trim="true" />
+      <!-- Use a JavaScript regexp literal (surrounded by //) to make ng-pattern work.  -->
+      <input
+        id="greetingInput" name="myField" type="text"
+        ng-model="greeting" ng-trim="true" ng-pattern="/^Hello, .*!$/"
+      />
+      <!-- Show validation error message. -->
+      <!-- Note that invalid input is not synced back to $rootScope. -->
+      <!-- Note how the validation field is based on the name attribute of the form and input element. -->
+      <!-- Note how the type of error is based on the validation directive (ng-pattern). -->
+      <!-- <form name>.<input name>.$error.<validator name sans ng- prefix> -->
+      <p style="color: red" ng-if="myForm.myField.$error.pattern">Invalid greeting!</p>
     </form>
   </body>
 </html>
+
 
