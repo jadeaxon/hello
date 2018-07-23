@@ -1,0 +1,27 @@
+<!-- To run:
+  python -m http.server # Assumes Python 3.
+  E http://localhost:8000/form.html # Open in web browser.  Uses my E alias for Cygwin.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+
+  <!-- We're using an anonymous app module, $rootScope, and no controller. -->
+  <!-- By using ng-init, we can get away without using a <script> element. -->
+  <!-- It sets $rootScope.greeting. -->
+  <body ng-app ng-cloak ng-init="greeting = 'Hello, form!'">
+    <div>
+      <!-- The extra space keeps the paragraph from going away when greeting is "". -->
+      <p>{{greeting}}&nbsp;</p>
+    </div>
+    <form>
+      <label for="greetingInput">Greeting: </label>
+      <!-- ng-trim trims all leading/trailing whitespace. -->
+      <input id="greetingInput" type="text" ng-model="greeting" ng-trim="true" />
+    </form>
+  </body>
+</html>
+
