@@ -1,46 +1,53 @@
 <!DOCTYPE html>
-<html ng-app="services">
-<head>
-  <title>Text input</title>
-  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body style="margin-top:12px;">
-  <div class="container"
-       ng-controller="depthCtrl">
-    <label class="control-label">
-      Planned Maximum Depth (feet)
-    </label>
-    <input class="form-control"
-           type="number"
-           ng-model="maxDepth"/>
-    <p class="text-danger">
-      You need {{cert()}} certification for this dive.
-    </p>
-  </div>
-  <script src="./lib/angular/angular.min.js"></script>
-  <script>
-    function Depth() {
-      this.toMeters = function (feet) {
-        return feet / 3.28;
-      }
-      this.toFeet = function(meeters) {
-        return metters * 3.28;
-      }
-      this.isDeep = function (depthInFeet) {
-        return depthInFeet > 120;
-      }
-    }
-
-    angular.module('services', [])
-    .service('depth', Depth)
-    .controller('depthCtrl', 
-      function ($scope, depth) {
-        $scope.cert = function () {
-          return depth.isDeep($scope.maxDepth)
-            ? "Advanced Open Water"
-            : "Open Water"
+<html ng-app="serviceApp">
+  <head>
+    <title>Service Instance</title>
+    <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body style="margin-top:12px;">
+    <div class="container" ng-controller="depthCtrl">
+      <label class="control-label">
+        Planned Maximum Depth (feet)
+      </label>
+      <input class="form-control" type="number" ng-model="maxDepth"/>
+      <!-- $scope.cert() is defined in terms of $$depth. -->
+      <p class="text-danger">
+        You need {{cert()}} certification for this dive.
+      </p>
+    </div>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script>
+      // Constructor for the $$depth service.
+      function Depth() {
+        // Since it's a construtor, we can use 'this'.
+        this.toMeters = function (feet) {
+          return feet / 3.28;
         }
-      });
-  </script>
-</body>
+        this.toFeet = function(meeters) {
+          return metters * 3.28;
+        }
+        this.isDeep = function (depthInFeet) {
+          return depthInFeet > 120;
+        }
+      }
+
+      // Register $$depth service with the 'serviceApp' module.
+      // It's constructor is Depth().
+      // Will be called with new operator since registered via module.service().
+      angular.module('serviceApp', [])
+        .service('$$depth', Depth)
+        .controller('depthCtrl',
+          function ($scope, $$depth) {
+            // Inject $$depth into controller so we can use it.
+            $scope.cert = function () {
+              // Use the $$depth service.
+              return $$depth.isDeep($scope.maxDepth)
+                ? "Advanced Open Water"
+                : "Open Water"
+            }
+          });
+    </script>
+  </body>
 </html>
+
+
