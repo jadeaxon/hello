@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="componentApp">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, AngularJS Component!</title>
+
+    <!-- AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Load definition of <jsa-count> custom component element. -->
+    <script>
+      var app = angular.module('componentApp', []);
+      app.controller('mainCtrl', function ($scope) {
+        $scope.greeting = "Hello, AngularJS Component!";
+      });
+    </script>
+    <!-- This script registers a custom component with the componentApp module.  -->
+    <script src="components/jsaCount.js"></script>
+  </head>
+  <body ng-cloak ng-controller="mainCtrl">
+    <p>{{greeting}}</p>
+    <!-- Use the custom component element. -->
+    <!-- WARNING: Do not use the shorthand version of the tag: <jsa-count ... />. -->
+    <!-- If you do, the 2nd one fails to render. -->
+    <!-- https://github.com/angular/angular.js/issues/1953 -->
+    <jsa-count min="-3" max="0"></jsa-count>
+    <jsa-count min="4" max="7"></jsa-count>
+  </body>
+</html>
+
+

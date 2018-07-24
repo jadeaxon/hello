@@ -1,0 +1,13 @@
+<!-- This is the HTML template for the component. -->
+<!-- This gets substituted for our custom tag <jsa-count>. -->
+<!-- The component has an empty isolated scope. -->
+<!-- Because of this, we have to use controller properties. -->
+<!-- By default, the controller is available as $ctrl. -->
+<!-- Using the controllerAs property of the component definition, we set it to 'component' here. -->
+<!-- The min and max attributes of <jsa-count> were copied to the 'component' controller. -->
+<!-- You could define this component in terms of other custom components. -->
+<!-- You can use all the normal AngularJS stuff in here as well. -->
+<div>
+  <p>Counting from {{component.min}} to {{component.max}} using &lt;jsa-count&gt;:</p>
+  <span ng-repeat="number in component.numbers">{{number}}<br /></span>
+</div>
