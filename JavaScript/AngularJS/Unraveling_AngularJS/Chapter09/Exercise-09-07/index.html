@@ -1,59 +1,69 @@
 <!DOCTYPE html>
-<html ng-app="services">
-<head>
-  <title>Text input</title>
-  <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body style="margin-top:12px;">
-  <div class="container"
-       ng-controller="depthCtrl">
-    <label class="control-label">
-      Planned Maximum Depth (feet)
-    </label>
-    <input class="form-control"
-           type="number"
-           ng-model="maxDepth"/>
-    <p class="text-danger">
-      You need {{cert()}} certification for this dive.
-    </p>
-  </div>
-  <script src="./lib/angular/angular.min.js"></script>
-  <script>
-    angular.module('services', [])
-    .provider('depth', function () {
-      var depthLimit = 120;
-      return {
-        setDepthLimit: function (limit) {
-          depthLimit = limit;
-        },
-        $get: function () {
+<html ng-app="serviceApp">
+  <head>
+    <title>Text input</title>
+    <link href="./lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body style="margin-top:12px;">
+    <div class="container" ng-controller="depthCtrl">
+      <label class="control-label">
+        Planned Maximum Depth (feet)
+      </label>
+      <input class="form-control" type="number" ng-model="maxDepth"/>
+      <p class="text-danger">
+        You need {{cert()}} certification for this dive.
+      </p>
+    </div>
+    <script src="./lib/angular/angular.min.js"></script>
+    <script>
+      // Register $$depthProvider with the serviceApp module.
+      // The name of the provider is <service name>Provider.
+      angular.module('serviceApp', [])
+        .provider('$$depth', function () {
+          // Note that we use the service name above, not the provider name.
+          var depthLimit = 120;
+          // This is the provider object.
           return {
-            toMeters: function (feet) {
-              return feet / 3.28;
+            setDepthLimit: function (limit) {
+              depthLimit = limit;
             },
-            toFeet: function(meeters) {
-              return metters * 3.28;
-            },
-            isDeep: function (depthInFeet) {
-              return depthInFeet > depthLimit;
+            // $get is the service factory function of the service provider object.
+            // What if we wanted to return an instance?
+            $get: function () {
+              // This is the service object.
+              return {
+                toMeters: function (feet) {
+                  return feet / 3.28;
+                },
+                toFeet: function(meeters) {
+                  return metters * 3.28;
+                },
+                isDeep: function (depthInFeet) {
+                  return depthInFeet > depthLimit;
+                }
+              } // service object
+            } // $get
+          } // provider object
+        }) // .provider() call
+
+        .config(function ($$depthProvider) {
+          // By using a service provider, we can configure the service.
+          // Note how 'Provider' is just tacked onto the service name.
+          // The provider can ONLY be used at config time.
+          $$depthProvider.setDepthLimit(240);
+        })
+
+        .controller('depthCtrl',
+          function ($scope, $$depth) {
+            // Use the configured $$depth service to implement the controller.
+            $scope.cert = function () {
+              return $$depth.isDeep($scope.maxDepth)
+                ? "Advanced Open Water"
+                : "Open Water"
             }
-          }
-        }
-      }
-    })
-
-    .config(function (depthProvider) {
-      depthProvider.setDepthLimit(240)
-    })
-
-    .controller('depthCtrl', 
-      function ($scope, depth) {
-        $scope.cert = function () {
-          return depth.isDeep($scope.maxDepth)
-            ? "Advanced Open Water"
-            : "Open Water"
-        }
-      });
-  </script>
-</body>
+          });
+    </script>
+  </body>
 </html>
+
+
