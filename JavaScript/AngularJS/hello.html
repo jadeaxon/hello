@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- ng-app calls angular.bootstrap() to turn this page into an AngularJS app. -->
+<!-- Normally, we'd set ng-app to the name of an app module, but we're just using a generic app module here. -->
+<html lang="us-en" ng-app>
+  <head>
+    <!-- I'm not sure how you'd use AngularJS to dynamically set the page title.  -->
+    <title>Hello, AngularJS!</title>
+    <meta charset="utf-8" />
+    <!-- Load AngularJS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+  </head>
+  <!-- ng-init is evaluated in $rootScope. -->
+  <body ng-init="message = 'Hello, AngularJS!'">
+    <!-- {{<expression>}} uses $interpolate to interpolate the expression in element's scope. -->
+    <!-- In this case, since we haven't defined a controller, the scope is $rootScope. -->
+    <!-- Thus, $rootScope.message, which we set via ng-init above, is available here. -->
+    <p>{{message}}</p>
+  </body>
+</html>
+
+
