@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- A value service that uses decorators. -->
 <html ng-app="services">
 <head>
   <title>Value Service</title>
@@ -7,36 +8,42 @@
 <body ng-controller="versionCtrl">
   <div class="container">
     <h2>This is Younderwater v{{getVersion()}}</h2>
-    <button class="btn btn-primary"
-            ng-click="incMinor()">
+    <button class="btn btn-primary" ng-click="incMinor()">
       Increment minor number
     </button>
   </div>
   <script src="./lib/angular/angular.min.js"></script>
   <script>
+    // Define a value service and register it with the 'services' module.
     angular.module('services', [])
-    .value('version', {major: 1, minor: 3})
+    .value('$$version', {major: 1, minor: 3})
     .controller('versionCtrl',
-      function ($scope, version) {
+      function ($scope, $$version) {
+        // We can inject the $$version service into our controller.
         $scope.getVersion = function () {
-          return version.major + "." + version.minor;
+          return $$version.major + "." + $$version.minor;
         }
         $scope.incMinor = function () {
-          version.minor++;
+          $$version.minor++;
         }
       });
 
+    // Replace original $$version service via decorator.
+    // Since $delegate isn't used, the old $$value service is essentially gone.
     angular.module('services')
     .config(function ($provide) {
-      $provide.decorator('version', function () {
+      $provide.decorator('$$version', function () {
         return { major: 2, minor: 0 };
       })
     });
 
+    // Add a decorator to the chain.
+    // This one delegates to the previous service object.
     angular.module('services')
     .config(function ($provide) {
-      $provide.decorator('version',
+      $provide.decorator('$$version',
       function ($delegate) {
+        // major == 3
         return {
           major: $delegate.major + 1,
           minor: 0
