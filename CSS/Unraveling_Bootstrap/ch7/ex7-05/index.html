@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Tooltips</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="padding-top: 32px;">
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Prepare your dive log
+      </div>
+      <div class="panel-body">
+        With Younderwater.com, you can manage multiple
+        <a href="#" data-toggle="tooltip"
+           >dive logs</a>.
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-primary"
+           data-toggle="tooltip"
+           title="More information about multiple dive logs">
+          Learn more &raquo;
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    $("*[data-toggle='tooltip']").tooltip(
+      {
+        delay: { show: 500, hide: 1000 },
+        template:
+        '<div class="tooltip" role="tooltip">' +
+        '<div class="tooltip-inner" style=' +
+        '"background-color: navy; color:yellow;">' +
+        '</div></div>',
+        title: 'Missing tooltip'
+      });
+  </script>
+</body>
+</html>

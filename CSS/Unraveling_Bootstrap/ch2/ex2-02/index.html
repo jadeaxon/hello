@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid System Basics</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .col {
+      background-color: lightblue;
+      padding: 8px;
+      border: 2px solid darkgray;
+    }
+    .row {
+      margin-top: 16px;
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body style="background-color: yellow">
+  <div class="container-fluid">
+    <div class="row" id="row1">
+      <div class="col-xs-3 col">Col #1 (3)</div>
+      <div class="col-xs-3 col">Col #2 (3)</div>
+      <div class="col-xs-3 col">Col #3 (3)</div>
+      <div class="col-xs-3 col">Col #4 (3)</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" id="row2">
+      <div class="col-xs-3 col">Col #1 (3)</div>
+      <div class="col-xs-3 col">Col #2 (3)</div>
+      <div class="col-xs-3 col">Col #3 (3)</div>
+      <div class="col-xs-3 col">Col #4 (3)</div>
+    </div>
+    <div class="row" id="row3">
+      <div class="col-xs-3">Col #1 (3)</div>
+      <div class="col-xs-3">Col #2 (3)</div>
+      <div class="col-xs-3">Col #3 (3)</div>
+      <div class="col-xs-3">Col #4 (3)</div>
+    </div>
+    <div class="row" id="row4">
+      <div class="col-xs-4 col">Col #1 (4)</div>
+      <div class="col-xs-2 col">Col #2 (2)</div>
+      <div class="col-xs-2 col">Col #3 (2)</div>
+      <div class="col-xs-4 col">Col #4 (4)</div>
+    </div>
+    <div class="row" id="row5">
+      <div class="col-xs-6 col">Col #1 (7)</div>
+      <div class="col-xs-3 col">Col #2 (3)</div>
+      <div class="col-xs-2 col">Col #3 (1)</div>
+      <div class="col-xs-4 col">Col #4 (4)</div>
+    </div>
+  </div>
+</body>
+</html>

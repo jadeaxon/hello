@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal dialog</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  </head>
+<body style="padding-top: 32px;">
+  <div id="parent" class="container">
+    <button class="btn btn-danger" 
+            data-toggle="modal" 
+            data-target="#confirm">
+      Delete log entry
+    </button>
+    <button class="btn btn-danger"
+            data-toggle="modal"
+            data-target="#confirm">
+      Delete your logbook
+    </button>
+    <div id="confirm" class="modal fade" role="dialog">
+      <div class="modal-dialog" style="margin-top:80px;">
+        <div class="modal-content">
+          <!-- dialog.html goes here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('#confirm').modal({
+      show: false,
+      backdrop: 'static',
+      remote: 'dialog.html'
+    });
+    $('#confirm').on('show.bs.modal', function (e) {
+      $('#caption').text("Confirm this action:" + e.relatedTarget.innerText);
+    })
+  </script>
+</body>
+</html>

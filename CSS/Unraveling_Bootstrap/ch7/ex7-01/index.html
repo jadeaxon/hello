@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Progress bars</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="padding-top: 32px;">
+  <div class="container">
+    <h4>Simple progress bar</h4>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="33"
+           style="width: 33%">
+      </div>
+    </div>
+    <h4>Multiple segments</h4>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="33"
+           style="width: 33%">
+      </div>
+      <div class="progress-bar progress-bar-warning" 
+           role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="42"
+           style="width: 42%">
+      </div>
+    </div>
+    <h4>Memory usage</h4>
+    <div class="progress">
+      <div class="progress-bar progress-bar-danger"
+           role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="33"
+           style="width: 33%">
+        Kernel: 33%
+      </div>
+      <div class="progress-bar progress-bar-info"
+           role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="42"
+           style="width: 42%">
+        User: 42%
+      </div>
+      <div class="progress-bar progress-bar-success"
+           role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="42"
+           style="width: 25%">
+        Free: 25%
+      </div>
+    </div>
+    <h4>Striped effect</h4>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped" 
+           role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="33"
+           style="width: 33%">
+      </div>
+    </div>
+    <h4>Animated progress bar</h4>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped active"
+           role="progressbar"
+           aria-valuemin="0"
+           aria-valuemax="100"
+           aria-valuenow="33"
+           style="width: 33%">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

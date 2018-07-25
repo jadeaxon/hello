@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Row and Column Heights</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .card {
+      background-color: papayawhip;
+      border: 1px solid darkgray;
+      padding: 8px;
+      margin-bottom: 24px;
+
+    }
+    .name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+    .company {
+      font-size: 1.1em;
+      font-style: italic;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body style="margin-top: 16px;">
+  <div class="container" style="background-color: lightgray">
+    <div class="row">
+      <div class="col-sm-4 col-sm-push-5">
+        <div class="card">
+          <p class="name">#1: Peter McAllister</p>
+          <p class="company">MegaCorp</p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-sm-pull-4">
+        <div class="card">
+          <p class="name">#2: Steve Ottochik</p>
+          <p class="company">MySoft</p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-sm-push-1">
+        <div class="card">
+          <p class="name">#3: Anita Hegerland</p>
+          <p class="company">SingASong Ltd.</p>
+        </div>
+      </div>
+      <div class="col-sm-4 col-sm-pull-1">
+        <div class="card">
+          <p class="name">#4: John Karpowsky</p>
+          <p class="company">Uhum Inc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

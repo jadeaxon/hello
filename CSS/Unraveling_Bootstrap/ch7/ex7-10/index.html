@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Accordion-like panel</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="padding-top: 32px;">
+  <div id="parent" class="container">
+    <div class="panel panel-success">
+      <div class="panel-heading"
+           style="cursor: pointer"
+           data-toggle="collapse"
+           data-parent="#parent"
+           data-target="#secret1">
+        <h5>Secret #1</h5>
+      </div>
+      <div id="secret1"
+           class="panel-collapse collapse">
+        <div class="panel-body">
+          Choose a reliable diving buddy!
+        </div>
+      </div>
+      <div class="panel-heading"
+           style="cursor: pointer"
+           data-toggle="collapse"
+           data-parent="#parent"
+           data-target="#secret2">
+        <h5>Secret #2</h5>
+      </div>
+      <div id="secret2"
+           class="panel-collapse collapse">
+        <div class="panel-body">
+          Choose a reliable diving buddy!
+        </div>
+      </div>
+      <div class="panel-heading"
+           style="cursor: pointer"
+           data-toggle="collapse"
+           data-parent="#parent"
+           data-target="#secret3">
+        <h5>Secret #3</h5>
+      </div>
+      <div id="secret3"
+           class="panel-collapse collapse">
+        <div class="panel-body">
+          Choose a reliable diving buddy!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

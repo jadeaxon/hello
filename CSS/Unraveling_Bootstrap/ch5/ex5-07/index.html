@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Using Tabs</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="margin-top:16px;">
+  <div class="container-fluid">
+    <ul id="diveInfo" class="nav nav-tabs" role="tablist">
+      <li class="active">
+        <a href="#location" role="tab" data-toggle="tab">
+          Location
+        </a>
+      </li>
+      <li>
+        <a href="#dAndT" role="tab" data-toggle="tab">
+          Depth &amp; Time
+        </a>
+      </li>
+      <li>
+        <a href="#experience" role="tab" data-toggle="tab">
+          Experience
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="location">
+        <h4>Dive location</h4>
+      </div>
+      <div class="tab-pane" id="dAndT">
+        <h4>Depth and time</h4>
+      </div>
+      <div class="tab-pane" id="experience">
+        <h4>Dive experience</h4>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

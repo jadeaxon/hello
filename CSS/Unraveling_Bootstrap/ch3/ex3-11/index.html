@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Code-Related Elements</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="margin-top:16px;">
+  <div class="container">
+    <p>
+      The following definition describes the
+      <code>ILoggable</code> interface that
+      should be implemented by loggable
+      data structures. <var>Timestamp</var>
+      holds the exact time of the event to 
+      be logged.
+    </p>
+    <pre>using System;
+namespace Logging
+{
+  // This interface represent log data.
+  public interface ILoggable
+  {
+    // Gets or sets the time of the event
+    DateTime Timestamp { get; set; }
+  }
+}</pre>
+    <p>
+      Surround your code with
+      <code>&lt;pre&gt;</code>
+      to preserve spacing.
+    </p>
+    <p>
+      To compile and run the code, press
+      <kbd>Ctrl + F5</kbd>.
+    </p>
+    <p>
+      When logging an event, the output will
+      contain the timestamp in this format:
+      <samp>yyyy.MM.dd hh:mm:ss,fff</samp>
+    </p>
+  </div>
+</body>
+</html>

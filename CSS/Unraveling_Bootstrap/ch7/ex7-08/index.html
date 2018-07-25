@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Collapsible panel</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="padding-top: 32px;">
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <button class="btn btn-default pull-right"
+                data-toggle="collapse" 
+                data-target="#topDives">
+          Show them!
+        </button>
+        <h4>Top three divers of the month</h4>
+      </div>
+      <div id="topDives" class="list-group collapse">
+        <a class="list-group-item">
+          <span class="badge">474</span>
+          <h4 class="list-group-item-heading">Istvan Novak</h4>
+          <p class="list-group-item-text">Dive Master</p>
+        </a>
+        <a class="list-group-item">
+          <span class="badge">215</span>
+          <h4 class="list-group-item-heading">Henriett Cseszregi</h4>
+          <p class="list-group-item-text">Advanced OW Diver</p>
+        </a>
+        <a class="list-group-item">
+          <span class="badge">17</span>
+          <h4 class="list-group-item-heading">Eszter Novak</h4>
+          <p class="list-group-item-text">OW Diver</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

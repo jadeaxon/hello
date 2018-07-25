@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Dive Log Entry</title>
+</head>
+<body>
+  <h4>
+    Please, specify the details of your dive
+  </h4>
+  <form>
+    <label for="divesite">Dive site:</label>
+    <input type="text" id="divesite" value="" 
+           placeholder="(e.g. Al Arouk)"/>
+    <br />
+    <label for="region">Region:</label>
+    <input type="text" id="region" value="" 
+           placeholder="(e.g. Egypt)" />
+    <br />
+    <label for="divedate">Date:</label>
+    <input type="date" id="divedate" value="" />
+    <br />
+    <label for="depth">Max depth (feet):</label>
+    <input type="number" id="depth" value="" />
+    <br />
+    <label for="bottomtime">
+      Bottom time (minutes):</label>
+    <input type="number" id="bottomtime" value="" />
+    <br />
+    <label>
+      <input type="checkbox" id="nightdive"/>
+      Nightdive
+    </label>
+    <br />
+    <label for="comment">Comment:</label>
+    <br />
+    <textarea rows="3" id="comment"></textarea>
+    <br />
+    <input type="submit" value="Save"/>
+  </form>
+</body>
+</html>

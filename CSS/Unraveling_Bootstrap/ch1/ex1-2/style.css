@@ -1,0 +1,26 @@
+﻿body {
+  font-family: Verdana, Arial, sans-serif;
+}
+
+form label {
+  display: inline-block;
+  width: 160px;
+  vertical-align: top;
+}
+
+.full-width {
+  width: 320px;
+}
+
+.half-width {
+  width: 80px;
+}
+
+input[type="submit"] {
+  margin-top: 12px;
+}
+
+.indent {
+  margin-left: 160px;
+}
+

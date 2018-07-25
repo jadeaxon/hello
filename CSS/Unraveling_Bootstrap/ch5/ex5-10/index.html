@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabs with dropdowns</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="margin-top: 32px;">
+  <div class="container-fluid">
+    <ul id="diveInfo" class="nav nav-tabs" role="tablist">
+      <li class="active">
+        <a href="#location" role="tab" data-toggle="tab">
+          Location
+        </a>
+      </li>
+      <li>
+        <a href="#dAndT" role="tab" data-toggle="tab">
+          Depth &amp; Time
+        </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Dive Type <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li role="presentation">
+            <a role="menuitem" href="#openWater" data-toggle="tab">
+              Open water dive
+            </a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" href="#night" data-toggle="tab">
+              Night dive
+            </a>
+          </li>
+          <li role="presentation">
+            <a role="menuitem" href="#wreck" data-toggle="tab">
+              Wreck dive
+            </a>
+          </li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation">
+            <a role="menuitem" href="#cave" data-toggle="tab">
+              Cave dive
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#experience" role="tab" data-toggle="tab">
+          Experience
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="location">
+        <h4>Dive location</h4>
+      </div>
+      <div class="tab-pane" id="dAndT">
+        <h4>Depth and time</h4>
+      </div>
+      <div class="tab-pane" id="experience">
+        <h4>Dive experience</h4>
+      </div>
+      <div class="tab-pane" id="openWater">
+        <h4>Open water dive</h4>
+      </div>
+      <div class="tab-pane" id="night">
+        <h4>Night dive</h4>
+      </div>
+      <div class="tab-pane" id="wreck">
+        <h4>Wreck dive</h4>
+      </div>
+      <div class="tab-pane" id="cave">
+        <h4>Cave dive</h4>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

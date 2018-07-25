@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Row and Column Heights (fixed)</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .col {
+      background-color: lightblue;
+      padding: 8px;
+      border: 2px solid darkgray;
+    }
+    .row {
+      margin-top: 16px;
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body style="background-color: yellow">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col">Narrow #1</div>
+      <div class="col-xs-3 col">
+        This content is wide, so it is
+        definitely higher than other
+        columns.
+      </div>
+      <div class="col-xs-3 col">Narrow #2</div>
+      <div class="col-xs-3 col">
+        Not so narrow
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-xs-2 col">
+        Not so narrow #2
+      </div>
+      <div class="col-xs-4 col">
+        Not so narrow #3
+      </div>
+      <div class="clearfix"></div>
+      <div class="col-xs-7 col">
+        Another column with a bit longer
+        text
+      </div>
+    </div>
+  </div>
+</body>
+</html>

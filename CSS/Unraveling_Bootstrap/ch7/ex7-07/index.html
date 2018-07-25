@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Popovers</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="padding-top: 32px;">
+  <div class="container">
+    <div class="panel panel-default">
+      <div id="heading" class="panel-heading">
+        Prepare your dive log
+      </div>
+      <div class="panel-body">
+        With Younderwater.com, you can manage multiple
+        <a href="#" data-toggle="popover"
+           data-trigger="hover"
+           data-placement="bottom"
+           title="Dive log"
+           data-content="An online logbook that can be used instead of you paper log book.">dive logs</a>.
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-primary" 
+                data-toggle="popover"
+                data-trigger="hover"
+                title="More information"
+                data-content="By clicking this button you will navigate into the right topic within the Younderwater user guide.">
+          Learn more &raquo;
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    $("*[data-toggle='popover']").popover();
+  </script>
+</body>
+</html>

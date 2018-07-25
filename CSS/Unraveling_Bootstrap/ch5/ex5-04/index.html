@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown menu with enhancements</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="margin-top:16px;">
+  <div class="container-fluid">
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdown1" 
+              data-toggle="dropdown">
+        Create a new dive log entry
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu"
+          aria-labelledby="dropdown1">
+        <li role="presentation" class="dropdown-header">
+          Easy dives
+        </li>
+        <li role="presentation">
+          <a role="menuitem" href="#">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            &nbsp;&nbsp;Open water dive
+          </a>
+        </li>
+        <li role="presentation" class="disabled">
+          <a role="menuitem" href="#">
+            <span class="glyphicon glyphicon-adjust"></span>
+            &nbsp;&nbsp;Night dive
+          </a>
+        </li>
+        <li role="presentation" class="disabled">
+          <a role="menuitem" href="#">
+            <span class="glyphicon glyphicon-dashboard"></span>
+            &nbsp;&nbsp;Wreck dive
+          </a>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation" class="dropdown-header">
+          Advanced dives
+        </li>
+        <li role="presentation">
+          <a role="menuitem" href="#">
+            <span class="glyphicon">&nbsp;</span>
+            &nbsp;&nbsp;Cave dive
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Dive Log Entry</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h2>
+      Please, specify the details of your dive
+    </h2>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="divesite">Dive site:</label>
+        <div class="col-sm-8">
+          <input class="form-control" type="text" id="divesite" value="" placeholder="(e.g. Al Arouk)" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="region">Region:</label>
+        <div class="col-sm-8">
+          <input class="form-control" type="text" id="region" value="" placeholder="(e.g. Egypt)" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="divedate">Date:</label>
+        <div class="col-sm-3">
+          <input class="form-control" type="date" id="divedate" value="" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="depth">Max depth (feet):</label>
+        <div class="col-sm-2">
+          <input class="form-control" type="number" id="depth" value="" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="bottomtime">Bottom time (minutes):</label>
+        <div class="col-sm-2">
+          <input class="form-control" type="number" id="bottomtime" value="" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-2 col-sm-offset-2">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="nightdive" />
+              Nightdive
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="comment">Comment:</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="3" id="comment"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+          <input class="btn btn-success" type="submit" value="Save" />
+        </div>
+      </div>
+</form>
+  </div>
+</body>
+</html>

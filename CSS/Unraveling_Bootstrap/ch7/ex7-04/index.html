@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Using tooltip selector</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="padding-top: 32px;">
+  <div class="container">
+    <div class="panel panel-default">
+      <div id="heading" class="panel-heading">
+        Dynamic elements
+      </div>
+      <table class="table">
+        <thead>
+          <tr><th>Operation</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <!-- Filled up by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    function generateTable() {
+      var sum = 0;
+      for (var i = 0; i < 6; i++) {
+        var a = Math.floor(100 * Math.random());
+        var b = Math.floor(100 * Math.random());
+        var row = $("<tr>")
+          .append($("<td>").html(a + " + " + b + " ="))
+          .append($("<td class='result' data-toggle='tooltip' data-placement='left' title='Result'>").html(a + b));
+        sum += a + b;
+        $("tbody").append(row);
+      }
+    }
+
+    $("*[data-toggle='tooltip']").tooltip();
+    $("body").tooltip({ selector: '.result' });
+
+    generateTable();
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Alert panels</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <script src="jQuery/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body style="padding-top: 32px;">
+  <div class="container">
+    <div class="alert alert-success alert-dismissible">
+      The changes in <b>Employee #2431</b> data
+      has been successfully saved.
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Close</span>
+      </button>
+    </div>
+    <div class="alert alert-danger">
+      Some unexpected error occurred while the
+      employee data was being saved.
+      <a class="alert-link" href="#">
+        Click here for more details.
+      </a>
+    </div>
+  </div>
+</body>
+</html>
