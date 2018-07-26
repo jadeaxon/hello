@@ -1,13 +1,18 @@
-﻿body {
+﻿/* What font do we want to use for everything in <body>? */
+body {
   font-family: Verdana, Arial, sans-serif;
 }
 
+/* Any <label> within a <form>. */
 form label {
+  /* An inline block element sits next to other elements horizontally. */
+  /* But, you can set a specific width for it (unlike for inline elements). */
   display: inline-block;
   width: 160px;
-  vertical-align: top;
+  vertical-align: top; /* Align text to the top of the label. */
 }
 
+/* class="full-width" */
 .full-width {
   width: 320px;
 }
@@ -16,8 +21,9 @@ form label {
   width: 80px;
 }
 
+/* Attribute selector.  Any <input type="submit"> element. */
 input[type="submit"] {
-  margin-top: 12px;
+  margin-top: 12px; /* content -> padding -> border -> margin */
 }
 
 .indent {
