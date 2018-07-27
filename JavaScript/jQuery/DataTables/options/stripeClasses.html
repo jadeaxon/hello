@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>DataTables stripeClasses Option</title>
+    <meta charset="utf-8" />
+
+    <!-- DataTables requires jQuery. -->
+    <!-- These extra attributes allow checking that the 3rd-party file hasn't been tampered with. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+
+    <!-- DataTables also supports the Bootstrap CSS library. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
+    <!-- The main DataTables library from their CDN. -->
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <style>
+      /* These classes will be used with the DataTables stripeClasses option. */
+      /* You have to use very specific selectors otherwise DataTables' own styles will be applied, not yours. */
+      table.dataTable tbody tr.fee {
+        background-color: lightgray;
+      }
+      table.dataTable tbody tr.fie {
+        background-color: lightgreen;
+      }
+      table.dataTable tbody tr.foe {
+        background-color: lightblue;
+      }
+    </style>
+
+    <script>
+      // Turn the HTML table into a DataTable instance.
+      // Use jQuery to run this only after the entire HTML document has loaded.
+      $(document).ready(function () {
+        model = [
+          ['1', 'one', 'um', 'ein', 'uno'],
+          ['2', 'two', 'dos', 'zwei', 'due'],
+          ['3', 'three', 'tres', 'drei', 'tre'],
+          ['4', 'four', 'quatro', 'vier', 'quattro'],
+          ['5', 'five', 'cinco', 'fünf', 'cinque'],
+          ['6', 'six', 'seis', 'sechs', 'sei']
+        ];
+
+        // You can construct a DataTable using a bunch of options.
+        // The data option can take a 2D array or an array of objects.
+        // If you use an array of objects, you have to do more configuration
+        // to bind object properties to columns.
+        $('table#mytable').DataTable({
+          data: model,
+          // This sets CSS class of 1st row to fee, 2nd to fie, 3rd to foe.
+          // The pattern is repeated forever to create a striped table effect.
+          stripeClasses: ['fee', 'fie', 'foe'],
+          // The DataTables base style highlights sorted column.
+          // This removes the striping effect in that column.
+          // I don't want that, so I am disabling sorting (ordering).
+          ordering: false
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- You can turn any HTML table into a DataTable instance. -->
+    <table id="mytable" class="display" class="stripe">
+      <thead>
+        <tr>
+          <th>Base 10</th>
+          <th>English</th>
+          <th>Portuguese</th>
+          <th>German</th>
+          <th>Italian</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+
