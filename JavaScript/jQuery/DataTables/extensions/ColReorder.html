@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>DataTables stripeClasses Option</title>
+    <meta charset="utf-8" />
+
+    <!-- DataTables requires jQuery. -->
+    <!-- These extra attributes allow checking that the 3rd-party file hasn't been tampered with. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+
+    <!-- DataTables also supports the Bootstrap CSS library. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
+    <!-- The main DataTables library from their CDN. -->
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <!-- The ColReorder extension. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/colreorder/1.5.0/css/colReorder.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/colreorder/1.5.0/js/dataTables.colReorder.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Define the data for the table to show.
+        model = [
+          ['1', 'one', 'um', 'ein', 'uno'],
+          ['2', 'two', 'dos', 'zwei', 'due'],
+          ['3', 'three', 'tres', 'drei', 'tre'],
+          ['4', 'four', 'quatro', 'vier', 'quattro'],
+          ['5', 'five', 'cinco', 'fünf', 'cinque'],
+          ['6', 'six', 'seis', 'sechs', 'sei']
+        ];
+
+        // Turn the HTML table into a DataTable instance.
+        $('table#mytable').DataTable({
+          data: model,
+          // Allow reordering of columns  drag-and-drop via the ColReorder extension.
+          colReorder: {
+            realtime: true
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- You can turn any HTML table into a DataTable instance. -->
+    <table id="mytable">
+      <thead>
+        <tr>
+          <th>Base 10</th>
+          <th>English</th>
+          <th>Portuguese</th>
+          <th>German</th>
+          <th>Italian</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+
