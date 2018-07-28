@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>DataTables stripeClasses Option</title>
+    <title>ColReorder Extension</title>
     <meta charset="utf-8" />
 
     <!-- DataTables requires jQuery. -->
@@ -38,7 +38,7 @@
         // Turn the HTML table into a DataTable instance.
         $('table#mytable').DataTable({
           data: model,
-          // Allow reordering of columns  drag-and-drop via the ColReorder extension.
+          // Allow reordering of columns by drag-and-drop via the ColReorder extension.
           colReorder: {
             realtime: true
           }
@@ -47,6 +47,7 @@
     </script>
   </head>
   <body>
+    <p>Click and drag column headings to reorder columns.</p>
     <!-- You can turn any HTML table into a DataTable instance. -->
     <table id="mytable">
       <thead>
