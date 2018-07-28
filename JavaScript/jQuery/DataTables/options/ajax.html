@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>DataTables stripeClasses Option</title>
+    <meta charset="utf-8" />
+
+    <!-- DataTables requires jQuery. -->
+    <!-- These extra attributes allow checking that the 3rd-party file hasn't been tampered with. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+
+    <!-- DataTables also supports the Bootstrap CSS library. -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+
+    <!-- The main DataTables library from their CDN. -->
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $('table#mytable').DataTable({
+          // Load JSON data from relative URL data.json.
+          // You'll have to run this in an actual web server.
+          // Just opening the file in a web browser won't work.
+          // There won't be anything to serve up data.json when Ajax request made.
+          //
+          // The JSON that comes back from the URL needs to have be an object.
+          // It must have a top-level property "data".
+          // The value of that property needs to be the array of arrays or objects that is the data model.
+          // This allows you to shove other values into the JSON to config the DataTable.
+          ajax: 'data.json'
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- You can turn any HTML table into a DataTable instance. -->
+    <table id="mytable">
+      <thead>
+        <tr>
+          <th>Base 10</th>
+          <th>English</th>
+          <th>Portuguese</th>
+          <th>German</th>
+          <th>Italian</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+
