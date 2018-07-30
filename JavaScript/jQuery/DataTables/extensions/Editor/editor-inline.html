@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Editor Extension</title>
+    <meta charset="utf-8" />
+
+    <!-- DataTables requires jQuery. -->
+    <!-- These extra attributes allow checking that the 3rd-party file hasn't been tampered with. -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+
+    <!-- DataTables default style.  DataTables also supports the Bootstrap CSS library. -->
+    <!-- You must use v1.10.18+ for this to work. -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.css">
+
+    <!-- The main DataTables library from their CDN. -->
+    <script type="text/javascript" charset="utf8"
+      src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.js"></script>
+
+    <!-- DataTables Editor CSS. -->
+    <link rel="stylesheet" type="text/css" href="Editor-1.7.4/css/editor.dataTables.css">
+
+    <!-- DataTables Editor JavaScript. -->
+    <script type="text/javascript" src="Editor-1.7.4/js/dataTables.editor.js"></script>
+
+    <!-- The Buttons extension.  Not required, but integrates with Editor. -->
+    <script type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+
+    <!-- The Select extension.  Not required, but integrates with Editor. -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdn.datatables.net/select/1.2.6/css/select.dataTables.min.css"/>
+    <script type="text/javascript"
+      src="https://cdn.datatables.net/select/1.2.6/js/dataTables.select.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Define the data for the table to show.
+        // Each row must have a unique id value in the DT_RowId property for Editor to work.
+        // Because of this, you can't use Editor with pure array data.
+        model = [
+          { DT_RowId: 1, first_name: 'Bill', last_name: 'Gates'},
+          { DT_RowId: 2, first_name: 'Mark', last_name: 'Zuckerberg'},
+          { DT_RowId: 3, first_name: 'Jeff', last_name: 'Bezos'}
+        ];
+
+        // Create an Editor instance before creating a DataTable instance.
+        var myEditor = new $.fn.dataTable.Editor({
+          table: '#mytable',
+          // These are what will show up in the popup editor (for create/update).
+          // Not sure if the field name has to match the row data property.
+          fields: [
+            { label: 'First Name', name: 'first_name' },
+            { label: 'Last Name',  name: 'last_name'  }
+          ]
+        });
+
+        // Turn the HTML table into a DataTable instance.
+        $('table#mytable').DataTable({
+          dom: 'Bfrtip', // Include Buttons.
+          data: model,
+          columns: [
+            { data: 'first_name' },
+            { data: 'last_name' }
+          ],
+          select: true,
+          // Use Editor's integration with Buttons.
+          // These also work with Select in that they act on the selected row.
+          buttons: [
+            { extend: 'create', editor: myEditor },
+            { extend: 'edit',   editor: myEditor },
+            { extend: 'remove', editor: myEditor }
+          ]
+        }); // DataTable
+
+        // Do inline editing when user clicks on a row.
+        $('#mytable').on('click', 'tbody td', function () {
+              myEditor.inline(this);
+        });
+
+      }); // document ready
+    </script>
+  </head>
+  <body>
+    <!-- You can turn any HTML table into a DataTable instance. -->
+    <table id="mytable">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>
+
+
