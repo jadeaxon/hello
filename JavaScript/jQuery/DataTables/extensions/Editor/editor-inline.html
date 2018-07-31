@@ -45,9 +45,9 @@
         // Each row must have a unique id value in the DT_RowId property for Editor to work.
         // Because of this, you can't use Editor with pure array data.
         model = [
-          { DT_RowId: 1, first_name: 'Bill', last_name: 'Gates'},
-          { DT_RowId: 2, first_name: 'Mark', last_name: 'Zuckerberg'},
-          { DT_RowId: 3, first_name: 'Jeff', last_name: 'Bezos'}
+          { DT_RowId: 1, first_name: 'Bill', last_name: 'Gates', company: 'Microsoft'},
+          { DT_RowId: 2, first_name: 'Mark', last_name: 'Zuckerberg', company: 'Facebook'},
+          { DT_RowId: 3, first_name: 'Jeff', last_name: 'Bezos', company: 'Amazon'}
         ];
 
         // Create an Editor instance before creating a DataTable instance.
@@ -58,6 +58,8 @@
           fields: [
             { label: 'First Name', name: 'first_name' },
             { label: 'Last Name',  name: 'last_name'  }
+            // Company has been omitted on purpose.
+            // User cannot edit this column inline because no input field is defined that maps to it.
           ]
         });
 
@@ -67,7 +69,9 @@
           data: model,
           columns: [
             { data: 'first_name' },
-            { data: 'last_name' }
+            { data: 'last_name' },
+            // The defaultContent option gets rid of the insert warning since user can't provide a value.
+            { data: 'company', defaultContent: 'Unknown' }
           ],
           select: true,
           // Use Editor's integration with Buttons.
@@ -94,6 +98,7 @@
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Company</th>
         </tr>
       </thead>
       <tbody></tbody>
