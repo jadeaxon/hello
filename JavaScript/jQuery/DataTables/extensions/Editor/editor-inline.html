@@ -122,6 +122,11 @@
           }
         });
 
+        // Autoselect text when inline edit occurs.
+        $('input', myEditor.node()).on('focus', function () {
+          this.select();
+        });
+
       }); // document ready
     </script>
   </head>
