@@ -39,11 +39,20 @@
     <script type="text/javascript"
       src="https://cdn.datatables.net/select/1.2.6/js/dataTables.select.min.js"></script>
 
+    <!-- The KeyTable extension. -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdn.datatables.net/keytable/2.4.1/css/keyTable.dataTables.min.css"/>
+    <script type="text/javascript"
+      src="https://cdn.datatables.net/keytable/2.4.1/js/dataTables.keyTable.min.js"></script>
+
     <!-- Show a discouraging mouse pointer over uneditable cells. -->
     <style>
       .uneditable { cursor: not-allowed; }
       /* FAIL: You cannot style <option> elements via CSS! */
       .dropdown, #DTE_Field_city, option { cursor: grab; }
+
+      /* Override the KeyTable style that highlights key focus cell. */
+      table.dataTable tbody td.focus { box-shadow: none; }
     </style>
 
     <script>
@@ -95,7 +104,13 @@
             { label: 'City', name: 'city', type: 'select', options: cities }
             // Company has been omitted on purpose.
             // User cannot edit this column inline because no input field is defined that maps to it.
-          ]
+          ],
+          // Without this, inline edits don't save when you tab/click off of them.
+          formOptions: {
+            inline: {
+              onBlur: 'submit'
+            }
+          }
         });
 
         // Turn the HTML table into a DataTable instance.
@@ -110,7 +125,15 @@
             { data: 'company', defaultContent: 'Unknown', className: 'uneditable' },
             { data: 'city', className: 'dropdown' }
           ],
-          select: true,
+          ordering: false, // Leaving ordering on while doing inline editing causes row to change position mid-edit.
+          select: true, // Use Select extension.
+          // Use KeyTable extension.
+          keys: {
+            editOnFocus: true, // Auto-inline-edit on key focus (different from regular focus).
+            editor: myEditor, // Which editor to use to edit with.
+            keys: [ "\t".charCodeAt(0) ], // Only listen for tab key.  Shift tab also works.
+            columns: [ 0, 1, 3 ], // Skip the company column.
+          },
           // Use Editor's integration with Buttons.
           // These also work with Select in that they act on the selected row.
           buttons: [
@@ -125,11 +148,17 @@
           // Verified.  Without the onBlur handler, edits made by dropdown list won't stick.
           // The uneditable class check prevents a JavaScript warning.
           if (!$(this).hasClass('uneditable')) {
-            myEditor.inline(this, { onBlur: 'submit' });
+            myEditor.inline(this);
           }
         });
 
+        // Inline editing on tab focus.  This was allegedly not necessary in KeyTable 2.3.0.
+        $('#mytable').on( 'key-focus', function (e, dt, cell) {
+          myEditor.inline(cell.index());
+        });
+
         // Autoselect text when inline edit occurs.
+        // BUG: Dropdown value does not save when you tab off the field.
         $('input', myEditor.node()).on('focus', function () {
           this.select();
         });
