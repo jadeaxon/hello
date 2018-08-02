@@ -45,10 +45,27 @@
         // Each row must have a unique id value in the DT_RowId property for Editor to work.
         // Because of this, you can't use Editor with pure array data.
         model = [
-          { DT_RowId: 1, first_name: 'Bill', last_name: 'Gates', company: 'Microsoft'},
-          { DT_RowId: 2, first_name: 'Mark', last_name: 'Zuckerberg', company: 'Facebook'},
-          { DT_RowId: 3, first_name: 'Jeff', last_name: 'Bezos', company: 'Amazon'}
+          {
+            DT_RowId: 1, first_name: 'Bill', last_name: 'Gates',
+            company: 'Microsoft', city: 'Seattle'
+          },
+          {
+            DT_RowId: 2, first_name: 'Mark', last_name: 'Zuckerberg',
+            company: 'Facebook', city: 'Menlo Park'
+          },
+          {
+            DT_RowId: 3, first_name: 'Jeff', last_name: 'Bezos',
+            company: 'Amazon', city: 'Seatle'
+          },
+          {
+            DT_RowId: 4, first_name: 'Sundar', last_name: 'Pichai',
+            company: 'Google', city: 'Mountain View'
+          }
         ];
+
+        // Selectable options for the headquarters field dropdown.
+        // We could populate this dynamically.
+        var cities = ['Menlo Park', 'Mountain View', 'Seattle', 'San Francisco', 'Provo', 'Lehi'];
 
         // Create an Editor instance before creating a DataTable instance.
         var myEditor = new $.fn.dataTable.Editor({
@@ -57,7 +74,12 @@
           // Not sure if the field name has to match the row data property.
           fields: [
             { label: 'First Name', name: 'first_name' },
-            { label: 'Last Name',  name: 'last_name'  }
+            { label: 'Last Name',  name: 'last_name'  },
+            // You can name your form inputs different from the data property.
+            // If you do, you need to set editField option of the column this field will edit.
+            // So, HTTP param <- field <- column -> data property -> renderer -> DOM.
+            // This input field will be of type select (a dropdown box).
+            { label: 'City', name: 'city', type: 'select', options: cities }
             // Company has been omitted on purpose.
             // User cannot edit this column inline because no input field is defined that maps to it.
           ]
@@ -67,11 +89,13 @@
         $('table#mytable').DataTable({
           dom: 'Bfrtip', // Include Buttons.
           data: model,
+          // These need to be in the same order as the <th>s in the <table>.
           columns: [
             { data: 'first_name' },
             { data: 'last_name' },
             // The defaultContent option gets rid of the insert warning since user can't provide a value.
-            { data: 'company', defaultContent: 'Unknown' }
+            { data: 'company', defaultContent: 'Unknown' },
+            { data: 'city' }
           ],
           select: true,
           // Use Editor's integration with Buttons.
@@ -85,7 +109,8 @@
 
         // Do inline editing when user clicks on a row.
         $('#mytable').on('click', 'tbody td', function () {
-              myEditor.inline(this);
+          // Verified.  Without the onBlur handler, edits made by dropdown list won't stick.
+          myEditor.inline(this, { onBlur: 'submit' });
         });
 
       }); // document ready
@@ -99,6 +124,7 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Company</th>
+          <th>City</th>
         </tr>
       </thead>
       <tbody></tbody>
