@@ -134,6 +134,11 @@
           this.select();
         });
 
+        // Make the DataTables search input autoselect its text.
+        $('div#mytable_filter input[type="search"]').on('focus', function () {
+          this.select();
+        });
+
       }); // document ready
     </script>
   </head>
