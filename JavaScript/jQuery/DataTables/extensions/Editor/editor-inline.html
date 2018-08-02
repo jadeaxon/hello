@@ -77,6 +77,12 @@
             { label: 'Last Name',  name: 'last_name'  },
             // You can name your form inputs different from the data property.
             // If you do, you need to set editField option of the column this field will edit.
+
+            // BUG?: For select fields whose name does not match the data
+            // property, this does not work.  When you leave the field, the value does not stick.
+            // The example https://editor.datatables.net/examples/inline-editing/join.html
+            // works, but it is not using a standalone DataTable.
+
             // So, HTTP param <- field <- column -> data property -> renderer -> DOM.
             // This input field will be of type select (a dropdown box).
             { label: 'City', name: 'city', type: 'select', options: cities }
