@@ -94,7 +94,7 @@
             { data: 'first_name' },
             { data: 'last_name' },
             // The defaultContent option gets rid of the insert warning since user can't provide a value.
-            { data: 'company', defaultContent: 'Unknown' },
+            { data: 'company', defaultContent: 'Unknown', className: 'uneditable' },
             { data: 'city' }
           ],
           select: true,
@@ -110,7 +110,10 @@
         // Do inline editing when user clicks on a row.
         $('#mytable').on('click', 'tbody td', function () {
           // Verified.  Without the onBlur handler, edits made by dropdown list won't stick.
-          myEditor.inline(this, { onBlur: 'submit' });
+          // The uneditable class check prevents a JavaScript warning.
+          if (!$(this).hasClass('uneditable')) {
+            myEditor.inline(this, { onBlur: 'submit' });
+          }
         });
 
       }); // document ready
