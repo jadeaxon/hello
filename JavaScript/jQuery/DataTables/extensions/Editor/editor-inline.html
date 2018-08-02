@@ -39,6 +39,13 @@
     <script type="text/javascript"
       src="https://cdn.datatables.net/select/1.2.6/js/dataTables.select.min.js"></script>
 
+    <!-- Show a discouraging mouse pointer over uneditable cells. -->
+    <style>
+      .uneditable { cursor: not-allowed; }
+      /* FAIL: You cannot style <option> elements via CSS! */
+      .dropdown, #DTE_Field_city, option { cursor: grab; }
+    </style>
+
     <script>
       $(document).ready(function () {
         // Define the data for the table to show.
@@ -101,7 +108,7 @@
             { data: 'last_name' },
             // The defaultContent option gets rid of the insert warning since user can't provide a value.
             { data: 'company', defaultContent: 'Unknown', className: 'uneditable' },
-            { data: 'city' }
+            { data: 'city', className: 'dropdown' }
           ],
           select: true,
           // Use Editor's integration with Buttons.
