@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, &lt;table&gt;!</title>
+
+    <!-- Style the table. -->
+    <style>
+      table {
+        border: 1px solid black;
+        /* Get rid of the double border effect. */
+        border-collapse: collapse;
+      }
+      th {
+        color: orange;
+        background-color: lightgray;
+      }
+      /* Style the cells in the 3rd column. */
+      tr td:nth-child(3) {
+        color: green;
+      }
+      /* Change background color of every other row. */
+      tr:nth-child(odd) {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The border attribute causes a sort of double border around each cell.  -->
+    <table border="1">
+      <!-- Table header. -->
+      <thead>
+        <!-- Table row. -->
+        <tr>
+          <!-- Table header data.  That is, a table cell. -->
+          <th>X</th>
+          <th>Y</th>
+          <th>R</th>
+        </tr>
+      </thead>
+      <!-- Table body. -->
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+
