@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, &lt;table&gt;!</title>
+
+    <!-- Include Bootstrap and its deps via CDN. -->
+    <!-- Bootstrap depends on jQuery. -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <!-- Bootstrap depends on Popper. -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <!-- The Bootstrap CSS. -->
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+    <!-- The Bootstrap JavaScript. -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <!-- The border attribute causes a sort of double border around each cell.  -->
+    <table class="table table-bordered table-striped table-hover">
+      <caption>
+        Table 1.1: Thoughts about video games.
+      </caption>
+      <thead>
+        <tr>
+          <th>Game</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Baldur's Gate</td>
+          <td>Fight monsters with Imoen and become one.</td>
+        </tr>
+        <tr>
+          <td>NetHack</td>
+          <!-- Using the danger class should do something, but it doesn't. -->
+          <td class="danger">Do not put the wand of inversion in the bag of holding.</td>
+        </tr>
+        </tr>
+          <td>Fallout 4</td>
+          <td>Quest to find lost son ends in mini nuking him on his death bed.</td>
+        </tr>
+        <tr>
+          <td colspan="2">This cell takes up two columns.</td>
+        </tr>
+        <tr>
+          <!-- Notice how this throws off the zebra striping effect. -->
+          <td rowspan="2">FTL</td>
+          <td>Level 4 shields.</td>
+        </tr>
+        <tr>
+          <td>Four repeating lasers.</t>
+        </tr>
+
+      </tbody>
+    </table>
+  </body>
+</html>
+
+
