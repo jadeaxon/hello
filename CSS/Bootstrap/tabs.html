@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Hello, Bootstrap tabs!</title>
+    <meta charset="utf-8" />
+
+    <!-- Include Bootstrap and its deps via CDN. -->
+    <!-- Bootstrap depends on jQuery. -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <!-- Bootstrap depends on Popper. -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+
+    <!-- The Bootstrap 3 CSS. -->
+    <!-- This is supposed to include the glyph icons.  It does. -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+
+    <!-- The Bootstrap 3 JavaScript. -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <!-- This control navigates to different tabs. -->
+      <!-- Clicking on these will switch between tabs without additional JavaScript. -->
+      <ul id="tabs" class="nav nav-tabs" role="tablist">
+        <li class="active">
+          <a href="#first" role="tab" data-toggle="tab">First Tab</a>
+        </li>
+        <li>
+          <a href="#second" role="tab" data-toggle="tab">Second Tab</a>
+        </li>
+        <li>
+          <a href="#third" role="tab" data-toggle="tab">Third Tab</a>
+        </li>
+      </ul>
+
+      <!-- This div holds the contents of each tab as separate child divs. -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="first">
+          <h2>First Tab Content</h2>
+        </div>
+        <div class="tab-pane" id="second">
+          <h2>Second Tab Content</h2>
+        </div>
+        <div class="tab-pane" id="third">
+          <h2>Third Tab Content</h2>
+        </div>
+      </div> <!-- tab-content -->
+    </div> <!-- container-fluid -->
+  </body>
+</html>
+
+
+
