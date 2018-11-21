@@ -35,14 +35,21 @@
       <div class="panel panel-primary">
         <div class="panel-heading">
           <button class="btn btn-default pull-right" data-toggle="collapse"
-                                                     data-target="#expanded">Toggle</button>
+                                                     data-target="#collapsible">Toggle</button>
           <h4>Accordion Title</h4>
-          <div id="expanded" class="collapse">
+          <div id="collapsible" class="collapse">
             Is this what you wanted to see?
           </div>
         </div>
       </div> <!-- panel-primary -->
     </div> <!-- container -->
+
+    <!-- Bootstrap fires some events you can react to. -->
+    <script>
+      $('#collapsible').on('show.bs.collapse', function () {
+        alert('About to show collapsible element.');
+      });
+    </script>
   </body>
 </html>
 
