@@ -5,17 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Dialog</title>
 
-
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
-      // Turn element with id 'info_dialog' into a jQuery UI dialog.
-      $( function() {
-        $( "#info_dialog" ).dialog();
-      } );
+      // Turn element with id 'info_dialog' into a jQuery UI dialog when this page is loaded.
+      $(function() {
+        $("#info_dialog").dialog(); // Initial creation and display.
+      });
+
+      // Attach button handler to button after DOM exists (else no button yet).
+      $(document).ready(function () {
+        // Use a button to show the dialog again after it is dismissed.
+        $("#show_dialog_button").click(function (event) {
+          $("#info_dialog").dialog("open"); // Reopen.
+          event.preventDefault();
+        });
+      });
     </script>
   </head>
   <body>
@@ -24,6 +32,8 @@
       information. The dialog window can be moved, resized and closed with the
       'x' icon.</p>
     </div>
+
+    <button id="show_dialog_button">Show Dialog</button>
   </body>
 </html>
 
