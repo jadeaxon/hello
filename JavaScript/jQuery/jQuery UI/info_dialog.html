@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Dialog</title>
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+      // Turn element with id 'info_dialog' into a jQuery UI dialog.
+      $( function() {
+        $( "#info_dialog" ).dialog();
+      } );
+    </script>
+  </head>
+  <body>
+    <div id="info_dialog" title="Info Dialog">
+      <p>This is the default dialog which is useful for displaying
+      information. The dialog window can be moved, resized and closed with the
+      'x' icon.</p>
+    </div>
+  </body>
+</html>
+
