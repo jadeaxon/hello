@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c8077323-6c58-4ccc-a7f0-25a1928477b3" name="Default Changelist" comment="Reformat index.html">
+      <change beforePath="$PROJECT_DIR$/../README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/MyFirstWebProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/MyFirstWebProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/codeStyleSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/codeStyleSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/dictionaries/denpatin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/dictionaries/denpatin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/scopes/scope_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/scopes/scope_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/css/map.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/css/map.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/js/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/js/map.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch1/MyFirstWebProject/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch1/MyFirstWebProject/map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.bowerrc" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.bowerrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/MyAngularApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/MyAngularApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/scopes/scope_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/scopes/scope_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/app/partials/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/app/partials/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/app/views/entries.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/app/views/entries.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/app/views/entry.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/app/views/entry.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/app/views/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/app/views/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/assets/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/assets/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/jsondata/entries.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/jsondata/entries.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/jsondata/menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/jsondata/menu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/angular-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/angular-route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/angular-route.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/angular-route.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/angular-route.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/angular-route.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular-route/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular-csp.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular-csp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.min.js.gzip" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.min.js.gzip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/angular.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/Gruntfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/dist/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/.jshintrc" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/.jshintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-commonjs-generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-commonjs-generator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-glyphicons-data-generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-glyphicons-data-generator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-lessdoc-parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-lessdoc-parser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-raw-files-generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/bs-raw-files-generator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/configBridge.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/configBridge.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/sauce_browsers.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/grunt/sauce_browsers.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/.jscsrc" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/.jscsrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/.jshintrc" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/.jshintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/affix.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/affix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/alert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/collapse.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/collapse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/modal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/popover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/scrollspy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/scrollspy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/tab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/tooltip.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/tooltip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/transition.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/js/transition.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/.csscomb.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/.csscomb.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/.csslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/.csslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/alerts.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/alerts.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/badges.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/badges.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/bootstrap.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/bootstrap.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/breadcrumbs.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/breadcrumbs.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/button-groups.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/button-groups.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/buttons.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/buttons.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/carousel.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/carousel.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/close.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/close.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/code.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/code.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/component-animations.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/component-animations.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/dropdowns.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/dropdowns.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/forms.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/forms.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/glyphicons.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/glyphicons.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/grid.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/grid.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/input-groups.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/input-groups.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/jumbotron.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/jumbotron.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/labels.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/labels.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/list-group.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/list-group.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/media.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/media.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/alerts.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/alerts.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/background-variant.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/background-variant.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/border-radius.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/border-radius.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/buttons.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/buttons.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/center-block.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/center-block.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/clearfix.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/clearfix.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/forms.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/forms.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/gradients.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/gradients.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/grid-framework.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/grid-framework.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/grid.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/grid.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/hide-text.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/hide-text.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/image.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/image.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/labels.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/labels.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/list-group.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/list-group.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/nav-divider.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/nav-divider.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/nav-vertical-align.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/nav-vertical-align.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/opacity.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/opacity.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/pagination.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/pagination.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/panels.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/panels.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/progress-bar.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/progress-bar.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/reset-filter.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/reset-filter.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/resize.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/resize.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/responsive-visibility.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/responsive-visibility.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/size.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/size.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/tab-focus.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/tab-focus.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/table-row.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/table-row.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/text-emphasis.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/text-emphasis.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/text-overflow.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/text-overflow.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/vendor-prefixes.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/mixins/vendor-prefixes.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/modals.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/modals.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/navbar.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/navbar.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/navs.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/navs.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/normalize.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/normalize.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/pager.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/pager.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/pagination.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/pagination.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/panels.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/panels.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/popovers.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/popovers.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/print.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/print.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/progress-bars.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/progress-bars.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/responsive-embed.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/responsive-embed.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/responsive-utilities.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/responsive-utilities.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/scaffolding.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/scaffolding.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/tables.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/tables.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/theme.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/theme.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/thumbnails.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/thumbnails.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/tooltip.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/tooltip.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/type.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/type.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/utilities.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/utilities.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/variables.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/wells.less" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/less/wells.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/package.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/package.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/bootstrap/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/.bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/.bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/MIT-LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/MIT-LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/bower.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/dist/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/dist/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/dist/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/dist/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/dist/jquery.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/dist/jquery.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/jsonp.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/jsonp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/load.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/load.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/parseJSON.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/parseJSON.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/parseXML.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/parseXML.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/var/nonce.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/var/nonce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/var/rquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/var/rquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/xhr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/ajax/xhr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/attr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/attr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/classes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/classes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/prop.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/prop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/val.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/attributes/val.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/callbacks.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/callbacks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/access.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/access.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/parseHTML.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/parseHTML.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/ready.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/ready.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/var/rsingleTag.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/core/var/rsingleTag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/addGetHookIf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/addGetHookIf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/curCSS.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/curCSS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/defaultDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/defaultDisplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/hiddenVisibleSelectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/hiddenVisibleSelectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/swap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/swap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/cssExpand.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/cssExpand.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/getStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/getStyles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/isHidden.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/isHidden.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/rmargin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/rmargin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/rnumnonpx.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/css/var/rnumnonpx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/Data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/accepts.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/accepts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/var/data_priv.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/var/data_priv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/var/data_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/data/var/data_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/deferred.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/deferred.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/deprecated.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/deprecated.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/dimensions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/dimensions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/effects.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/effects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/effects/Tween.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/effects/Tween.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/effects/animatedSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/effects/animatedSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event/alias.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event/alias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/event/support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/exports/amd.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/exports/amd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/exports/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/exports/global.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/intro.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/intro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation/_evalUrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation/_evalUrl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation/support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation/var/rcheckableType.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/manipulation/var/rcheckableType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/offset.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/offset.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/outro.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/outro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/queue.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/queue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/queue/delay.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/queue/delay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/selector-native.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/selector-native.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/selector-sizzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/selector-sizzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/selector.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/selector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/serialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/serialize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/sizzle/dist/sizzle.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/sizzle/dist/sizzle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/sizzle/dist/sizzle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/sizzle/dist/sizzle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/sizzle/dist/sizzle.min.map" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/sizzle/dist/sizzle.min.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/traversing.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/traversing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/traversing/findFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/traversing/findFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/traversing/var/rneedsContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/traversing/var/rneedsContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/arr.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/arr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/class2type.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/class2type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/concat.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/concat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/hasOwn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/hasOwn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/indexOf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/indexOf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/pnum.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/pnum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/push.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/push.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/rnotwhite.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/rnotwhite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/slice.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/slice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/strundefined.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/strundefined.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/support.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/support.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/toString.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/var/toString.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/wrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyAngularApp/vendor/jquery/src/wrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.bowerrc" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.bowerrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/MyNodejsApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/MyNodejsApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/scopes/scope_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/scopes/scope_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch4/MyNodejsApp/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch4/MyNodejsApp/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/4520_Ch05_code.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/4520_Ch05_code.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/Angular_code.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/Angular_code.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/React_Code.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/React_Code.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/js/jquery-1.11.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/js/jquery-1.11.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/.pgbomit" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/.pgbomit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/android/icon-36-ldpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/android/icon-36-ldpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/android/icon-48-mdpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/android/icon-48-mdpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/android/icon-72-hdpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/android/icon-72-hdpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/android/icon-96-xhdpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/android/icon-96-xhdpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/bada-wac/icon-48-type5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/bada-wac/icon-48-type5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/bada-wac/icon-50-type3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/bada-wac/icon-50-type3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/bada-wac/icon-80-type4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/bada-wac/icon-80-type4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/bada/icon-128.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/bada/icon-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/blackberry/icon-80.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/blackberry/icon-80.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-57-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-57-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-57.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-57.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-72-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-72-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-72.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/ios/icon-72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/tizen/icon-128.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/tizen/icon-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/webos/icon-64.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/webos/icon-64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/windows-phone/icon-173-tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/windows-phone/icon-173-tile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/windows-phone/icon-48.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/windows-phone/icon-48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/icon/windows-phone/icon-62-tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/icon/windows-phone/icon-62-tile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-hdpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-hdpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-hdpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-hdpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-ldpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-ldpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-ldpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-ldpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-mdpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-mdpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-mdpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-mdpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-xhdpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-xhdpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/android/screen-xhdpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/android/screen-xhdpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/bada-wac/screen-type3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/bada-wac/screen-type3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/bada-wac/screen-type4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/bada-wac/screen-type4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/bada-wac/screen-type5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/bada-wac/screen-type5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/bada/screen-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/bada/screen-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/blackberry/screen-225.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/blackberry/screen-225.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-landscape-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-landscape-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-portrait-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-portrait-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-ipad-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-landscape-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-landscape-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-portrait-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-portrait-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-portrait-568h-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/ios/screen-iphone-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/tizen/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/tizen/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/webos/screen-64.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/webos/screen-64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/res/screen/windows-phone/screen-portrait.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/res/screen/windows-phone/screen-portrait.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/spec.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/spec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/spec/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/spec/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/spec/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/spec/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/MIT.LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/MIT.LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/jasmine-html.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/jasmine-html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/jasmine.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/jasmine.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/jasmine.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch5/spec/lib/jasmine-1.2.0/jasmine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/4520_Ch05_code.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/4520_Ch05_code.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/js/jquery-1.11.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/js/jquery-1.11.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/.pgbomit" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/.pgbomit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/android/icon-36-ldpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/android/icon-36-ldpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/android/icon-48-mdpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/android/icon-48-mdpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/android/icon-72-hdpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/android/icon-72-hdpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/android/icon-96-xhdpi.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/android/icon-96-xhdpi.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/bada-wac/icon-48-type5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/bada-wac/icon-48-type5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/bada-wac/icon-50-type3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/bada-wac/icon-50-type3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/bada-wac/icon-80-type4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/bada-wac/icon-80-type4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/bada/icon-128.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/bada/icon-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/blackberry/icon-80.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/blackberry/icon-80.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-57-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-57-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-57.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-57.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-72-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-72-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-72.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/ios/icon-72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/tizen/icon-128.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/tizen/icon-128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/webos/icon-64.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/webos/icon-64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/windows-phone/icon-173-tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/windows-phone/icon-173-tile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/windows-phone/icon-48.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/windows-phone/icon-48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/icon/windows-phone/icon-62-tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/icon/windows-phone/icon-62-tile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-hdpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-hdpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-hdpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-hdpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-ldpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-ldpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-ldpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-ldpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-mdpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-mdpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-mdpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-mdpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-xhdpi-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-xhdpi-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/android/screen-xhdpi-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/android/screen-xhdpi-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/bada-wac/screen-type3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/bada-wac/screen-type3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/bada-wac/screen-type4.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/bada-wac/screen-type4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/bada-wac/screen-type5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/bada-wac/screen-type5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/bada/screen-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/bada/screen-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/blackberry/screen-225.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/blackberry/screen-225.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-landscape-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-landscape-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-portrait-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-portrait-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-ipad-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-landscape-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-landscape-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-landscape.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-landscape.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-portrait-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-portrait-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-portrait-568h-2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-portrait.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/ios/screen-iphone-portrait.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/tizen/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/tizen/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/webos/screen-64.png" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/webos/screen-64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/res/screen/windows-phone/screen-portrait.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/res/screen/windows-phone/screen-portrait.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/spec.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/spec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/spec/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/spec/helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/spec/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/spec/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/MIT.LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/MIT.LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/jasmine-html.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/jasmine-html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/jasmine.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/jasmine.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/jasmine.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch6/spec/lib/jasmine-1.2.0/jasmine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch7/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch7/Gruntfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch7/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ch7/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch7/fib.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch7/fib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch7/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch7/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch7/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch7/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/Gruntfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/fib.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/fib.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/karma.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/test/cucumber/fib.feature" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/test/cucumber/fib.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/test/cucumber/step_definitions/fib.steps.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/test/cucumber/step_definitions/fib.steps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/test/jasmine/fib.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/test/jasmine/fib.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/test/mocha/fib.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/test/mocha/fib.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/test/nodeunit/fib.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/test/nodeunit/fib.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ch8/wallaby.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ch8/wallaby.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1913" />
+    <option name="width" value="974" />
+    <option name="height" value="1207" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ch3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ch3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ch3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ch3" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ch3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ch3" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ch3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ch3" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ch3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="ch3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="jquery" type="70bed36:NamedLibraryElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ChangesTree.GroupingKeys" value="directory" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8077323-6c58-4ccc-a7f0-25a1928477b3" name="Default Changelist" comment="" />
+      <created>1549662838683</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1549662838683</updated>
+      <workItem from="1549662839917" duration="1833000" />
+    </task>
+    <task id="LOCAL-00001" summary="Reformat index.html">
+      <created>1549664230828</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549664230828</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1833000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1936" height="1216" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32963988" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32963988" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Reformat index.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformat index.html" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
