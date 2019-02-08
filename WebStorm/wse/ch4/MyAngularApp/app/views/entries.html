@@ -1,0 +1,7 @@
+<article ng-repeat="entry in entries.slice().reverse()">
+	<h1><a href="#/entry/{{ entries.indexOf(entry) }}">{{ entry.title }}</a></h1>
+    <p>
+        {{ entry.content.split(" ").slice(0,5).join(" ") }}
+        <a href="#/entry/{{ entries.indexOf(entry) }}">... (read more)</a>
+    </p>
+</article>

@@ -1,0 +1,25 @@
+{
+  "name": "webstorm_essentials_testing",
+  "version": "1.0.0",
+  "description": "webstorm_essentials_testing sample code",
+  "main": "fib.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srosca/webstorm_essentials_debugging.git"
+  },
+  "author": "Stefan Rosca",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srosca/webstorm_essentials_debugging/issues"
+  },
+  "homepage": "https://github.com/srosca/webstorm_essentials_debugging#readme",
+  "devDependencies": {
+    "cucumber": "^0.5.2",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "mocha": "^2.2.5",
+    "nodeunit": "^0.9.1"
+  }
+}
