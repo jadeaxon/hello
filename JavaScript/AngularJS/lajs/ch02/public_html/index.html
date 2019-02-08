@@ -1,23 +1,33 @@
 <!DOCTYPE html> 
 <html lang="en" ng-app="helloWorldApp"> 
-    <head> 
-        <title>AngularJS Hello World</title>             
+    <head>
+        <title>Hello, AngularJS!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-       
-        <script src="js/libs/jquery-1.10.2.min.js"></script>  
+
+        <!-- jQuery. -->
+        <script src="js/libs/jquery-3.3.1.min.js"></script>
+
+        <!-- Bootstrap 4. -->
+        <link rel="stylesheet" href="js/libs/bootstrap.min.css" />
+        <script src="js/libs/bootstrap.min.js"></script>
+
+        <!-- AngularJS 1.7.6. -->
+        <!-- AngularJS depends on jQuery. -->
         <script src="js/libs/angular.min.js"></script>        
         <script src="js/libs/angular-route.min.js"></script> 
         <script src="js/libs/angular-resource.min.js"></script> 
         <script src="js/libs/angular-cookies.min.js"></script> 
 
+        <!-- Our custom AngularJS code. -->
         <script src="js/app.js"></script> 
         <script src="js/controllers.js"></script>        
         <script src="js/services.js"></script> 
 
 
     </head> 
-    <body> 
+    <body>
+        <!-- This will display an HTML view/template/partial. -->
         <div ng-view></div> 
     </body> 
 </html> 
