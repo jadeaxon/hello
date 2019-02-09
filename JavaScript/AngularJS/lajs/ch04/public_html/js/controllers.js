@@ -1,41 +1,45 @@
 'use strict';
 
-/* Controllers */
+(function() {
 
-var helloWorldControllers = angular.module('helloWorldControllers', []);
+// This module contains all the controllers for our app.
+var controllers = angular.module('helloWorld.controllers', []);
 
-
-
-helloWorldControllers.controller('MainCtrl', ['$scope', 
+// The common convention is for controller names to end with Ctrl.
+controllers.controller('MainCtrl', ['$scope',
     function MainCtrl($scope) {
-        $scope.message = "Hello World";
+        $scope.message = "Hello, world!";
     }]);
 
-helloWorldControllers.controller('ShowCtrl', ['$scope', 
+controllers.controller('ShowCtrl', ['$scope',
     function ShowCtrl($scope) {
-        $scope.message = "Show The World";
+        $scope.message = "Show the world about controllers.";
     }]);
 
-helloWorldControllers.controller('CustomerCtrl', ['$scope', 
+controllers.controller('CustomerCtrl', ['$scope',
+    // Initialize the scope.
+    // Variables and functions defined in the scope are available in the view template this controller is attached to.
+    // No need to name the function passed here.
     function CustomerCtrl($scope) {
-        $scope.customerName = "Bob's Burgers";
-        $scope.customerNumber = 44522;
-        $scope.changeCustomer = function(){
+        $scope.customerName = "MgRonald's";
+        $scope.customerNumber = 666;
+        $scope.changeCustomer = function () {
             $scope.customerName = $scope.cName;
             $scope.customerNumber = $scope.cNumber;
         };
     }]);
 
-
-helloWorldControllers.controller('AddCustomerCtrl', ['$scope', '$location',
-    function AddCustomerCtrl($scope, $location) {       
-        $scope.submit = function(){
+controllers.controller('AddCustomerCtrl', ['$scope', '$location',
+    function AddCustomerCtrl($scope, $location) {
+        $scope.submit = function () {
             $location.path('/addedCustomer/' + $scope.cName + "/" + $scope.cCity);
         };
     }]);
 
-helloWorldControllers.controller('AddedCustomerCtrl', ['$scope', '$routeParams',
-    function AddedCustomerCtrl($scope, $routeParams) { 
+controllers.controller('AddedCustomerCtrl', ['$scope', '$routeParams',
+    function AddedCustomerCtrl($scope, $routeParams) {
         $scope.customerName = $routeParams.customer;
-        $scope.customerCity = $routeParams.city;       
+        $scope.customerCity = $routeParams.city;
     }]);
+
+})();

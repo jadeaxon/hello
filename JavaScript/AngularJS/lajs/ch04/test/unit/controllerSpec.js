@@ -1,7 +1,7 @@
 /* jasmine specs for controllers go here */
 describe('Hello World', function() {
 
-  beforeEach(module('helloWorldApp'));
+  beforeEach(module('app'));
 
   describe('MainCtrl', function(){
     var scope, ctrl;
