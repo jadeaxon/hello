@@ -1,10 +1,6 @@
 'use strict';
 
-/* Controllers */
-
-var blogControllers = angular.module('blogControllers', []);
-
-
+var blogControllers = angular.module('blog.controllers', ['blog.services']);
 
 blogControllers.controller('BlogCtrl', ['$scope',
     function BlogCtrl($scope) {
@@ -22,8 +18,6 @@ blogControllers.controller('BlogCtrl', ['$scope',
                 "blogText": "In this blog post we will learn how to build applications based on REST web services that contain most of the business logic needed for the application."
             }
         ];
-
-
     }]);
 
 blogControllers.controller('BlogViewCtrl', ['$scope', '$routeParams', 

@@ -2,9 +2,9 @@
 
 /* App Module */
 
-var blogApp = angular.module('blogApp', [
+var blogApp = angular.module('blog.app', [
     'ngRoute',     
-    'blogControllers'
+    'blog.controllers'
     
 ]);
 
