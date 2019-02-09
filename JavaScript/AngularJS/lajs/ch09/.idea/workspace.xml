@@ -111,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549746084629</updated>
-      <workItem from="1549746085882" duration="895000" />
+      <workItem from="1549746085882" duration="892000" />
     </task>
     <task id="LOCAL-00001" summary="Update libs">
       <created>1549746319437</created>
@@ -124,7 +124,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="895000" />
+    <option name="totallyTimeSpent" value="892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
