@@ -1,0 +1,16 @@
+{
+  "name": "hello_karma",
+  "version": "1.0.0",
+  "description": "The point of this app is to get basic Karma/Jasmine unit testing working from WebStorm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeff Anderson",
+  "license": "ISC",
+  "devDependencies": {
+    "karma": "^4.0.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1"
+  }
+}
