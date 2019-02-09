@@ -1,14 +1,11 @@
 'use strict';
 
-/* App Module */
-
-var blogApp = angular.module('blogApp', [
+var blogApp = angular.module('blog.app', [
     'ngRoute',     
-    'blogControllers',
-    'blogServices'
+    'blog.controllers',
+    'blog.services' // Allows each service to be injected into any controller.
     
 ]);
-
 
 blogApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
