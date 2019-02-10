@@ -25,4 +25,21 @@ npm install -g karma-cli
 karma init
 
 # Run your tests, assuming you have defined any.
+# There's actually little test run icons that appear in the editor gutter.  That's how I'm starting the tests.
+# This pops up a "Test Run" tab at the bottom left in WebStorm.  Expand all test results to see a specific test.
+# This is the test runner tab of the run tool window.  There's also a Karma Server tab.
 karma start
+
+# To run all tests in WebStorm, see
+https://www.jetbrains.com/help/webstorm/running-unit-tests-on-karma.html
+Actually, right click on a single .spec.js test file and run it.
+Now, edit that run configuration that WebStorm created.  There's a radio button to run all tests.
+Rename your run configuration to "Unit Tests" or whatever.
+<A-S r> -- rerun the last set of tests that were run
+
+You have to use angular-mocks.js.
+Your karma.conf.js files section has to point to this and all JavaScript libs and custom code in your project.
+Finally, it has to point at the JavaScript tests.
+This causes all the code to be loaded into the browser it is running the tests in.
+
+
