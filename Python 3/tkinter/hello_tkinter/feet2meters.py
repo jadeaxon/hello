@@ -1,15 +1,21 @@
 from tkinter import *
+
+# Note that ttk widgets do not use the exact same attributes as tk widgets.
+# ttk widgets use a styling system similar to CSS.
 from tkinter import ttk
 
 # Convert feet to meters.
 # Being a function triggered by a button command, there are probably various args passed in.
 # We're ignoring all of them for now.
 def calculate(*args):
+    error.set("") # Reset validation error message.
     try:
+        # We have to use get() to get the underlying value of the bind variable.
         value = float(feet.get())
+        # We have to use set() to set the underlying value of the bind variable.
         meters.set((0.3048 * value * 10000.0 + 0.5) / 10000.0)
     except ValueError:
-        pass
+        error.set("ERROR: '{0}' is not a number.".format(feet.get()))
 
 # Create a root window and give it a title.
 root = Tk()
@@ -35,6 +41,7 @@ mainframe.rowconfigure(0, weight=1)
 # Yeah, these are two-way data bind variable similar to AngularJS $scope vars.
 feet = StringVar()
 meters = StringVar()
+error = StringVar()
 
 # Add a text entry field to the main frame.
 feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
@@ -48,8 +55,13 @@ ttk.Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
 ttk.Button(mainframe, text="Calculate", command=calculate).grid(column=3, row=3, sticky=W)
 
 ttk.Label(mainframe, text="feet").grid(column=3, row=1, sticky=W)
+
 ttk.Label(mainframe, text="is equivalent to").grid(column=1, row=2, sticky=E)
 ttk.Label(mainframe, text="meters").grid(column=3, row=2, sticky=W)
+
+# A field to show validation errors.
+# TODO Make the window not grow in size when this label appears.
+ttk.Label(mainframe, textvariable=error, foreground="red").grid(column=1, row=4, sticky=(W,E))
 
 # Set some padding for each of the main frame's child widgets.
 for child in mainframe.winfo_children():
