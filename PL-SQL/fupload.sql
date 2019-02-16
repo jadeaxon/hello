@@ -247,6 +247,7 @@ DECLARE
 	hr1 FuploadHeaderRecord;
 	tr1 FuploadTrailerRecord;
 	txr1 FuploadTextRecord;
+	dr1 FuploadDetailRecord;
 	r varchar2(148);
 
 BEGIN
@@ -257,16 +258,44 @@ BEGIN
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
-	tr1 := FuploadTrailerRecord('DATALOAD', '', '2', '20190216', '3', '123.45');
+	tr1 := FuploadTrailerRecord('DATALOAD', '', '3', '20190216', '20', '123.45');
 	r := tr1.toString();
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
-	txr1 := FuploadTextRecord('DATALOAD', '', '3', '20190216', 'This is a sample transaction.');
+	txr1 := FuploadTextRecord('DATALOAD', '', '4', '20190216', 'This is a sample transaction.');
 	r := txr1.toString();
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
+	dr1 := FuploadDetailRecord(
+		'DATALOAD', -- self.system_id
+		'', -- self.doc_code
+		'2', -- self.rec_type
+		'JE16',-- self.rucl_code
+		'JE12.10', -- self.doc_ref_num
+		'123.45', -- self.trans_amt
+		'Sample transaction', -- self.trans_desc
+		'+', -- self.dr_cr_ind
+		'WF', -- bank_code
+		'U', -- coas_code
+		'660001', -- acci_code
+		'', -- fund_code
+		'', -- orgn_code
+		'', -- acct_code
+		'', -- prog_code
+		'', -- actv_code
+		'', -- locn_code
+		'', -- encd_num
+		'', -- encd_item_num
+		'', -- encd_seq_num
+		'', -- encd_action_ind
+		'', -- prjd_code
+		'' -- encb_type
+	);
+	r := dr1.toString();
+	dbms_output.put_line(REPLACE(r, ' ', '_'));
+	dbms_output.put_line(LENGTH(r));
 
 END;
 /
