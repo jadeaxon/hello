@@ -70,8 +70,13 @@ END;
 
 -- FUPLOAD trailer record interface spec.  Inherits from the base record type.
 CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
-	rec_count varchar2(8), -- Number of atomic records in the FUPLOAD finance document record.
-	trans_tot varchar2(12), -- The total of the absolute value of each atomic detail record amount.
+	-- Number of atomic records in the FUPLOAD finance document record.
+	rec_count varchar2(8),
+
+	-- The total of the absolute value of each atomic detail record amount.
+	-- This is a value in cents (no decimal point).
+	-- On output, it gets left-padded with 0s.
+	trans_tot varchar2(12),
 
 	-- An atomic FUPLOAD record has a fixed length of 148 bytes.
 	-- This filler field aligns with that record boundary.
@@ -91,7 +96,7 @@ CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
 		r := r || LPAD(NVL(self.doc_code, ' '), 8);
 		r := r || NVL(self.rec_type, ' ');
 		r := r || LPAD(NVL(self.rec_count, ' '), 8);
-		r := r || LPAD(NVL(self.trans_tot, ' '), 12);
+		r := r || LPAD(NVL(self.trans_tot, '0'), 12, '0');
 		r := r || self.filler;
 		return r;
 	END toString;
@@ -141,6 +146,8 @@ CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
 	doc_ref_num varchar2(8),
 
 	-- The absolute value of the transaction amount.
+	-- This is a value in cents (no decimal point).
+	-- On output, it gets left-padded with 0s.
 	trans_amt varchar2(12),
 
 	--  A description of the transaction.
@@ -213,7 +220,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		r := r || NVL(self.rec_type, ' ');
 		r := r || LPAD(NVL(self.rucl_code, ' '), 4);
 		r := r || LPAD(NVL(self.doc_ref_num, ' '), 8);
-		r := r || LPAD(NVL(self.trans_amt, ' '), 12);
+		r := r || LPAD(NVL(self.trans_amt, '0'), 12, '0');
 		r := r || LPAD(NVL(self.trans_desc, ' '), 35);
 		r := r || NVL(self.dr_cr_ind, ' '); -- Length 1.
 		r := r || LPAD(NVL(self.bank_code, ' '), 2);
@@ -260,7 +267,7 @@ BEGIN
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
-	tr1 := FuploadTrailerRecord('DATALOAD', '', '3', '20190216', '20', '123.45');
+	tr1 := FuploadTrailerRecord('DATALOAD', '', '3', '20190216', '20', '123456');
 	r := tr1.toString();
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
@@ -276,15 +283,15 @@ BEGIN
 		'2', -- self.rec_type
 		'JESY',-- self.rucl_code
 		'JE12.10', -- self.doc_ref_num
-		'123.45', -- self.trans_amt
+		'12345', -- self.trans_amt
 		'Sample transaction', -- self.trans_desc
-		'+', -- self.dr_cr_ind
+		'C', -- self.dr_cr_ind
 		'WF', -- bank_code
 		'U', -- coas_code
 		'660001', -- acci_code
-		'', -- fund_code
-		'', -- orgn_code
-		'', -- acct_code
+		'FUND12', -- fund_code
+		'ORGN34', -- orgn_code
+		'ACCT56', -- acct_code
 		'', -- prog_code
 		'', -- actv_code
 		'', -- locn_code
