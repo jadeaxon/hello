@@ -257,7 +257,14 @@ DECLARE
 	tr1 FuploadTrailerRecord;
 	txr1 FuploadTextRecord;
 	dr1 FuploadDetailRecord;
+	dr2 FuploadDetailRecord;
+
 	r varchar2(148);
+	er varchar2(148); -- Expected record.
+
+	rd varchar(1024);
+	erd varchar2(1024);
+
 
 BEGIN
 	dbms_output.put_line('Testing FUPLOAD object types.');
@@ -278,14 +285,14 @@ BEGIN
 	dbms_output.put_line(LENGTH(r));
 
 	dr1 := FuploadDetailRecord(
-		'DATALOAD', -- self.system_id
-		'', -- self.doc_code
-		'2', -- self.rec_type
-		'JESY',-- self.rucl_code
-		'JE12.10', -- self.doc_ref_num
-		'12345', -- self.trans_amt
-		'Sample transaction', -- self.trans_desc
-		'C', -- self.dr_cr_ind
+		'DATALOAD', -- system_id
+		'', -- doc_code
+		'2', -- rec_type
+		'JESY',-- rucl_code
+		'JE12.10', -- doc_ref_num
+		'12345', -- trans_amt
+		'Sample transaction', -- trans_desc
+		'C', -- dr_cr_ind
 		'WF', -- bank_code
 		'U', -- coas_code
 		'660001', -- acci_code
@@ -305,6 +312,50 @@ BEGIN
 	r := dr1.toString();
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
+
+	er := 'DATALOAD        2JESY10002074000000001290            Move FZ031253 to 720556CWFU660001            720559                                            ';
+	dr2 := FuploadDetailRecord(
+		'DATALOAD', -- system_id
+		'', -- doc_code
+		'2', -- rec_type
+		'JESY',-- rucl_code
+		'10002074', -- doc_ref_num
+		'1290', -- trans_amt
+		'Move FZ031253 to 720556', -- trans_desc
+		'C', -- dr_cr_ind
+		'WF', -- bank_code
+		'U', -- coas_code
+		'660001', -- acci_code
+		'', -- fund_code
+		'', -- orgn_code
+		'720559', -- acct_code
+		'', -- prog_code
+		'', -- actv_code
+		'', -- locn_code
+		'', -- encd_num
+		'', -- encd_item_num
+		'', -- encd_seq_num
+		'', -- encd_action_ind
+		'', -- prjd_code
+		'' -- encb_type
+	);
+	r := dr2.toString();
+	dbms_output.put_line(r);
+
+	dbms_output.put_line(er);
+	select dump(er) into erd from dual;
+	dbms_output.put_line(erd);
+
+	dbms_output.put_line(r);
+	select dump(r) into rd from dual;
+	dbms_output.put_line(rd);
+
+	-- This fails even though the strings appear to be exactly the same.
+	if r = er then
+		dbms_output.put_line('Test 1 passed.');
+	else
+		dbms_output.put_line('Test 1 failed.');
+	end if;
 
 END;
 /
