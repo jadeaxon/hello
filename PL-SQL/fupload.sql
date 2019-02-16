@@ -9,6 +9,8 @@ CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
 
 DROP TYPE FuploadHeaderRecord;
 DROP TYPE FuploadTrailerRecord;
+DROP TYPE FuploadText Record;
+DROP TYPE FuploadDetailRecord;
 
 
 -- Abstract base class for the 4 types of atomic FUPLOAD records.
@@ -120,6 +122,116 @@ CREATE OR REPLACE TYPE BODY FuploadTextRecord AS
 		r := r || self.rec_type;
 		r := r || self.text;
 		r := r || self.filler;
+		return r;
+	END toString;
+END;
+/
+
+
+
+-- FUPLOAD detail record interface spec.  Inherits from the base record type.
+CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
+	-- Banner Finance rule class.
+	-- This represents the type of financial operation/transaction being done.
+	rucl_code char(4),
+
+	-- A finance document reference number.
+	-- This is something you can use to link back to the transaction in the external system.
+	-- We'll probably use a hash that maps to a <request id>.<line number> in JEBTRS.
+	doc_ref_num char(8),
+
+	-- The absolute value of the transaction amount.
+	trans_amt char(12),
+
+	--  A description of the transaction.
+	trans_desc char(35),
+
+	-- Debit/credit indicator.  Must be 'D', 'C', '+', or '-'.
+	dr_cr_ind char(1),
+
+	-- WF => Wells Fargo.
+	bank_code char(2),
+
+	-- C-FOAPAL
+	-- Banner Finance chart of accounts code.
+	coas_code char(1),
+
+	-- Banner Finance "account" index code.
+	acci_code char(6),
+
+	-- Banner Finance fund code.
+	fund_code char(6),
+
+	-- Banner Finance organization code.
+	orgn_code char(6),
+
+	-- Bannr Finance account code.
+	acct_code char(6),
+
+	-- Banner Finance program code.
+	prog_code char(6),
+
+	-- Banner Finance activity code.
+	actv_code char(6),
+
+	-- Banner Finance location code.
+	locn_code char(6),
+
+	-- Encumbrances
+	-- Encumbrance number.
+	encd_num char(8),
+
+	-- Encumbrance commodity item number.
+	encd_item_num char(4),
+
+	-- Encumbrance detail sequence number.
+	encd_seq_num char(4),
+
+	-- Encumbrance action indication.
+	-- T => total liquidation; P => partial liquidation; A => adjustment.
+	encd_action_ind char(1),
+
+	-- Project code.
+	prjd_code char(8),
+
+	-- Encumbrance type.
+	-- R => requisition; P => purchase order; E => general encubrance; L => labor; M => memo.
+	encb_type char(1),
+
+	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
+);
+/
+
+
+-- FUPLOAD detail record implementation body.
+CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
+	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
+		r varchar2(148) := '';
+	BEGIN
+		r := self.system_id;
+		r := r || self.doc_code;
+		r := r || self.rec_type;
+		r := r || self.rucl_code;
+		r := r || self.doc_ref_num;
+		r := r || self.trans_amt;
+		r := r || self.trans_desc;
+		r := r || self.dr_cr_ind;
+		r := r || bank_code;
+		r := r || coas_code;
+		r := r || acci_code;
+		r := r || fund_code;
+		r := r || orgn_code;
+		r := r || acct_code;
+		r := r || prog_code;
+		r := r || actv_code;
+		r := r || locn_code;
+		r := r || encd_num;
+		r := r || encd_item_num;
+		r := r || encd_seq_num;
+		r := r || encd_action_ind;
+		r := r || prjd_code;
+		r := r || encb_type;
+
 		return r;
 	END toString;
 END;
