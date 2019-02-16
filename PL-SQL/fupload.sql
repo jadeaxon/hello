@@ -68,7 +68,6 @@ END;
 
 -- FUPLOAD trailer record interface spec.  Inherits from the base record type.
 CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
-	-- The transaction date in YYYYMMDD format.
 	rec_count char(8), -- Number of atomic records in the FUPLOAD finance document record.
 	trans_tot char(12), -- The total of the absolute value of each atomic detail record amount.
 
@@ -98,6 +97,35 @@ END;
 /
 
 
+-- FUPLOAD text record interface spec.  Inherits from the base record type.
+CREATE OR REPLACE TYPE FuploadTextRecord UNDER FuploadBaseRecord (
+	text char(50), -- Arbitrary text describing the transaction.
+
+	-- An atomic FUPLOAD record has a fixed length of 148 bytes.
+	-- This filler field aligns with that record boundary.
+	-- It should contain all space characters (ASCII 32).
+	filler char(81),
+	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
+);
+/
+
+
+-- FUPLOAD text record implementation body.
+CREATE OR REPLACE TYPE BODY FuploadTextRecord AS
+	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
+		r varchar2(148) := '';
+	BEGIN
+		r := self.system_id;
+		r := r || self.doc_code;
+		r := r || self.rec_type;
+		r := r || self.text;
+		r := r || self.filler;
+		return r;
+	END toString;
+END;
+/
+
+
 -- Show specific compilation errors, if any.
 show errors;
 
@@ -106,6 +134,7 @@ show errors;
 DECLARE
 	hr1 FuploadHeaderRecord;
 	tr1 FuploadTrailerRecord;
+	txr1 FuploadTextRecord;
 	r varchar2(148);
 
 BEGIN
@@ -120,6 +149,12 @@ BEGIN
 	r := tr1.toString();
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
+
+	txr1 := FuploadTextRecord('DATALOAD', '', '3', '20190216', 'This is a sample transaction.');
+	r := txr1.toString();
+	dbms_output.put_line(REPLACE(r, ' ', '_'));
+	dbms_output.put_line(LENGTH(r));
+
 
 END;
 /
