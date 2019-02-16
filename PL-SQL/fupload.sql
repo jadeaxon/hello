@@ -19,19 +19,19 @@ CREATE OR REPLACE TYPE FuploadBaseRecord AS OBJECT (
 	-- This is the id of the non-Banner system loading finance document data into Banner via FUPLOAD.
 	-- This id is defined via FTMSDAT and GJAPVAL.
 	-- We probably should be using JEBTRS here instead of a generic id DATALOAD we use.
-	system_id char(8),
+	system_id varchar2(8),
 
 	-- The desired Banner finance document id code.
 	-- This should be left blank to let Banner generate an id.
 	-- Banner uses FOMFSEQ to generate the id.
-	doc_code char(8),
+	doc_code varchar2(8),
 
 	-- The FUPLOAD record type.
 	-- 1 => header record
 	-- 2 => detail record
 	-- 3 => trailer record
 	-- 4 => text record
-	rec_type char(1),
+	rec_type varchar2(1),
 
 	NOT FINAL MEMBER FUNCTION toString RETURN varchar2
 ) NOT FINAL NOT INSTANTIABLE;
@@ -41,7 +41,7 @@ CREATE OR REPLACE TYPE FuploadBaseRecord AS OBJECT (
 -- FUPLOAD header record interface spec.  Inherits from the base record type.
 CREATE OR REPLACE TYPE FuploadHeaderRecord UNDER FuploadBaseRecord (
 	-- The transaction date in YYYYMMDD format.
-	trans_date char(8),
+	trans_date varchar2(8),
 
 	-- An atomic FUPLOAD record has a fixed length of 148 bytes.
 	-- This filler field aligns with that record boundary.
@@ -57,11 +57,11 @@ CREATE OR REPLACE TYPE BODY FuploadHeaderRecord AS
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
-		r := self.system_id;
-		r := r || self.doc_code;
-		r := r || self.rec_type;
-		r := r || self.trans_date;
-		r := r || self.filler;
+		r := LPAD(NVL(self.system_id, ' '), 8);
+		r := r || LPAD(NVL(self.doc_code, ' '), 8);
+		r := r || NVL(self.rec_type, ' '); -- Length 1.
+		r := r || LPAD(NVL(self.trans_date, ' '), 8);
+		r := r || self.filler; -- char, not varchar2
 		return r;
 	END toString;
 END;
@@ -70,8 +70,8 @@ END;
 
 -- FUPLOAD trailer record interface spec.  Inherits from the base record type.
 CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
-	rec_count char(8), -- Number of atomic records in the FUPLOAD finance document record.
-	trans_tot char(12), -- The total of the absolute value of each atomic detail record amount.
+	rec_count varchar2(8), -- Number of atomic records in the FUPLOAD finance document record.
+	trans_tot varchar2(12), -- The total of the absolute value of each atomic detail record amount.
 
 	-- An atomic FUPLOAD record has a fixed length of 148 bytes.
 	-- This filler field aligns with that record boundary.
@@ -87,11 +87,11 @@ CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
-		r := self.system_id;
-		r := r || self.doc_code;
-		r := r || self.rec_type;
-		r := r || self.rec_count;
-		r := r || self.trans_tot;
+		r := LPAD(NVL(self.system_id, ' '), 8);
+		r := r || LPAD(NVL(self.doc_code, ' '), 8);
+		r := r || NVL(self.rec_type, ' ');
+		r := r || LPAD(NVL(self.rec_count, ' '), 8);
+		r := r || LPAD(NVL(self.trans_tot, ' '), 12);
 		r := r || self.filler;
 		return r;
 	END toString;
@@ -101,7 +101,7 @@ END;
 
 -- FUPLOAD text record interface spec.  Inherits from the base record type.
 CREATE OR REPLACE TYPE FuploadTextRecord UNDER FuploadBaseRecord (
-	text char(50), -- Arbitrary text describing the transaction.
+	text varchar2(50), -- Arbitrary text describing the transaction.
 
 	-- An atomic FUPLOAD record has a fixed length of 148 bytes.
 	-- This filler field aligns with that record boundary.
@@ -117,10 +117,10 @@ CREATE OR REPLACE TYPE BODY FuploadTextRecord AS
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
-		r := self.system_id;
-		r := r || self.doc_code;
+		r := LPAD(NVL(self.system_id, ' '), 8);
+		r := r || LPAD(NVL(self.doc_code, ' '), 8);
 		r := r || self.rec_type;
-		r := r || self.text;
+		r := r || LPAD(NVL(self.text, ' '), 50);
 		r := r || self.filler;
 		return r;
 	END toString;
@@ -133,70 +133,70 @@ END;
 CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
 	-- Banner Finance rule class.
 	-- This represents the type of financial operation/transaction being done.
-	rucl_code char(4),
+	rucl_code varchar2(4),
 
 	-- A finance document reference number.
 	-- This is something you can use to link back to the transaction in the external system.
 	-- We'll probably use a hash that maps to a <request id>.<line number> in JEBTRS.
-	doc_ref_num char(8),
+	doc_ref_num varchar2(8),
 
 	-- The absolute value of the transaction amount.
-	trans_amt char(12),
+	trans_amt varchar2(12),
 
 	--  A description of the transaction.
-	trans_desc char(35),
+	trans_desc varchar2(35),
 
 	-- Debit/credit indicator.  Must be 'D', 'C', '+', or '-'.
-	dr_cr_ind char(1),
+	dr_cr_ind varchar2(1),
 
 	-- WF => Wells Fargo.
-	bank_code char(2),
+	bank_code varchar2(2),
 
 	-- C-FOAPAL
 	-- Banner Finance chart of accounts code.
-	coas_code char(1),
+	coas_code varchar2(1),
 
 	-- Banner Finance "account" index code.
-	acci_code char(6),
+	acci_code varchar2(6),
 
 	-- Banner Finance fund code.
-	fund_code char(6),
+	fund_code varchar2(6),
 
 	-- Banner Finance organization code.
-	orgn_code char(6),
+	orgn_code varchar2(6),
 
 	-- Bannr Finance account code.
-	acct_code char(6),
+	acct_code varchar2(6),
 
 	-- Banner Finance program code.
-	prog_code char(6),
+	prog_code varchar2(6),
 
 	-- Banner Finance activity code.
-	actv_code char(6),
+	actv_code varchar2(6),
 
 	-- Banner Finance location code.
-	locn_code char(6),
+	locn_code varchar2(6),
 
 	-- Encumbrances
 	-- Encumbrance number.
-	encd_num char(8),
+	encd_num varchar2(8),
 
 	-- Encumbrance commodity item number.
-	encd_item_num char(4),
+	encd_item_num varchar2(4),
 
 	-- Encumbrance detail sequence number.
-	encd_seq_num char(4),
+	encd_seq_num varchar2(4),
 
 	-- Encumbrance action indication.
 	-- T => total liquidation; P => partial liquidation; A => adjustment.
-	encd_action_ind char(1),
+	encd_action_ind varchar2(1),
 
 	-- Project code.
-	prjd_code char(8),
+	prjd_code varchar2(8),
 
 	-- Encumbrance type.
 	-- R => requisition; P => purchase order; E => general encubrance; L => labor; M => memo.
-	encb_type char(1),
+	encb_type varchar2(1),
 
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
@@ -208,29 +208,31 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
-		r := self.system_id;
-		r := r || self.doc_code;
-		r := r || self.rec_type;
-		r := r || self.rucl_code;
-		r := r || self.doc_ref_num;
-		r := r || self.trans_amt;
-		r := r || self.trans_desc;
-		r := r || self.dr_cr_ind;
-		r := r || bank_code;
-		r := r || coas_code;
-		r := r || acci_code;
-		r := r || fund_code;
-		r := r || orgn_code;
-		r := r || acct_code;
-		r := r || prog_code;
-		r := r || actv_code;
-		r := r || locn_code;
-		r := r || encd_num;
-		r := r || encd_item_num;
-		r := r || encd_seq_num;
-		r := r || encd_action_ind;
-		r := r || prjd_code;
-		r := r || encb_type;
+		r := LPAD(NVL(self.system_id, ' '), 8);
+		r := r || LPAD(NVL(self.doc_code, ' '), 8);
+		r := r || NVL(self.rec_type, ' ');
+		r := r || LPAD(NVL(self.rucl_code, ' '), 4);
+		r := r || LPAD(NVL(self.doc_ref_num, ' '), 8);
+		r := r || LPAD(NVL(self.trans_amt, ' '), 12);
+		r := r || LPAD(NVL(self.trans_desc, ' '), 35);
+		r := r || NVL(self.dr_cr_ind, ' '); -- Length 1.
+		r := r || LPAD(NVL(self.bank_code, ' '), 2);
+		r := r || LPAD(NVL(self.coas_code, ' '), 1);
+		r := r || LPAD(NVL(self.acci_code, ' '), 6);
+		-- Oracle does empty strings WRONG!
+		-- And Ellucian doesn't know how to write accurate data specs.
+		r := r || LPAD(NVL(self.fund_code, ' '), 6);
+		r := r || LPAD(NVL(self.orgn_code, ' '), 6);
+		r := r || LPAD(NVL(self.acct_code, ' '), 6);
+		r := r || LPAD(NVL(self.prog_code, ' '), 6);
+		r := r || LPAD(NVL(self.actv_code, ' '), 6);
+		r := r || LPAD(NVL(self.locn_code, ' '), 6);
+		r := r || LPAD(NVL(self.encd_num, ' '), 8);
+		r := r || LPAD(NVL(self.encd_item_num, ' '), 4);
+		r := r || LPAD(NVL(self.encd_seq_num, ' '), 4);
+		r := r || NVL(self.encd_action_ind, ' '); -- Length 1.
+		r := r || LPAD(NVL(self.prjd_code, ' '), 8);
+		r := r || NVL(self.encb_type, ' '); -- Length 1.
 
 		return r;
 	END toString;
@@ -272,7 +274,7 @@ BEGIN
 		'DATALOAD', -- self.system_id
 		'', -- self.doc_code
 		'2', -- self.rec_type
-		'JE16',-- self.rucl_code
+		'JESY',-- self.rucl_code
 		'JE12.10', -- self.doc_ref_num
 		'123.45', -- self.trans_amt
 		'Sample transaction', -- self.trans_desc
