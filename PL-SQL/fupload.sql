@@ -33,8 +33,8 @@ CREATE OR REPLACE TYPE FuploadBaseRecord AS OBJECT (
 	-- 3 => trailer record
 	-- 4 => text record
 	rec_type varchar2(1),
-
 	NOT FINAL MEMBER FUNCTION toString RETURN varchar2
+
 ) NOT FINAL NOT INSTANTIABLE;
 /
 
@@ -48,6 +48,7 @@ CREATE OR REPLACE TYPE FuploadHeaderRecord UNDER FuploadBaseRecord (
 	-- This filler field aligns with that record boundary.
 	-- It should contain all space characters (ASCII 32).
 	filler char(123),
+	CONSTRUCTOR FUNCTION FuploadHeaderRecord(trans_date varchar2) RETURN SELF AS RESULT,
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
 /
@@ -55,6 +56,17 @@ CREATE OR REPLACE TYPE FuploadHeaderRecord UNDER FuploadBaseRecord (
 
 -- FUPLOAD header record implementation body.
 CREATE OR REPLACE TYPE BODY FuploadHeaderRecord AS
+	CONSTRUCTOR FUNCTION FuploadHeaderRecord(trans_date varchar2)
+    RETURN SELF AS RESULT IS
+    BEGIN
+		self.system_id := 'DATALOAD';
+		self.doc_code := '';
+		self.rec_type := '1';
+		self.trans_date := trans_date;
+		self.filler := ' '; -- Yes, if you leave this null, it concats as nothing.
+        RETURN;
+    END;
+
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
@@ -285,11 +297,12 @@ BEGIN
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := RPAD('DATALOAD        120190206', 148);
-	hr1 := FuploadHeaderRecord('DATALOAD', '', '1', '20190206', '');
+	hr1 := FuploadHeaderRecord('20190206');
 	r := hr1.toString();
+
 	-- dbms_output.put_line(REPLACE(r, ' ', '_'));
 	-- dbms_output.put_line(LENGTH(r));
-	-- This fails even though the strings appear to be exactly the same.
+
 	if r = er then
 		dbms_output.put_line('Test 1 passed.');
 	else
