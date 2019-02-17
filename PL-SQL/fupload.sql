@@ -9,8 +9,9 @@ CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
 
 DROP TYPE FuploadHeaderRecord;
 DROP TYPE FuploadTrailerRecord;
-DROP TYPE FuploadText Record;
+DROP TYPE FuploadTextRecord;
 DROP TYPE FuploadDetailRecord;
+DROP TYPE FuploadBaseRecord;
 
 
 -- Abstract base class for the 4 types of atomic FUPLOAD records.
@@ -66,6 +67,7 @@ CREATE OR REPLACE TYPE BODY FuploadHeaderRecord AS
 	END toString;
 END;
 /
+show errors;
 
 
 -- FUPLOAD trailer record interface spec.  Inherits from the base record type.
@@ -82,6 +84,7 @@ CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
 	-- This filler field aligns with that record boundary.
 	-- It should contain all space characters (ASCII 32).
 	filler char(111),
+	CONSTRUCTOR FUNCTION FuploadTrailerRecord(self in out nocopy FuploadTrailerRecord, rec_count varchar2, trans_tot varchar2) RETURN SELF AS RESULT,
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
 /
@@ -89,6 +92,18 @@ CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
 
 -- FUPLOAD trailer record implementation body.
 CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
+	CONSTRUCTOR FUNCTION FuploadTrailerRecord(self in out nocopy FuploadTrailerRecord, rec_count varchar2, trans_tot varchar2)
+    RETURN SELF AS RESULT IS
+    BEGIN
+		self.system_id := 'DATALOAD';
+		self.doc_code := '';
+		self.rec_type := '3';
+		self.rec_count := rec_count;
+		self.trans_tot := trans_tot;
+		self.filler := ' '; -- Yes, if you leave this null, it concats as nothing.
+        RETURN;
+    END;
+
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
@@ -102,6 +117,7 @@ CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
 	END toString;
 END;
 /
+show errors;
 
 
 -- FUPLOAD text record interface spec.  Inherits from the base record type.
@@ -131,6 +147,7 @@ CREATE OR REPLACE TYPE BODY FuploadTextRecord AS
 	END toString;
 END;
 /
+show errors;
 
 
 
@@ -245,9 +262,6 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 	END toString;
 END;
 /
-
-
--- Show specific compilation errors, if any.
 show errors;
 
 
@@ -269,21 +283,52 @@ DECLARE
 BEGIN
 	dbms_output.put_line('Testing FUPLOAD object types.');
 
-	hr1 := FuploadHeaderRecord('DATALOAD', '', '1', '20190216', '');
+	dbms_output.put_line('--------------------------------------------------------------------------------');
+	er := RPAD('DATALOAD        120190206', 148);
+	hr1 := FuploadHeaderRecord('DATALOAD', '', '1', '20190206', '');
 	r := hr1.toString();
-	dbms_output.put_line(REPLACE(r, ' ', '_'));
-	dbms_output.put_line(LENGTH(r));
+	-- dbms_output.put_line(REPLACE(r, ' ', '_'));
+	-- dbms_output.put_line(LENGTH(r));
+	-- This fails even though the strings appear to be exactly the same.
+	if r = er then
+		dbms_output.put_line('Test 1 passed.');
+	else
+		dbms_output.put_line('Test 1 failed.');
+	end if;
 
-	tr1 := FuploadTrailerRecord('DATALOAD', '', '3', '20190216', '20', '123456');
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
+
+	dbms_output.put_line('--------------------------------------------------------------------------------');
+	er := RPAD('DATALOAD        3      10000000430286', 148);
+	tr1 := FuploadTrailerRecord('10', '430286');
 	r := tr1.toString();
-	dbms_output.put_line(REPLACE(r, ' ', '_'));
-	dbms_output.put_line(LENGTH(r));
+	-- dbms_output.put_line(REPLACE(r, ' ', '_'));
+	-- dbms_output.put_line(LENGTH(r));
+	dbms_output.put_line(er);
+	select dump(er) into erd from dual;
+	dbms_output.put_line(erd);
 
+	dbms_output.put_line(r);
+	select dump(r) into rd from dual;
+	dbms_output.put_line(rd);
+
+	if r = er then
+		dbms_output.put_line('Test 2 passed.');
+	else
+		dbms_output.put_line('Test 2 failed.');
+	end if;
+
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
+
+	dbms_output.put_line('--------------------------------------------------------------------------------');
 	txr1 := FuploadTextRecord('DATALOAD', '', '4', '20190216', 'This is a sample transaction.');
 	r := txr1.toString();
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
+	dbms_output.put_line('--------------------------------------------------------------------------------');
 	dr1 := FuploadDetailRecord(
 		'DATALOAD', -- system_id
 		'', -- doc_code
@@ -313,6 +358,10 @@ BEGIN
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
+
+	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := 'DATALOAD        2JESY10002074000000001290            Move FZ031253 to 720556CWFU660001            720559                                            ';
 	dr2 := FuploadDetailRecord(
 		'DATALOAD', -- system_id
@@ -352,9 +401,57 @@ BEGIN
 
 	-- This fails even though the strings appear to be exactly the same.
 	if r = er then
-		dbms_output.put_line('Test 1 passed.');
+		dbms_output.put_line('Test 3 passed.');
 	else
-		dbms_output.put_line('Test 1 failed.');
+		dbms_output.put_line('Test 3 failed.');
+	end if;
+
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
+
+	dbms_output.put_line('--------------------------------------------------------------------------------');
+	er := 'DATALOAD        2JESY10002074000000001290          Move FZ031253 from 720559DWFU660001            720556                                            ';
+	dr2 := FuploadDetailRecord(
+		'DATALOAD', -- system_id
+		'', -- doc_code
+		'2', -- rec_type
+		'JESY',-- rucl_code
+		'10002074', -- doc_ref_num
+		'1290', -- trans_amt
+		'Move FZ031253 from 720559', -- trans_desc
+		'D', -- dr_cr_ind
+		'WF', -- bank_code
+		'U', -- coas_code
+		'660001', -- acci_code
+		'', -- fund_code
+		'', -- orgn_code
+		'720556', -- acct_code
+		'', -- prog_code
+		'', -- actv_code
+		'', -- locn_code
+		'', -- encd_num
+		'', -- encd_item_num
+		'', -- encd_seq_num
+		'', -- encd_action_ind
+		'', -- prjd_code
+		'' -- encb_type
+	);
+	r := dr2.toString();
+	dbms_output.put_line(r);
+
+	dbms_output.put_line(er);
+	select dump(er) into erd from dual;
+	dbms_output.put_line(erd);
+
+	dbms_output.put_line(r);
+	select dump(r) into rd from dual;
+	dbms_output.put_line(rd);
+
+	-- This fails even though the strings appear to be exactly the same.
+	if r = er then
+		dbms_output.put_line('Test 4 passed.');
+	else
+		dbms_output.put_line('Test 4 failed.');
 	end if;
 
 END;
