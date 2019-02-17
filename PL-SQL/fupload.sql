@@ -96,7 +96,7 @@ CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
 	-- This filler field aligns with that record boundary.
 	-- It should contain all space characters (ASCII 32).
 	filler char(111),
-	CONSTRUCTOR FUNCTION FuploadTrailerRecord(self in out nocopy FuploadTrailerRecord, rec_count varchar2, trans_tot varchar2) RETURN SELF AS RESULT,
+	CONSTRUCTOR FUNCTION FuploadTrailerRecord(rec_count varchar2, trans_tot varchar2) RETURN SELF AS RESULT,
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
 /
@@ -104,7 +104,7 @@ CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
 
 -- FUPLOAD trailer record implementation body.
 CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
-	CONSTRUCTOR FUNCTION FuploadTrailerRecord(self in out nocopy FuploadTrailerRecord, rec_count varchar2, trans_tot varchar2)
+	CONSTRUCTOR FUNCTION FuploadTrailerRecord(rec_count varchar2, trans_tot varchar2)
     RETURN SELF AS RESULT IS
     BEGIN
 		self.system_id := 'DATALOAD';
@@ -140,6 +140,7 @@ CREATE OR REPLACE TYPE FuploadTextRecord UNDER FuploadBaseRecord (
 	-- This filler field aligns with that record boundary.
 	-- It should contain all space characters (ASCII 32).
 	filler char(81),
+	CONSTRUCTOR FUNCTION FuploadTextRecord(text varchar2) RETURN SELF AS RESULT,
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
 /
@@ -147,6 +148,17 @@ CREATE OR REPLACE TYPE FuploadTextRecord UNDER FuploadBaseRecord (
 
 -- FUPLOAD text record implementation body.
 CREATE OR REPLACE TYPE BODY FuploadTextRecord AS
+	CONSTRUCTOR FUNCTION FuploadTextRecord(text varchar2)
+	RETURN SELF AS RESULT IS
+	BEGIN
+		self.system_id := 'DATALOAD';
+		self.doc_code := '';
+		self.rec_type := '4';
+		self.text := text;
+		self.filler := ' ';
+		return;
+	END;
+
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
@@ -160,7 +172,6 @@ CREATE OR REPLACE TYPE BODY FuploadTextRecord AS
 END;
 /
 show errors;
-
 
 
 -- FUPLOAD detail record interface spec.  Inherits from the base record type.
@@ -309,8 +320,9 @@ BEGIN
 		dbms_output.put_line('Test 1 failed.');
 	end if;
 
-	dbms_output.put_line(' ');
-	dbms_output.put_line(' ');
+
+	dbms_output.put_line(chr(10));
+	dbms_output.put_line(chr(10));
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := RPAD('DATALOAD        3      10000000430286', 148);
@@ -332,11 +344,11 @@ BEGIN
 		dbms_output.put_line('Test 2 failed.');
 	end if;
 
-	dbms_output.put_line(' ');
-	dbms_output.put_line(' ');
+	dbms_output.put_line(chr(10));
+	dbms_output.put_line(chr(10));
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
-	txr1 := FuploadTextRecord('DATALOAD', '', '4', '20190216', 'This is a sample transaction.');
+	txr1 := FuploadTextRecord('This is a sample text record.');
 	r := txr1.toString();
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
@@ -371,8 +383,8 @@ BEGIN
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
-	dbms_output.put_line(' ');
-	dbms_output.put_line(' ');
+	dbms_output.put_line(chr(10));
+	dbms_output.put_line(chr(10));
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := 'DATALOAD        2JESY10002074000000001290            Move FZ031253 to 720556CWFU660001            720559                                            ';
@@ -419,8 +431,8 @@ BEGIN
 		dbms_output.put_line('Test 3 failed.');
 	end if;
 
-	dbms_output.put_line(' ');
-	dbms_output.put_line(' ');
+	dbms_output.put_line(chr(10));
+	dbms_output.put_line(chr(10));
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := 'DATALOAD        2JESY10002074000000001290          Move FZ031253 from 720559DWFU660001            720556                                            ';
