@@ -3,10 +3,13 @@ SET SERVEROUTPUT ON SIZE 1000000;
 SET TRIMOUT OFF;
 SET TRIMSPOOL OFF;
 
+DROP TYPE FuploadFileWriter;
+DROP TYPE FuploadDocumentRecords;
 DROP TYPE FuploadDocumentRecord;
 DROP TYPE FuploadDetailRecords;
 DROP TYPE FuploadHeaderRecord;
 DROP TYPE FuploadTrailerRecord;
+DROP TYPE FuploadTextRecords;
 DROP TYPE FuploadTextRecord;
 DROP TYPE FuploadDetailRecord;
 DROP TYPE FuploadBaseRecord;
@@ -349,18 +352,25 @@ show errors;
 
 CREATE OR REPLACE TYPE BODY FuploadFileWriter AS
 	MEMBER FUNCTION getFileContents RETURN varchar2 IS
-		r varchar2(32767) := ''; -- This might need to be a CLOB.
+		contents varchar2(32767) := ''; -- This might need to be a CLOB.
 	BEGIN
 		FOR i IN 1 .. self.documents.count() LOOP
-			r := r || self.documents(i).toString();
+			contents := contents || self.documents(i).toString();
 		END LOOP;
 
-		return r;
+		return contents;
 	END getFileContents;
 
 	MEMBER PROCEDURE write IS
+		ofile UTL_FILE.FILE_TYPE;
+		contents varchar2(32767) := ''; -- This might need to be a CLOB.
 	BEGIN
 		dbms_output.put_line('Writing file.');
+
+		ofile := UTL_FILE.FOPEN('MY_DIR', 'fupload.dat.unprocessed', 'W');
+		contents := self.getFileContents();
+		UTL_FILE.PUT(ofile, contents);
+		UTL_FILE.FCLOSE(ofile);
 	END write;
 END;
 /
