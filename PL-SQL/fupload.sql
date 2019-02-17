@@ -1,5 +1,7 @@
-SET SERVEROUTPUT ON SIZE 1000000
-
+SET SERVEROUTPUT ON SIZE 1000000;
+-- FAIL: Tell sqlplus not to trim output lines.
+SET TRIMOUT OFF;
+SET TRIMSPOOL OFF;
 
 DROP TYPE FuploadDocumentRecord;
 DROP TYPE FuploadDetailRecords;
@@ -338,7 +340,8 @@ CREATE OR REPLACE TYPE FuploadDocumentRecords AS TABLE OF FuploadDocumentRecord;
 CREATE OR REPLACE TYPE FuploadFileWriter AS OBJECT (
 	documents FuploadDocumentRecords,
 
-	MEMBER FUNCTION getFileContents RETURN varchar2
+	MEMBER FUNCTION getFileContents RETURN varchar2,
+	MEMBER PROCEDURE write
 
 );
 /
@@ -354,6 +357,11 @@ CREATE OR REPLACE TYPE BODY FuploadFileWriter AS
 
 		return r;
 	END getFileContents;
+
+	MEMBER PROCEDURE write IS
+	BEGIN
+		dbms_output.put_line('Writing file.');
+	END write;
 END;
 /
 show errors;
@@ -399,8 +407,8 @@ BEGIN
 	end if;
 
 
-	dbms_output.put_line(chr(10));
-	dbms_output.put_line(chr(10));
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := RPAD('DATALOAD        3      10000000430286', 148);
@@ -422,8 +430,8 @@ BEGIN
 		dbms_output.put_line('Test 2 failed.');
 	end if;
 
-	dbms_output.put_line(chr(10));
-	dbms_output.put_line(chr(10));
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	txr1 := FuploadTextRecord('This is a sample text record.');
@@ -461,8 +469,8 @@ BEGIN
 	dbms_output.put_line(REPLACE(r, ' ', '_'));
 	dbms_output.put_line(LENGTH(r));
 
-	dbms_output.put_line(chr(10));
-	dbms_output.put_line(chr(10));
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := 'DATALOAD        2JESY10002074000000001290            Move FZ031253 to 720556CWFU660001            720559                                            ';
@@ -509,8 +517,8 @@ BEGIN
 		dbms_output.put_line('Test 3 failed.');
 	end if;
 
-	dbms_output.put_line(chr(10));
-	dbms_output.put_line(chr(10));
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := 'DATALOAD        2JESY10002074000000001290          Move FZ031253 from 720559DWFU660001            720556                                            ';
@@ -556,6 +564,8 @@ BEGIN
 	else
 		dbms_output.put_line('Test 4 failed.');
 	end if;
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	docr1 := FuploadDocumentRecord(
@@ -578,8 +588,9 @@ BEGIN
 	writer := FuploadFileWriter(FuploadDocumentRecords(docr1));
 	file_contents := writer.getFileContents();
 	dbms_output.put_line(file_contents);
-	dbms_output.put_line(chr(10));
-	dbms_output.put_line(chr(10));
+	writer.write();
+	dbms_output.put_line(' ');
+	dbms_output.put_line(' ');
 
 END;
 /
