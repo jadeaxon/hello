@@ -331,6 +331,34 @@ END;
 show errors;
 
 
+CREATE OR REPLACE TYPE FuploadDocumentRecords AS TABLE OF FuploadDocumentRecord;
+/
+
+-- FUPLOAD file writer class.
+CREATE OR REPLACE TYPE FuploadFileWriter AS OBJECT (
+	documents FuploadDocumentRecords,
+
+	MEMBER FUNCTION getFileContents RETURN varchar2
+
+);
+/
+show errors;
+
+CREATE OR REPLACE TYPE BODY FuploadFileWriter AS
+	MEMBER FUNCTION getFileContents RETURN varchar2 IS
+		r varchar2(32767) := ''; -- This might need to be a CLOB.
+	BEGIN
+		FOR i IN 1 .. self.documents.count() LOOP
+			r := r || self.documents(i).toString();
+		END LOOP;
+
+		return r;
+	END getFileContents;
+END;
+/
+show errors;
+
+
 
 -- Test using the FUPLOAD object types.
 DECLARE
@@ -342,6 +370,9 @@ DECLARE
 
 	docr1 FuploadDocumentRecord;
 	fdoc varchar(32767);
+
+	writer FuploadFileWriter;
+	file_contents varchar(32767);
 
 	r varchar2(148);
 	er varchar2(148); -- Expected record.
@@ -543,7 +574,12 @@ BEGIN
 
 	-- TO DO: Construct a document record without any optional text records.
 
-
+	dbms_output.put_line('--------------------------------------------------------------------------------');
+	writer := FuploadFileWriter(FuploadDocumentRecords(docr1));
+	file_contents := writer.getFileContents();
+	dbms_output.put_line(file_contents);
+	dbms_output.put_line(chr(10));
+	dbms_output.put_line(chr(10));
 
 END;
 /
