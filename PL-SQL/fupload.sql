@@ -1,12 +1,8 @@
 SET SERVEROUTPUT ON SIZE 1000000
 
-/*
-CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
 
-);
-/
-*/
-
+DROP TYPE FuploadDocumentRecord;
+DROP TYPE FuploadDetailRecords;
 DROP TYPE FuploadHeaderRecord;
 DROP TYPE FuploadTrailerRecord;
 DROP TYPE FuploadTextRecord;
@@ -288,6 +284,45 @@ END;
 show errors;
 
 
+-- This just acts as a list collection type.
+CREATE OR REPLACE TYPE FuploadDetailRecords AS TABLE OF FuploadDetailRecord;
+/
+
+-- FUPLOAD document record interface spec.
+CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
+	header FuploadHeaderRecord,
+	details FuploadDetailRecords,
+	trailer FuploadTrailerRecord,
+
+	MEMBER FUNCTION toString RETURN varchar2
+
+);
+/
+show errors;
+
+CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
+	/*
+	CONSTRUCTOR FUNCTION FuploadDocumentRecord(trans_date varchar2)
+    RETURN SELF AS RESULT IS
+    BEGIN
+        RETURN;
+    END;
+	*/
+
+	MEMBER FUNCTION toString RETURN varchar2 IS
+		r varchar2(32767) := ''; -- This might need to be a CLOB.
+	BEGIN
+		r := self.header.toString();
+		-- TO DO: Loop over detail records.
+		r := r || self.trailer.toString();
+		return r;
+	END toString;
+END;
+/
+show errors;
+
+
+
 -- Test using the FUPLOAD object types.
 DECLARE
 	hr1 FuploadHeaderRecord;
@@ -304,6 +339,7 @@ DECLARE
 
 
 BEGIN
+	return;
 	dbms_output.put_line('Testing FUPLOAD object types.');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
