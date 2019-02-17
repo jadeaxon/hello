@@ -288,11 +288,15 @@ show errors;
 CREATE OR REPLACE TYPE FuploadDetailRecords AS TABLE OF FuploadDetailRecord;
 /
 
+CREATE OR REPLACE TYPE FuploadTextRecords AS TABLE OF FuploadTextRecord;
+/
+
 -- FUPLOAD document record interface spec.
 CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
 	header FuploadHeaderRecord,
 	details FuploadDetailRecords,
 	trailer FuploadTrailerRecord,
+	texts FuploadTextRecords,
 
 	MEMBER FUNCTION toString RETURN varchar2
 
@@ -301,20 +305,25 @@ CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
 show errors;
 
 CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
-	/*
-	CONSTRUCTOR FUNCTION FuploadDocumentRecord(trans_date varchar2)
-    RETURN SELF AS RESULT IS
-    BEGIN
-        RETURN;
-    END;
-	*/
-
 	MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(32767) := ''; -- This might need to be a CLOB.
 	BEGIN
+		-- The records are 148 byte fixed length.
+		-- Thus, there are no newlines between them.
 		r := self.header.toString();
-		-- TO DO: Loop over detail records.
+
+		FOR i IN 1 .. self.details.count() LOOP
+			r := r || self.details(i).toString();
+		END LOOP;
+
 		r := r || self.trailer.toString();
+
+		FOR i IN 1 .. self.texts.count() LOOP
+			r := r || self.texts(i).toString();
+		END LOOP;
+
+		-- TO DO: Output the text records.
+
 		return r;
 	END toString;
 END;
@@ -331,6 +340,9 @@ DECLARE
 	dr1 FuploadDetailRecord;
 	dr2 FuploadDetailRecord;
 
+	docr1 FuploadDocumentRecord;
+	fdoc varchar(32767);
+
 	r varchar2(148);
 	er varchar2(148); -- Expected record.
 
@@ -339,7 +351,6 @@ DECLARE
 
 
 BEGIN
-	return;
 	dbms_output.put_line('Testing FUPLOAD object types.');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
@@ -514,6 +525,25 @@ BEGIN
 	else
 		dbms_output.put_line('Test 4 failed.');
 	end if;
+
+	dbms_output.put_line('--------------------------------------------------------------------------------');
+	docr1 := FuploadDocumentRecord(
+		hr1,
+		FuploadDetailRecords(dr1, dr2),
+		tr1,
+		FuploadTextRecords(txr1)
+	);
+	fdoc := docr1.toString();
+	dbms_output.put_line(fdoc);
+
+	-- Oh God, just to add another layer of horrors, sqlplus tries to be "helpful" by trimming
+	-- whitespace from your output.
+	dbms_output.put_line(REPLACE(fdoc, ' ', '_'));
+	dbms_output.put_line(LENGTH(fdoc));
+
+	-- TO DO: Construct a document record without any optional text records.
+
+
 
 END;
 /
