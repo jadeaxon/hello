@@ -13,13 +13,13 @@ import cx_Oracle
 file = open("password.dat")
 password = file.read().strip()
 
-connection = cx_Oracle.connect('python3/{}@localhost'.format(password));
+connection = cx_Oracle.connect('python3/{}@localhost'.format(password))
 
-cursor = connection.cursor();
-query = 'select * from person';
-cursor.execute(query);
+cursor = connection.cursor()
+query = 'select * from person'
+cursor.execute(query)
 # This returns all the rows fetched by the query as tuples.
-rows = cursor.fetchall();
+rows = cursor.fetchall()
 for row in rows:
     print(row)
 
