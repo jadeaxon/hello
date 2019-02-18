@@ -23,6 +23,10 @@ img = Image.open("images/checkmark.png")
 img = img.resize((width, height), Image.ANTIALIAS)
 image = ImageTk.PhotoImage(img)
 
-button3 = ttk.Button(root, text="Button 3", command=button_handler, image=image, compound='right')
+button3 = ttk.Button(root, text="Button 3", image=image, compound='right')
+# You can use either normal functions or lambdas as callbacks.
+# You can set configuration options in the constructor or by map key notation.
+button3['command'] = lambda: print("Anonymous function.")
 button3.grid(column=2, row=1)
+
 root.mainloop()
