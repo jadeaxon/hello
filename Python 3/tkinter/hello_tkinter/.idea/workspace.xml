@@ -6,7 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46673bf9-0205-4c89-b277-cb28dd3653c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/checkbuttons.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entries.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +16,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/hello_tkinter$checkbuttons.coverage" NAME="checkbuttons Coverage Results" MODIFIED="1550521371950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hello_tkinter$checkbuttons.coverage" NAME="checkbuttons Coverage Results" MODIFIED="1550521894250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hello_tkinter$hello.coverage" NAME="hello Coverage Results" MODIFIED="1550119033575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hello_tkinter$images.coverage" NAME="images Coverage Results" MODIFIED="1550512636311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hello_tkinter$entries.coverage" NAME="entries Coverage Results" MODIFIED="1550523549682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hello_tkinter$events.coverage" NAME="events Coverage Results" MODIFIED="1550501664681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hello_tkinter$labels.coverage" NAME="labels Coverage Results" MODIFIED="1550510495739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hello_tkinter$radiobuttons.coverage" NAME="radiobuttons Coverage Results" MODIFIED="1550522371083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hello_tkinter$buttons.coverage" NAME="buttons Coverage Results" MODIFIED="1550513862280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
@@ -97,11 +99,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/checkbuttons.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="454">
+              <caret line="27" lean-forward="true" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/radiobuttons.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" lean-forward="true" selection-end-line="24" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/entries.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -154,6 +180,8 @@
         <option value="$PROJECT_DIR$/labels.py" />
         <option value="$PROJECT_DIR$/buttons.py" />
         <option value="$PROJECT_DIR$/checkbuttons.py" />
+        <option value="$PROJECT_DIR$/radiobuttons.py" />
+        <option value="$PROJECT_DIR$/entries.py" />
       </list>
     </option>
   </component>
@@ -207,7 +235,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.checkbuttons">
+  <component name="RunManager" selected="Python.entries">
     <configuration name="buttons" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hello_tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -252,7 +280,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="events" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="entries" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hello_tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -265,7 +293,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/events.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/entries.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -296,7 +324,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="labels" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="radiobuttons" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hello_tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -309,7 +337,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/labels.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/radiobuttons.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -320,11 +348,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.entries" />
+        <item itemvalue="Python.radiobuttons" />
         <item itemvalue="Python.checkbuttons" />
         <item itemvalue="Python.buttons" />
         <item itemvalue="Python.images" />
-        <item itemvalue="Python.labels" />
-        <item itemvalue="Python.events" />
       </list>
     </recent_temporary>
   </component>
@@ -341,7 +369,7 @@
       <workItem from="1550118944095" duration="2854000" />
       <workItem from="1550451092949" duration="11000" />
       <workItem from="1550500590391" duration="6518000" />
-      <workItem from="1550511794698" duration="3470000" />
+      <workItem from="1550511794698" duration="5661000" />
     </task>
     <task id="LOCAL-00001" summary="Get Tkinter working">
       <created>1549919340649</created>
@@ -420,11 +448,25 @@
       <option name="project" value="LOCAL" />
       <updated>1550513902733</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Demo Tkinter checkbutton">
+      <created>1550521442532</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1550521442532</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Demo Tkinter radiobuttons">
+      <created>1550522403085</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1550522403085</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12853000" />
+    <option name="totallyTimeSpent" value="15044000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,7 +579,9 @@
     <MESSAGE value="Demo Tkinter buttons" />
     <MESSAGE value="Make a button with an image" />
     <MESSAGE value="Use a lambda as button command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use a lambda as button command" />
+    <MESSAGE value="Demo Tkinter checkbutton" />
+    <MESSAGE value="Demo Tkinter radiobuttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Demo Tkinter radiobuttons" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/tkinter/ttk.py">
@@ -619,8 +663,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/checkbuttons.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="454">
+          <caret line="27" lean-forward="true" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/radiobuttons.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
