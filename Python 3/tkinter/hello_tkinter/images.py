@@ -3,7 +3,7 @@ from tkinter import ttk
 
 root = Tk()
 
-image = PhotoImage(file="ascii_art.gif")
+image = PhotoImage(file="images/ascii_art.gif")
 
 # The label widget does not fully support animated gifs.
 # Using the 'compound' option, the image can be displayed below the text.
