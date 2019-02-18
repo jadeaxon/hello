@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/feet2meters.py" line="49" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46673bf9-0205-4c89-b277-cb28dd3653c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/feet2meters.py" beforeDir="false" afterPath="$PROJECT_DIR$/feet2meters.py" afterDir="false" />
-    </list>
+    <list default="true" id="46673bf9-0205-4c89-b277-cb28dd3653c6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/feet2meters.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="548">
-              <caret line="73" column="32" lean-forward="true" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -98,30 +96,7 @@
       <showMembers ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="hello_tkinter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hello_tkinter" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="hello_tkinter" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -226,6 +201,7 @@
       <option name="presentableId" value="Default" />
       <updated>1549919199052</updated>
       <workItem from="1550118944095" duration="2854000" />
+      <workItem from="1550451092949" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Get Tkinter working">
       <created>1549919340649</created>
@@ -259,7 +235,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2854000" />
+    <option name="totallyTimeSpent" value="2865000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -272,12 +248,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5083488" side_tool="true" weight="0.25917017" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4916512" weight="0.25917017" />
       <window_info id="Structure" order="2" sideWeight="0.5083488" side_tool="true" weight="0.25917017" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Python Console" order="2" weight="0.32876712" />
@@ -289,12 +264,14 @@
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32876712" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Key Promoter X" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="5" />
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -394,7 +371,7 @@
     <entry file="file://$PROJECT_DIR$/feet2meters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
-          <caret line="73" column="32" lean-forward="true" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>

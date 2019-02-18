@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="python3@localhost">
+  <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.14">
+    <root id="1">
+      <ServerVersion>11.2.0.2.0</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="ANONYMOUS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="3" parent="1" name="APEX_040000">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="APEX_050000">
+      <ObjectId>48</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="APPQOSSYS">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="CTXSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="DBSNMP">
+      <ObjectId>29</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="FLOWS_FILES">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="HR">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="MDSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="PYTHON3">
+      <ObjectId>50</ObjectId>
+      <CreatedTimestamp>2019-02-17.11:42:53</CreatedTimestamp>
+      <ModifiedTimestamp>2019-02-17.11:42:53</ModifiedTimestamp>
+      <IntrospectionTimestamp>2019-02-17.11:46:06</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="17" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="XDB">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <table id="21" parent="16" name="PERSON">
+      <ObjectId>24010</ObjectId>
+      <CreatedTimestamp>2019-02-17.11:42:53</CreatedTimestamp>
+      <ModifiedTimestamp>2019-02-17.11:42:53</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="22" parent="21" name="FNAME">
+      <Position>1</Position>
+      <DataType>VARCHAR2(80 byte)|0s</DataType>
+    </column>
+    <column id="23" parent="21" name="LNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(80 byte)|0s</DataType>
+    </column>
+  </database-model>
+</dataSource>
