@@ -6,7 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46673bf9-0205-4c89-b277-cb28dd3653c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/events.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ascii_art.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,6 +18,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/hello_tkinter$hello.coverage" NAME="hello Coverage Results" MODIFIED="1550119033575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hello_tkinter$images.coverage" NAME="images Coverage Results" MODIFIED="1550505111625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hello_tkinter$events.coverage" NAME="events Coverage Results" MODIFIED="1550501664681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
@@ -36,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hello.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-end-line="12" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -48,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feet2meters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+            <state relative-caret-position="199">
+              <caret line="51" column="74" selection-start-line="51" selection-end-line="51" selection-end-column="78" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -58,10 +60,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/images.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/events.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -98,6 +109,7 @@
         <option value="$PROJECT_DIR$/hello.py" />
         <option value="$PROJECT_DIR$/feet2meters.py" />
         <option value="$PROJECT_DIR$/events.py" />
+        <option value="$PROJECT_DIR$/images.py" />
       </list>
     </option>
   </component>
@@ -133,6 +145,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jadeaxon\projects\pycharm\hello\Python 3\tkinter\hello_tkinter" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -145,7 +162,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.events">
+  <component name="RunManager" selected="Python.images">
     <configuration name="events" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hello_tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,6 +229,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="images" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="hello_tkinter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/images.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hello_tkinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -236,6 +275,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.images" />
         <item itemvalue="Python.events" />
         <item itemvalue="Python.hello" />
         <item itemvalue="Python.feet2meters" />
@@ -255,7 +295,7 @@
       <updated>1549919199052</updated>
       <workItem from="1550118944095" duration="2854000" />
       <workItem from="1550451092949" duration="11000" />
-      <workItem from="1550500590391" duration="918000" />
+      <workItem from="1550500590391" duration="3364000" />
     </task>
     <task id="LOCAL-00001" summary="Get Tkinter working">
       <created>1549919340649</created>
@@ -285,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549931136254</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Demo Tkinter event binding">
+      <created>1550502061865</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1550502061865</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3783000" />
+    <option name="totallyTimeSpent" value="6229000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,7 +442,8 @@
     <MESSAGE value="Do a hello Tkinter program" />
     <MESSAGE value="Make a Tkinter program that convents feet to meters" />
     <MESSAGE value="Show a validation error message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show a validation error message" />
+    <MESSAGE value="Demo Tkinter event binding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Demo Tkinter event binding" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/tkinter/ttk.py">
@@ -412,10 +460,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello.py">
+    <entry file="file://$PROJECT_DIR$/events.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -424,21 +472,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/feet2meters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+        <state relative-caret-position="199">
+          <caret line="51" column="74" selection-start-line="51" selection-end-line="51" selection-end-column="78" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/events.py">
+    <entry file="file://$PROJECT_DIR$/hello.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-end-line="12" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ascii_art.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
