@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en_US" ng-app="app">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter 5</title>
+
+    <!-- AngularJS requires jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+
+    <!-- Include AngularJS. -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+
+    <!-- Include our stylesheet. -->
+    <link rel="stylesheet" href="ch05.css" />
+
+    <!-- Include our app module. -->
+    <script type="text/javascript" src="ch05.js"></script>
+
+  </head>
+  <body>
+    <h2>TurboGrafx 16 Games</h2>
+    <div ng-cloak ng-controller="MainCtrl">
+      <ul>
+        <li ng-repeat="game in games">{{game}}</li>
+      </ul>
+    </div>
+
+    <h2>CEOs</h2>
+    <div ng-cloak ng-controller="MainCtrl">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Comany</th>
+        </tr>
+        <tr ng-repeat="ceo in ceos">
+          <td>{{ceo.name}}</td>
+          <td>{{ceo.company}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </body>
+</html>
