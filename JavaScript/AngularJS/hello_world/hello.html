@@ -20,9 +20,24 @@
   </head>
   <body>
     <!-- Associate one of the controllers in our app with this div. -->
-    <div ng-cloak ng-controller="helloCtrl">
+    <!-- ng-cloak hides this element until its scope is fully initialized. -->
+    <!-- This prevents glitchy display of {}s. -->
+    <div ng-cloak ng-controller="HelloCtrl">
       <!-- Show a message stored in the scope of the controller. -->
       {{message}}
+    </div>
+
+    <!-- Use another controller on a different div. -->
+    <div ng-cloak ng-controller="NameCtrl">
+      <p>Is your name {{fullName()}}?</p>
+    </div>
+
+    <!-- Use the same controller type on two different views. -->
+    <div ng-cloak ng-controller="NameCtrl">
+      <!-- We use ng-init to run some code before the children DOM elements render. -->
+      <!-- The scope setter method changes its first name. -->
+      <!-- Notice how the first name in the other div with a NameCtrl does not change. -->
+      <p ng-init="setFirstName('Steven')">I changed your name to {{fullName()}}.</p>
     </div>
   </body>
 </html>
