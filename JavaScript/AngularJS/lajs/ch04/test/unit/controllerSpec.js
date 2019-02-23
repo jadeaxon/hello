@@ -1,6 +1,7 @@
 /* jasmine specs for controllers go here */
 describe('Hello World', function() {
 
+  // This is angular.mock.module, so you need to include angular-mock.min.js somehow.
   beforeEach(module('app'));
 
   describe('MainCtrl', function(){

@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Associate our app module with this page. -->
+<html lang="en_US" ng-app="helloApp">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, Angular JS!</title>
+
+    <!-- AngularJS requires jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+
+    <!-- Include AngularJS. -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+
+    <!-- Include our app module. -->
+    <script type="text/javascript" src="hello.js"></script>
+
+  </head>
+  <body>
+    <!-- Associate one of the controllers in our app with this div. -->
+    <div ng-cloak ng-controller="helloCtrl">
+      <!-- Show a message stored in the scope of the controller. -->
+      {{message}}
+    </div>
+  </body>
+</html>
