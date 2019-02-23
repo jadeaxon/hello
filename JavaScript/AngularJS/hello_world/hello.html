@@ -14,6 +14,9 @@
     <!-- Include AngularJS. -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
 
+    <!-- Include our stylesheet. -->
+    <link rel="stylesheet" href="hello.css" />
+
     <!-- Include our app module. -->
     <script type="text/javascript" src="hello.js"></script>
 
@@ -28,16 +31,19 @@
     </div>
 
     <!-- Use another controller on a different div. -->
-    <div ng-cloak ng-controller="NameCtrl">
+    <div id="name1" ng-cloak ng-controller="NameCtrl">
       <p>Is your name {{fullName()}}?</p>
     </div>
 
     <!-- Use the same controller type on two different views. -->
-    <div ng-cloak ng-controller="NameCtrl">
+    <div id="name2" ng-cloak ng-controller="NameCtrl">
       <!-- We use ng-init to run some code before the children DOM elements render. -->
       <!-- The scope setter method changes its first name. -->
       <!-- Notice how the first name in the other div with a NameCtrl does not change. -->
       <p ng-init="setFirstName('Steven')">I changed your name to {{fullName()}}.</p>
+
+      <label for="nameField">First Name: </label><input id="nameField" type="text" ng-model="firstName"><br>
+
     </div>
   </body>
 </html>
