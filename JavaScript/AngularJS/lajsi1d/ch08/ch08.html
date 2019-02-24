@@ -21,8 +21,15 @@
 
   </head>
   <body>
-    <div ng-cloak ng-controller="MainCtrl">
-      {{message}}
+    <!-- ng-init runs an initializer block for the $scope of this controller. -->
+    <div ng-cloak ng-controller="MainCtrl" ng-init="foo=1;bar=2;baz='baz';">
+      <!-- Note the use of ng-non-bindable to prevent interpolation inside curly braces. -->
+      <p ng-non-bindable>JavaScript expressions go inside {{}}.</p>
+      {{message}}<br>
+      <!-- You can put arbitrary JavaScript inside the {{}}. -->
+      <!-- Well, you can't define functions, do loops, branching, and a few other things. -->
+      {{ 12 * 12 }}<br>
+      {{baz}} = {{foo + bar}}<br>
     </div>
   </body>
 </html>
