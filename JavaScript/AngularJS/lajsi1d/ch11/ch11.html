@@ -2,7 +2,7 @@
 <html lang="en_US" ng-app="app">
   <head>
     <meta charset="UTF-8" />
-    <title>Chapter 11: Directives</title>
+    <title>Chapter 11: Built-in Directives</title>
 
     <!-- AngularJS requires jQuery. -->
     <script
@@ -22,8 +22,15 @@
   </head>
   <body>
     <!-- ng-init runs an initializer block for the $scope of this controller. -->
-    <div ng-cloak ng-controller="MainCtrl">
-      {{message}}
+    <div ng-cloak ng-controller="MainCtrl" ng-init="label='Amount: '; amount=3; price=1.99">
+      {{message}}<br>
+      <label for="amount">{{label}}</label>
+      <input type="text" id="amount" ng-model="amount" size="4"/><br>
+      Price: {{ price }}<br>
+      Total: {{ amount * price | currency }}<br>
+      <hr>
+      <h3>Holidays</h3>
+      <p ng-repeat="day in holidays">{{day}}</p>
     </div>
   </body>
 </html>
