@@ -22,7 +22,20 @@
   </head>
   <body>
     <div ng-cloak ng-controller="MainCtrl">
-      {{message}}
+      <!-- Bind input fields to specific scope variables. -->
+      <form>
+        <label for="firstName">First Name: </label><input id="firstName" type="text" ng-model="person.firstName" /><br>
+        <label for="lastName">Last Name: </label><input id="lastName" type="text" ng-model="person.lastName" /><br>
+        <button id="addPerson" ng-click="addPerson()">Add Person</button>
+      </form>
+
+      <h2>Current Person</h2>
+      <p>{{person.firstName}} {{person.lastName}}</p>
+
+      <h2>List of People</h2>
+      <ul>
+        <li ng-repeat="peep in people">{{peep.firstName}} {{peep.lastName}}</li>
+      </ul>
     </div>
   </body>
 </html>
