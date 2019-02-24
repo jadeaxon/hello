@@ -2,7 +2,7 @@
 <html lang="en_US" ng-app="app">
   <head>
     <meta charset="UTF-8" />
-    <title>Chapter 5</title>
+    <title>Chapter 6</title>
 
     <!-- AngularJS requires jQuery. -->
     <script
@@ -23,6 +23,7 @@
   <body>
     <div ng-cloak ng-controller="MainCtrl">
       <!-- Bind input fields to specific scope variables. -->
+      <!-- You can bind them to nested object properties. -->
       <form>
         <label for="firstName">First Name: </label><input id="firstName" type="text" ng-model="person.firstName" /><br>
         <label for="lastName">Last Name: </label><input id="lastName" type="text" ng-model="person.lastName" /><br>
@@ -33,11 +34,13 @@
         <button id="addPerson" ng-click="addPerson()">Add Person</button>
       </form>
 
+      <!-- This shows the person the form is creating.  The new person will be added to the list of people. -->
       <h2>Current Person</h2>
       <p>{{person.firstName}} {{person.lastName}} <span ng-if="person.description">--</span> {{person.description}}</p>
       <p ng-if="person.skills.angularjs">This person knows AngularJS.</p>
       <p ng-if="person.skills.html">This person knows HTML.</p>
 
+      <!-- List of people created by the form. -->
       <h2>List of People</h2>
       <ul>
         <li ng-repeat="peep in people">{{peep.firstName}} {{peep.lastName}} <span ng-if="peep.description">--</span> {{peep.description}}</li>
