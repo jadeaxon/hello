@@ -5,7 +5,8 @@ app.controller("MainCtrl", function ($scope) {
 
   $scope.person = {
     firstName: null,
-    lastName: null
+    lastName: null,
+    description: null
   };
 
   $scope.people = [];
@@ -15,7 +16,7 @@ app.controller("MainCtrl", function ($scope) {
     // Clone the existing person object and push the clone onto our list of people.
     // $scope.people.push(JSON.parse(JSON.stringify($scope.person)));
     $scope.people.push($scope.person);
-    $scope.person = { firstName: null, lastName: null }; // Make a new person.
+    $scope.person = { firstName: null, lastName: null, description: null }; // Make a new person.
     console.log($scope.people)
   };
 });

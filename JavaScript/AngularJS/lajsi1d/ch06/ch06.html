@@ -26,15 +26,17 @@
       <form>
         <label for="firstName">First Name: </label><input id="firstName" type="text" ng-model="person.firstName" /><br>
         <label for="lastName">Last Name: </label><input id="lastName" type="text" ng-model="person.lastName" /><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" rows="4" cols="80" ng-model="person.description"></textarea><br>
         <button id="addPerson" ng-click="addPerson()">Add Person</button>
       </form>
 
       <h2>Current Person</h2>
-      <p>{{person.firstName}} {{person.lastName}}</p>
+      <p>{{person.firstName}} {{person.lastName}} <span ng-if="person.description">--</span> {{person.description}}</p>
 
       <h2>List of People</h2>
       <ul>
-        <li ng-repeat="peep in people">{{peep.firstName}} {{peep.lastName}}</li>
+        <li ng-repeat="peep in people">{{peep.firstName}} {{peep.lastName}} <span ng-if="peep.description">--</span> {{peep.description}}</li>
       </ul>
     </div>
   </body>
