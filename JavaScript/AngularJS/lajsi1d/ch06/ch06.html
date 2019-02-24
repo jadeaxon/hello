@@ -28,11 +28,15 @@
         <label for="lastName">Last Name: </label><input id="lastName" type="text" ng-model="person.lastName" /><br>
         <label for="description">Description:</label><br>
         <textarea id="description" rows="4" cols="80" ng-model="person.description"></textarea><br>
+        <label for="angularjs">AngularJS?</label><input id="angularjs" type="checkbox" ng-model="person.skills.angularjs" /><br>
+        <label for="html">HTML?</label><input id="html" type="checkbox" ng-model="person.skills.html" /><br>
         <button id="addPerson" ng-click="addPerson()">Add Person</button>
       </form>
 
       <h2>Current Person</h2>
       <p>{{person.firstName}} {{person.lastName}} <span ng-if="person.description">--</span> {{person.description}}</p>
+      <p ng-if="person.skills.angularjs">This person knows AngularJS.</p>
+      <p ng-if="person.skills.html">This person knows HTML.</p>
 
       <h2>List of People</h2>
       <ul>
