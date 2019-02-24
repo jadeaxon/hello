@@ -12,6 +12,6 @@ app.controller("MainCtrl", function ($scope) {
 // If we apply jsa-title to any element, it will replace it with the HTML template.
 app.directive("jsaTitle", function (){
   return {
-    template: "<h2>Chapter {{chapter}}: {{topic}}</h2>"
+    template: "<h2 id='jsa-title'>Chapter {{chapter}}: {{topic}}</h2>"
   };
 });
