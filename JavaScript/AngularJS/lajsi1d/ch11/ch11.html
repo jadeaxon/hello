@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en_US" ng-app="app">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter 11: Directives</title>
+
+    <!-- AngularJS requires jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+
+    <!-- Include AngularJS. -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+
+    <!-- Include our stylesheet. -->
+    <link rel="stylesheet" href="ch11.css" />
+
+    <!-- Include our app module. -->
+    <script type="text/javascript" src="ch11.js"></script>
+
+  </head>
+  <body>
+    <!-- ng-init runs an initializer block for the $scope of this controller. -->
+    <div ng-cloak ng-controller="MainCtrl">
+      {{message}}
+    </div>
+  </body>
+</html>
