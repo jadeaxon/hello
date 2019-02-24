@@ -1,0 +1,24 @@
+span#error {
+    color: darkred;
+}
+
+div.bedroom {
+    background: blanchedalmond;
+}
+
+div.hallway {
+    background: gainsboro;
+}
+
+form {
+    background: aquamarine;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid black;
+    text-align: left;
+}
