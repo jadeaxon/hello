@@ -28,6 +28,15 @@
       <button ng-click="increment()">+</button>
       <button ng-click="decrement()">-</button>
       {{value}}
+      <p ng-show="value % 2 == 0">Even</p>
+      <p ng-show="value % 2 != 0">Odd</p>
+
+      <p ng-hide="value >= 0">Negative</p>
+      <p ng-hide="value <= 0">Positive</p>
+      <p ng-hide="value != 0">Zero</p>
+
+      <p ng-if="value == 7">Lucky</p>
+      <p ng-if="value == 13">Unlucky</p>
     </div>
   </body>
 </html>
