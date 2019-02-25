@@ -26,3 +26,13 @@ directives.directive("jsaPane", function () {
     scope: {title: '@'}
   };
 });
+
+// A custom element directive.
+directives.directive("jsaRed", function () {
+  return {
+    transclude: true,
+    template: "<div class='jsa-red'><ng-transclude></ng-transclude></div>",
+    restrict: "E" // Allow for use only as an element.
+  };
+});
+

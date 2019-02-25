@@ -26,8 +26,12 @@
   </head>
   <body>
     <div ng-cloak ng-controller="MainCtrl">
-      <!-- Use our custom attribute directive. -->
-      <h2 jsa-title></h2><br>
+      <!-- Use our custom element directive. -->
+      <jsa-red>
+        <!-- Note that we can nest a directive within a directive. -->
+        <!-- Use our custom attribute directive. -->
+        <h2 jsa-title></h2><br>
+      </jsa-red>
 
       <!-- Another custom directive that uses transclusion. -->
       <div jsa-pane title="In Custom Directive Scope">

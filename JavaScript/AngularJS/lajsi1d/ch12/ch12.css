@@ -10,3 +10,9 @@
     background: darksalmon;
     border: 1px solid cadetblue;
 }
+
+/* Style the div created by our custom element directive. */
+.jsa-red {
+    border: 3px dotted indianred;
+    display: inline-block;
+}
