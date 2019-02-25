@@ -16,3 +16,8 @@
     border: 3px dotted indianred;
     display: inline-block;
 }
+
+/* Style our custom directive that counts clicks. */
+.jsa-click-counter {
+    border: 1px solid goldenrod;
+}

@@ -36,3 +36,21 @@ directives.directive("jsaRed", function () {
   };
 });
 
+// A custom element directive that responds to clicks.
+directives.directive("jsaClickCounter", function () {
+  return {
+    template: "<span class='jsa-click-counter'>{{clicks}}</span>",
+    restrict: "E", // Allow for use only as an element.
+    // The link function allows you to register event handlers on the underlying DOM.
+    link: function ($scope, element, attrs) {
+      element.bind('click', function () {
+        $scope.clicks += 1;
+        // Strangely enough, AngularJS doesn't automatically update the scope here.
+        $scope.$apply();
+        console.log("Clicked!");
+      });
+    }
+  };
+});
+
+
