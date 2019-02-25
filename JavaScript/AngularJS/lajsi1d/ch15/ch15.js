@@ -1,7 +1,7 @@
 // Include the ngRoute module as a dependency.
 var app = angular.module("app", ['ngRoute']);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
   $routeProvider.when('/', {
     templateUrl: 'views/start.html',
     controller: 'StartCtrl'
@@ -14,15 +14,29 @@ app.config(function ($routeProvider) {
     templateUrl: 'views/hallway.html',
     controller: 'HallwayCtrl'
   });
+
+  // Put : in front of an identifier to extract to that variable within the scope.
+  $routeProvider.when('/object/:type/:id', {
+    templateUrl: 'views/object.html',
+    controller: 'ObjectCtrl'
+  });
   $routeProvider.otherwise({
     templateUrl: 'views/error.html',
     controller: 'ErrorCtrl'
   });
+
+  // $locationProvider.html5Mode({ enabled: true, requireBase: false });
 });
 
 app.controller("MainCtrl", function ($scope) {
   $scope.gameTitle = "Rooms of Doom"
 
+});
+
+// Inject $routeParams to access parameters extracted from the URL.
+app.controller("ObjectCtrl", function ($scope, $routeParams) {
+  $scope.type = $routeParams.type;
+  $scope.id = $routeParams.id;
 });
 
 app.controller("StartCtrl", function ($scope, $location) {
