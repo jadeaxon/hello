@@ -7,6 +7,16 @@
     $scope.chapter = 14;
     $scope.topic = "Events";
     $scope.message = "This is chapter " + $scope.chapter + ".";
+
+    $scope.value = 0;
+
+    $scope.increment = function () {
+      $scope.value += 1;
+    };
+
+    $scope.decrement = function () {
+      $scope.value -= 1;
+    };
   });
 
 })();

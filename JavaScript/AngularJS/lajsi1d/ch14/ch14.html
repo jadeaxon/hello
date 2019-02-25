@@ -25,7 +25,9 @@
   </head>
   <body>
     <div ng-cloak ng-controller="ModuleCtrl">
-      {{message}}
+      <button ng-click="increment()">+</button>
+      <button ng-click="decrement()">-</button>
+      {{value}}
     </div>
   </body>
 </html>
