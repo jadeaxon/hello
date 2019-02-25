@@ -1,6 +1,8 @@
 // Include the ngRoute module as a dependency.
 var app = angular.module("app", ['ngRoute']);
 
+// FAIL: app.contstant('baseUrl', 'http://localhost:63342/ch15/ch15.html/');
+
 app.config(function ($routeProvider, $locationProvider) {
   $routeProvider.when('/', {
     templateUrl: 'views/start.html',
@@ -25,7 +27,7 @@ app.config(function ($routeProvider, $locationProvider) {
     controller: 'ErrorCtrl'
   });
 
-  // $locationProvider.html5Mode({ enabled: true, requireBase: false });
+  // FAIL: $locationProvider.html5Mode(true);
 });
 
 app.controller("MainCtrl", function ($scope) {
