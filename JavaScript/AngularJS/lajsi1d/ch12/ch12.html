@@ -24,6 +24,11 @@
     <div ng-cloak ng-controller="MainCtrl">
       <!-- Use our custom attribute directive. -->
       <h2 jsa-title></h2><br>
+
+      <!-- Another custom directive that uses transclusion. -->
+      <div jsa-pane title="In Custom Directive Scope">
+        <p>This paragraph should get transcluded.</p>
+      </div>
     </div>
   </body>
 </html>

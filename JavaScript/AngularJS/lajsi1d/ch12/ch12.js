@@ -22,3 +22,18 @@ app.directive("jsaTitle", function () {
     template: "<h2 id='{{ctrl.ctrlid}}'>Chapter {{chapter}}: {{topic}}</h2>"
   };
 });
+
+// Another custom directive.  This one uses transclusion.
+app.directive("jsaPane", function () {
+  return {
+    // Wherever you use ng-transclude in the template, the original contents of the element you are
+    // replacing will be inserted there.
+    transclude: true,
+
+    // TODO This template is getting pretty busy.  Let's put it in its own file.
+    template: "<div class='jsa-pane'><h3>{{title}}</h3><br />Transcluded:<br /><ng-transclude></ng-transclude></div>",
+
+    // This makes it so the title attribute is visible in the element created by our custom directive.
+    scope: {title: '@'}
+  };
+});
