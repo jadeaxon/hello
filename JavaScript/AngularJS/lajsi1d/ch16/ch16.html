@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en_US" ng-app="app">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter 16: Ajax</title>
+
+    <!-- AngularJS requires jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+
+    <!-- Include AngularJS. -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
+
+
+    <!-- Include our stylesheet. -->
+    <link rel="stylesheet" href="ch16.css" />
+
+    <!-- Include our app module. -->
+    <script type="text/javascript" src="ch16.js"></script>
+
+  </head>
+  <body>
+    <div ng-cloak ng-controller="MainCtrl">
+      <h1>{{gameTitle}}</h1>
+    </div>
+    <div ng-view></div>
+    <!-- Link directly to hallway. -->
+    <a href="#!/hallway">Hallway</a>
+
+    <a href="#!/object/trees/17">Route with Parameters</a>
+
+  </body>
+</html>
