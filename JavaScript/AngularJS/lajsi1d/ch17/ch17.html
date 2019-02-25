@@ -24,7 +24,23 @@
   </head>
   <body>
     <div ng-cloak ng-controller="MainCtrl">
-      {{message}}
+      <!-- We can use ng-repeat to compose large tables from a list of objects. -->
+      <table id="guitarists">
+        <tr>
+          <th>Index</th>
+          <th>Guitarist</th>
+          <th>Song</th>
+          <th>Technique</th>
+        </tr>
+        <tr ng-repeat="guitarist in guitarists">
+          <!-- The $index service is automatically injected by ng-repeat. -->
+          <!-- It tells us the 0-based index of the repetition we're on. -->
+          <td>{{$index}}</td>
+          <td>{{guitarist.name}}</td>
+          <td>{{guitarist.song}}</td>
+          <td>{{guitarist.technique}}</td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

@@ -1,8 +1,15 @@
-table {
+table#guitarists {
     border-collapse: collapse;
 }
 
-th, td {
+td {
     border: 2px solid black;
     text-align: left;
+    background-color: lightgreen;
+}
+
+th {
+    border: 2px solid black;
+    text-align: left;
+    background-color: darkgoldenrod;
 }
