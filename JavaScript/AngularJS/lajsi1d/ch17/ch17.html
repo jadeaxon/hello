@@ -32,10 +32,11 @@
           <th>Song</th>
           <th>Technique</th>
         </tr>
-        <tr ng-repeat="guitarist in guitarists">
+        <!-- You can use a filter with ng-repeat to sort the results -->
+        <tr ng-repeat="guitarist in guitarists | orderBy:'name'">
           <!-- The $index service is automatically injected by ng-repeat. -->
           <!-- It tells us the 0-based index of the repetition we're on. -->
-          <td>{{$index}}</td>
+          <td>{{$index + 1}}</td>
           <td>{{guitarist.name}}</td>
           <td>{{guitarist.song}}</td>
           <td>{{guitarist.technique}}</td>
