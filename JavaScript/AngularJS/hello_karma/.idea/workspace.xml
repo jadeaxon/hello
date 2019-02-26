@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e13c52e6-8c0d-4a16-a6b7-02ea8dc24083" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../lajs/ch04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lajs/ch04/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lajs/ch04/test/unit/controllerSpec.js" beforeDir="false" afterPath="$PROJECT_DIR$/../lajs/ch04/test/unit/controllerSpec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/site/js/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+            <state relative-caret-position="17">
+              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -54,26 +54,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/hello_karma.spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="119">
+              <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/site/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="136">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -96,10 +96,11 @@
         <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/site/index.html" />
         <option value="$PROJECT_DIR$/../lajs/ch04/test/unit/controllerSpec.js" />
-        <option value="$PROJECT_DIR$/test/hello_karma.spec.js" />
         <option value="$PROJECT_DIR$/karma.conf.js" />
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/site/js/controllers.js" />
+        <option value="$PROJECT_DIR$/test/hello_karma.spec.js" />
+        <option value="$PROJECT_DIR$/site/js/app.js" />
       </list>
     </option>
   </component>
@@ -114,6 +115,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -121,16 +123,31 @@
               <item name="hello_karma" type="b2602c69:ProjectViewProjectNode" />
               <item name="hello_karma" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hello_karma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_karma" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello_karma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_karma" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello_karma" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_karma" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Vim/vim81/gvim.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
@@ -152,7 +169,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Karma.Unit Tests">
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
     <configuration name="Unit Tests" type="JavaScriptTestRunnerKarma" temporary="true">
       <config-file value="$PROJECT_DIR$/karma.conf.js" />
       <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
@@ -169,8 +186,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Karma.Unit Tests" />
         <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="Karma.Unit Tests" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +204,7 @@
       <workItem from="1549752269804" duration="7422000" />
       <workItem from="1549759988001" duration="4218000" />
       <workItem from="1550889568187" duration="12000" />
+      <workItem from="1551186182587" duration="2115000" />
     </task>
     <task id="LOCAL-00001" summary="Get a basic app running">
       <created>1549754161261</created>
@@ -223,25 +241,17 @@
       <option name="project" value="LOCAL" />
       <updated>1549763341959</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Use _ syntax for injection">
+      <created>1551187651035</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551187651035</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="always_fail - 2019.02.09 at 17h 13m 46s.xml">
-      <configuration name="always fail" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="hello_karma_spec_js - 2019.02.09 at 17h 14m 16s.xml">
-      <configuration name="hello_karma.spec.js" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="Unit_Tests - 2019.02.09 at 17h 22m 27s.xml">
-      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="Unit_Tests - 2019.02.09 at 17h 24m 14s.xml">
-      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="Unit_Tests - 2019.02.09 at 17h 29m 11s.xml">
-      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
     <history-entry file="Unit_Tests - 2019.02.09 at 17h 29m 24s.xml">
       <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
@@ -257,20 +267,35 @@
     <history-entry file="Unit_Tests - 2019.02.09 at 17h 55m 59s.xml">
       <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
+    <history-entry file="Unit_Tests - 2019.02.26 at 06h 04m 04s.xml">
+      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Unit_Tests - 2019.02.26 at 06h 22m 50s.xml">
+      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Unit_Tests - 2019.02.26 at 06h 23m 10s.xml">
+      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Unit_Tests - 2019.02.26 at 06h 25m 37s.xml">
+      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
+    <history-entry file="Unit_Tests - 2019.02.26 at 06h 25m 57s.xml">
+      <configuration name="Unit Tests" configurationId="JavaScriptTestRunnerKarma" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11652000" />
+    <option name="totallyTimeSpent" value="13767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24985163" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24985163" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49970326" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49970326" visible="true" weight="0.5554172" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -293,7 +318,8 @@
     <MESSAGE value="Get a test to work that uses app, scope, and controller" />
     <MESSAGE value="Add libs" />
     <MESSAGE value="Set up gVim to run as external editor via &lt;A-S v&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up gVim to run as external editor via &lt;A-S v&gt;" />
+    <MESSAGE value="Use _ syntax for injection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use _ syntax for injection" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../lajs/ch04/test/unit/controllerSpec.js">
@@ -320,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -340,24 +359,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/hello_karma.spec.js">
+    <entry file="file://$PROJECT_DIR$/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="17">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/js/app.js">
+    <entry file="file://$PROJECT_DIR$/test/hello_karma.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="119">
+          <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/site/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
