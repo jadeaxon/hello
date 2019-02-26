@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en_US" ng-app="app">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chapter 19: Form Validation</title>
+
+    <!-- AngularJS requires jQuery. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+
+    <!-- Include AngularJS. -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular-route.min.js"></script>
+
+    <!-- Include our stylesheet. -->
+    <link rel="stylesheet" href="ch19.css" />
+
+    <!-- Include our app module. -->
+    <script type="text/javascript" src="ch19.js"></script>
+
+  </head>
+  <body>
+    <div ng-cloak ng-controller="MainCtrl">
+      {{message}}
+
+      <!-- Give the form a name so that AngularJS has something to attach dirty/pristine/valid/invalid/error states to. -->
+      <!-- Use novalidate to switch off HTML validation. -->
+      <form name="personForm" novalidate>
+        <h2>Person Form</h2>
+        <!-- Each field needs to have a name to attach validation state to. -->
+        <!-- Each field must use ng-model or else validation won't trigger. -->
+        <!-- Be aware that the field gets autotrimmed, so if you try to put a space at end of validation pattern, it won't work. -->
+        <label for="name1">Name: </label><input type="text" id="name1" name="name" ng-model="person.name" ng-pattern="/(^Jeff)|(^Jeff .)/" required>
+        <!-- The validation properties are created based on form name and field name (not id). -->
+        <!-- The model is not the same as the form values. -->
+        <p ng-show="personForm.name.$valid">Name is valid.</p>
+
+        <p class="validation-error" ng-show="personForm.name.$invalid">Name is invalid.</p>
+        <p ng-show="personForm.name.$error.pattern">First name must be Jeff.</p>
+        <p ng-show="personForm.name.$error.required">Name is required.</p>
+
+        <p ng-show="personForm.name.$pristine">Name is pristine.</p>
+        <p ng-show="personForm.name.$dirty">Name is dirty.</p>
+
+
+        <!-- Note that validation properties also apply to the form as a whole. -->
+        <input type="submit" ng-disabled="personForm.$invalid || personForm.$pristine" />
+      </form>
+    </div>
+  </body>
+</html>
