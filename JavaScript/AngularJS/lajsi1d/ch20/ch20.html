@@ -5,9 +5,10 @@
     <title>Chapter 20: ng-include</title>
 
     <!-- AngularJS requires jQuery. -->
+    <!-- The slim version of jQuery does not include the load() function. -->
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
 
     <!-- Include AngularJS. -->
@@ -48,6 +49,17 @@
         <input type="submit" ng-disabled="personForm.$invalid || personForm.$pristine" />
       </form>
       <p ng-if="submitted">You have submitted the form.</p>
+
+      <!-- Content in an external file will be loaded into this div. -->
+      <div id="content"></div>
+
+      <!-- Note that ng-include takes an expression.  So, you have to quote the string again. -->
+      <!-- The tagged element is completely replaced by the included HTML fragment. -->
+      <!-- Unlike ng-view, you can use ng-include multiple times. -->
+      <!-- Using this with ng-if lets you change multiple parts of the page when going to a new URL. -->
+      <label>Include files? </label><input type="checkbox" ng-model="includeFiles" />
+      <div ng-if="includeFiles" ng-include="'include1.html'"></div>
+      <div ng-if="includeFiles" ng-include="'include2.html'"></div>
     </div>
   </body>
 </html>
