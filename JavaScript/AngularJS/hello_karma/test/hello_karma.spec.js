@@ -19,16 +19,17 @@ describe('hello karma app', function() {
     beforeEach(module('karma.app'));
 
     describe('MainCtrl', function(){
-        var scope, ctrl;
+        var $scope, $controller;
 
         // Before each test, inject a scope and controller.
-        beforeEach(inject(function($rootScope, $controller) {
-            scope = $rootScope.$new();
-            ctrl = $controller('MainCtrl', {$scope: scope});
+        // Use _ syntax to allow us to use $scope in the individual tests.
+        beforeEach(inject(function(_$rootScope_, _$controller_) {
+            $scope = _$rootScope_.$new();
+            $controller = _$controller_('MainCtrl', {$scope: $scope});
         }));
 
         it('should initialize scope message', function() {
-            expect(scope.message).toEqual("Hello, Karma!");
+            expect($scope.message).toEqual("Hello, Karma!");
         });
     });
 });
