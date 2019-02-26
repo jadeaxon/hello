@@ -27,7 +27,7 @@
 
       <!-- Give the form a name so that AngularJS has something to attach dirty/pristine/valid/invalid/error states to. -->
       <!-- Use novalidate to switch off HTML validation. -->
-      <form name="personForm" novalidate>
+      <form name="personForm" ng-submit="processForm()" novalidate>
         <h2>Person Form</h2>
         <!-- Each field needs to have a name to attach validation state to. -->
         <!-- Each field must use ng-model or else validation won't trigger. -->
@@ -44,10 +44,10 @@
         <p ng-show="personForm.name.$pristine">Name is pristine.</p>
         <p ng-show="personForm.name.$dirty">Name is dirty.</p>
 
-
         <!-- Note that validation properties also apply to the form as a whole. -->
         <input type="submit" ng-disabled="personForm.$invalid || personForm.$pristine" />
       </form>
+      <p ng-if="submitted">You have submitted the form.</p>
     </div>
   </body>
 </html>
