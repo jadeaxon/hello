@@ -30,3 +30,14 @@ describe('angularjs homepage todo list', function() {
   });
 });
 
+describe('name field', function() {
+  it('should receive value Jade Axon', function () {
+    browser.get('https://angularjs.org');
+    // Look up element by ng-model.
+    element(by.model('yourName')).sendKeys('Jade Axon');
+    // Find the hello message by a DOM path to it.
+    var name = element(by.xpath('html/body/div[2]/div[1]/div[2]/div[2]/div/h1'));
+    expect(name.getText()).toEqual('Hello Jade Axon!');
+  });
+});
+
