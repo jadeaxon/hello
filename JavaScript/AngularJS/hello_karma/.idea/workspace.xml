@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e13c52e6-8c0d-4a16-a6b7-02ea8dc24083" name="Default Changelist" comment="" />
+    <list default="true" id="e13c52e6-8c0d-4a16-a6b7-02ea8dc24083" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/hello_karma.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/hello_karma.test.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -60,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/hello_karma.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -132,9 +135,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1908" />
-    <option name="width" value="981" />
-    <option name="height" value="1215" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -142,6 +146,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,15 +158,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.protractor.protractor_package" value="$USER_HOME$/AppData/Roaming/npm/node_modules/protractor" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -180,18 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
-    <configuration name="End-to-end app tests" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
-      <node-interpreter value="project" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-names>
-        <test-name value="End-to-end app tests" />
-      </test-names>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Protractor.Protractor Tests">
     <configuration name="Unit Tests" type="JavaScriptTestRunnerKarma" temporary="true">
       <config-file value="$PROJECT_DIR$/karma.conf.js" />
       <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
@@ -210,24 +204,35 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/hello_karma/site/index.html" useBuiltInWebServerPort="true">
+    <configuration name="Protractor Tests" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-package value="$USER_HOME$/AppData/Roaming/npm/node_modules/protractor" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
       <method v="2" />
     </configuration>
-    <configuration name="protractor.conf.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/protractor.conf.js" working-dir="$PROJECT_DIR$">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/hello_karma/site/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Karma.End-to-end app tests" />
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Karma.Unit Tests" />
       <item itemvalue="Karma.&lt;jsa-title&gt;" />
-      <item itemvalue="JavaScript Debug.index.html (1)" />
-      <item itemvalue="Node.js.protractor.conf.js" />
+      <item itemvalue="Protractor.Protractor Tests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.html (1)" />
-        <item itemvalue="Node.js.protractor.conf.js" />
-        <item itemvalue="Karma.End-to-end app tests" />
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Karma.&lt;jsa-title&gt;" />
         <item itemvalue="Karma.Unit Tests" />
       </list>
@@ -248,6 +253,7 @@
       <workItem from="1550889568187" duration="12000" />
       <workItem from="1551186182587" duration="5122000" />
       <workItem from="1551191973267" duration="1063000" />
+      <workItem from="1551474603686" duration="865000" />
     </task>
     <task id="LOCAL-00001" summary="Get a basic app running">
       <created>1549754161261</created>
@@ -309,24 +315,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_jsa-title_ - 2019.02.26 at 06h 53m 06s.xml">
-      <configuration name="&lt;jsa-title&gt;" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="_jsa-title_ - 2019.02.26 at 06h 55m 47s.xml">
-      <configuration name="&lt;jsa-title&gt;" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="End-to-end_app_tests - 2019.02.26 at 07h 26m 30s.xml">
-      <configuration name="End-to-end app tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="End-to-end_app_tests - 2019.02.26 at 07h 27m 18s.xml">
-      <configuration name="End-to-end app tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="End-to-end_app_tests - 2019.02.26 at 07h 27m 42s.xml">
-      <configuration name="End-to-end app tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
-    <history-entry file="End-to-end_app_tests - 2019.02.26 at 07h 28m 32s.xml">
-      <configuration name="End-to-end app tests" configurationId="JavaScriptTestRunnerKarma" />
-    </history-entry>
     <history-entry file="End-to-end_app_tests - 2019.02.26 at 07h 29m 58s.xml">
       <configuration name="End-to-end app tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
@@ -339,26 +327,46 @@
     <history-entry file="End-to-end_app_tests - 2019.02.26 at 07h 41m 01s.xml">
       <configuration name="End-to-end app tests" configurationId="JavaScriptTestRunnerKarma" />
     </history-entry>
+    <history-entry file="Protractor_Tests - 2019.03.01 at 14h 17m 14s.xml">
+      <configuration name="Protractor Tests" configurationId="JavaScriptTestRunnerProtractor" />
+    </history-entry>
+    <history-entry file="Protractor_Tests - 2019.03.01 at 14h 18m 07s.xml">
+      <configuration name="Protractor Tests" configurationId="JavaScriptTestRunnerProtractor" />
+    </history-entry>
+    <history-entry file="Protractor_Tests - 2019.03.01 at 14h 18m 47s.xml">
+      <configuration name="Protractor Tests" configurationId="JavaScriptTestRunnerProtractor" />
+    </history-entry>
+    <history-entry file="Protractor_Tests - 2019.03.01 at 14h 19m 44s.xml">
+      <configuration name="Protractor Tests" configurationId="JavaScriptTestRunnerProtractor" />
+    </history-entry>
+    <history-entry file="Protractor_Tests - 2019.03.01 at 14h 20m 23s.xml">
+      <configuration name="Protractor Tests" configurationId="JavaScriptTestRunnerProtractor" />
+    </history-entry>
+    <history-entry file="Protractor_Tests - 2019.03.01 at 14h 22m 53s.xml">
+      <configuration name="Protractor Tests" configurationId="JavaScriptTestRunnerProtractor" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18456000" />
+    <option name="totallyTimeSpent" value="19321000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1719" height="932" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24985163" />
+      <window_info id="npm" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49970326" weight="0.5554172" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49970326" visible="true" weight="0.5551294" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39975095" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32876712" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3279003" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002967" side_tool="true" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -433,13 +441,6 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/hello_karma.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/karma.conf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -450,17 +451,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/test/hello_karma.spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="1054">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
@@ -471,10 +465,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/hello_karma.test.js">
+    <entry file="file://$PROJECT_DIR$/site/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
+          <caret line="7" column="69" selection-start-line="7" selection-start-column="69" selection-end-line="7" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/hello_karma.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
