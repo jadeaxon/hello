@@ -13,6 +13,8 @@ declare
 
 	bvalue boolean;
 
+	v_count number;
+
 	parsed_json apex_json.t_values;
 
 	-- List of JSON paths.
@@ -81,6 +83,10 @@ BEGIN
 	if bvalue then
 		dbms_output.put_line('The request has been completed.');
 	end if;
+
+	-- Get number of elements in a array.
+	v_count := apex_json.get_count('request.ops');
+	dbms_output.put_line('The request contains ' || v_count || ' operations.');
 
 	-- Check if something exists at a given path.
 	if apex_json.does_exist('request.ops[%d].to_acct', 2) then
