@@ -44,7 +44,12 @@ BEGIN
 
 	-- This uses 1-based indexes.
 	value := apex_json.get_varchar2('request.ops[%d].orig_trans_id', 1);
-    dbms_output.put_line(value);
+	dbms_output.put_line(value);
+
+	-- Check if something exists at a given path.
+	if apex_json.does_exist('request.ops[%d].to_acct', 2) then
+		dbms_output.put_line('request.ops[2].to_acct exists');
+	end if;
 
 END;
 /
