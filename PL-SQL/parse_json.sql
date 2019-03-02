@@ -11,6 +11,8 @@ set serveroutput on;
 declare
 	value varchar2(256);
 
+	bvalue boolean;
+
 	parsed_json apex_json.t_values;
 
 	-- List of JSON paths.
@@ -22,6 +24,8 @@ declare
 	"request": {
 		"id": "1",
 		"requester_pidm": "54321",
+		"completed": true,
+		"approved": false,
 		"ops": [
 			{
 				"seq": 1,
@@ -71,6 +75,12 @@ BEGIN
 	-- You can supply a 3rd argument to read from another parsed JSON object.
 	value := apex_json.get_varchar2('request.ops[%d].orig_trans_id', 1);
 	dbms_output.put_line(value);
+
+	-- Get a boolean value.
+	bvalue := apex_json.get_boolean('request.completed');
+	if bvalue then
+		dbms_output.put_line('The request has been completed.');
+	end if;
 
 	-- Check if something exists at a given path.
 	if apex_json.does_exist('request.ops[%d].to_acct', 2) then
