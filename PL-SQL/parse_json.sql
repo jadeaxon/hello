@@ -17,6 +17,9 @@ declare
 
 	parsed_json apex_json.t_values;
 
+	-- List of members of an object.
+	v_members wwv_flow_t_varchar2;
+
 	-- List of JSON paths.
 	paths apex_t_varchar2;
 
@@ -96,6 +99,13 @@ BEGIN
 	if apex_json.does_exist('request.ops[%d].to_acct', 2) then
 		dbms_output.put_line('request.ops[2].to_acct exists');
 	end if;
+
+	-- Get the names of all members of an object.
+	dbms_output.put_line('Members of request.ops[3]');
+	v_members := apex_json.get_members('request.ops[3]');
+	for i in 1 .. v_members.count loop
+		dbms_output.put_line(v_members(i));
+	end loop;
 
 	-- Get a list of related paths.
 	-- We want to find all transaction reclassification operations within the request.
