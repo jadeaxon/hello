@@ -303,13 +303,23 @@ CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
 	trailer FuploadTrailerRecord,
 	texts FuploadTextRecords,
 
+	-- CONSTRUCTOR FUNCTION FuploadDocumentRecord(json varchar2) RETURN SELF AS RESULT,
 	MEMBER FUNCTION toString RETURN varchar2
 
 );
 /
 show errors;
 
+
 CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
+	/*
+	CONSTRUCTOR FUNCTION FuploadDocumentRecord(json varchar2)
+    RETURN SELF AS RESULT IS
+    BEGIN
+        RETURN;
+    END;
+	*/
+
 	MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(32767) := ''; -- This might need to be a CLOB.
 	BEGIN
@@ -391,6 +401,8 @@ DECLARE
 
 	writer FuploadFileWriter;
 	file_contents varchar(32767);
+ 	line varchar(256);
+	ifile UTL_FILE.FILE_TYPE;
 
 	r varchar2(148);
 	er varchar2(148); -- Expected record.
@@ -400,6 +412,26 @@ DECLARE
 
 
 BEGIN
+	dbms_output.put_line('Reading file.');
+
+	ifile := UTL_FILE.FOPEN('MY_DIR', 'request.json', 'R');
+	IF UTL_FILE.IS_OPEN(ifile) THEN
+		LOOP
+			BEGIN
+				UTL_FILE.GET_LINE(ifile, line);
+				file_contents := file_contents || line;
+			EXCEPTION
+				WHEN NO_DATA_FOUND THEN
+					EXIT;
+			END;
+		END LOOP;
+		UTL_FILE.FCLOSE(ifile);
+	END IF;
+	dbms_output.put_line(file_contents);
+	dbms_output.put_line('--------------------------------------------------------------------------------');
+	return;
+
+
 	dbms_output.put_line('Testing FUPLOAD object types.');
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
