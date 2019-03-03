@@ -84,9 +84,13 @@ BEGIN
 		dbms_output.put_line('The request has been completed.');
 	end if;
 
-	-- Get number of elements in a array.
+	-- Get number of elements in a array.  Loop over each op in the request.
 	v_count := apex_json.get_count('request.ops');
 	dbms_output.put_line('The request contains ' || v_count || ' operations.');
+	for i in 1 .. v_count loop
+		value := apex_json.get_varchar2('request.ops[%d].type', i);
+		dbms_output.put_line(value);
+	end loop;
 
 	-- Check if something exists at a given path.
 	if apex_json.does_exist('request.ops[%d].to_acct', 2) then
