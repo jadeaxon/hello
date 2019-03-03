@@ -10,10 +10,12 @@ set serveroutput on;
 
 declare
 	value varchar2(256);
+	v_path varchar2(256);
 
 	bvalue boolean;
 
 	v_count number;
+	v_number number;
 
 	parsed_json apex_json.t_values;
 
@@ -86,6 +88,11 @@ BEGIN
 	if bvalue then
 		dbms_output.put_line('The request has been completed.');
 	end if;
+
+	-- Get a numberic value.
+	v_path := 'request.ops[2].seq';
+	v_number := apex_json.get_number(v_path);
+	dbms_output.put_line(v_path || ' == ' || v_number);
 
 	-- Get number of elements in a array.  Loop over each op in the request.
 	v_count := apex_json.get_count('request.ops');
