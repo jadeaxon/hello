@@ -3,6 +3,17 @@ SET SERVEROUTPUT ON SIZE 1000000;
 SET TRIMOUT OFF;
 SET TRIMSPOOL OFF;
 
+SET PAGESIZE 0;
+SET NEWPAGE 0;
+SET SPACE 0;
+SET LINESIZE 1000;
+SET ECHO OFF;
+SET FEEDBACK OFF;
+SET VERIFY OFF;
+SET HEADING OFF;
+SET MARKUP HTML OFF SPOOL OFF;
+SET COLSEP ' ';
+
 DROP TYPE FuploadFileWriter;
 DROP TYPE FuploadDocumentRecords;
 DROP TYPE FuploadDocumentRecord;
@@ -397,29 +408,35 @@ DECLARE
 	dr2 FuploadDetailRecord;
 
 	docr1 FuploadDocumentRecord;
-	fdoc varchar(32767);
+	fdoc varchar2(32767);
 
 	writer FuploadFileWriter;
-	file_contents varchar(32767);
- 	line varchar(256);
+	file_contents varchar2(32767);
+ 	line varchar2(1024);
+	value varchar2(128);
 	ifile UTL_FILE.FILE_TYPE;
+	ofile UTL_FILE.FILE_TYPE;
 
 	r varchar2(148);
 	er varchar2(148); -- Expected record.
 
-	rd varchar(1024);
+	rd varchar2(1024);
 	erd varchar2(1024);
 
 
 BEGIN
 	dbms_output.put_line('Reading file.');
 
-	ifile := UTL_FILE.FOPEN('MY_DIR', 'request.json', 'R');
+	-- ifile := UTL_FILE.FOPEN('MY_DIR', 'request.json', 'R');
+	ifile := UTL_FILE.FOPEN('NEW_EXTRACTS', 'request.json', 'R');
 	IF UTL_FILE.IS_OPEN(ifile) THEN
 		LOOP
 			BEGIN
 				UTL_FILE.GET_LINE(ifile, line);
-				file_contents := file_contents || line;
+				-- Oracle strips off the EOL when reading in a line.
+				-- Also, make sure you're using Unix line endings because it only strips off the \n,
+				-- not the \r.
+				file_contents := file_contents || line || CHR(10);
 			EXCEPTION
 				WHEN NO_DATA_FOUND THEN
 					EXIT;
@@ -428,6 +445,21 @@ BEGIN
 		UTL_FILE.FCLOSE(ifile);
 	END IF;
 	dbms_output.put_line(file_contents);
+	dbms_output.put_line(length(file_contents));
+
+	apex_json.parse(file_contents);
+
+	value := apex_json.get_varchar2('requester');
+    dbms_output.put_line(value);
+
+	-- Reading the file seems to munge the whitespace a bit, but the JSON meaning is the same.
+	dbms_output.put_line('Writing file.');
+	-- WARNING: Oracle's default max_line_size is 1024.  Unless we increase it, an error is thrown.
+	ofile := UTL_FILE.FOPEN('NEW_EXTRACTS', 'request.out.json', 'W', 32767);
+	-- UTL_FILE.PUT(ofile, 'hello file');
+	UTL_FILE.PUT(ofile, file_contents);
+	UTL_FILE.FCLOSE(ofile);
+
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	return;
 
