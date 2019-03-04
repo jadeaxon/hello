@@ -26,6 +26,10 @@ DROP TYPE FuploadDetailRecord;
 DROP TYPE FuploadBaseRecord;
 
 
+-- PRE: If on personal Oracle instance:
+-- CREATE OR REPLACE DIRECTORY NEW_EXTRACTS AS 'C:\temp';
+-- GRANT READ ON DIRECTORY NEW_EXTRACTS TO PUBLIC;
+
 -- Abstract base class for the 4 types of atomic FUPLOAD records.
 -- Since we're making fixed-width records, we'll use char, not varchar2.
 CREATE OR REPLACE TYPE FuploadBaseRecord AS OBJECT (
