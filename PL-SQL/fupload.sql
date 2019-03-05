@@ -268,6 +268,7 @@ CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
 
 
 -- FUPLOAD detail record implementation body.
+-- TO DO: Handle other types of request operations.
 CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 	-- Each request operation can yield more than one detail record.
 	-- Thus, we pass in the desired role of the detail record we're generating relative to its
@@ -287,29 +288,50 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		v_reason varchar2(128);
     BEGIN
 		apex_json.parse(json);
-
-		dbms_output.put_line('Constructing FuploadDetailRecord for operation ' || opi || '.');
-
 		v_sequence := apex_json.get_number('operations[%d].sequence', opi);
-		dbms_output.put_line(v_sequence);
-
 		v_type := apex_json.get_varchar2('operations[%d].type', opi);
-		dbms_output.put_line(v_type);
-
 		v_index := apex_json.get_varchar2('operations[%d].index', opi);
-		dbms_output.put_line(v_index);
-
 		v_fromAccount := apex_json.get_varchar2('operations[%d].fromAccount', opi);
-		dbms_output.put_line(v_fromAccount);
-
 		v_toAccount := apex_json.get_varchar2('operations[%d].toAccount', opi);
-		dbms_output.put_line(v_toAccount);
-
 		v_transactionId := apex_json.get_number('operations[%d].transactionId', opi);
-		dbms_output.put_line(v_transactionId);
 
-		v_reason := apex_json.get_varchar2('operations[%d].reason', opi);
-		dbms_output.put_line(v_reason);
+		-- This would need to go into a text record.
+		-- v_reason := apex_json.get_varchar2('operations[%d].reason', opi);
+
+		self.system_id := 'DATALOAD';
+		self.doc_code := ''; -- TO DO: Look this up based on surrogate id.
+		self.rec_type := '2';
+		self.rucl_code := 'JESY';
+		self.doc_ref_num := ''; -- TO DO: Refer to the JEBTRS request here.
+		self.trans_amt := ''; -- TO DO: Convert to cents.
+		self.trans_desc := ''; -- TO DO: Compose from other info.
+		self.dr_cr_ind := ''; -- Depends on transaction role.
+		self.bank_code := 'WF';
+		self.coas_code := 'U';
+		self.acci_code := v_index; -- For recategorization op, this stays the same.
+		self.fund_code := '';
+		self.orgn_code := '';
+		self.acct_code := ''; -- Depends on transaction role.
+		self.prog_code := '';
+		self.actv_code := '';
+		self.locn_code := '';
+		self.encd_num := '';
+		self.encd_item_num := '';
+		self.encd_seq_num := '';
+		self.encd_action_ind := '';
+		self.prjd_code := '';
+		self.encb_type := '';
+
+		-- I can't tell how to do class constants in PL/SQL, so its magic numbers for now.
+		if role = 0 then
+			self.dr_cr_ind := '';
+			self.acct_code := '';
+		elsif role = 1 then
+			self.dr_cr_ind := '';
+			self.acct_code := '';
+		else
+			dbms_output.put_line('ERROR: Unknown detail record transaction role.');
+		end if;
 
         RETURN;
     END;
