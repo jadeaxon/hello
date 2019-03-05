@@ -287,6 +287,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		v_toAccount varchar2(6);
 		v_transactionId number; -- The surrogate id from FGBTRND.
 		v_reason varchar2(128);
+		v_doc_code varchar2(8);
     BEGIN
 		apex_json.parse(json);
 		v_sequence := apex_json.get_number('operations[%d].sequence', opi);
@@ -300,8 +301,11 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		-- This would need to go into a text record.
 		-- v_reason := apex_json.get_varchar2('operations[%d].reason', opi);
 
+		select fgbtrnd_doc_code into v_doc_code from fgbtrnd where fgbtrnd_surrogate_id = v_transactionId;
+		--- dbms_output.put_line('v_doc_code = ' || v_doc_code);
+
 		self.system_id := 'DATALOAD';
-		self.doc_code := ''; -- TO DO: Look this up based on surrogate id.
+		self.doc_code := v_doc_code;
 		self.rec_type := '2';
 		self.rucl_code := 'JESY';
 		self.doc_ref_num := v_opid;
