@@ -283,6 +283,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		v_type varchar2(128);
 		v_opid varchar2(8); -- This identifies a particular line item of a JE request.
 		v_index varchar2(6);
+		v_amount number;
 		v_fromAccount varchar2(6);
 		v_toAccount varchar2(6);
 		v_transactionId number; -- The surrogate id from FGBTRND.
@@ -294,6 +295,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		v_type := apex_json.get_varchar2('operations[%d].type', opi);
 		v_opid := apex_json.get_varchar2('operations[%d].id', opi);
 		v_index := apex_json.get_varchar2('operations[%d].index', opi);
+		v_amount := apex_json.get_number('operations[%d].amount', opi);
 		v_fromAccount := apex_json.get_varchar2('operations[%d].fromAccount', opi);
 		v_toAccount := apex_json.get_varchar2('operations[%d].toAccount', opi);
 		v_transactionId := apex_json.get_number('operations[%d].transactionId', opi);
@@ -309,12 +311,12 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		self.rec_type := '2';
 		self.rucl_code := 'JESY';
 		self.doc_ref_num := v_opid;
-		self.trans_amt := ''; -- TO DO: Convert to cents.
-		self.trans_desc := ''; -- TO DO: Compose from other info.
+		self.trans_amt := to_char(floor(v_amount * 100)); -- 13.27 => '1327'
+		self.trans_desc := ''; -- Depends on transaction role.
 		self.dr_cr_ind := ''; -- Depends on transaction role.
 		self.bank_code := 'WF';
 		self.coas_code := 'U';
-		self.acci_code := v_index; -- For recategorization op, this stays the same.
+		self.acci_code := v_index; -- For recategorization ops, this stays the same.
 		self.fund_code := '';
 		self.orgn_code := '';
 		self.acct_code := ''; -- Depends on transaction role.
@@ -329,12 +331,16 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		self.encb_type := '';
 
 		-- I can't tell how to do class constants in PL/SQL, so its magic numbers for now.
+		-- Type 0 (row A) inverts the original transaction.
+		-- Type 1 (row B) posts the corrected transaction.
 		if role = 0 then
-			self.dr_cr_ind := '';
-			self.acct_code := '';
+			self.dr_cr_ind := 'C';
+			self.acct_code := v_fromAccount;
+			self.trans_desc := 'Move ' || self.doc_code || ' to ' || v_toAccount;
 		elsif role = 1 then
-			self.dr_cr_ind := '';
-			self.acct_code := '';
+			self.dr_cr_ind := 'D';
+			self.acct_code := v_toAccount;
+			self.trans_desc := 'Move ' || self.doc_code || ' from ' || v_fromAccount;
 		else
 			dbms_output.put_line('ERROR: Unknown detail record transaction role.');
 		end if;
