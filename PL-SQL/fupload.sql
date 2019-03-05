@@ -281,6 +281,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
     RETURN SELF AS RESULT IS
 		v_sequence number;
 		v_type varchar2(128);
+		v_opid varchar2(8); -- This identifies a particular line item of a JE request.
 		v_index varchar2(6);
 		v_fromAccount varchar2(6);
 		v_toAccount varchar2(6);
@@ -290,6 +291,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		apex_json.parse(json);
 		v_sequence := apex_json.get_number('operations[%d].sequence', opi);
 		v_type := apex_json.get_varchar2('operations[%d].type', opi);
+		v_opid := apex_json.get_varchar2('operations[%d].id', opi);
 		v_index := apex_json.get_varchar2('operations[%d].index', opi);
 		v_fromAccount := apex_json.get_varchar2('operations[%d].fromAccount', opi);
 		v_toAccount := apex_json.get_varchar2('operations[%d].toAccount', opi);
@@ -302,7 +304,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		self.doc_code := ''; -- TO DO: Look this up based on surrogate id.
 		self.rec_type := '2';
 		self.rucl_code := 'JESY';
-		self.doc_ref_num := ''; -- TO DO: Refer to the JEBTRS request here.
+		self.doc_ref_num := v_opid;
 		self.trans_amt := ''; -- TO DO: Convert to cents.
 		self.trans_desc := ''; -- TO DO: Compose from other info.
 		self.dr_cr_ind := ''; -- Depends on transaction role.
