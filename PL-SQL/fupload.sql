@@ -261,6 +261,7 @@ CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
 	-- R => requisition; P => purchase order; E => general encubrance; L => labor; M => memo.
 	encb_type varchar2(1),
 
+	CONSTRUCTOR FUNCTION FuploadDetailRecord(json varchar2, di number) RETURN SELF AS RESULT,
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
 /
@@ -268,6 +269,14 @@ CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
 
 -- FUPLOAD detail record implementation body.
 CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
+	CONSTRUCTOR FUNCTION FuploadDetailRecord(json varchar2, di number)
+    RETURN SELF AS RESULT IS
+    BEGIN
+		apex_json.parse(json);
+
+        RETURN;
+    END;
+
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(148) := '';
 	BEGIN
@@ -329,11 +338,25 @@ show errors;
 CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
 	CONSTRUCTOR FUNCTION FuploadDocumentRecord(json varchar2)
     RETURN SELF AS RESULT IS
+		v_count number;
+		v_detail_record FuploadDetailRecord;
+		v_value varchar2(256);
     BEGIN
+		apex_json.parse(json);
+
 		-- All the transactions implied by this request happen today even though they alter
 		-- transactions that happened in the past.
 		self.header := FuploadHeaderRecord(to_char(sysdate, 'YYYYMMDD'));
-		-- self.details := FuploadDetailRecords(json);
+
+		-- Get number of elements in a array.  Loop over each op in the request.
+		v_count := apex_json.get_count('operations');
+		dbms_output.put_line('The request contains ' || v_count || ' operations.');
+		for i in 1 .. v_count loop
+			v_detail_record := FuploadDetailRecord(json, i);
+			v_value := apex_json.get_varchar2('operations[%d].type', i);
+			dbms_output.put_line(v_value);
+		end loop;
+
 		-- self.trailer := FuploadTrailerRecord(json);
 		-- self.texts = FuploadTextRecords(json);
         RETURN;
