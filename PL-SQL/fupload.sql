@@ -318,7 +318,7 @@ CREATE OR REPLACE TYPE FuploadDocumentRecord AS OBJECT (
 	trailer FuploadTrailerRecord,
 	texts FuploadTextRecords,
 
-	-- CONSTRUCTOR FUNCTION FuploadDocumentRecord(json varchar2) RETURN SELF AS RESULT,
+	CONSTRUCTOR FUNCTION FuploadDocumentRecord(json varchar2) RETURN SELF AS RESULT,
 	MEMBER FUNCTION toString RETURN varchar2
 
 );
@@ -327,32 +327,43 @@ show errors;
 
 
 CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
-	/*
 	CONSTRUCTOR FUNCTION FuploadDocumentRecord(json varchar2)
     RETURN SELF AS RESULT IS
     BEGIN
+		-- All the transactions implied by this request happen today even though they alter
+		-- transactions that happened in the past.
+		self.header := FuploadHeaderRecord(to_char(sysdate, 'YYYYMMDD'));
+		-- self.details := FuploadDetailRecords(json);
+		-- self.trailer := FuploadTrailerRecord(json);
+		-- self.texts = FuploadTextRecords(json);
         RETURN;
     END;
-	*/
+
 
 	MEMBER FUNCTION toString RETURN varchar2 IS
 		r varchar2(32767) := ''; -- This might need to be a CLOB.
 	BEGIN
 		-- The records are 148 byte fixed length.
 		-- Thus, there are no newlines between them.
-		r := self.header.toString();
+		if self.header is not null then
+			r := self.header.toString();
+		end if;
 
-		FOR i IN 1 .. self.details.count() LOOP
-			r := r || self.details(i).toString();
-		END LOOP;
+		if self.details is not null then
+			FOR i IN 1 .. self.details.count() LOOP
+				r := r || self.details(i).toString();
+			END LOOP;
+		end if;
 
-		r := r || self.trailer.toString();
+		if self.trailer is not null then
+			r := r || self.trailer.toString();
+		end if;
 
-		FOR i IN 1 .. self.texts.count() LOOP
-			r := r || self.texts(i).toString();
-		END LOOP;
-
-		-- TO DO: Output the text records.
+		if self.texts is not null then
+			FOR i IN 1 .. self.texts.count() LOOP
+				r := r || self.texts(i).toString();
+			END LOOP;
+		end if;
 
 		return r;
 	END toString;
@@ -411,6 +422,7 @@ DECLARE
 	dr1 FuploadDetailRecord;
 	dr2 FuploadDetailRecord;
 
+	docr0 FuploadDocumentRecord;
 	docr1 FuploadDocumentRecord;
 	fdoc varchar2(32767);
 
@@ -429,6 +441,7 @@ DECLARE
 
 
 BEGIN
+	dbms_output.put_line('--------------------------------------------------------------------------------');
 	dbms_output.put_line('Reading file.');
 
 	-- ifile := UTL_FILE.FOPEN('MY_DIR', 'request.json', 'R');
@@ -465,6 +478,12 @@ BEGIN
 	UTL_FILE.FCLOSE(ofile);
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
+	docr0 := FuploadDocumentRecord(file_contents);
+	fdoc := docr0.toString();
+	dbms_output.put_line(fdoc);
+
+	dbms_output.put_line('--------------------------------------------------------------------------------');
+
 	return;
 
 
