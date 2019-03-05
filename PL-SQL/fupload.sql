@@ -261,7 +261,7 @@ CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
 	-- R => requisition; P => purchase order; E => general encubrance; L => labor; M => memo.
 	encb_type varchar2(1),
 
-	CONSTRUCTOR FUNCTION FuploadDetailRecord(json varchar2, di number) RETURN SELF AS RESULT,
+	CONSTRUCTOR FUNCTION FuploadDetailRecord(json varchar2, opi number, role number) RETURN SELF AS RESULT,
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
 /
@@ -269,10 +269,25 @@ CREATE OR REPLACE TYPE FuploadDetailRecord UNDER FuploadBaseRecord (
 
 -- FUPLOAD detail record implementation body.
 CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
-	CONSTRUCTOR FUNCTION FuploadDetailRecord(json varchar2, di number)
+	-- Each request operation can yield more than one detail record.
+	-- Thus, we pass in the desired role of the detail record we're generating relative to its
+	-- source operation.
+	--
+	-- json: The JSON of the entire request.
+	-- opi: The 1-based index of the request operation for which we are generating one (of perhaps many) detail records.
+	-- role: The role of the detail record we're generating (relative to its source operation).
+	CONSTRUCTOR FUNCTION FuploadDetailRecord(json varchar2, opi number, role number)
     RETURN SELF AS RESULT IS
+		v_sequnce number;
+		v_type varchar2(128);
+		v_index varchar2(6);
+		v_fromAccount varchar2(6);
+		v_toAccount varchar2(6);
+		v_transactionId number; -- The surrogate id from FGBTRND.
+		v_reason varchar2(128);
     BEGIN
 		apex_json.parse(json);
+
 
         RETURN;
     END;
@@ -352,7 +367,10 @@ CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
 		v_count := apex_json.get_count('operations');
 		dbms_output.put_line('The request contains ' || v_count || ' operations.');
 		for i in 1 .. v_count loop
-			v_detail_record := FuploadDetailRecord(json, i);
+			v_detail_record := FuploadDetailRecord(json, i, 0); -- invert existing transaction
+			-- TO DO: Add to self.details.
+			v_detail_record := FuploadDetailRecord(json, i, 1); -- new fixed transaciton
+			-- TO DO: Add to self.details.
 			v_value := apex_json.get_varchar2('operations[%d].type', i);
 			dbms_output.put_line(v_value);
 		end loop;
