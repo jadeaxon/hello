@@ -278,7 +278,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 	-- role: The role of the detail record we're generating (relative to its source operation).
 	CONSTRUCTOR FUNCTION FuploadDetailRecord(json varchar2, opi number, role number)
     RETURN SELF AS RESULT IS
-		v_sequnce number;
+		v_sequence number;
 		v_type varchar2(128);
 		v_index varchar2(6);
 		v_fromAccount varchar2(6);
@@ -288,6 +288,28 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
     BEGIN
 		apex_json.parse(json);
 
+		dbms_output.put_line('Constructing FuploadDetailRecord for operation ' || opi || '.');
+
+		v_sequence := apex_json.get_number('operations[%d].sequence', opi);
+		dbms_output.put_line(v_sequence);
+
+		v_type := apex_json.get_varchar2('operations[%d].type', opi);
+		dbms_output.put_line(v_type);
+
+		v_index := apex_json.get_varchar2('operations[%d].index', opi);
+		dbms_output.put_line(v_index);
+
+		v_fromAccount := apex_json.get_varchar2('operations[%d].fromAccount', opi);
+		dbms_output.put_line(v_fromAccount);
+
+		v_toAccount := apex_json.get_varchar2('operations[%d].toAccount', opi);
+		dbms_output.put_line(v_toAccount);
+
+		v_transactionId := apex_json.get_number('operations[%d].transactionId', opi);
+		dbms_output.put_line(v_transactionId);
+
+		v_reason := apex_json.get_varchar2('operations[%d].reason', opi);
+		dbms_output.put_line(v_reason);
 
         RETURN;
     END;
@@ -452,7 +474,6 @@ CREATE OR REPLACE TYPE BODY FuploadFileWriter AS
 END;
 /
 show errors;
-
 
 
 -- Test using the FUPLOAD object types.
