@@ -415,6 +415,7 @@ CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
 		v_value varchar2(256);
     BEGIN
 		apex_json.parse(json);
+		self.details := FuploadDetailRecords(); -- Initialize empty list.
 
 		-- All the transactions implied by this request happen today even though they alter
 		-- transactions that happened in the past.
@@ -425,13 +426,18 @@ CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
 		dbms_output.put_line('The request contains ' || v_count || ' operations.');
 		for i in 1 .. v_count loop
 			v_detail_record := FuploadDetailRecord(json, i, 0); -- invert existing transaction
-			-- TO DO: Add to self.details.
-			v_detail_record := FuploadDetailRecord(json, i, 1); -- new fixed transaciton
-			-- TO DO: Add to self.details.
+			self.details.EXTEND;
+			self.details(self.details.LAST) := v_detail_record;
+
+			v_detail_record := FuploadDetailRecord(json, i, 1); -- new fixed transaction
+			self.details.EXTEND;
+			self.details(self.details.LAST) := v_detail_record;
+
 			v_value := apex_json.get_varchar2('operations[%d].type', i);
 			dbms_output.put_line(v_value);
 		end loop;
 
+		-- TO DO:
 		-- self.trailer := FuploadTrailerRecord(json);
 		-- self.texts = FuploadTextRecords(json);
         RETURN;
