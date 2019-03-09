@@ -84,13 +84,16 @@ CREATE OR REPLACE TYPE BODY FuploadHeaderRecord AS
     END;
 
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
-		r varchar2(148) := '';
+		r varchar2(150) := '';
 	BEGIN
 		r := LPAD(NVL(self.system_id, ' '), 8);
 		r := r || LPAD(NVL(self.doc_code, ' '), 8);
 		r := r || NVL(self.rec_type, ' '); -- Length 1.
 		r := r || LPAD(NVL(self.trans_date, ' '), 8);
 		r := r || self.filler; -- char, not varchar2
+
+		-- The sample file has a DOS line ending, but the FUPLOAD specs don't indicate this.
+		r := r || chr(13) || chr(10);
 		return r;
 	END toString;
 END;
@@ -133,7 +136,7 @@ CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
     END;
 
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
-		r varchar2(148) := '';
+		r varchar2(150) := '';
 	BEGIN
 		r := LPAD(NVL(self.system_id, ' '), 8);
 		r := r || LPAD(NVL(self.doc_code, ' '), 8);
@@ -141,6 +144,9 @@ CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
 		r := r || LPAD(NVL(self.rec_count, ' '), 8);
 		r := r || LPAD(NVL(self.trans_tot, '0'), 12, '0');
 		r := r || self.filler;
+
+		-- The sample file has a DOS line ending, but the FUPLOAD specs don't indicate this.
+		r := r || chr(13) || chr(10);
 		return r;
 	END toString;
 END;
@@ -176,13 +182,16 @@ CREATE OR REPLACE TYPE BODY FuploadTextRecord AS
 	END;
 
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
-		r varchar2(148) := '';
+		r varchar2(150) := '';
 	BEGIN
 		r := LPAD(NVL(self.system_id, ' '), 8);
 		r := r || LPAD(NVL(self.doc_code, ' '), 8);
 		r := r || self.rec_type;
 		r := r || LPAD(NVL(self.text, ' '), 50);
 		r := r || self.filler;
+
+		-- The sample file has a DOS line ending, but the FUPLOAD specs don't indicate this.
+		r := r || chr(13) || chr(10);
 		return r;
 	END toString;
 END;
@@ -282,6 +291,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		v_sequence number;
 		v_type varchar2(128);
 		v_opid varchar2(8); -- This identifies a particular line item of a JE request.
+		v_doc_ref_num varchar2(8); -- The Banner Finance document the original transaction comes from.
 		v_index varchar2(6);
 		v_amount number;
 		v_fromAccount varchar2(6);
@@ -293,7 +303,11 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		apex_json.parse(json);
 		v_sequence := apex_json.get_number('operations[%d].sequence', opi);
 		v_type := apex_json.get_varchar2('operations[%d].type', opi);
+		-- The sample files uses the Banner document, not the JEBTRS request.
+		-- So, if we want to link JEBTRS requests back to specific transactions, we'll need to do
+		-- that separately.
 		v_opid := apex_json.get_varchar2('operations[%d].id', opi);
+		v_doc_ref_num := apex_json.get_varchar2('operations[%d].docRef', opi);
 		v_index := apex_json.get_varchar2('operations[%d].index', opi);
 		v_amount := apex_json.get_number('operations[%d].amount', opi);
 		v_fromAccount := apex_json.get_varchar2('operations[%d].fromAccount', opi);
@@ -311,7 +325,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		self.doc_code := v_docCode;
 		self.rec_type := '2';
 		self.rucl_code := 'JESY';
-		self.doc_ref_num := v_opid;
+		self.doc_ref_num := v_doc_ref_num;
 		self.trans_amt := to_char(floor(v_amount * 100)); -- 13.27 => '1327'
 		self.trans_desc := ''; -- Depends on transaction role.
 		self.dr_cr_ind := ''; -- Depends on transaction role.
@@ -350,7 +364,7 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
     END;
 
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2 IS
-		r varchar2(148) := '';
+		r varchar2(150) := '';
 	BEGIN
 		r := LPAD(NVL(self.system_id, ' '), 8);
 		r := r || LPAD(NVL(self.doc_code, ' '), 8);
@@ -377,6 +391,9 @@ CREATE OR REPLACE TYPE BODY FuploadDetailRecord AS
 		r := r || NVL(self.encd_action_ind, ' '); -- Length 1.
 		r := r || LPAD(NVL(self.prjd_code, ' '), 8);
 		r := r || NVL(self.encb_type, ' '); -- Length 1.
+
+		-- The sample file has a DOS line ending, but the FUPLOAD specs don't indicate this.
+		r := r || chr(13) || chr(10);
 
 		return r;
 	END toString;
@@ -535,6 +552,7 @@ DECLARE
 	value varchar2(128);
 	ifile UTL_FILE.FILE_TYPE;
 	ofile UTL_FILE.FILE_TYPE;
+	ff_name varchar2(80); -- FUPLOAD file name.
 
 	r varchar2(148);
 	er varchar2(148); -- Expected record.
@@ -581,9 +599,16 @@ BEGIN
 	UTL_FILE.FCLOSE(ofile);
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
+	ff_name := 'jebtrs.fupload.unprocessed';  -- TO DO: Add datestamp.
+	dbms_output.put_line('Writing ' || ff_name || '.');
 	docr0 := FuploadDocumentRecord(file_contents);
 	fdoc := docr0.toString();
 	dbms_output.put_line(fdoc);
+
+	-- TO DO: There usually will be many requests in the FUPLOAD file for a day.
+	ofile := UTL_FILE.FOPEN('NEW_EXTRACTS', ff_name, 'W', 32767);
+	UTL_FILE.PUT(ofile, fdoc);
+	UTL_FILE.FCLOSE(ofile);
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 
