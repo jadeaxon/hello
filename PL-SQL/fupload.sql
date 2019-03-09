@@ -115,7 +115,7 @@ CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
 	-- This filler field aligns with that record boundary.
 	-- It should contain all space characters (ASCII 32).
 	filler char(111),
-	CONSTRUCTOR FUNCTION FuploadTrailerRecord(rec_count varchar2, trans_tot varchar2) RETURN SELF AS RESULT,
+	CONSTRUCTOR FUNCTION FuploadTrailerRecord(rec_count number, trans_tot number) RETURN SELF AS RESULT,
 	OVERRIDING MEMBER FUNCTION toString RETURN varchar2
 );
 /
@@ -123,14 +123,14 @@ CREATE OR REPLACE TYPE FuploadTrailerRecord UNDER FuploadBaseRecord (
 
 -- FUPLOAD trailer record implementation body.
 CREATE OR REPLACE TYPE BODY FuploadTrailerRecord AS
-	CONSTRUCTOR FUNCTION FuploadTrailerRecord(rec_count varchar2, trans_tot varchar2)
+	CONSTRUCTOR FUNCTION FuploadTrailerRecord(rec_count number, trans_tot number)
     RETURN SELF AS RESULT IS
     BEGIN
 		self.system_id := 'DATALOAD';
 		self.doc_code := '';
 		self.rec_type := '3';
-		self.rec_count := rec_count;
-		self.trans_tot := trans_tot;
+		self.rec_count := to_char(rec_count);
+		self.trans_tot := to_char(trans_tot);
 		self.filler := ' '; -- Yes, if you leave this null, it concats as nothing.
         RETURN;
     END;
@@ -427,10 +427,14 @@ show errors;
 CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
 	CONSTRUCTOR FUNCTION FuploadDocumentRecord(json varchar2)
     RETURN SELF AS RESULT IS
-		v_count number;
+		v_count number; -- Number of detail transactions.  Used in the trailer record.
+		v_total number; -- Total of all detail record amounts.  Used in the trailer record.
 		v_detail_record FuploadDetailRecord;
 		v_value varchar2(256);
     BEGIN
+		v_count := 0;
+		v_total := 0;
+
 		apex_json.parse(json);
 		self.details := FuploadDetailRecords(); -- Initialize empty list.
 
@@ -450,12 +454,17 @@ CREATE OR REPLACE TYPE BODY FuploadDocumentRecord AS
 			self.details.EXTEND;
 			self.details(self.details.LAST) := v_detail_record;
 
-			v_value := apex_json.get_varchar2('operations[%d].type', i);
-			dbms_output.put_line(v_value);
+			-- Total up all amounts.  Convert to cents and add both detail record amounts.
+			v_value := apex_json.get_varchar2('operations[%d].amount', i);
+			v_total := v_total + to_number(v_value) * 100 * 2;
+
+			-- v_value := apex_json.get_varchar2('operations[%d].type', i);
+			-- dbms_output.put_line(v_value);
 		end loop;
 
+		self.trailer := FuploadTrailerRecord(v_count, v_total);
+
 		-- TO DO:
-		-- self.trailer := FuploadTrailerRecord(json);
 		-- self.texts = FuploadTextRecords(json);
         RETURN;
     END;
@@ -533,6 +542,10 @@ END;
 /
 show errors;
 
+
+-------------------------------------------------------------------------------
+-- Main
+-------------------------------------------------------------------------------
 
 -- Test using the FUPLOAD object types.
 DECLARE
@@ -637,7 +650,7 @@ BEGIN
 
 	dbms_output.put_line('--------------------------------------------------------------------------------');
 	er := RPAD('DATALOAD        3      10000000430286', 148);
-	tr1 := FuploadTrailerRecord('10', '430286');
+	tr1 := FuploadTrailerRecord(10, 430286);
 	r := tr1.toString();
 	-- dbms_output.put_line(REPLACE(r, ' ', '_'));
 	-- dbms_output.put_line(LENGTH(r));
