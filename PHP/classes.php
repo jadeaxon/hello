@@ -23,6 +23,24 @@
 		}
 	}
 
+	// Base class.
+	class Animal {
+		public function makeSound() { }
+	}
+
+	// Subclass.
+	class Toad extends Animal {
+		public function makeSound() {
+			echo "Ribbit!\n";
+		}
+	}
+
+	class Fox extends Animal {
+		public function makeSound() {
+			echo "Yagdaba jag no jag no blam blim blam!\n";
+		}
+	}
+
 	// An instance of the guitarist class: Joe Satriani.
 	$satch = new Guitarist();
 	$satch->name = "Joe Satriani";
@@ -30,6 +48,12 @@
 	$satch->tone = 80;
 
 	echo $satch->getPickType() . "\n";
+
+	$toad = new Toad();
+	$fox = new Fox();
+
+	$toad->makeSound();
+	$fox->makeSound();
 
 ?>
 
