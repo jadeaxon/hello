@@ -25,8 +25,12 @@
 	// Split (explode) a string into array elements.
 	$values = [];
 	$input = "222,13,27,89";
-	$values = explode(",", $input);
+	$values = explode(",", $input); // split
 	echo $values[0] . "\n";
+
+	// Join (implode) an array into a string.
+	$result = implode(";", $values); // join
+	echo $result . "\n";
 
 ?>
 
