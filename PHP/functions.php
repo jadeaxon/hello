@@ -7,7 +7,12 @@
 		echo "Hello, ${name}!\n";
 	}
 
+	function helloWithDefault($name = "world") {
+		hello($name);
+	}
+
 	helloPHP();
 	hello("parameterized functions");
+	helloWithDefault();
 ?>
 
