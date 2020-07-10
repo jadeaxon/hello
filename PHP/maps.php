@@ -11,6 +11,32 @@
 	// Delete an entry.
 	unset($jimmy["weapon"]);
 
+	$item_counts = array(
+		"toothpicks" => 37,
+		"jelly beans" => 28,
+		"dryer sheets" => 19,
+		"shirts" => 32
+	);
+
+	ksort($item_counts);
+
+	// FAIL: PHP does not pretty print maps automagically.
+	// echo $item_counts;
+
+	// Multidimensional arrays.  Nested maps.
+	$characters = array(
+		"Witch King" => array(
+			"HP" => 2,
+			"MP" => 100
+		),
+		"White Knight" => array(
+			"HP" => 100,
+			"MP" => 2
+		)
+	);
+
+	echo $characters["Witch King"]["MP"];
+
 
 ?>
 
