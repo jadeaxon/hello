@@ -39,6 +39,11 @@
 		public function makeSound() {
 			echo "Yagdaba jag no jag no blam blim blam!\n";
 		}
+
+		// Static class function.
+		public static function about() {
+			echo "This is the fox class.\n";
+		}
 	}
 
 	// An instance of the guitarist class: Joe Satriani.
@@ -54,6 +59,7 @@
 
 	$toad->makeSound();
 	$fox->makeSound();
+	$fox->about();
 
 ?>
 
