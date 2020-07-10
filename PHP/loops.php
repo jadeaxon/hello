@@ -24,6 +24,17 @@
 		echo "${i}\n";
 
 	} // next iteration
+	echo "\n";
+
+	// A do-while loop.
+	$i = 0;
+	echo "Count to 10 (do-while loop):\n";
+	do {
+		$i += 1;
+		echo "${i}\n";
+	}
+	while ($i < 10);
+	echo "\n";
 
 ?>
 
