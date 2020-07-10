@@ -10,7 +10,7 @@
 
 	// Loop over an array.
 	$guitarists = ["Vai", "Satch", "EVH", "EJ", "Hendrix", "Santana"];
-	echo "Guitarists:\n";
+	echo "Guitarists (for loop):\n";
 	for ($i = 0; $i < count($guitarists); $i++) {
 		echo $guitarists[$i] . "\n";
 	} // next guitarist
@@ -34,6 +34,13 @@
 		echo "${i}\n";
 	}
 	while ($i < 10);
+	echo "\n";
+
+	// Use a foreach loop to iterate over an array.
+	echo "Guitarists (foreach loop):\n";
+	foreach ($guitarists as $guitarist) {
+		echo "${guitarist}\n";
+	} // next guitarist
 	echo "\n";
 
 ?>
