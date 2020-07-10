@@ -2,7 +2,7 @@
 	echo "Hello, PHP loops!\n";
 
 	// Basic for loop.
-	echo "Count to 10:\n";
+	echo "Count to 10 (for loop):\n";
 	for ($i = 1; $i <= 10; $i++) {
 		echo "${i}\n";
 	}
@@ -15,6 +15,15 @@
 		echo $guitarists[$i] . "\n";
 	} // next guitarist
 	echo "\n";
+
+	// Basic while loop.
+	$i = 0;
+	echo "Count to 10 (while loop):\n";
+	while ($i < 10) {
+		$i++;
+		echo "${i}\n";
+
+	} // next iteration
 
 ?>
 
