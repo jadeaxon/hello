@@ -43,5 +43,19 @@
 	} // next guitarist
 	echo "\n";
 
+	// Use a foreach loop to iterate over an associative array.
+	$item_counts = array(
+		"toothpicks" => 37,
+		"jelly beans" => 28,
+		"dryer sheets" => 19,
+		"shirts" => 32
+	);
+
+	echo "Item counts (foreach loop):\n";
+	foreach ($item_counts as $key => $value) {
+		echo "${key} => ${value}\n";
+	} // next item count
+	echo "\n";
+
 ?>
 

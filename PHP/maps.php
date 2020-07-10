@@ -35,8 +35,12 @@
 		)
 	);
 
-	echo $characters["Witch King"]["MP"];
+	echo $characters["Witch King"]["MP"] . "\n";
 
+	// Loop over map with foreach.
+	foreach ($item_counts as $key => $value) {
+		echo "${key} => ${value}\n";
+	} // next item count
 
 ?>
 
