@@ -60,6 +60,7 @@
 	$toad->makeSound();
 	$fox->makeSound();
 	$fox->about();
+	$fox::about(); // The more clear way to call a static method.
 
 ?>
 
