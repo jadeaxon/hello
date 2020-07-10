@@ -16,5 +16,19 @@
 		echo "That's a reasonable amount of notes.\n";
 	}
 
+	$animal = "cat";
+	if ($animal == "cat") {
+		echo "Meow!\n";
+	}
+	else if ($animal == "dog") {
+		echo "Woof!\n";
+	}
+	else if ($animal == "politician") {
+		echo "Lies!\n";
+	}
+	else {
+		echo "I don't know what the ${animal} says.";
+	}
+
 ?>
 
