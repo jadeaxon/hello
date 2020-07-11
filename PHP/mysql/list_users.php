@@ -18,6 +18,13 @@ try {
 	echo "<pre>";
 	print_r($user);
 	echo "</pre>";
+
+	$users = $conn->query('SELECT * FROM users')->fetchAll(PDO::FETCH_ASSOC);
+	echo "<h2>All Users</h2>";
+	echo "<pre>";
+	print_r($users);
+	echo "</pre>";
+
 }
 catch(PDOException $e) {
 	echo "Connection failed: " . $e->getMessage();
