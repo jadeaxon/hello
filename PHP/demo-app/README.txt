@@ -5,6 +5,10 @@ composer.json
 	PRE: Use Cygwin installer to install php-json, php-phar, php-iconv, and php-zlib.
 	To install Composer, see https://getcomposer.org/download/.
 
+	FAIL: Runs out of memory no matter what you do in Cygwin.  Need to run this in Linux.
+	./composer.phar install
+	php -d memory_limit=-1 composer.phar install
+
 instructions.txt
 	Instructions for running this web app.
 
