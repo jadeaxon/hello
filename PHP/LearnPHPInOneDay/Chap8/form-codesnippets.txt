@@ -1,0 +1,21 @@
+// For prefilling textbox
+
+<input type = "text" name = "studentname" value = "<?php 
+    if (isset($_POST['studentname'])) 
+        echo $_POST['studentname']; 
+?>">     
+
+
+// For preselecting checkbox
+
+<input type = "checkbox" name = "subj[]" value = "EL"
+<?php 
+    if (isset($_POST['subj']) && in_array('EL', $_POST['subj'])) 
+        echo 'checked'; 
+?>
+>English
+
+// XSS
+
+<script>alert('Hacked');</script>
+
