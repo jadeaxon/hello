@@ -38,6 +38,15 @@
           <h3>Looping over objects on a specific property</h3>
           <ul>
             <li v-for="thing in things" v-bind:key="thing.name">{{thing.name}}: {{thing}}</li>
+          </ul>
+
+          <!-- Also get the index during the loop. -->
+          <h3>Looping over objects; also getting index</h3>
+          <ul>
+            <li v-for="(thing, index) in things" v-bind:key="thing.name">
+              {{index}}: {{thing.name}}
+             </li>
+          </ul>
 
         </div>`
       });
