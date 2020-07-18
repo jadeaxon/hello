@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, Vue.js components!</title>
+  </head>
+  <body>
+    <!-- Include the Vue.js framework via CDN. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      // Register a custom component.
+      // You should now be able to use <my-component> in your HTML.
+      // You have to register the component before the rest of the <body> HTML.
+      Vue.component(
+        'MyComponent',
+        {
+          template: '<h2>I am a custom component.</h2>'
+        }
+      );
+    </script>
+
+
+    <!-- A div to attach our app to. -->
+    <!-- Use {{<expression>}} to interpolate. -->
+    <div id="app">
+      <p>{{hello}}</p>
+      <my-component></my-component>
+    </div>
+
+
+    <!-- The main code for our app. -->
+    <!-- This needs to come at the end of the <body> HTML. -->
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          // Use this property in the <div> controller by this Vue app.
+          hello: 'Hello, Vue.js components!'
+        }
+      });
+
+    </script>
+
+  </body>
+</html>
+
