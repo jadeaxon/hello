@@ -14,7 +14,15 @@
       Vue.component(
         'MyComponent',
         {
-          template: '<h2>I am a custom component.</h2>'
+          // Use backticks so we can use single and double quotes in the template.
+          template: `<h2 v-on:click="content = content.split('').reverse().join('')">{{content}}</h2>`,
+
+          // In a component, data is a function.  This lets each component instance have its own data.
+          data: function () {
+            return {
+              content: 'Click to reverse.'
+            };
+          }
         }
       );
     </script>
