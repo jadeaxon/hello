@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello, Vue.js!</title>
+  </head>
+  <body>
+    <!-- A div to attach our app to. -->
+    <!-- Use {{<expression>}} to interpolate. -->
+    <div id="app">
+      <p>{{hello}}</p>
+    </div>
+
+    <!-- Include the Vue.js framework via CDN. -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- The code for our app. -->
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          // Use this property in the <div> controller by this Vue app.
+          hello: 'Hello, Vue.js!'
+        }
+      });
+    </script>
+
+  </body>
+</html>
+
