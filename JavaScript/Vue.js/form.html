@@ -9,9 +9,11 @@
     <div id="app">
       <p>{{hello}}</p>
       <label>Name: </label><input name="name" type="text" v-model="input.name" /><br />
-      <label>Email: </label><input name="email" type="text" v-model="input.email" />
+      <label>Email: </label><input name="email" type="text" v-model="input.email" /> <br />
+      <label>Guitars: </label><input name="guitars" type="number" v-model.number="input.guitars" />
       <p>{{input.name}}</p>
       <p>{{input.email}}</p>
+      <p>{{input.guitars}}</p>
     </div>
 
     <!-- Include the Vue.js framework via CDN. -->
@@ -26,7 +28,8 @@
           hello: 'Hello, Vue.js forms!',
           input: {
             name: 'your name',
-            email: 'your email'
+            email: 'your email',
+            guitars: 0
           }
         }
       });
