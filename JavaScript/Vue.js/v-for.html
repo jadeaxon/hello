@@ -21,7 +21,12 @@
             {name: 'Foo', value: 3},
             {name: 'Bar', value: 4},
             {name: 'Baz', value: 5}
-          ]
+          ],
+          thingamajig: {
+            foo: 'I am foo.',
+            bar: 'I am bar.',
+            baz: 'I am baz.'
+          }
         },
         // Iterate over a list using the v-for directive.
         // Note the use of ` for multi-line quoting.
@@ -46,6 +51,14 @@
             <li v-for="(thing, index) in things" v-bind:key="thing.name">
               {{index}}: {{thing.name}}
              </li>
+          </ul>
+
+          <!-- Loop over the properties of a single object. -->
+          <h3>Loop over properties of an object</h3>
+          <ul>
+            <li v-for="(p, k, i) in thingamajig">
+              {{i}}: {{k}} => {{p}}
+            </li>
           </ul>
 
         </div>`
