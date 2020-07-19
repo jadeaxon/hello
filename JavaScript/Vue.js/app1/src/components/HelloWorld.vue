@@ -31,6 +31,8 @@
 </template>
 
 <script>
+// This is a newer ES6-style module.  Use import with these.
+// Basically it is saying this is the default object returned when you import this module.
 export default {
   name: 'HelloWorld',
   props: {

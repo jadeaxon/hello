@@ -13,9 +13,14 @@
 
 
 <script>
+// Import an ES6 module.
 import HelloWorld from './components/HelloWorld.vue'
 
-// Import my custom component.
+// Import (require) a CommonJS module.
+// var ConciseGreeter = require('./components/ConciseGreeter.vue');
+// Interestingly, the above does not work.
+// There's some kind of magic with the way Webpack interacts with import.
+// That, or I just have no idea what the heck I'm doing.
 import ConciseGreeter from './components/ConciseGreeter.vue'
 
 export default {

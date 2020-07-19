@@ -6,6 +6,10 @@
 </template>
 
 <script>
+// This is the older CommonJS way of creating a module.
+// Use require() with these. 
+// Basically module.exports is the object returned when you require this module.
+// Each file kind of is implicitly a module (has a module variable).
 module.exports = {
 	data: function () {
 		return { my_user: 'component user' }
