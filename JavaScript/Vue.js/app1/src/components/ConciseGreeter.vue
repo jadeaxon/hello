@@ -1,6 +1,7 @@
 <template>
-<div>
+<div class="concise-greeter">
 	<p>Hi, {{user}}!</p>
+	<input type="text" v-model="user">
 </div>
 </template>
 
@@ -8,13 +9,15 @@
 module.exports = {
 	data: function () {
 		return { user: 'default user' }
-	}
+	},
+	props: ['user']
+
 }
 </script>
 
-<style scoped>
-p {
-	text-color: purple
+<style>
+.concise-greeter {
+	background-color: gray;
 }
 </style>
 

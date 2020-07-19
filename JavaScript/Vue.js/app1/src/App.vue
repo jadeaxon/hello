@@ -3,8 +3,11 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
 	
+	<!-- This does not change even though we bound user to the component. -->
+	<p>App user: {{user}}</p>
+
 	<!-- Use my custom component. -->
-	<concise-greeter />
+	<concise-greeter :user="user" />
   </div>
 </template>
 
@@ -16,11 +19,19 @@ import HelloWorld from './components/HelloWorld.vue'
 import ConciseGreeter from './components/ConciseGreeter.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld: HelloWorld,
-	// Register my custom component.
-	ConciseGreeter: ConciseGreeter
+	name: 'App',
+	
+	// We'll v-bind this to a props property in ConciseGreeter.
+	data: function () {
+		return {
+			user: 'parent user'
+		};
+	},
+	components: {
+		HelloWorld: HelloWorld,
+		
+		// Register my custom component.
+		ConciseGreeter: ConciseGreeter
   }
 }
 </script>
