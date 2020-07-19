@@ -27,12 +27,12 @@ export default {
 			user: 'parent user'
 		};
 	},
+	// Not exactly sure why a list works between {}.
 	components: {
-		HelloWorld: HelloWorld,
-		
+		HelloWorld,
 		// Register my custom component.
-		ConciseGreeter: ConciseGreeter
-  }
+		ConciseGreeter
+	}
 }
 </script>
 

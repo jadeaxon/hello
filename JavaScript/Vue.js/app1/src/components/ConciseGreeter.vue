@@ -17,10 +17,18 @@ module.exports = {
 
 <!-- Using <style scoped> makes this CSS apply only to ConciseGreeter components. -->
 <!-- Seems to be broken though. -->
-<style>
+<!--
+For some reason, scoped styles don't get applied during hot reload when
+they are first added to the component. Full page reload fixes the issue,
+from there the styles, since they have been detected, get updated with
+consecutive hot reloads.
+-->
+<style scoped>
+p {
+	color: purple;
+}
 .concise-greeter {
 	background-color: gray;
-	color: purple;
 }
 </style>
 
