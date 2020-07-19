@@ -7,7 +7,7 @@
 	<p>App user: {{user}}</p>
 
 	<!-- Use my custom component. -->
-	<concise-greeter :user="user" />
+	<concise-greeter :user='user' />
   </div>
 </template>
 
