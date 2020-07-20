@@ -6,6 +6,7 @@
 </template>
 
 <script>
+/*
 // This is the older CommonJS way of creating a module.
 // Use require() with these. 
 // Basically module.exports is the object returned when you require this module.
@@ -17,6 +18,17 @@ module.exports = {
 	props: ['user']
 
 }
+*/
+
+// Create an ES6 module (instead of a CommonJS one).
+export default {
+	name: 'ConciseGreeter',
+	data() {
+		return { my_user: 'ES6 component user' };
+	},
+	props: ['user']
+}
+
 </script>
 
 <!-- Using <style scoped> makes this CSS apply only to ConciseGreeter components. -->

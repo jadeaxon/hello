@@ -1,20 +1,24 @@
 <template>
   <div id="app">
+    <!--
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-	
+	<HelloWorld msg="Welcome to Your Vue.js App"/>
+	-->
+
 	<!-- This does not change even though we bound user to the component. -->
 	<p>App user: {{user}}</p>
 
-	<!-- Use my custom component. -->
+	<!-- Use my custom components. -->
 	<concise-greeter :user='user' />
+	<debug-switch />
+
   </div>
 </template>
 
 
 <script>
 // Import an ES6 module.
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 // Import (require) a CommonJS module.
 // var ConciseGreeter = require('./components/ConciseGreeter.vue');
@@ -22,6 +26,8 @@ import HelloWorld from './components/HelloWorld.vue'
 // There's some kind of magic with the way Webpack interacts with import.
 // That, or I just have no idea what the heck I'm doing.
 import ConciseGreeter from './components/ConciseGreeter.vue'
+
+import DebugSwitch from './components/DebugSwitch.vue'
 
 export default {
 	name: 'App',
@@ -34,9 +40,10 @@ export default {
 	},
 	// Not exactly sure why a list works between {}.
 	components: {
-		HelloWorld,
+		// HelloWorld,
 		// Register my custom component.
-		ConciseGreeter
+		ConciseGreeter,
+		DebugSwitch
 	}
 }
 </script>
