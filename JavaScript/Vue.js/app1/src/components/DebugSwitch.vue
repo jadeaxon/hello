@@ -1,6 +1,7 @@
 <template>
 <div>
-	<label>Debug: </label><input type="checkbox" v-model="debug">
+	<label>Debug: </label><input v-on:change="changeHandler" type="checkbox" v-model="debug">
+	<p>Changes: {{changes}}</p>
 	<p v-if="debug">Debugging is turned on.</p>
 </div>
 </template>
@@ -10,8 +11,17 @@
 export default {
 	name: 'DebugSwitch',
 	data() {
-		return { debug: false };
+		return { 
+			debug: false,
+			changes: 0
+		};
 	},
+	methods: {
+		// Counts how many times the checkbox state has changed.
+		changeHandler() {
+			this.changes += 1;
+		}
+	}
 }
 
 </script>
