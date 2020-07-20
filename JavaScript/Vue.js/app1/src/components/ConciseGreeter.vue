@@ -1,7 +1,8 @@
 <template>
-<div class="concise-greeter">
+<div v-on:debug="handleDebug" class="concise-greeter">
 	<p>Hi, {{user}} now {{my_user}}!</p>
 	<input type="text" v-model="my_user">
+	<p v-if="debug">Debugging enabled for ConciseGreeter.</p>
 </div>
 </template>
 
@@ -24,9 +25,17 @@ module.exports = {
 export default {
 	name: 'ConciseGreeter',
 	data() {
-		return { my_user: 'ES6 component user' };
+		return { 
+			my_user: 'ES6 component user',
+			debug: false
+		};
 	},
-	props: ['user']
+	props: ['user'],
+	methods: {
+		handleDebug(value) {
+			this.debug = value;
+		}
+	}
 }
 
 </script>

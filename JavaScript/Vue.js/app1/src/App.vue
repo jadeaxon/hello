@@ -7,10 +7,15 @@
 
 	<!-- This does not change even though we bound user to the component. -->
 	<p>App user: {{user}}</p>
+	<p v-if="debug">Debug enabled in App component.</p>
 
 	<!-- Use my custom components. -->
 	<concise-greeter :user='user' />
-	<debug-switch />
+	
+	<!-- WARNING: The debug-mode event won't bubble up to the <div>. -->
+	<!-- Thus, you must attach the event handler to the component that emitted the event. -->
+	<!-- This is how you communicate from child component back up to parent component. -->
+	<debug-switch v-on:debug-mode="handleDebug" />
 
   </div>
 </template>
@@ -35,7 +40,8 @@ export default {
 	// We'll v-bind this to a props property in ConciseGreeter.
 	data: function () {
 		return {
-			user: 'parent user'
+			user: 'parent user',
+			debug: false
 		};
 	},
 	// Not exactly sure why a list works between {}.
@@ -44,6 +50,11 @@ export default {
 		// Register my custom component.
 		ConciseGreeter,
 		DebugSwitch
+	},
+	methods: {
+		handleDebug(value) {
+			this.debug = value;
+		}
 	}
 }
 </script>
@@ -59,3 +70,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+

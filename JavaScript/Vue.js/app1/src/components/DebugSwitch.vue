@@ -18,8 +18,11 @@ export default {
 	},
 	methods: {
 		// Counts how many times the checkbox state has changed.
-		changeHandler() {
+		changeHandler: function () {
 			this.changes += 1;
+			// Emit a custom event whenever the debug value changes.
+			// This will let us affect the parent component state.
+			this.$emit('debug-mode', this.debug);
 		}
 	}
 }
