@@ -10,7 +10,7 @@
 	<p v-if="debug">Debug enabled in App component.</p>
 
 	<!-- Use my custom components. -->
-	<concise-greeter :user='user' />
+	<concise-greeter :user='user' :debug='debug' />
 	
 	<!-- WARNING: The debug-mode event won't bubble up to the <div>. -->
 	<!-- Thus, you must attach the event handler to the component that emitted the event. -->

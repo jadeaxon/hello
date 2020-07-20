@@ -1,8 +1,8 @@
 <template>
-<div v-on:debug="handleDebug" class="concise-greeter">
-	<p>Hi, {{user}} now {{my_user}}!</p>
+<div class="concise-greeter">
+	<p>Hi, {{user}} (now {{my_user}})!</p>
 	<input type="text" v-model="my_user">
-	<p v-if="debug">Debugging enabled for ConciseGreeter.</p>
+	<p v-if="debug">Debugging enabled (indirectly via props v-bind) for ConciseGreeter.</p>
 </div>
 </template>
 
@@ -27,15 +27,14 @@ export default {
 	data() {
 		return { 
 			my_user: 'ES6 component user',
-			debug: false
 		};
 	},
-	props: ['user'],
-	methods: {
-		handleDebug(value) {
-			this.debug = value;
-		}
-	}
+	// The debug property will be dynamically bound in parent component via v-bind.
+	// It will be bound to its debug value which is toggled via the DebugSwitch compenent.
+	// Thus, that component will indirectly affect this one.
+	// Note that unless you use a global bus, components can't listen to events from arbitrary
+	// components.
+	props: ['user', 'debug']
 }
 
 </script>
