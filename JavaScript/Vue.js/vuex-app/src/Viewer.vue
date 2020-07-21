@@ -7,7 +7,14 @@
 
 <script>
 export default {
-	props: ['msg']
+	// Any reason for msg to still be a prop?  Nope.	
+	// props: ['msg'],
+	computed: {
+		msg() {
+			// I guess $store is injected into components.
+			return this.$store.state.msg
+		}
+	}
 }
 
 </script>

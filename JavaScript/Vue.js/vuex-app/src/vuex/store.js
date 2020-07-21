@@ -4,7 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-  msg: 'Hello, Vuex!'
+  msg: 'Vuex store: Hello, Vuex!'
 };
 
 const mutations = {

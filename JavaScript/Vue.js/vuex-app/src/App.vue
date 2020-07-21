@@ -1,7 +1,7 @@
 <template>
 <div id="app">
-	<editor :msg="msg" />
-	<viewer :msg="msg" />
+	<editor />
+	<viewer />
 </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
 	name: 'app',
 	data () {
 		return {
-			msg: 'Welcome to your Vue.js Vuex app'
+			msg: 'App: Welcome to your Vue.js Vuex app'
 		}
 	},
 	// ES6 adds the shorthand of being able to use 'foo' for 'foo: foo' in object literals.
