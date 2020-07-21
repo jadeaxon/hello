@@ -1,7 +1,7 @@
 <template>
 <div id="app">
-	<editor />
-	<viewer />
+	<editor :msg="msg" />
+	<viewer :msg="msg" />
 </div>
 </template>
 
@@ -17,10 +17,14 @@ export default {
 			msg: 'Welcome to your Vue.js Vuex app'
 		}
 	},
+	// ES6 adds the shorthand of being able to use 'foo' for 'foo: foo' in object literals.
+	/*
 	components: {
 		Viewer: Viewer,
 		Editor: Editor
 	}
+	*/
+	components: {Viewer, Editor}
 }
 </script>
 
