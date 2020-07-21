@@ -7,8 +7,9 @@
 
 
 <script>
-import Editor from './Editor.vue'
-import Viewer from './Viewer.vue'
+import Editor from './Editor.vue';
+import Viewer from './Viewer.vue';
+import store from './vuex/store';
 
 export default {
 	name: 'app',
@@ -24,7 +25,8 @@ export default {
 		Editor: Editor
 	}
 	*/
-	components: {Viewer, Editor}
+	components: {Viewer, Editor},
+	store
 }
 </script>
 
