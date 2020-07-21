@@ -1,7 +1,9 @@
 <template>
 <div>
-	<!-- Should not use a prop as a model. -->
-	<input type="text" v-model="msg" @keyup="keyHandler">
+	<!-- Should not use a prop as a v-model. -->
+	<!-- When using Vuex, v-model is no longer even needed here. -->
+	<!-- You do need to v-bind it to value though. -->
+	<label>Message: </label><input type="text" :value="msg" @keyup="keyHandler" size="80">
 </div>
 </template>
 
