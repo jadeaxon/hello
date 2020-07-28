@@ -1,0 +1,15 @@
+
+/Users/venkats/books/ves6/Book/code/parameters/morethanonerest.js
+  3:29  error  Parsing error: Comma is not permitted after the rest element
+
+/Users/venkats/books/ves6/Book/code/parameters/notlastrest.js
+  3:29  error  Parsing error: Comma is not permitted after the rest element
+
+/Users/venkats/books/ves6/Book/code/parameters/objectspread.js
+  6:14  error  Parsing error: Unexpected token ..
+
+/Users/venkats/books/ves6/Book/code/parameters/rest-and-default.js
+  4:58  error  Parsing error: Unexpected token =
+
+✖ 4 problems (4 errors, 0 warnings)
+

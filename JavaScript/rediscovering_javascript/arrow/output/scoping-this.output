@@ -1,0 +1,8 @@
+[ 2, 4, 6 ]
+[ 2, 4, 6 ]
+someValue is 4
+this...undefined
+self...from lexical scope
+someValue is 4
+this...from lexical scope
+self...from lexical scope

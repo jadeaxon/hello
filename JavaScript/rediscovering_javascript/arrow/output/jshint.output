@@ -1,0 +1,104 @@
+anonymous-to-arrow.js: line 2, col 25, Missing "use strict" statement.
+anonymous-to-arrow.js: line 6, col 42, Missing "use strict" statement.
+
+anonymous.js: line 3, col 3, Missing "use strict" statement.
+anonymous.js: line 10, col 2, Missing semicolon.
+
+arrow-new-target.js: line 2, col 3, Missing "use strict" statement.
+arrow-new-target.js: line 2, col 18, 'new.target' must be in function scope.
+arrow-new-target.js: line 3, col 2, Missing semicolon.
+
+arrow-prototype.js: line 1, col 28, Missing semicolon.
+arrow-prototype.js: line 2, col 25, Missing semicolon.
+
+car.js: line 5, col 3, Missing "use strict" statement.
+car.js: line 6, col 2, Missing semicolon.
+
+default-argument-arrow.js: line 3, col 1, Missing "use strict" statement.
+default-argument-arrow.js: line 1, col 57, Missing semicolon.
+
+embedded-arrow-new-target.js: line 2, col 3, Missing "use strict" statement.
+embedded-arrow-new-target.js: line 3, col 2, Missing semicolon.
+
+functional-arrow.js: line 3, col 3, Missing "use strict" statement.
+functional-arrow.js: line 6, col 2, Missing semicolon.
+
+functional.js: line 3, col 3, Missing "use strict" statement.
+functional.js: line 6, col 2, Missing semicolon.
+
+imperative.js: line 3, col 3, Missing "use strict" statement.
+imperative.js: line 12, col 2, Missing semicolon.
+
+messy-return-object-literal.js: line 1, col 34, Missing "use strict" statement.
+messy-return-object-literal.js: line 1, col 45, Label 'firstName' on name statement.
+messy-return-object-literal.js: line 1, col 49, Missing semicolon.
+
+multiline.js: line 3, col 3, Missing "use strict" statement.
+multiline.js: line 10, col 2, Missing semicolon.
+
+named-anonymous.js: line 2, col 3, Missing "use strict" statement.
+named-anonymous.js: line 4, col 5, Expected '{' and instead saw 'setTimeout'.
+
+new-target.js: line 2, col 3, Missing "use strict" statement.
+new-target.js: line 3, col 5, Expected '{' and instead saw 'console'.
+new-target.js: line 5, col 5, Expected '{' and instead saw 'console'.
+new-target.js: line 6, col 2, Missing semicolon.
+
+no-constructor.js: line 1, col 39, Missing "use strict" statement.
+
+no-generator.js: line 2, col 3, Missing "use strict" statement.
+no-generator.js: line 3, col 26, Expected '{' and instead saw 'return'.
+no-generator.js: line 7, col 2, Missing semicolon.
+no-generator.js: line 10, col 28, Expected an identifier and instead saw '*'.
+no-generator.js: line 10, col 29, Expected an operator and instead saw '('.
+no-generator.js: line 10, col 30, Missing semicolon.
+no-generator.js: line 10, col 35, Missing semicolon.
+no-generator.js: line 10, col 35, Expected an identifier and instead saw ')'.
+no-generator.js: line 10, col 37, Expected an operator and instead saw '=>'.
+no-generator.js: line 10, col 39, Missing semicolon.
+no-generator.js: line 16, col 24, Expected '{' and instead saw 'yield'.
+no-generator.js: line 16, col 24, Yield expressions may only occur within generator functions.
+
+no-throw.js: line 1, col 27, Expected an identifier and instead saw 'throw'.
+no-throw.js: line 1, col 33, Expected an operator and instead saw 'new'.
+no-throw.js: line 1, col 37, Missing "use strict" statement.
+no-throw.js: line 1, col 36, Missing semicolon.
+
+non-smelly-call.js: line 3, col 3, Missing "use strict" statement.
+non-smelly-call.js: line 3, col 3, `var` declarations are forbidden. Use `let` or `const` instead.
+non-smelly-call.js: line 4, col 3, `var` declarations are forbidden. Use `let` or `const` instead.
+non-smelly-call.js: line 11, col 3, Missing "use strict" statement.
+non-smelly-call.js: line 13, col 2, Missing semicolon.
+non-smelly-call.js: line 13, col 2, Expected an identifier and instead saw ')'.
+
+rest-parameter-arrow.js: line 2, col 76, Missing "use strict" statement.
+
+return-object-literal.js: line 1, col 53, Missing "use strict" statement.
+
+scoping-arguments.js: line 4, col 3, Missing "use strict" statement.
+scoping-arguments.js: line 7, col 4, Missing semicolon.
+scoping-arguments.js: line 8, col 2, Missing semicolon.
+scoping-arguments.js: line 18, col 3, Missing "use strict" statement.
+scoping-arguments.js: line 20, col 2, Missing semicolon.
+
+scoping-this.js: line 3, col 29, Missing "use strict" statement.
+scoping-this.js: line 10, col 29, Missing "use strict" statement.
+scoping-this.js: line 20, col 3, Missing "use strict" statement.
+scoping-this.js: line 28, col 3, Missing "use strict" statement.
+
+single-parameter-arrow.js: line 3, col 59, Missing "use strict" statement.
+single-parameter-arrow.js: line 11, col 57, Missing "use strict" statement.
+
+smelly-call.js: line 3, col 5, Missing "use strict" statement.
+smelly-call.js: line 3, col 5, `var` declarations are forbidden. Use `let` or `const` instead.
+smelly-call.js: line 4, col 5, `var` declarations are forbidden. Use `let` or `const` instead.
+smelly-call.js: line 10, col 5, Missing "use strict" statement.
+
+using-bind.js: line 2, col 3, Missing "use strict" statement.
+using-bind.js: line 3, col 2, Missing semicolon.
+
+wrap-throw.js: line 2, col 30, Missing "use strict" statement.
+wrap-throw.js: line 6, col 29, Missing "use strict" statement.
+wrap-throw.js: line 6, col 55, Missing semicolon.
+
+77 errors

@@ -1,0 +1,28 @@
+
+/Users/venkats/books/ves6/Book/code/literals/extensible-copy.js
+  4:11  error  Parsing error: Unexpected token ..
+
+/Users/venkats/books/ves6/Book/code/literals/multiple-returns.js
+   4:35  error  'number' is defined but never used               no-unused-vars
+  21:21  error  'middleName' is assigned a value but never used  no-unused-vars
+  42:10  error  'firstName' is assigned a value but never used   no-unused-vars
+  42:22  error  'lastName' is assigned a value but never used    no-unused-vars
+  49:10  error  'firstName' is assigned a value but never used   no-unused-vars
+  49:22  error  'lastName' is assigned a value but never used    no-unused-vars
+
+/Users/venkats/books/ves6/Book/code/literals/nope-extraction.js
+  9:19  error  Parsing error: Unexpected token =
+
+/Users/venkats/books/ves6/Book/code/literals/object-destructuring.js
+   92:11  error  'name' is assigned a value but never used  no-unused-vars
+   98:17  error  'address' is not defined                   no-undef
+  106:11  error  'name' is assigned a value but never used  no-unused-vars
+
+/Users/venkats/books/ves6/Book/code/literals/semi-outside.js
+  8:25  error  Parsing error: Unexpected token ;
+
+/Users/venkats/books/ves6/Book/code/literals/using-raw.js
+  8:39  error  Unnecessary escape character: \ .  no-useless-escape
+
+✖ 13 problems (13 errors, 0 warnings)
+

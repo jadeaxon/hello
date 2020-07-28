@@ -1,0 +1,36 @@
+above-block.js: line 6, col 7, `var` declarations are forbidden. Use `let` or `const` instead.
+
+above-def.js: line 4, col 7, `var` declarations are forbidden. Use `let` or `const` instead.
+above-def.js: line 6, col 9, 'message' was used before it was declared, which is illegal for 'let' variables.
+
+after-block.js: line 4, col 7, `var` declarations are forbidden. Use `let` or `const` instead.
+
+boolean-const.js: line 5, col 3, Attempting to override 'value' which is a constant.
+
+change-string.js: line 2, col 3, Missing "use strict" statement.
+
+const-reach.js: line 7, col 9, It's not necessary to initialize 'nothing' to 'undefined'.
+
+letconst.js: line 8, col 3, Attempting to override 'tax' which is a constant.
+
+no-block.js: line 6, col 7, `var` declarations are forbidden. Use `let` or `const` instead.
+no-block.js: line 8, col 5, `var` declarations are forbidden. Use `let` or `const` instead.
+no-block.js: line 4, col 15, 'message' used out of scope.
+no-block.js: line 11, col 15, 'message' used out of scope.
+
+no-redefine.js: line 6, col 7, 'max' has already been declared.
+
+null-const.js: line 5, col 3, Attempting to override 'value' which is a constant.
+
+number-const.js: line 5, col 3, Attempting to override 'value' which is a constant.
+
+redefine.js: line 3, col 3, `var` declarations are forbidden. Use `let` or `const` instead.
+redefine.js: line 6, col 3, `var` declarations are forbidden. Use `let` or `const` instead.
+redefine.js: line 6, col 7, 'max' is already defined.
+
+undefined-const.js: line 3, col 9, It's not necessary to initialize 'value' to 'undefined'.
+undefined-const.js: line 5, col 3, Attempting to override 'value' which is a constant.
+
+yes-block.js: line 6, col 7, `var` declarations are forbidden. Use `let` or `const` instead.
+
+21 errors

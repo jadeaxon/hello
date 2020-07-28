@@ -1,0 +1,30 @@
+4
+false
+SetIterator {
+  [ 'Jack', 'Jack' ],
+  [ 'Jill', 'Jill' ],
+  [ 'Jake', 'Jake' ],
+  [ 'Sara', 'Sara' ],
+  [ 'Mike', 'Mike' ],
+  [ 'Kate', 'Kate' ],
+  [ 'Kara', 'Kara' ] }
+SetIterator { 'Jack', 'Jill', 'Jake', 'Sara', 'Mike', 'Kate', 'Kara' }
+SetIterator { 'Jack', 'Jill', 'Jake', 'Sara', 'Mike', 'Kate', 'Kara' }
+Jack
+Jill
+Jake
+Sara
+Mike
+Kate
+Kara
+Jack
+Jill
+Jake
+Sara
+Mike
+Kate
+Kara
+JACK
+JILL
+JAKE
+Set { 'a', 1 }

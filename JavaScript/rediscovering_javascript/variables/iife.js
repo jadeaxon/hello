@@ -1,0 +1,26 @@
+/***
+ * Excerpted from "Rediscovering JavaScript",
+ * published by The Pragmatic Bookshelf.
+ * Copyrights apply to this code. It may not be used to create training material,
+ * courses, books, articles, and the like. Contact us if you are in doubt.
+ * We make no guarantees that this code is fit for any purpose.
+ * Visit http://www.pragmaticprogrammer.com/titles/ves6 for more book information.
+***/
+//BROKEN CODE
+'use strict';
+
+var result = (function() {
+  var result = 0;
+
+  for(var i = 0; i < 5; i++) {
+    var sqrt = Math.sqrt(i);
+    result += sqrt;
+  }
+  
+  return result;
+})();
+
+console.log(result);
+
+console.log(sqrt); //ERROR because sqrt is not visible here,
+//that's the desired behavior

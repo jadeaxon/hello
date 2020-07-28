@@ -1,0 +1,15 @@
+/Users/venkats/books/ves6/Book/code/gotchas/deorderized.js:5
+    factor = 4;
+           ^
+
+ReferenceError: factor is not defined
+    at sample (/Users/venkats/books/ves6/Book/code/gotchas/deorderized.js:5:12)
+    at /Users/venkats/books/ves6/Book/code/gotchas/deorderized.js:14:15
+    at Object.<anonymous> (/Users/venkats/books/ves6/Book/code/gotchas/deorderized.js:15:3)
+    at Module._compile (module.js:571:32)
+    at Object.Module._extensions..js (module.js:580:10)
+    at Module.load (module.js:488:32)
+    at tryModuleLoad (module.js:447:12)
+    at Function.Module._load (module.js:439:3)
+    at Module.runMain (module.js:605:10)
+    at run (bootstrap_node.js:418:7)

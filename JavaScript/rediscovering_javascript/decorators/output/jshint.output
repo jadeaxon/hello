@@ -1,0 +1,4 @@
+person.js: line 1, col 1, Use the function form of "use strict".
+person.js: line 14, col 1, 'console' is not defined.
+
+2 errors

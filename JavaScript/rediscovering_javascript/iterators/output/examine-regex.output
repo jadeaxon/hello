@@ -1,0 +1,8 @@
+regex is of type RegExp: true
+Properties of regex: [ 'lastIndex' ]
+Symbol properties of regex: []
+Symbol properties of regex's prototype: 
+[ Symbol(Symbol.match),
+  Symbol(Symbol.replace),
+  Symbol(Symbol.search),
+  Symbol(Symbol.split) ]

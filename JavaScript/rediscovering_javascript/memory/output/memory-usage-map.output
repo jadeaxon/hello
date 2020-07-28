@@ -1,0 +1,25 @@
+
+<--- Last few GCs --->
+
+[72086:0x102804a00]      291 ms: Scavenge 88.5 (108.5) -> 89.1 (109.0) MB, 41.2 / 0.0 ms  allocation failure 
+[72086:0x102804a00]      337 ms: Scavenge 89.1 (109.0) -> 88.4 (124.0) MB, 45.6 / 0.0 ms  allocation failure 
+[72086:0x102804a00]     4289 ms: Mark-sweep 1399.0 (1442.1) -> 1385.6 (1428.9) MB, 426.6 / 0.0 ms  (+ 60.7 ms in 202 steps since start of marking, biggest step 13.1 ms, walltime since start of marking 4119 ms) allocation failure GC in old space requested
+
+
+<--- JS stacktrace --->
+
+==== JS stack trace =========================================
+
+Security context: 0x35310b4a5501 <JSObject>
+    1: set(this=0x3531ff61b131 <Map map = 0x3531f6c848d9>,0x35319bf1a601 <Object map = 0x3531f6cbc1c9>,16777216)
+    2: /* anonymous */(aka /* anonymous */) [/Users/venkats/books/ves6/Book/code/memory/memory-usage-map.js:~1] [pc=0x1a5339d066bc](this=0x3531969022d1 <undefined>)
+    3: /* anonymous */ [/Users/venkats/books/ves6/Book/code/memory/memory-usage-map.js:15] [bytecode=0x353129242109 offs...
+
+FATAL ERROR: invalid table size Allocation failed - JavaScript heap out of memory
+ 1: node::Abort() [/usr/local/bin/node]
+ 2: node::FatalTryCatch::~FatalTryCatch() [/usr/local/bin/node]
+ 3: v8::internal::V8::FatalProcessOutOfMemory(char const*, bool) [/usr/local/bin/node]
+ 4: v8::internal::OrderedHashTable<v8::internal::OrderedHashMap, 2>::Rehash(v8::internal::Handle<v8::internal::OrderedHashMap>, int) [/usr/local/bin/node]
+ 5: v8::internal::Runtime_MapGrow(int, v8::internal::Object**, v8::internal::Isolate*) [/usr/local/bin/node]
+ 6: 0x1a5339b842fd
+ 7: 0x1a5339c3251e

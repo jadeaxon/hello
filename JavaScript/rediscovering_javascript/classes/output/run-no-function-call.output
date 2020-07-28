@@ -1,0 +1,4 @@
+Car(); //BROKEN CODE
+^
+
+TypeError: Class constructor Car cannot be invoked without 'new'

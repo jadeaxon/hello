@@ -1,0 +1,17 @@
+creating a ReputablePerson
+initializing Person fields
+ReputablePerson { firstName: 'Alan', lastName: 'Turing', rating: 5 }
+ReputablePerson {}
+Person {}
+{}
+...after change of prototype...
+ReputablePerson { firstName: 'Alan', lastName: 'Turing', rating: 5 }
+ReputablePerson {}
+ComputerWiz {}
+{}
+creating a ReputablePerson
+initializing Person fields
+ReputablePerson { firstName: 'Ada', lastName: 'Lovelace', rating: 5 }
+ReputablePerson {}
+ComputerWiz {}
+{}

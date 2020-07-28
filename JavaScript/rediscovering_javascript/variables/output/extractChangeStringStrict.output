@@ -1,0 +1,4 @@
+greet[0] = 'r';
+         ^
+
+TypeError: Cannot assign to read only property '0' of string 'dude'

@@ -1,0 +1,3 @@
+[ 'constructor', 'drive' ]
+Car { year: 2018, miles: 0 }
+Car { year: 2018, miles: 10 }

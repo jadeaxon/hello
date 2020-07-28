@@ -1,0 +1,2 @@
+The Symbol properties in arrays are:
+[ Symbol(Symbol.iterator), Symbol(Symbol.unscopables) ]

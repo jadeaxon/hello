@@ -1,0 +1,18 @@
+card-deck-iterator.js: line 16, col 10, Missing semicolon.
+card-deck-iterator.js: line 18, col 6, Missing semicolon.
+
+examine-regex.js: line 13, col 57, The '__proto__' property is deprecated.
+
+infinite-sequence.js: line 3, col 3, Missing "use strict" statement.
+infinite-sequence.js: line 4, col 26, Expected '{' and instead saw 'return'.
+infinite-sequence.js: line 8, col 2, Missing semicolon.
+infinite-sequence.js: line 13, col 3, Missing "use strict" statement.
+infinite-sequence.js: line 16, col 24, Expected '{' and instead saw 'yield'.
+infinite-sequence.js: line 19, col 2, Missing semicolon.
+infinite-sequence.js: line 25, col 19, Expected '{' and instead saw 'break'.
+
+search.js: line 10, col 55, Missing semicolon.
+
+traditional-for.js: line 3, col 5, `var` declarations are forbidden. Use `let` or `const` instead.
+
+12 errors

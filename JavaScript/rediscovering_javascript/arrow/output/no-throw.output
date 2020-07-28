@@ -1,0 +1,15 @@
+/Users/venkats/books/ves6/Book/code/arrow/no-throw.js:3
+const mapFunction = () => throw new Error('fail'); //BROKEN CODE
+                          ^^^^^
+
+SyntaxError: Unexpected token throw
+    at new Script (vm.js:51:7)
+    at createScript (vm.js:138:10)
+    at Object.runInThisContext (vm.js:199:10)
+    at Module._compile (module.js:624:28)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Function.Module.runMain (module.js:701:10)
+    at startup (bootstrap_node.js:190:16)

@@ -1,0 +1,3 @@
+Promise { <rejected> 'no negative number, please.' }
+Promise { 0 }
+Promise { <pending> }

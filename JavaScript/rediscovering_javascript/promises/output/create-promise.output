@@ -1,0 +1,6 @@
+Promise { <rejected> 'no negative number, please.' }
+Promise { 0 }
+Promise { <pending> }
+result is 0.
+ERROR: no negative number, please.
+result is 4.

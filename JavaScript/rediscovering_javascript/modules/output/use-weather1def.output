@@ -1,0 +1,7 @@
+(node:78824) ExperimentalWarning: The ESM module loader is experimental.
+file:///Users/venkats/books/ves6/Book/code/modules/use-weather1def.mjs:1
+import d, { f2c, Thermostat } from './weather1';
+       ^
+SyntaxError: The requested module does not provide an export named 'default'
+    at ModuleJob._instantiate (internal/loader/ModuleJob.js:86:19)
+    at <anonymous>

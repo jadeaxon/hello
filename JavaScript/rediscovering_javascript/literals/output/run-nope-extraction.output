@@ -1,0 +1,4 @@
+{ name: theName } = sam;
+                  ^
+
+SyntaxError: Unexpected token =

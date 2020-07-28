@@ -1,0 +1,5 @@
+iterating over properties:
+first : Sam
+emailValue : sam@example.com
+list of property names:
+[ 'first', 'emailValue' ]

@@ -1,0 +1,7 @@
+(node:78826) ExperimentalWarning: The ESM module loader is experimental.
+file:///Users/venkats/books/ves6/Book/code/modules/use-weather2.mjs:1
+import { f2c, Thermostat } from './weather2';
+         ^^^
+SyntaxError: The requested module does not provide an export named 'f2c'
+    at ModuleJob._instantiate (internal/loader/ModuleJob.js:86:19)
+    at <anonymous>

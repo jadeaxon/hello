@@ -1,0 +1,28 @@
+mask.js: line 2, col 3, Missing "use strict" statement.
+mask.js: line 6, col 2, Missing semicolon.
+
+multiline.js: line 8, col 2, Missing semicolon.
+
+multiple-returns.js: line 4, col 3, Missing "use strict" statement.
+multiple-returns.js: line 5, col 2, Missing semicolon.
+multiple-returns.js: line 74, col 3, Missing "use strict" statement.
+multiple-returns.js: line 75, col 2, Missing semicolon.
+
+no-nesting.js: line 7, col 65, Missing "use strict" statement.
+
+print-template-literal.js: line 2, col 3, Missing "use strict" statement.
+print-template-literal.js: line 4, col 2, Missing semicolon.
+
+template-confusion.js: line 6, col 1, Missing "use strict" statement.
+template-confusion.js: line 4, col 42, Missing semicolon.
+
+using-enhanced-object-literals.js: line 3, col 3, Missing "use strict" statement.
+using-enhanced-object-literals.js: line 14, col 4, Missing semicolon.
+using-enhanced-object-literals.js: line 15, col 2, Missing semicolon.
+using-enhanced-object-literals.js: line 20, col 18, Missing "use strict" statement.
+
+without-enhanced-object-literals.js: line 2, col 3, Missing "use strict" statement.
+without-enhanced-object-literals.js: line 13, col 2, Missing semicolon.
+without-enhanced-object-literals.js: line 17, col 18, Missing "use strict" statement.
+
+19 errors

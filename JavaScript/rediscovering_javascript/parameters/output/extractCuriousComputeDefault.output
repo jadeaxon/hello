@@ -1,0 +1,7 @@
+stateTax: 10 localTax: 2
+stateTax: 10 localTax: 1
+...
+  stateTax = localTax * 10, localTax = stateTax * .10) {
+             ^
+
+ReferenceError: localTax is not defined

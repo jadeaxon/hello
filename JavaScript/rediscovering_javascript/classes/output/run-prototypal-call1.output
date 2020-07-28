@@ -1,0 +1,4 @@
+ReputablePerson { firstName: 'Alan', lastName: 'Turing', rating: 5 }
+ReputablePerson {}
+Person {}
+{}

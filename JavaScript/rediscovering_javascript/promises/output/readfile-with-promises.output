@@ -1,0 +1,4 @@
+ERROR: undefined, path must be a string or Buffer
+ERROR: invalid, ENOENT: no such file or directory, open 'invalid'
+Number of lines with THIS LINE is 2
+ERROR: readfile.js, text does not exist in file

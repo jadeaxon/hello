@@ -1,0 +1,86 @@
+
+/Users/venkats/books/ves6/Book/code/gotchas/careful-with-semicolon.js
+   2:1   error  Use the global form of 'use strict'           strict
+   9:11  error  Missing semicolon                             semi
+  10:1   error  Expected indentation of 4 spaces but found 6  indent
+  10:7   error  Unreachable code                              no-unreachable
+
+/Users/venkats/books/ves6/Book/code/gotchas/declaration.js
+   1:1   error  Use the global form of 'use strict'              strict
+   3:7   error  'haha' is never reassigned. Use 'const' instead  prefer-const
+  10:13  error  'haha' is not defined                            no-undef
+
+/Users/venkats/books/ves6/Book/code/gotchas/double-equals.js
+  2:1   error  Use the global form of 'use strict'  strict
+  6:15  error  Expected '===' and instead saw '=='  eqeqeq
+  7:15  error  Expected '===' and instead saw '=='  eqeqeq
+  8:15  error  Expected '===' and instead saw '=='  eqeqeq
+
+/Users/venkats/books/ves6/Book/code/gotchas/fix-global-mess.js
+  1:1  error  Use the global form of 'use strict'  strict
+
+/Users/venkats/books/ves6/Book/code/gotchas/global-mess.js
+   2:1   error  Use the global form of 'use strict'  strict
+   3:7   error  'i' is not defined                   no-undef
+   3:14  error  'i' is not defined                   no-undef
+   3:22  error  'i' is not defined                   no-undef
+   9:7   error  'i' is not defined                   no-undef
+   9:14  error  'i' is not defined                   no-undef
+   9:22  error  'i' is not defined                   no-undef
+  10:17  error  'i' is not defined                   no-undef
+
+/Users/venkats/books/ves6/Book/code/gotchas/is-perfect.js
+   1:1   error  Use the global form of 'use strict'       strict
+   1:1   error  Unexpected var, use let or const instead  no-var
+   2:3   error  Unexpected var, use let or const instead  no-var
+   4:7   error  'index' is not defined                    no-undef
+   4:18  error  'index' is not defined                    no-undef
+   4:35  error  'index' is not defined                    no-undef
+   5:17  error  'index' is not defined                    no-undef
+   5:23  error  Expected '===' and instead saw '=='       eqeqeq
+   6:23  error  'index' is not defined                    no-undef
+  11:5   error  Expected '===' and instead saw '=='       eqeqeq
+  14:5   error  'i' is not defined                        no-undef
+  14:12  error  'i' is not defined                        no-undef
+  14:21  error  'i' is not defined                        no-undef
+  15:23  error  'i' is not defined                        no-undef
+  15:53  error  'i' is not defined                        no-undef
+
+/Users/venkats/books/ves6/Book/code/gotchas/no-declaration.js
+  2:1   error  Use the global form of 'use strict'  strict
+  3:3   error  'haha' is not defined                no-undef
+  5:15  error  'haha' is not defined                no-undef
+  9:13  error  'haha' is not defined                no-undef
+
+/Users/venkats/books/ves6/Book/code/gotchas/preemptive-strike.js
+   5:3   error  'haha' is not defined  no-undef
+   7:15  error  'haha' is not defined  no-undef
+  11:13  error  'haha' is not defined  no-undef
+
+/Users/venkats/books/ves6/Book/code/gotchas/smelly.js
+  1:1   error  Use the global form of 'use strict'           strict
+  2:3   error  'factor' is not defined                       no-undef
+  4:13  error  Expected '===' and instead saw '=='           eqeqeq
+  5:11  error  Missing semicolon                             semi
+  6:1   error  Expected indentation of 4 spaces but found 6  indent
+  6:7   error  Unreachable code                              no-unreachable
+  6:16  error  'factor' is not defined                       no-undef
+
+/Users/venkats/books/ves6/Book/code/gotchas/triple-equals.js
+  1:1  error  Use the global form of 'use strict'  strict
+
+/Users/venkats/books/ves6/Book/code/gotchas/unexpected.js
+   2:1   error  Use the global form of 'use strict'  strict
+   3:12  error  Missing semicolon                    semi
+   4:3   error  'second' is not defined              no-undef
+   7:15  error  'second' is not defined              no-undef
+   8:2   error  Missing semicolon                    semi
+  12:13  error  'second' is not defined              no-undef
+
+/Users/venkats/books/ves6/Book/code/gotchas/whendoubleeql.js
+  6:15  error  Expected '===' and instead saw '=='  eqeqeq
+  7:15  error  Expected '===' and instead saw '=='  eqeqeq
+
+✖ 58 problems (58 errors, 0 warnings)
+  9 errors, 0 warnings potentially fixable with the `--fix` option.
+

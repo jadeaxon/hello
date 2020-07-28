@@ -1,0 +1,19 @@
+   1:1   error  Use the global form of 'use strict'       strict
+   1:1   error  Unexpected var, use let or const instead  no-var
+   2:3   error  Unexpected var, use let or const instead  no-var
+   4:7   error  'index' is not defined                    no-undef
+   4:18  error  'index' is not defined                    no-undef
+   4:35  error  'index' is not defined                    no-undef
+   5:17  error  'index' is not defined                    no-undef
+   5:23  error  Expected '===' and instead saw '=='       eqeqeq
+   6:23  error  'index' is not defined                    no-undef
+  11:5   error  Expected '===' and instead saw '=='       eqeqeq
+  14:5   error  'i' is not defined                        no-undef
+  14:12  error  'i' is not defined                        no-undef
+  14:21  error  'i' is not defined                        no-undef
+  15:23  error  'i' is not defined                        no-undef
+  15:53  error  'i' is not defined                        no-undef
+
+✖ 15 problems (15 errors, 0 warnings)
+  2 errors, 0 warnings potentially fixable with the `--fix` option.
+

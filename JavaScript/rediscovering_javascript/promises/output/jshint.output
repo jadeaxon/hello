@@ -1,0 +1,12 @@
+async-await.js: line 28, col 2, Missing semicolon.
+async-await.js: line 34, col 2, Missing semicolon.
+async-await.js: line 44, col 26, Missing semicolon.
+async-await.js: line 44, col 35, Missing name in function declaration.
+async-await.js: line 46, col 25, Missing semicolon.
+
+async-promise.js: line 4, col 22, Missing semicolon.
+async-promise.js: line 4, col 31, Missing name in function declaration.
+async-promise.js: line 9, col 2, Unnecessary semicolon.
+async-promise.js: line 16, col 2, Missing semicolon.
+
+9 errors

@@ -1,0 +1,4 @@
+let max = 200;
+    ^
+
+SyntaxError: Identifier 'max' has already been declared

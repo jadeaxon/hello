@@ -1,0 +1,4 @@
+FunctionalSet { 'Jack', 'Jill', 'Tom', 'Jerry', 'Jane' }
+FunctionalSet { 'Jack', 'Jill', 'Jerry', 'Jane' }
+FunctionalSet { 'JACK', 'JILL', 'TOM', 'JERRY', 'JANE' }
+17

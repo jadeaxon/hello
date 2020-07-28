@@ -1,0 +1,11 @@
+iterating over properties:
+first : Sam
+emailValue : sam@example.com
+list of property names:
+[ 'first', 'emailValue' ]
+list of symbol properties
+[ Symbol(ageValue) ]
+accessing a symbol property:
+2
+changing value...
+3

@@ -1,0 +1,7 @@
+(node:78815) ExperimentalWarning: The ESM module loader is experimental.
+file:///Users/venkats/books/ves6/Book/code/modules/noconst.mjs:1
+export default const ABSOLUTE_TEMPERATURE = 0;
+               ^^^^^
+SyntaxError: Unexpected token const
+    at loaders.set (internal/loader/ModuleRequest.js:33:13)
+    at <anonymous>

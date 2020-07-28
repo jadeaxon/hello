@@ -1,0 +1,1 @@
+export { Thermostat as Thermo, default as default } from './temperature';

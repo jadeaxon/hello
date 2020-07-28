@@ -1,0 +1,75 @@
+
+/Users/venkats/books/ves6/Book/code/variables/above-block.js
+  3:13  error  'message' is not defined                            no-undef
+  5:5   error  Unexpected var, use let or const instead            no-var
+  6:7   error  'message' is assigned a value but never used        no-unused-vars
+  6:7   error  'message' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/venkats/books/ves6/Book/code/variables/above-def.js
+  3:5  error  Unexpected var, use let or const instead            no-var
+  5:7  error  'message' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/venkats/books/ves6/Book/code/variables/after-block.js
+  3:5   error  Unexpected var, use let or const instead            no-var
+  4:7   error  'message' is assigned a value but never used        no-unused-vars
+  4:7   error  'message' is never reassigned. Use 'const' instead  prefer-const
+  7:13  error  'message' is not defined                            no-undef
+
+/Users/venkats/books/ves6/Book/code/variables/boolean-const.js
+  2:7  error  'value' is assigned a value but never used  no-unused-vars
+  4:1  error  'value' is constant                         no-const-assign
+
+/Users/venkats/books/ves6/Book/code/variables/change-string.js
+  2:1  error  Use the global form of 'use strict'  strict
+
+/Users/venkats/books/ves6/Book/code/variables/confusion.js
+  4:5  error  'product' is never reassigned. Use 'const' instead  prefer-const
+
+/Users/venkats/books/ves6/Book/code/variables/iife.js
+   4:1   error  Unexpected var, use let or const instead  no-var
+   5:3   error  Unexpected var, use let or const instead  no-var
+   7:7   error  Unexpected var, use let or const instead  no-var
+   8:5   error  Unexpected var, use let or const instead  no-var
+  17:13  error  'sqrt' is not defined                     no-undef
+
+/Users/venkats/books/ves6/Book/code/variables/lack-of-block-scope.js
+  4:1  error  Unexpected var, use let or const instead  no-var
+  6:5  error  Unexpected var, use let or const instead  no-var
+  7:3  error  Unexpected var, use let or const instead  no-var
+
+/Users/venkats/books/ves6/Book/code/variables/letconst.js
+  3:5  error  'price' is assigned a value but never used  no-unused-vars
+  4:7  error  'tax' is assigned a value but never used    no-unused-vars
+  8:1  error  'tax' is constant                           no-const-assign
+
+/Users/venkats/books/ves6/Book/code/variables/no-block.js
+  6:5  error  Unexpected var, use let or const instead  no-var
+  8:3  error  Unexpected var, use let or const instead  no-var
+
+/Users/venkats/books/ves6/Book/code/variables/no-redefine.js
+  5:5  error  Parsing error: Identifier 'max' has already been declared
+
+/Users/venkats/books/ves6/Book/code/variables/null-const.js
+  2:7  error  'value' is assigned a value but never used  no-unused-vars
+  4:1  error  'value' is constant                         no-const-assign
+
+/Users/venkats/books/ves6/Book/code/variables/number-const.js
+  2:7  error  'value' is assigned a value but never used  no-unused-vars
+  4:1  error  'value' is constant                         no-const-assign
+
+/Users/venkats/books/ves6/Book/code/variables/redefine.js
+  2:1  error  Unexpected var, use let or const instead  no-var
+  5:1  error  Unexpected var, use let or const instead  no-var
+  5:5  error  'max' is already defined                  no-redeclare
+
+/Users/venkats/books/ves6/Book/code/variables/undefined-const.js
+  2:7  error  'value' is assigned a value but never used  no-unused-vars
+  4:1  error  'value' is constant                         no-const-assign
+
+/Users/venkats/books/ves6/Book/code/variables/yes-block.js
+  8:7  error  'message' is assigned a value but never used        no-unused-vars
+  8:7  error  'message' is never reassigned. Use 'const' instead  prefer-const
+
+✖ 39 problems (39 errors, 0 warnings)
+  15 errors, 0 warnings potentially fixable with the `--fix` option.
+

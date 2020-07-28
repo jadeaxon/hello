@@ -1,0 +1,4 @@
+const primesStartingFrom = *(start) => { //Will not work
+                           ^
+
+SyntaxError: Unexpected token *

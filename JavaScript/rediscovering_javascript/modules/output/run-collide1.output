@@ -1,0 +1,3 @@
+import { Thermostat } from './home';
+         ^^^^^^^^^^
+SyntaxError: Identifier 'Thermostat' has already been declared

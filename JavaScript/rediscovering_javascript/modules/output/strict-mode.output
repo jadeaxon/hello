@@ -1,0 +1,5 @@
+(node:78811) ExperimentalWarning: The ESM module loader is experimental.
+ReferenceError: noway is not defined
+    at file:///Users/venkats/books/ves6/Book/code/modules/strict-mode.mjs:1:7
+    at ModuleJob.run (internal/loader/ModuleJob.js:102:14)
+    at <anonymous>

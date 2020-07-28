@@ -1,0 +1,4 @@
+'invalid text' is not a number
+[ 'Number of primes from 1 to 100 is 25',
+  'Number of primes from 1 to 1000 is 168',
+  'Number of primes from 1 to 5000 is 669' ]

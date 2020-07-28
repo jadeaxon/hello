@@ -1,0 +1,15 @@
+
+/Users/venkats/books/ves6/Book/code/promises/async-await.js
+  44:27  error  Parsing error: Unexpected token function
+
+/Users/venkats/books/ves6/Book/code/promises/async-promise.js
+  3:23  error  Parsing error: Unexpected token function
+
+/Users/venkats/books/ves6/Book/code/promises/create-promise.js
+  13:40  error  'reject' is defined but never used  no-unused-vars
+
+/Users/venkats/books/ves6/Book/code/promises/race.js
+  5:40  error  'reject' is defined but never used  no-unused-vars
+
+✖ 4 problems (4 errors, 0 warnings)
+

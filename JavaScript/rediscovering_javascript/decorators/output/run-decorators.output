@@ -1,0 +1,5 @@
+(node:2561) ExperimentalWarning: The ESM module loader is experimental.
+MetadataKeys: annotations
+Annotations:
+selector: contents
+templateUrl: ./sample.component.html

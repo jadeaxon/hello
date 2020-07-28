@@ -1,0 +1,4 @@
+const notAllowed = function(first, second, ...moreValues = [1, 2, 3]) {}
+                                                         ^
+
+SyntaxError: Rest parameter may not have a default initializer

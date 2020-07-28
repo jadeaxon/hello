@@ -1,0 +1,5 @@
+(node:78813) ExperimentalWarning: The ESM module loader is experimental.
+executing right module
+executing middle module
+middle called
+right called

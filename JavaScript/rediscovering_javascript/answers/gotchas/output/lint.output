@@ -1,0 +1,37 @@
+
+/Users/venkats/books/ves6/Book/code/answers/gotchas/ex1.js
+  1:1  error  Use the global form of 'use strict'           strict
+  1:7  error  Missing semicolon                             semi
+  2:1  error  Expected indentation of 0 spaces but found 1  indent
+  2:2  error  Unreachable code                              no-unreachable
+  8:1  error  Expected indentation of 0 spaces but found 2  indent
+
+/Users/venkats/books/ves6/Book/code/answers/gotchas/ex2.js
+  3:1   error  Use the global form of 'use strict'  strict
+  3:1   error  Strings must use singlequote         quotes
+  3:13  error  Strings must use singlequote         quotes
+
+/Users/venkats/books/ves6/Book/code/answers/gotchas/ex3.js
+   9:12  error  Strings must use singlequote  quotes
+  16:21  error  Strings must use singlequote  quotes
+
+/Users/venkats/books/ves6/Book/code/answers/gotchas/is-perfect.js
+   1:1   error  Use the global form of 'use strict'       strict
+   1:1   error  Unexpected var, use let or const instead  no-var
+   2:3   error  Unexpected var, use let or const instead  no-var
+   4:7   error  'index' is not defined                    no-undef
+   4:18  error  'index' is not defined                    no-undef
+   4:35  error  'index' is not defined                    no-undef
+   5:17  error  'index' is not defined                    no-undef
+   5:23  error  Expected '===' and instead saw '=='       eqeqeq
+   6:23  error  'index' is not defined                    no-undef
+  11:5   error  Expected '===' and instead saw '=='       eqeqeq
+  14:5   error  'i' is not defined                        no-undef
+  14:12  error  'i' is not defined                        no-undef
+  14:21  error  'i' is not defined                        no-undef
+  15:23  error  'i' is not defined                        no-undef
+  15:53  error  'i' is not defined                        no-undef
+
+✖ 25 problems (25 errors, 0 warnings)
+  9 errors, 0 warnings potentially fixable with the `--fix` option.
+

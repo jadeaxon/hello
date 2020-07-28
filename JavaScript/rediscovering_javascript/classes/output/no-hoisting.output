@@ -1,0 +1,14 @@
+/Users/venkats/books/ves6/Book/code/classes/no-hoisting.js:4
+new Car(); //BROKEN CODE
+^
+
+ReferenceError: Car is not defined
+    at Object.<anonymous> (/Users/venkats/books/ves6/Book/code/classes/no-hoisting.js:4:1)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Function.Module.runMain (module.js:701:10)
+    at startup (bootstrap_node.js:190:16)
+    at bootstrap_node.js:662:3

@@ -1,0 +1,7 @@
+(node:78832) ExperimentalWarning: The ESM module loader is experimental.
+file:///Users/venkats/books/ves6/Book/code/modules/use-weather5.mjs:1
+import units, { Thermo } from './weather5';
+       ^^^^^
+SyntaxError: The requested module does not provide an export named 'default'
+    at ModuleJob._instantiate (internal/loader/ModuleJob.js:86:19)
+    at <anonymous>

@@ -1,0 +1,5 @@
+...after change of prototype...
+ReputablePerson { firstName: 'Alan', lastName: 'Turing', rating: 5 }
+ReputablePerson {}
+ComputerWiz {}
+{}

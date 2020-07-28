@@ -1,0 +1,3 @@
+no-hoisting.js: line 3, col 7, 'Car' was used before it was declared, which is illegal for 'class' variables.
+
+1 error

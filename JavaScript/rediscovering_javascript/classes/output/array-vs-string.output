@@ -1,0 +1,2 @@
+instanceof MyString?: false
+instanceof MyArray?: true

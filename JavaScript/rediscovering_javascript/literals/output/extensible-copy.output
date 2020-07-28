@@ -1,0 +1,4 @@
+{ first: 'Peter',
+  last: 'PARKER',
+  email: 'spiderman@superheroes.example.com',
+  age: 15 }

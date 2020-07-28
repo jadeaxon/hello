@@ -1,0 +1,17 @@
+compute-default.js: line 6, col 45, A leading decimal point can be confused with a dot: '.10'.
+
+curious-compute-default.js: line 6, col 56, A leading decimal point can be confused with a dot: '.10'.
+curious-compute-default.js: line 6, col 31, 'localTax' was used before it was declared, which is illegal for 'param' variables.
+
+default-and-rest.js: line 4, col 60, Regular parameters should not come after default parameters.
+default-and-rest.js: line 6, col 4, Missing semicolon.
+
+mixed-default-parameters.js: line 6, col 7, Regular parameters should not come after default parameters.
+
+morethanonerest.js: line 4, col 31, Invalid parameter after rest parameter.
+
+notlastrest.js: line 4, col 31, Invalid parameter after rest parameter.
+
+rest-and-default.js: line 4, col 75, Missing semicolon.
+
+9 errors

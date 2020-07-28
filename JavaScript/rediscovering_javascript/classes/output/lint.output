@@ -1,0 +1,29 @@
+
+/Users/venkats/books/ves6/Book/code/classes/class-expression-named.js
+  13:7   error  'classic' is assigned a value but never used  no-unused-vars
+  17:15  error  'Show' is not defined                         no-undef
+
+/Users/venkats/books/ves6/Book/code/classes/class-expressions.js
+  13:7  error  'Book' is assigned a value but never used  no-unused-vars
+
+/Users/venkats/books/ves6/Book/code/classes/computed-members.js
+   5:13  error  Strings must use singlequote  quotes
+  25:24  error  Strings must use singlequote  quotes
+
+/Users/venkats/books/ves6/Book/code/classes/default-constructor-inheritance.js
+  18:7  error  'ReputablePerson' is defined but never used  no-unused-vars
+
+/Users/venkats/books/ves6/Book/code/classes/read-write-property.js
+  24:9  error  Strings must use singlequote  quotes
+
+/Users/venkats/books/ves6/Book/code/classes/static-members.js
+  23:9  error  Strings must use singlequote  quotes
+
+/Users/venkats/books/ves6/Book/code/classes/super-required.js
+  15:3  error  Expected to call 'super()'              constructor-super
+  17:5  error  'this' is not allowed before 'super()'  no-this-before-super
+  24:5  error  'this' is not allowed before 'super()'  no-this-before-super
+
+✖ 11 problems (11 errors, 0 warnings)
+  4 errors, 0 warnings potentially fixable with the `--fix` option.
+

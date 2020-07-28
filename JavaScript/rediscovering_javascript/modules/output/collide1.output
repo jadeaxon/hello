@@ -1,0 +1,7 @@
+(node:78836) ExperimentalWarning: The ESM module loader is experimental.
+file:///Users/venkats/books/ves6/Book/code/modules/collide1.mjs:2
+import { Thermostat } from './home';
+         ^^^^^^^^^^
+SyntaxError: Identifier 'Thermostat' has already been declared
+    at loaders.set (internal/loader/ModuleRequest.js:33:13)
+    at <anonymous>

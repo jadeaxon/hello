@@ -1,0 +1,8 @@
+this: Superman, value: Peter Parker, Clark Kent, Bruce Wayne
+Result of search: 14
+this: Batman, value: Peter Parker, Clark Kent, Bruce Wayne
+Result of search: 26
+this: Ironman, value: Peter Parker, Clark Kent, Bruce Wayne
+Result of search: -1
+this: Spiderman, value: Peter Parker, Clark Kent, Bruce Wayne
+Result of search: 0

@@ -1,0 +1,4 @@
+for(const suit of deck) {
+                  ^
+
+TypeError: deck is not iterable

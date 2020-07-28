@@ -1,0 +1,12 @@
+First name: John
+Fullname: John Doe
+Age: 8
+target is john? true
+propertyName is firstName
+receiver is proxyDoe? true
+First name: John
+Fullname: John Doe
+Age: 8
+First name: John
+Fullname: John Doe
+Age: It's not polite to ask that question, dear

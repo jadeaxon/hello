@@ -1,0 +1,4 @@
+sam.age = 3;
+        ^
+
+TypeError: Cannot assign to read only property 'age' of object '#<Object>'
