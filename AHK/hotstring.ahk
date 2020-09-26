@@ -22,4 +22,11 @@
 
 :*c:AHKx::AutoHotkey
 
+; Hotstrings are not limited to simply emitting a different sequence of keystrokes; they can trigger
+; arbitrary code to execute.
+; Note that the hotstring can contain spaces when using the * option.
+:*c:show me a message box::
+	MsgBox,,, Here is your message box.
+return
+
 
