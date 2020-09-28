@@ -3,14 +3,35 @@
 
 excel := ComObjCreate("Excel.Application") ; Get handle for Excel application COM object.
 
-workbook := excel.Workbooks.Open(A_Desktop . "\Test.xlsx")
-excel.Visible := true
+workbook := excel.workbooks.open(A_Desktop . "\Test.xlsx")
+excel.visible := true
 
 WinMaximize, ahk_exe EXCEL.EXE
 
-worksheet := ComObjActive("Excel.Application") ; Get handle for the active worksheet.
+; This works, but there is a simpler way below.
+; worksheet := ComObjActive("Excel.Application") ; Get handle for the active worksheet.
+worksheet := workbook.activeSheet
+ws := worksheet
 
-worksheet.range("A1").value := "Hello, Excel!"
+ws.range("A1").value := ""
+ws.range("A2").value := ""
+
+ws.range("A1").value := "Hello, Excel!"
+value := ws.range("A1").value
+ws.range("A2").value := value . " (copy)"
+
+; Copy range to clipboard.
+; clipboard := ws.range("A2").value ; Copy to clipboard.
+ws.range("A2").copy
+
+; Cell addressing is (row, column) 1-based.
+ws.cells(2, 2) := "cell value"
+
+; Set a column to use the first 32 colors in the color index.
+Loop, 32
+{
+	ws.cells(A_Index, 3).interior.colorIndex := A_Index
+}
 
 workbook.save()
 
