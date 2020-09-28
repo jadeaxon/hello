@@ -31,7 +31,20 @@ ws.cells(2, 2) := "cell value"
 Loop, 32
 {
 	ws.cells(A_Index, 3).interior.colorIndex := A_Index
+	ws.cells(A_Index, 4).value := "delete me"
+	ws.cells(A_Index, 5).value := "column E"
 }
+
+; Delete column D.
+; ws.range("D").delete ; ERROR
+ws.range("D:D").delete
+
+; Delete row 2.
+; ws.range("2").delete ; ERROR
+ws.range("2:2").delete
+
+
+
 
 workbook.save()
 
