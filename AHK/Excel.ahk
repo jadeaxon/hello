@@ -43,8 +43,11 @@ ws.range("D:D").delete
 ; ws.range("2").delete ; ERROR
 ws.range("2:2").delete
 
+; Insert a row above row 1.
+ws.rows("1:1").insert
 
-
+; Insert a column to the left of column A.
+ws.columns("A:A").insert
 
 workbook.save()
 
