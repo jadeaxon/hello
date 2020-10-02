@@ -66,5 +66,14 @@ loop, files, C:\Users\%A_UserName%\projects\hello\AHK\*.*, RFD
 MsgBox %files%
 
 
+; Key/value for loop.  Array loop.
+a := ["one", "two", "three"]
+for k, v in a {
+	MsgBox %k% => %v%
+}
+
+
+
+
 
 
