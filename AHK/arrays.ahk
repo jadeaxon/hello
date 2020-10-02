@@ -15,21 +15,30 @@ a.push("baz", "qux")
 MsgBox, % join(",", a*)
 
 ; Remove element at given index.
-removed := a.removeAt(1) ; pop
+removed := a.removeAt(1, 2) ; pop (but returns # of elements removed); shifts remaining elements left
 removed := a.pop()
-
 
 MsgBox, % join(",", a*)
 
 length := a.length()
+count := a.count() ; Arrays can be sparse.
 mini := a.minIndex()
 maxi := a.maxIndex()
 
 ; Loop over array.
-Loop % a.length()
+loop % a.length()
 {
 	MsgBox, % a[A_Index]
 }
+
+a.delete(1) ; Deletes element.  Does not shift existing.  Results in a sparse array.
+
+contents := ""
+for k, v in a {
+	contents .= format("{1} => {2}`n", k, v)
+}
+MsgBox %contents%
+
 
 ExitApp
 
