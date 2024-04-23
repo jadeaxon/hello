@@ -1,5 +1,9 @@
 weapons = ['knife', 'sword', 'mace', 'dagger']
 
+# You should not modify elements in for loops. Use a while loop.
+# You can use continue and break in loops. 
+# Are there labels to break/continue outer loops?
+
 # A simple for each (for in) loop over a list.
 for weapon in weapons:
     # The loop block is determined by indentation.
