@@ -72,8 +72,11 @@ print(f"The length of the fruit list is {len(fruit)}.")
 
 # Out of range index.
 # IndexError: list index out of range
-dne = fruit[7]
+# dne = fruit[7]
 
-
-
+# Make a copy of a list using slice notation.
+fruit_copy = fruit[:]
+fruit_copy.pop()
+print(len(fruit))
+print(len(fruit_copy))
 
