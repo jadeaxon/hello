@@ -31,7 +31,21 @@ def process_list(list):
     while list:
         element = list.pop()
         print(f'Processing {element}.')
-        
+
+
+# You can have a variable argument (vararg) function.
+# You can mix this with positional and named args. The *args has to come last.
+def sum_all(*args):
+    result = 0
+    for arg in args:
+        result += arg
+    return result
+
+# You can have arbitrary keyword arguments.
+def arbitrary(**kwargs):
+    for k, v in kwargs.items():
+        print(f'{k} => {v}')
+    
 # Call the functions.
 hello()
 hello2("programmer")
@@ -39,6 +53,11 @@ hello3() # Rely on default parameter value.
 
 sum = add(7, 9)
 print(sum)
+
+sum = sum_all(1, 2, 3, 4, 5, 6)
+print(sum)
+
+arbitrary(name='Jimbo', age=33)
 
 process_list([3, 7, 9])
 list = [5, 6, 7]
