@@ -10,6 +10,8 @@ print(file_dir)
 
 # You can use / in paths on Windows too.
 file = Path(f'{file_dir}\data.txt')
+if file.exists():
+    print(f'File {file} exists.')
 characters = file.read_text()
 lines = characters.splitlines()
 
