@@ -38,8 +38,8 @@ f = -3.14e-2
 # When you print floats, Python displays the most concise representation (excluding the lone .
 # form).
 
-
 # String literals.
+s = "" # Empty string (evaluates as false).
 s = "string"
 s = 'string'
 s = "Quoting \" double quotes"
@@ -53,6 +53,32 @@ multiline
 f-string
 {3 + 2}
 """
+
+# NoneType (null) literal.
+n = None
+if n is None:
+    print("The void.")
+
+# Boolean literals.
+b = True
+b = False
+
+# List literals.
+l = [] # Empty list. Evaluates as false.
+l = [1, 2, 3]
+l = ["one", 2, 3] # mixed types in list
+l = [[1, 2], [3, 4]] # nested list
+l = list("string") # convert to list of single characters
+
+# Tuple literals.
+t = ()
+t = (1, 2, 3)
+t = 1, 2, 3 # You can omit the parenthesis.
+t = tuple([1, 2, 3]) # conver list to tuple
+
+# Dictionary literals.
+d = {}
+d = {"key1": "value1", "key2": "value2"}
 
 
 
