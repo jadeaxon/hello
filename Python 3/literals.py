@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+
+# Integer literals.
+i = 123
+i = +123
+i = -123
+i = 1_000_000
+i = int("123")
+
+# Hexidecimal.
+i = 0xFACE
+i = 0xface
+i = 0Xface
+
+# Octal.
+i = 0o777
+i = 0O777
+
+# Binary.
+i = 0b1101
+i = 0B1101
+
+# Printing hex/oct/bin literals outputs the decimal version.
+print(0b1101)
+
+# Floating point literals.
+f = 4.0
+f = -4.0
+f = 4.
+f = 0.4
+f = .4
+f = float("3.14")
+f = 3e8 # Scientific notation, <base>e<exponent>: 3 * 10^8
+f = 3E8
+f = -3.14e7
+f = -3.14e-2
+
+# When you print floats, Python displays the most concise representation (excluding the lone .
+# form).
+
+
+# String literals.
+s = "string"
+s = 'string'
+s = "Quoting \" double quotes"
+s = f"f-string {3 + 2}" # Can interpolate expressions using {<expression>}.
+s = """
+multiline
+string
+"""
+s = f"""
+multiline
+f-string
+{3 + 2}
+"""
+
+
+
