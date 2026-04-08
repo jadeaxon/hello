@@ -12,6 +12,17 @@ print(" as above.")
 print("foo", "bar", "baz", sep="-", end="|")
 print()
 
+# Use escape sequences via escape character, \.
+# print("\") # Syntax error.
+print("\\") # Print \.
+print("\n") # newline
+print("Double quote: \"")
+print('Single quote: \'')
+print("Single quotes '' inside double quotes.")
+print('Double quotes "" inside single quotes.')
+print("line \
+continuation")
+
 # Use formatted strings to use variable values inside them.
 name = "Jeff"
 age = 40
