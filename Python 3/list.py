@@ -44,6 +44,17 @@ print(l)
 characters = list("a string")
 print(characters)
 
+# Swap the first and last elements of the list.
+l[0], l[-1] = l[-1], l[0]
+print(l)
+
+# Lists can contain various data types.
+l = ["one", 2, 3.0]
+print(l)
+
+# List can be nested.
+l = [1, [2, 3], 4]
+print(l)
 
 
 
