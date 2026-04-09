@@ -38,5 +38,17 @@ for i in reversed(range(0, 11, 2)):
     print(i)
 print()
 
+# Remove all the vowels from a string.
+# You can use 'continue' and 'break', but Python doesn't support labeled loops.
+s = "Remove all the vowels."
+s2 = ""
+for c in s:
+    if c.lower() in list("aeiou"): continue
+    if c.lower() == 'y':
+        print("Confused.")
+        break
+    s2 += c
+print(s2)
+
 
 
