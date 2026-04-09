@@ -49,6 +49,19 @@ for c in s:
         break
     s2 += c
 print(s2)
+print()
 
+# If you need the indexes and elements when iterating over a list, use enumerate().
+for i, v in enumerate(['one', 'two', 'three']):
+    print(i, v)
+print()
+
+numbers = [2, 3, 4]
+squared = [4, 9, 16]
+cubed = [8, 27, 64]
+# Loop over two or more sequences at once using zip().
+for n, s, c in zip(numbers, squared, cubed):
+    print(n, s, c)
+print()
 
 
