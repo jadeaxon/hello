@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Empty 3x3 tic tac toe board.
 board = [[" ", " ", " "] for r in range(3)]
 
 def print_board():
@@ -48,23 +49,19 @@ def user_turn():
             break
 
 def check_victory_conditions():
-    for i in range(3):
-        v1 = board[i][0] == board[i][1] == board[i][2] == 'X'
-        v2 = board[0][i] == board[1][i] == board[2][i] == 'X'
-        v3 = board[0][0] == board[1][1] == board[2][2] == 'X'
-        v4 = board[0][2] == board[1][1] == board[2][0] == 'X'
-        if v1 or v2 or v3 or v4:
-            print_board()
-            print("Computer wins!")
-            return True
-        v1 = board[i][0] == board[i][1] == board[i][2] == 'O'
-        v2 = board[0][i] == board[1][i] == board[2][i] == 'O'
-        v3 = board[0][0] == board[1][1] == board[2][2] == 'O'
-        v4 = board[0][2] == board[1][1] == board[2][0] == 'O'
-        if v1 or v2 or v3 or v4:
-            print_board()
-            print("User wins!")
-            return True
+    for mark in ['X', 'O']:
+        for i in range(3):
+            v1 = board[i][0] == board[i][1] == board[i][2] == mark
+            v2 = board[0][i] == board[1][i] == board[2][i] == mark
+            v3 = board[0][0] == board[1][1] == board[2][2] == mark
+            v4 = board[0][2] == board[1][1] == board[2][0] == mark
+            if v1 or v2 or v3 or v4:
+                print_board()
+                if mark == 'X':
+                    print("Computer wins!")
+                else:
+                    print("User wins!")
+                return True
     return False
 
 victory = False
@@ -80,11 +77,5 @@ while count_board_spaces() > 0:
     if victory: break
 
 if not victory: print("Stalemate!")
-
-
-
-
-
-
 
 
