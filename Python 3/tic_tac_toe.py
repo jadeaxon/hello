@@ -49,21 +49,23 @@ def user_turn():
 
 def check_victory_conditions():
     for i in range(3):
-        if board[i][0] == board[i][1] == board[i][2] == 'X':
+        v1 = board[i][0] == board[i][1] == board[i][2] == 'X'
+        v2 = board[0][i] == board[1][i] == board[2][i] == 'X'
+        v3 = board[0][0] == board[1][1] == board[2][2] == 'X'
+        v4 = board[0][2] == board[1][1] == board[2][0] == 'X'
+        if v1 or v2 or v3 or v4:
             print_board()
             print("Computer wins!")
             return True
-        if board[i][0] == board[i][1] == board[i][2] == 'O':
+        v1 = board[i][0] == board[i][1] == board[i][2] == 'O'
+        v2 = board[0][i] == board[1][i] == board[2][i] == 'O'
+        v3 = board[0][0] == board[1][1] == board[2][2] == 'O'
+        v4 = board[0][2] == board[1][1] == board[2][0] == 'O'
+        if v1 or v2 or v3 or v4:
             print_board()
             print("User wins!")
             return True
     return False
-
-# spaces = count_board_spaces()
-# print(spaces)
-
-# exit(0)
-
 
 victory = False
 while count_board_spaces() > 0:
