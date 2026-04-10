@@ -9,7 +9,7 @@
 import sys
 script, encoding, error = sys.argv
 
-# Prints a line showing encoded vs. raw bytes for each line of 
+# Prints a line showing encoded vs. raw bytes for each line of
 # language file.  Stops at first blank line.
 # main() is the typical entry point for other languages like C++.
 def main(language_file, enconding, errors):
@@ -24,8 +24,13 @@ def main(language_file, enconding, errors):
     # If a line is blank, stop processing the file.
 
 # Processes a single line of the file.
-# raw_bytes -- a sequence of bytes
+# raw_bytes -- a sequence of bytes (bytes builtin class)
 # Python displays these as a b'' byte literal string.
+#
+# UTF-8 characters are encoded as 1 to 4 bytes each.
+# In the b'' string, a character will show as normal ASCII if 1 byte.
+# If 2-4 bytes, you'll see 2-4 \xhh hex values.
+#
 # Decoding the bytes (according to the encoding) creates a string.
 # A codec (encoder/decoder) can translate both ways.
 # How exactly does Python store its strings internally?
@@ -35,8 +40,9 @@ def print_line(line, encoding, errors):
     cooked_string = raw_bytes.decode(encoding, errors=errors)
     print(raw_bytes, "<===>", cooked_string)
 
-# Open the languages file and run the main program on it.0
+# Open the languages file and run the main program on it.
 languages = open("languages.txt", encoding="utf-8")
 # languages = open("binary.docx", encoding="utf-8")
 
 main(languages, encoding, error)
+
