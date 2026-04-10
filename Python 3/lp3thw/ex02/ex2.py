@@ -10,3 +10,6 @@ print("I could have code like this.") # and the comment after is ignored
 
 print("This will run.")
 
+# String literals can contain #.
+print("String literals can contain #. Does not start a comment. Don't need to escape it.")
+
