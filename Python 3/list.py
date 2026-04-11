@@ -55,6 +55,89 @@ print(l)
 # List can be nested.
 l = [1, [2, 3], 4]
 print(l)
+print()
+
+# Check if something is in a list or not.
+L = ["frog", "turtle"]
+print("turtle" in L)
+print("bee" not in L)
+print()
+
+
+#==============================================================================
+# List Methods
+#==============================================================================
+
+print("Trying all the list methods.")
+L = []
+L2 = ["bar", "baz"]
+
+# Append to end of list. You can only append one element at a time.
+L.append("foo")
+print(L)
+# L.append("foo", "bar") # NO
+
+# Append all elements of an iterable to end of list.
+L.extend(L2)
+print(L)
+# L.extend("bar", "baz") # NO
+
+# Shallow copy the list.
+L3 = L.copy()
+print(L3)
+
+# Clear/empty the list.
+L.clear()
+print(L)
+
+L = L3[:] # Copy via slice.
+
+# Count number of times an equivalent object appears in list.
+foos = L.count("foo")
+print(foos)
+
+# Get the index of a list element. ValueError if not present.
+index = L.index("baz")
+print(index)
+
+# Insert something into list at specific location.
+# Existing elements move right.
+L.insert(0, "pre-foo") # Insert at beginning of list.
+print(L)
+
+# Remove and return (pop) element from specific location. Default is end of list (-1).
+# Allows list to be used like a stack.
+e = L.pop()
+print(L); print(e)
+e = L.pop(1)
+print(L); print(e)
+L = L3[:]
+
+# Remove (without returning) first occurrence of given value. ValueError if not found.
+L.remove("baz")
+print(L)
+L= L3[:]
+
+# Reverse list in place.
+L.reverse()
+print(L)
+
+# Sort in place.
+# Named args: key, reverse. Assign key a function/lambda to control how sorted. Use reverse=True to reverse
+# sort.
+L.sort()
+print(L)
+
+# We'll sort by "weight" of each element. The sum of the values of its characters.
+# Basically, whatever the key function returns given each element as an arg is sorted rather than
+# the element values directly.
+L = ["none", "one", "on", "o", "aaa"]
+L.sort(key=lambda e: sum(map(ord, e)))
+print(L)
+
+# That's it. That is ALL the list methods.
+
+
 
 
 
