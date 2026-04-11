@@ -8,7 +8,20 @@ from flask import request
 
 app = Flask(__name__)
 
-@app.route('/hello')
+@app.route('/hello', methods=['POST', 'GET'])
+def greet_user():
+    greeting = "Hello, user!"
+
+    if request.method == 'POST':
+        name = request.form['name']
+        salutation = request.form['salutation']
+        greeting = f"{salutation.capitalize()}, {name}!"
+        page = render_template("index.html", greeting=greeting)
+    else:
+        page = render_template("hello_form.html")
+    return page
+
+@app.route('/hello_old')
 def index():
     # Gets the args passed in via URL: https://server/hello?name=Bill
     name = request.args.get('name', 'sir')
