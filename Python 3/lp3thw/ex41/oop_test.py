@@ -6,7 +6,7 @@ from urllib.request import urlopen
 import sys
 
 # Source of random words.
-WORD_URL = "http://learncodethehardway.org/words.txt"
+WORD_URL = "https://learncodethehardway.org/words.txt"
 # The random words.
 WORDS = []
 
@@ -41,7 +41,7 @@ def convert(snippet, phrase):
     # Take a random sample of words from WORDS equal to number of %%% placeholders in the snippet.
     # Capitalize these class names.  This is all done with a list comprehension.
     class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]
-    ## print(f"class_names: {class_names}") 
+    ## print(f"class_names: {class_names}")
     other_names = random.sample(WORDS, snippet.count("***"))
     ## print(f"other_names: {other_names}")
     results = []
