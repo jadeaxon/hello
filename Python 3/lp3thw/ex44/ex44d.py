@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 # Superclass.
-class Parent(object):
+# class Parent(object):
+class Parent():
     def __init__(self):
         self.id = "1"
 
@@ -22,7 +23,9 @@ class Parent(object):
 # Subclass.
 class Child(Parent):
     def __init__(self, name):
-        super(Child, self).__init__()
+        # super(Child, self).__init__()
+        super().__init__()
+
         self.name = name
 
     # Completely override superclass method.
@@ -33,11 +36,13 @@ class Child(Parent):
     # of the superclass method.
     def altered(self):
         print("CHILD, BEFORE PARENT altered()")
-        # Call the superclass method. 
-        super(Child, self).altered()
+        # Call the superclass method.
+        # super(Child, self).altered()
+        super().altered()
         print("CHILD, AFTER PARENT altered()")
 
-class Other(object):
+# class Other(object):
+class Other():
     def override(self):
         print("OTHER override()")
 
@@ -48,7 +53,8 @@ class Other(object):
         print("OTHER altered()")
 
 # Use composition rather than inheritance.
-class Youngling(object):
+# class Youngling(object):
+class Youngling():
     def __init__(self):
         self.other = Other() # Delegate to this object.
 
