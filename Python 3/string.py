@@ -31,6 +31,15 @@ The value of x is:
 """
 print(fmls, end="")
 
+# Note that you can use multiline strings for multiline commenting.
+"""
+# Some lines we want to "comment" out.
+a = 2
+b = 3
+c = 4
+s = 'comment this stuff out' # Let's go!
+print(s)
+"""
 
 #==============================================================================
 # String Methods
