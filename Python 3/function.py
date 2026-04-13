@@ -72,6 +72,25 @@ args = {'x': 2, 'y': 2}
 r = f(**args) # Same as f(x=2, y=2)
 print(r)
 
+# Factory functions via closures.
+# When you define a function inside another function, it saves a copy of all the parent/factory
+# function's current local variable values with it (a closure).
+def adder_factory(x):
+	def adder(y):
+        # Current value of x will be used in calls to adder() via closure.
+		return y + x
+	return adder
+
+f = adder_factory(3)
+g = adder_factory(2)
+r = f(4) # 4 + 3 = 7
+print(r)
+r = g(4) # 4 + 2 = 6
+print(r)
+
+
+
+
 
 
 
