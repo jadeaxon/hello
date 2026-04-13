@@ -17,6 +17,15 @@ if g is f:
         print("Different function.")
 g()
 
+# You can use function attributes like static vars from C++.
+def f():
+    # Can access f before fully defined (else recursion would not work).
+    if not hasattr(f, 'invocations'): f.invocations = 0
+    f.invocations += 1
+f()
+f()
+print(f.invocations)
+
 # A function can have parameters.
 # The actual values assigned to the parameters in a function invocation are that invocation's
 # argumetns.
