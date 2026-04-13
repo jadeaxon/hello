@@ -97,6 +97,21 @@ print(r)
 r = g(4) # 4 + 2 = 6
 print(r)
 
+# Variadic function using positional args.
+def f(*args):
+    print(args) # args is a tuple of all arguments passed to function.
+f(1, 2, 3, 4, 5, 6)
+
+# Variadic function using keyword args.
+def f(**kwargs):
+    print(kwargs) # Everything in a dictionary.
+f(foo=1, bar=2, baz=3)
+
+# Variadic function with positional and keyword args.
+def f(*args, **kwargs):
+    print(args)
+    print(kwargs)
+f(6, 7, 8, qux='9')
 
 
 
