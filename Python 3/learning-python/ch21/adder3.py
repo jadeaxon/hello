@@ -6,6 +6,10 @@ def adder(*args):
         r += arg
     return r
 
+def adder3(x=1, y=2, z=3):
+    r = x + y + z
+    return r
+
 args_list = [
     (1, 2, 3, 4),
     ("one", "two", "three"),
@@ -18,11 +22,22 @@ args_list = [
     ({"k1": "v"}, {"k2": "v"})
 ]
 
-for args in args_list:
+args3_list = [
+    (1, 2, 3),
+    (1.1, 2.2, 3.3),
+    ("one", "two", "three"),
+]
+
+for args in args3_list:
     try:
-        r = adder(*args)
+        r = adder3(*args)
         print(r)
     except Exception as e:
         print(f"Error adding {args}: {e}")
+
+adder3()
+adder3(-1, -2)
+adder3(-1, -2, -3)
+adder3(1, 2, 3, 4)
 
 
