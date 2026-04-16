@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from pathlib import Path
+
 try:
     x = 1 / 0
     y = "string" + 1
@@ -16,6 +18,14 @@ else:
     print("No exceptions occurred.")
 finally:
     print("Always run the finally block.")
+print()
 
+# Make your own exceptions.
+class ScriptError(Exception): pass
+
+# Normalize the script's path.
+path = Path(__file__).resolve()
+
+raise ScriptError(f"Error in {path}.")
 
 
