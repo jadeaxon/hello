@@ -22,10 +22,20 @@ print()
 
 # Make your own exceptions.
 class ScriptError(Exception): pass
+class BadProgrammer(Exception): pass
 
 # Normalize the script's path.
 path = Path(__file__).resolve()
 
-raise ScriptError(f"Error in {path}.")
+try:
+    raise ScriptError(f"Error in {path}.")
+except ScriptError as e:
+    print(e)
+
+try:
+    x = 1 / 0
+except ZeroDivisionError as e:
+    # You can chain exceptions together.
+    raise BadProgrammer("bad programmer hard coded a divide by zero") from e
 
 
