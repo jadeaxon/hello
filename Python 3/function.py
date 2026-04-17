@@ -114,6 +114,26 @@ def f(*args, **kwargs):
 f(6, 7, 8, qux='9')
 
 
+# A weird example of where Python does not quite execute line by line.
+x = 13
+def f():
+    y = 0
+    # y = x + 1 # Should work. Using an unshadowed global in an expression.
+    # NOPE: You get UnboardLocalError because x is assigned to *later* in the function.
+    # Functions still get compiled at runtime.
+    # Python has to decide at the start of the function which vars are local and global.
+    print(y)
+
+    x = 1 # Should work. Assigning to x should turn it into a local variable.
+    y = x + 1
+    print(y)
+
+    # global x # Should work. We're saying x is really global x from here on out.
+    # NOPE: Python isn't that dynamic. Says x is used before global declaration.
+    y = x + 1
+    print(x)
+f()
+
 
 
 
