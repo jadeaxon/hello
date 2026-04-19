@@ -7,6 +7,9 @@ i = -123
 i = 1_000_000
 i = int("123")
 
+# You don't have to use _s where they really should go.
+i = 1_2_3_4 # 1234
+
 # Hexidecimal.
 i = 0xFACE
 i = 0xface
@@ -19,6 +22,11 @@ i = 0O777
 # Binary.
 i = 0b1101
 i = 0B1101
+
+# You can use _ in any kind of integer literal.
+i = 0xFACE_FACE
+i = 0o777_666
+i = 0b1101_0011
 
 # Printing hex/oct/bin literals outputs the decimal version.
 print(0b1101)
