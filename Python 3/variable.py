@@ -23,9 +23,11 @@ variables = dir()
 print(variables)
 
 # A variable can point to any kind of object.
+# The varible refers to the latest thing assigned to it.
 x = 2.3 # float
 x = [1, 2, 3] # list
 x = "a string" # string
+print(x)
 
 # You can delete a variable. Causes it to no longer exist.
 del x
@@ -88,6 +90,17 @@ if callable(foo):
     foo()
 else:
     print("foo is not callable.")
+
+# Variables typically get used in assignments, by themselves an function arguments, or in
+# expressions.
+x = 1 # Assign to x.
+bool(x) # Use x by itself as an arg.
+y = x + 1 # Use x in an expression.
+
+# Also, you can call the methods of an object.
+s = "string"
+b = s.isalpha()
+print(b)
 
 
 
