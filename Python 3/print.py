@@ -50,4 +50,11 @@ Multiline formatted string:
 """, end=""
 )
 
+# You can print to a file. You can use this to print to stderr.
+# You'll probably want to use the logging module instead of printing to stderr though.
+# Or use open() to get some other file to print to.
+import sys
+print('ERROR: Printing to stderr.', file=sys.stderr)
+
+
 
