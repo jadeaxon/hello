@@ -18,8 +18,12 @@ print("Suppress newline with the named arg 'end'", end="")
 print(" as above.")
 
 # Default separator is a space. Override using sep arg.
-# Default line end is newline. Override with end arg.
+# Default line end (or record end) is newline. Override with end arg.
 print("foo", "bar", "baz", sep="-", end="|")
+print()
+
+# The separator and line end don't have to be single characters.
+print("foo", "bar", "baz", sep="--separator--", end="--'line'-end--")
 print()
 
 # Use escape sequences via escape character, \.
