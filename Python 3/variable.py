@@ -40,4 +40,55 @@ x = 2 # x exists again
 print(x)
 
 
+# Variable names.
+# Letters, numbers, and underscores. Nothing else. Can't start with a number.
+# Can't be a reserved keyword.
+
+# Can use this string method to check. Doesn't check vs. keywords though.
+s = "valid_variable_name"
+s.isidentifier()
+
+import keyword
+keyword.iskeyword(s)
+
+# When you want to use a keyword for a variable name but can't, just add a trailing _.
+class_ = None
+in_ = None
+
+snake_case_var = None # Recommend style for most things.
+camelCaseVar = None
+UpperCamelCase = None # Mainly used for class names.
+var_with_numbers123 = None
+__dunder_var__ = None # Legal, but you should avoid since many have special meanings in Python.
+_start_with_underscore = None
+_ = None # Yup, legal. This gets magically assigned to last expression value when running python interactive mode.
+
+# 123var = None # NO: Can't start with a number.
+
+ALL_CAPS = None # Fine. Often used for things intended to be constants.
+l = None # Legal, but confusing. Better to use L or another letter.
+
+# You can use some non-ASCII Unicode letters in variable names too.
+
+# Variable names are case sensitive.
+var = None
+VAR = None # No problem.
+vaR = None # Weird, but legal.
+
+# When you do a function or class definition, it gets implicitly assigned to a variable.
+def foo(): pass
+foo = None # You can do this, but you've now lost access to the function.
+try:
+    foo() # Won't work. NoneType isn't callable.
+except Exception as e:
+    print(e, type(e))
+
+# You can check if an object is callable before trying to call it.
+if callable(foo):
+    foo()
+else:
+    print("foo is not callable.")
+
+
+
 
