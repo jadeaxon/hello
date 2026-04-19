@@ -43,6 +43,10 @@ f = 3E8
 f = -3.14e7
 f = -3.14e-2
 
+# You can use _s in float literals too. And use them badly.
+f = 1_234.45
+f = 1_2_3.4_5
+
 # When you print floats, Python displays the most concise representation (excluding the lone .
 # form).
 
