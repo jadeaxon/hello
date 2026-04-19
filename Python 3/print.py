@@ -56,5 +56,11 @@ Multiline formatted string:
 import sys
 print('ERROR: Printing to stderr.', file=sys.stderr)
 
+# Print acts like a procedure. In Python, there are no procedures, so it just returns None.
+# None is the equivalent of null in other languages.
+result = print("Print doesn't return anything useful. Acts like a procedure.")
+print(result)
+print(type(result))
+
 
 
