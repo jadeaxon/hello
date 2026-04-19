@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 D = {} # Empty dictionary.
+bool(D) # Empty dictionary is False.
 D = dict() # Same
 print(D)
 
@@ -9,12 +10,39 @@ value = 0
 D = dict.fromkeys(["one", "two", "three"], value)
 print(D)
 
+# Create a dictionary from a list of tuples.
+# Zip two equal size lists to form a dictionary.
+# zip gives you a sequence of tuples with elements at same index for given sequence args.
+L1 = ["one", "two", "three"]
+L2 = [1, 2, 3]
+
+# You can use dict() to turn any sequence of 2-tuples (pairs) into a dictionary.
+# If same key is used more than once, the latest value is kept.
+D = dict(zip(L1, L2))
+print("From zipped lists:")
+print(D)
+
+# Create dictionary via dictionary comprehension.
+D = {k: 0 for k in L1}
+print("From comprehension:")
+print(D)
+
 # A dictionary with 3 key/value pairs (items).
 D = {"one": 1, "two": 2, "three": 3}
 
+length = len(D) # Number of items.
+print(length)
+
 v = D["one"] # Look up a value by key. KeyError if DNE.
-v = D.get("one", "default value") # Alternate way that avoids KeyError.
+v = D.get("one") # Returns None if DNE.
+v = D.get("one", "default value") # Returns given default value if DNE.
 print(v)
+
+# Check if key is in dictionary or not
+b = "one" in D
+print(b)
+b = "one" not in D
+print(b)
 
 D["four"] = 4 # Add a new key/value pair.
 print(D)
@@ -70,6 +98,8 @@ D = D2.copy()
 D.setdefault("four", 4)
 D.setdefault("four", 5) # Does nothing.
 print(D["four"])
+
+
 
 
 
