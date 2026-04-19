@@ -1,7 +1,17 @@
 #!/usr/bin/python3
 
 # Unlike in Python 2, you need to use () with print.
+print() # Prints a blank line.
+print("Hello, print()!") # Single string arg.
+
+# You don't have to pass just string args.
+# Other args will be turned into a string via str(arg) which calls their __str__ method.
+print(42)
+print(print) # Print the print function itself.
+
+# The default separator is a single space.
 print("Put", "space", "between", "args.")
+
 print("Automatically append a newline.")
 print()
 print("Suppress newline with the named arg 'end'", end="")
