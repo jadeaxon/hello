@@ -9,18 +9,23 @@
 # Binary plus. Addition.
 # Operators actually call various dunder methods like __add__ under the hood.
 # This lets you override operators in your own classes.
-r = 1 + 1
-r = int(1).__add__(1) # Same thing.
+i = 1 + 1
+i = int(1).__add__(1) # Same thing.
 # NO: 1.__add__(1) # Can't call a method directly on an int literal.
-print(r)
+print(i)
 
 # For strings, it is concatenation.
 s = "first string" + "second string"
 print(s)
 
 # Binary minus. Subtraction.
-r = 1 - 1
-print(r)
+i = 1 - 1
+print(i)
+
+# For + and -, if either operand is a float, the result is a float.
+f = 1 + 2.0
+f = 2.0 - 1
+print(f)
 
 # You can't subtract strings.
 try:
@@ -29,17 +34,95 @@ except Exception as e:
     print(e)
 
 # Numeric multiplication.
-r = 3 * 2
-print(r)
+i = 3 * 2
+print(i)
 
-r = 3.3 * 2.0
-print(r)
+f = 3.3 * 2.0
+print(f)
 
-r = 3.2 * 2 # Mixing int and float results in float.
-print(r, type(r))
+f = 3.2 * 2 # Mixing int and float results in float.
+print(f, type(f))
 
 # String replication.
-r = "repeat me" * 3
-print(r)
+s = "repeat me" * 3
+print(s)
+
+# Exponentiation.
+i = 2 ** 3 # 2 to the power of 3
+f = 2.1 ** 3
+f = 3.2 ** .5 # Same as square root.
+print(f)
+
+# Division.
+f = 3 / 2
+f = 3.1 / 2
+f = 3.2 / 2.1
+print(f)
+print()
+
+# Division by zero does not work.
+try:
+    f = 3 / 0
+except Exception as e:
+    print(e, type(e))
+
+# Integer division. Floor division.
+print("Integer (floor) division:")
+i = 3 // 2 # 1
+print(i)
+i = 1 // 2 # 0
+print(i)
+i = -1 // 2 # -1 (rounds to next int below normal division result)
+print(i)
+print()
+
+# Modulo. Remainder.
+print("Modulo (remainder):")
+i = 3 % 3 # 0
+print(i)
+i = 6 % 3 # 0
+print(i)
+i = 5 % 3 # 2
+print(i)
+
+# You can do % with floats too.
+# x % y == x - ((x // y) * y)
+f = 3.2 % 3
+print(f)
+
+
+# Operator precedence.
+# Multiplication happens before addition.
+# *, /, //, and % bind before binary + and -.
+i1 = 3 * 2 + 2
+i2 = (3 * 2) + 2 # Use parenthesis to force evaluation order.
+print(i1 == i2)
+
+# Most operators bind left.
+i1 = 7 % 5 % 2
+i2 = (7 % 5) % 2
+print(i1 == i2)
+
+# Exponentiation binds right.
+i1 = 2 ** 3 ** 4
+i2 = 2 ** (3 ** 4)
+i3 = (2 ** 3) ** 4
+print(i1 == i2) # True
+print(i1 == i3) # False
+
+# Exponentiation binds before unary minus (surprisingly).
+# But only for the left operand.
+i1 = -3 ** 2
+i2 = (-3) ** 2
+i3 = -(3 ** 2)
+print(i1 == i2) # False (!).
+print(i1 == i3) # True
+
+# x ** -n == 1/(x ** n)
+i1 = 2 ** -1
+i2 = 1/(2 ** 1)
+print(i1 == i2)
+
+
 
 
