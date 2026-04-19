@@ -123,6 +123,19 @@ i1 = 2 ** -1
 i2 = 1/(2 ** 1)
 print(i1 == i2)
 
+# Augmented operators, aka shortcut assignment operators, aka in-place assignment operators.
+# There are no ++ and -- operators in Python.
+i = 0
+i += 1 # i = i + 1
+i -= 1 # i = i - 1
+i *= 2
+i /= 2 # i is now a float
+i = int(i)
+i %= 1
+print(i)
+
+i = 2
+i **= 2 # 4
 
 
 
