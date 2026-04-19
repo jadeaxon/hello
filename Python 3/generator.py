@@ -49,6 +49,12 @@ for v in generator:
     if v >= 300: break
     print(v)
 
-
+# Get the first true object in a list.
+# Actually using a generator comprehension.
+# Inside a function call, its enclosing ()s can be omitted.
+# next() gets the first value from the generator.
+L = [0, [], "true", True]
+o = next(e for e in L if e)
+print(o)
 
 
