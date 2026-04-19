@@ -137,5 +137,21 @@ print(i)
 i = 2
 i **= 2 # 4
 
+# Comparison operators.
+# They evaluate to a boolean value.
+# Mixed comparisons between int and float work.
+True is True # identity; the two objects are the exact same object
+True is not False
+True == 1 # equality; the two objects are considered to be equivalent in value
+3 == 3.0
+1 != 2 # inequality
+2 > 1 # greater than
+2 >= 1 # greater than or equal to
+1 < 2 # less that
+1 <= 2 # less than or equal to
+
+"apple" < "banana" # you can compare strings
+
+
 
 
