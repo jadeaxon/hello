@@ -152,6 +152,54 @@ True == 1 # equality; the two objects are considered to be equivalent in value
 
 "apple" < "banana" # you can compare strings
 
+# Bitwise operators. Bit twiddling.
+# Treat ints like a bit sequence. Results in an int.
+i = 0b1111 & 0b0100 # Bitwise and.
+print(bin(i)) # 0b100 (won't show leading zeroes)
+print(f"{i:08b}") # Width 8, left pad with 0, get rid of the 0b prefix.
+
+i = 0b1010 | 0b0101 # Bitwise or.
+print(f"{i:08b}") # 00001111
+
+i = 0b1001 ^ 0b0001 # Bitwise xor.
+print(f"{i:08b}") # 00001000
+
+i = ~0b1001 # Bitwise negation.
+print(f"{i:08b}") # You might expect 11110110, but you get -0001010.
+# Python is evaluating the bits as negative number.
+# But then showing you the bits for a positive number and adding a negative sign.
+# There is a way to get the actual bits.
+i &= 0xFF # Turns the number back into a positive number but with the final 8 bits preserved.
+print(f"{i:08b}") # Now we get the expected 11110110.
+# Also note from the above that all the bitwise operators have assignment shortcut operators too.
+
+# To set individual bit in any number.
+bitmask_3 = 0b100 # 3rd bit
+i = 0b1000
+i |= bitmask_3 # Set the 3rd bit. Leave everything else as is.
+print(f"{i:08b}") # 00001100
+
+i &= ~bitmask_3 # Clear the 3rd bit. And with negated bitmask.
+print(f"{i:08b}") # 00001000
+
+# Use the left shift operator to make a bitmask for the 8th bit.
+bitmask_8 = 1 << 7 # 8th bit
+i |= bitmask_8 # Set 8th bit
+print(f"{i:08b}") # 10001000
+
+bitmask_7 = 1 << 6 # 7th bit
+i ^= bitmask_7 # Toggle/flip the 7th bit.
+print(f"{i:08b}") # 11001000
+i ^= bitmask_7 # Toggle/flip the 7th bit.
+print(f"{i:08b}") # 10001000
+
+# There is also bitwise shift right. It is equivalent to floor dividing by 2.
+# Left shifting by 1 bit multiplies by 2.
+i = 77
+print(i // 2, i >> 1)
+
+
+
 
 
 
