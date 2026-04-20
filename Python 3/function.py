@@ -34,6 +34,16 @@ def f(x, y):
 f(2, 3)
 f(3, 4)
 
+# A function is a mechanism for code reuse.
+# Here's a more flexible/reusable hello world.
+def greet(salutation, greetee):
+    print(f"{salutation.capitalize()}, {greetee}!")
+
+greet("Hello", "world")
+greet("Yo", "Adrian")
+greet("Good morning", "Vietnam")
+greet("Howdy", "pilgrim")
+
 # You can assign default values to parameters.
 # Once you've assigned a default value, all subsequent parameters must have default values.
 def f(x=0, y=0):
