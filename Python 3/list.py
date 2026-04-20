@@ -208,6 +208,21 @@ L = ["first", "second", "third"]
 first = L[o]
 print(first)
 
+# List comprehensions. Creates a list.
+L = [x for x in range(5)]
+print(L)
+
+# Use an expression.
+L = [x ** 2 for x in range(5)] # squares
+
+# Create a list of tuples using multiple fors.
+L = [(x, y) for x in range(5) for y in range(1)]
+print(L)
+
+# Create a filtered list.
+L = [x for x in range(10) if x % 2 == 0] # evens
+print(L)
+
 
 
 
