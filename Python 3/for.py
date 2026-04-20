@@ -14,18 +14,33 @@ for i in range(1, 6):
 print()
 
 # A for loop can have an else clause.
-# Always executes once (on loop exit).
+# Executes once on natural loop exit. Won't execute on break or exception.
 for i in []:
     pass
 else:
     print("for loop else")
 print()
 
+# Using break with else.
+for i in [1, 2, 3]:
+    if i == 2: break # This will bypass the else clause.
+else:
+    print("This bypassed else clause should not run.")
+print(i)
+
 # Range can take a 3rd argument: the step.
 # Even numbers between 0 and 10.
 for i in range(0, 11, 2):
     print(i)
 print()
+
+i = 777
+for i in range(2, 1):
+    print(i)
+else:
+    # Since this range yields no values, i will still be 777.
+    # Loop vars aren't local to the loop like in other languages.
+    print(i)
 
 # You can do ranges in reverse.
 # The start and stop args preserve their meaning. Thus 10 will be the first included value.
