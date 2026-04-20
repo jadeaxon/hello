@@ -198,6 +198,15 @@ print(f"{i:08b}") # 10001000
 i = 77
 print(i // 2, i >> 1)
 
+# The in and not in operators.
+'a' in {'a', 'b', 'c'} # set
+'substring' in 'string with substring' # string
+1 in [1, 2, 3] # list
+"key" in {"key": "value"} # dictionary
+
+fruit = {'banana', 'apple', 'pear'}
+"truck" not in fruit
+
 
 
 
