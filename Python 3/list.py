@@ -82,6 +82,40 @@ print("turtle" in L)
 print("bee" not in L)
 print()
 
+# List slices.
+# L[start:stop:step]
+# stop is exclusive
+# step can be negative
+# leaving blank => None => include first/last depending on if step is + or -
+# The args work pretty much the same as range() args.
+print("List slice examples:")
+L = ["first", "second", "third", "fourth", "fifth"]
+L2 = L[:] # Copy of entire list.
+L2 = L[0:] # Same.
+L2 = L[0:2] # First two elements: L[0], L[1].
+L2 = L[1:3] # L[1], L[2]
+L2 = L[:-1] # All but the last element.
+L2 = L[0:-1] # Same
+L2 = L[::2] # Every other element, starting with first.
+print(L2)
+L2 = L[::-1] # Entire list, reversed.
+print(L2)
+L2 = L[::-2] # Every other element, starting with last.
+print(L2)
+
+# You can use the slice() function to get a slice object.
+slice_object = slice(3, None) # [3:]
+L2 = L[slice_object] # L[3:]
+print(L2)
+
+# You can delete slices. This affects original list.
+del L[:] # Clear the entire list. List is now empty.
+
+# You can assign to a slice. Replaces what was there.
+L = ["first", "second", "third", "fourth", "fifth"]
+L[1:3] = ["one", "two", "three"] # The replacement can be any size.
+L[1:2] = [] # Same as del L[1]
+print()
 
 #==============================================================================
 # List Methods
