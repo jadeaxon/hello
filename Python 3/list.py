@@ -2,59 +2,78 @@
 
 import random
 
-l = [] # empty list
-l = [1, 2, 3]
+L = [] # empty list
+L = [1, 2, 3]
+
+# Access list elements by integer index.
+e = L[0] # first
+e = L[1] # second
+
+# Negative indexes work.
+e = L[-1] # last (first to last)
+e = L[-2] # second to last
+
+# Trying to access an out of range index raises an IndexError.
+try:
+    e = L[77]
+except Exception as e:
+    print(e, type(e))
+
+# The index can be any expression.
+x = 0
+y = 1
+e = L[x + y]
 
 # Loop over the elements of the list.
-for e in l: print(e)
+for e in L: print(e)
 print()
 
 # Remove the last element of the list.
-print(l)
-print(len(l)) # Get length of list.
-del l[-1]
-print(l)
-print(len(l))
+print(L)
+print(len(L)) # Get length of list.
+del L[-1]
+print(L)
+print(len(L))
 print()
 
 # Append to list.
-l.append(3)
-l.append(4)
-print(l)
+L.append(3)
+L.append(4)
+print(L)
 
 # Insert into list.
-l.insert(0, 0) # list.insert(location, value)
-print(l)
+L.insert(0, 0) # list.insert(location, value)
+print(L)
 
-rli = reversed(l) # Create a reverse iterator for the list (not the same as a reversed actual list).
-l.reverse() # Reverse the list in place.
+rli = reversed(L) # Create a reverse iterator for the list (not the same as a reversed actual list).
+L.reverse() # Reverse the list in place.
 
-l2 = l[:] # Copy a list (via list slice).
-print(l)
-print(l2)
+L2 = L[:] # Copy a list (via list slice).
+print(L)
+print(L2)
 
-if l is not l2:
+if L is not L2:
     print("We have copied the list.")
 
 # Shuffle a list.
-random.shuffle(l)
-print(l)
+random.shuffle(L)
+print(L)
 
 # Convert a string to list of characters (length 1 strings).
 characters = list("a string")
 print(characters)
 
 # Swap the first and last elements of the list.
-l[0], l[-1] = l[-1], l[0]
-print(l)
+L[0], L[-1] = L[-1], L[0]
+print(L)
 
 # Lists can contain various data types.
 l = ["one", 2, 3.0]
-print(l)
+print(L)
 
 # List can be nested.
 l = [1, [2, 3], 4]
-print(l)
+print(L)
 print()
 
 # Check if something is in a list or not.

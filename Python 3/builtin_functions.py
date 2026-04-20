@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# Note that the type of builtin functions is not the same as user-defined functions.
+def f(): pass
+print(type(f), type(print))
+
 # print()
 # See hello/python3/print.py
 print("Hello, builtin functions!")
@@ -57,6 +61,11 @@ print(r)
 r = max("ace", "bat", "car")
 print(r)
 
+# len()
+# Return the length of an iterable.
+L = [1, 2, 3]
+s = "a string"
+print(len(L), len(s))
 
 
 
