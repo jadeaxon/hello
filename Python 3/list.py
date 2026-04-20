@@ -68,13 +68,20 @@ L[0], L[-1] = L[-1], L[0]
 print(L)
 
 # Lists can contain various data types.
-l = ["one", 2, 3.0]
+L = ["one", 2, 3.0]
 print(L)
 
 # List can be nested.
-l = [1, [2, 3], 4]
+L = [1, [2, 3], 4]
 print(L)
 print()
+
+# You can use them like an n-dimensional array.
+L = [[None, None, None], [None, None, None], [None, None, None]] # 3x3 grid
+cube = [L[:], L[:], L[:]]
+L[1][1] = "center"
+L[2][2] = "bottom right"
+cube[1][1][1] = "center"
 
 # Check if something is in a list or not.
 L = ["frog", "turtle"]
