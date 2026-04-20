@@ -38,5 +38,26 @@ print(i)
 i = int("FF", 16) # convert base 16 (hex) to int
 print(i)
 
+# min() and max()
+# You can pass them an iterable.
+L = [3, 27, -1]
+r = min(L)
+print(r)
+r = max(L)
+# Or you can pass them any number of args.
+r = min(7, 200, -27)
+print(r)
+r = max(42, 7, 1)
+print(r)
+
+# They work on strings too.
+# Should work on any sequence of elements that are comparable to each other.
+r = min("ace", "bat", "car")
+print(r)
+r = max("ace", "bat", "car")
+print(r)
+
+
+
 
 
