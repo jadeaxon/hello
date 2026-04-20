@@ -16,6 +16,24 @@ print(x)
 print(y)
 print(z)
 
+# Somewhat confusingly, this assigns the same tuple to all the variables.
+x = y = z = "foo", "bar", "baz"
+print(x)
+print(y)
+print(z)
+
+# Iterables unpack.
+L = [1, 2, 3]
+x, y, z = L
+print(x)
+
+# You can NOT explicitly unpack the iterable here.
+# x, y, z = *L # SyntaxError
+
+# Either too many or too few values in the iterable is a problem.
+# x, y = L # ValueError
+# a, b, c, d = L # ValueError
+
 # Nested tuple assignment/unpacking.
 ((a, b), (c, d)) = ((1, 2), (3, 4))
 print(d)
