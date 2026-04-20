@@ -223,6 +223,10 @@ print(L)
 L = [x for x in range(10) if x % 2 == 0] # evens
 print(L)
 
+# Nested list comprehension to create on 8x8 array.
+grid = [[None for column in range(8)] for row in range(8)]
+grid[7][7] = "bottom right"
+
 
 
 
