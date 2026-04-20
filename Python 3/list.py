@@ -137,6 +137,15 @@ print(L)
 
 # That's it. That is ALL the list methods.
 
+# Is overriding __index__ enough to use any object as a list index?
+class First():
+    def __index__(self):
+        return 0
+
+o = First()
+L = ["first", "second", "third"]
+first = L[o]
+print(first)
 
 
 
