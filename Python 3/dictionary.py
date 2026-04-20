@@ -38,7 +38,7 @@ v = D.get("one") # Returns None if DNE.
 v = D.get("one", "default value") # Returns given default value if DNE.
 print(v)
 
-# Check if key is in dictionary or not
+# Check if key is in dictionary or not.
 b = "one" in D
 print(b)
 b = "one" not in D
@@ -50,14 +50,19 @@ print(D)
 del D["four"] # Remove an item.
 print(D)
 
+D = {"two": 2, "one": 1, "three": 3} # change insertion order
 # Iterate over dictionary items.
+# The keys and items will be in insertion order by default.
 for key, value in D.items():
     print(f"{key} = {value}")
 
 for key in D.keys():
     print(f"{key} = {D[key]}")
 
-for key in D:
+for key in D: # Same as D.keys()
+    print(f"{key} = {D[key]}")
+
+for key in sorted(D.keys()):
     print(f"{key} = {D[key]}")
 
 # Iterate over just the values.
@@ -80,6 +85,14 @@ D.update({"seven": 7, "eight": 8})
 D.update({"seven": 77, "eight": 88})
 print(D)
 
+# You can use | to union dictionaries (like you can with sets).
+D = {"one": 1, "two": 2}
+D2 = {"three": 3, "four": 4}
+D3 = D | D2
+print(D3)
+D |= D2 # same as D.upadet(D2)
+print(D)
+
 # Remove a specific item and return its value.
 v = D.pop("one")
 D["one"] = v
@@ -99,7 +112,19 @@ D.setdefault("four", 4)
 D.setdefault("four", 5) # Does nothing.
 print(D["four"])
 
+# You can use tuples as dictionary keys.
+coordinate = (0, 6, 7)
+D[coordinate] = "treasure room"
+print(D)
 
-
+# You can use functions as dictionary values. This is known as a jump table.
+# This can be used in place of if/elif/else or match/case statements.
+def add(x, y): return x + y
+def subtract(x, y): return x + y
+def multiply(x, y): return x * y
+operations = {"+": add, "-": subtract, "*": multiply}
+operation = operations["*"]
+r = operation(5, 6)
+print(r)
 
 
