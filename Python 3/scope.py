@@ -56,6 +56,68 @@ except Exception as e:
 r = f(1, 2) # Only the latest function definition for a given function name exists.
 print(r)
 
+# Each function invocation has its own local scope.
+del x
+def f():
+    # x is only defined in the function invocation's local scope by this assignment
+    # this does not cause global x to become defined
+    # also, if you manage to run f() in parallel, each invocation will have a different local x
+    # or if you run a different function, its local vars will be completely separate
+    x = 1
+try:
+    print(x)
+except Exception as e:
+    print(e, type(e)) # NameError
+
+# If there was a global x defined, the local x would shadow it inside the function.
+x = 1
+def f():
+    x = 3
+    print(x) # local x; shadows global x
+f()
+print(x) # global x
+
+# If global x is defined, and local x is not, you can access global x but not assign to it.
+def f():
+    print(x) # global x (since no local x defined)
+f()
+
+# This one is a bit tricky.
+# If you assign a local x *anywhere* in function and try to access x before that, you'll
+# get an UnboundLocalError.
+# Since Python compiles the functions, it has to know which variables are global or local inside
+# it before it runs.
+def f():
+    print(x)
+    x = "this makes x local causing the above statement to be illegal"
+try:
+    f()
+except Exception as e:
+    print(e, type(e))
+
+# If you want to assign to global x inside your function, declare it global right at the start.
+x = "global x before function call"
+def f():
+    global x
+    print(x)
+    x = "x was declared global from the start so the above line is legal"
+f()
+print(x) # will have been modified by the function call
+
+
+# Parameters get turned into local variables. So, they shadow globals.
+x = "global x before function call"
+def f(x):
+    print(x) # the parameter (a local variable)
+    x = 13
+f("argument")
+print(x)
+
+# You can't use a global declaration to cause a parameter to not be a local variable.
+x = "global x before function call"
+def f(x):
+    # global x # NO: SyntaxError
+    print(x)
 
 
 
