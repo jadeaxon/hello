@@ -52,6 +52,21 @@ else:
     print("Neither will this.")
 
 
-
+# You can nest if statements.
+s = "nested if statement"
+if s.startswith("nest"):
+    if s.endswith("le"):
+        print("chocolate?")
+    elif s.endswith("ment"):
+        print("nested if statement?") # Only this should run.
+    else:
+        print("not sure")
+elif s.startswith("bird"):
+    if s.endswith("seed"):
+        print("bird seed?")
+    else:
+        pass
+else:
+    pass
 
 
