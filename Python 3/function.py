@@ -62,19 +62,58 @@ def f(x, /, y):
 # f(x=1, y=2) # NO: TypeError: x is positional-only.
 f(1, y=2)
 
-# A function returns a value. By default, it returns None.
+# A function returns a value (any expression). By default, it returns None.
+# The function exits immediately when it hits a return.
+# It returns a value to wherever it was called from and resumes execution there.
 def f(x):
-    return x * 2
+    if x >= 0:
+        return x * 2 # returns the value of any expression
+    return # returns None if used by itself
+    # If function ends without hitting a return, it returns None
 value = f(3)
 print(value)
 
 # Function calls can happen just about anywhere since they are expressions.
+# For nested calls, the innermost function calls will happen first.
+# When used with operators, precedence and the binding order will determine which function is
+# called.
+# When used in an argument list, the function calls will happen left to right.
 L = [f(0), f(1), f(2) + f(3), f(f(4))]
+print(L)
+
+# You can call a function that returns a value other than None without assigning its result.
+# Since the object it returns isn't referenced by any variable, it will just be garbage collected.
+# Functions are often called solely for their side effects, not their return value:
+# print(), functions that mutate a list in-place, functions that alter files, etc.
+f(7)
+
+# You can pass a list to a function.
+# While the list reference is passed by value, you'll still be pointing to the same list object.
+# Thus, you can mutate it.
+# Same idea applies to any mutable object.
+# If you don't want to change the original list, pass a copy of it using L[:] or L.copy()
+print("Mutating a list.")
+L = [1, 2, 3]
+def mutate_list(list_):
+    # list_ is pointing to the same list the caller passed.
+    list_.clear()
+    list_ = None # This does not affect what global L is assigned to: list_ (the ref/var/name) is a copy of L.
+mutate_list(L)
+print(L) # L is now empty. The function wasn't passed a copy of L. Just a copy of a reference to L.
+
+# You can return lists (and other more complex objects) from a function.
+def create_list():
+    list_ = []
+    list_.append("foo")
+    list_.append("bar")
+    return list_
+L = create_list()
 print(L)
 
 # You can create anonymous functions, lambdas.
 # map() applies a function to all values in an iterable.
 # It returns an iterator, so use list() to extract all the values.
+L = [1, 2, 3, 4]
 iterator = map(lambda x: x * 2, L)
 print(list(iterator))
 f = lambda x, y: x + y # The anonymous function is no longer anonymous.
@@ -143,8 +182,6 @@ def f():
     y = x + 1
     print(x)
 f()
-
-
 
 
 
