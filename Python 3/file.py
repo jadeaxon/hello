@@ -46,4 +46,10 @@ try:
 except FileExistsError:
     print("No can do: temp.txt already exists.")
 
+# Delete a file.
+import os
+if os.path.exists("temp.txt"):
+    print("Deleting temp.txt")
+    os.remove("temp.txt")
+
 
