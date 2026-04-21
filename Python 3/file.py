@@ -4,7 +4,7 @@
 # Default encoding is UTF-8.
 f = open('/etc/hosts', 'r')
 while True:
-	line = f.readline()
+	line = f.readline() # Read a single line (includes \n in result).
 	if line:
 		print(line, end="")
 	else:
@@ -24,3 +24,13 @@ with open('/etc/hosts', 'r') as file:
         lines += 1
 print(lines)
 
+# Read the first 5 characters of a file.
+# Default open mode is 'rt' (read text).
+with open('/etc/hosts') as file:
+    chars = file.read(5)
+print(chars)
+
+
+# Append to a file.
+with open('temp.txt', 'a') as f:
+    f.write('Appended.\n')
