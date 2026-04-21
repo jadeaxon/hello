@@ -28,5 +28,20 @@ print(s)
 # The f-string is only interpolated once when encountered at runtime.
 # Use str.format() or something else if you need to reuse a formatting template.
 
+# Comma-separate a number.
+i = 1_234_567
+print(f"{i:,}")
+
+# Binary, octal, and hex formats without literal prefix.
+print(f"{i:b}, {i:o}, {i:x}")
+
+# int to Unicode character (like chr())
+i = 1_234
+print(f"{i:c}")
+
+# number as a percent
+f = .7523
+print(f"{f:.1%}")
+
 
 
