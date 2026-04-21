@@ -227,6 +227,12 @@ print(L)
 grid = [[None for column in range(8)] for row in range(8)]
 grid[7][7] = "bottom right"
 
+# You can use the ternary if/else in a list comprehension.
+fruits = ["banana", "kiwi", "mango"]
+L = [x if x != "banana" else "orange" for x in fruits]
+print(L)
+
+
 
 
 
