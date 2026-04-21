@@ -121,7 +121,14 @@ class ShyThing(Thing):
         self.__secret = f'my secret is {id(self)}'
 
     def tell_secret(self):
+        # Inside the class, you can use the unmangled name.
+        # Outside the class, you can't.
+        secret = self.__secret
         print("No!")
+
+    def tell_secret_or_else(self):
+        print("Fine!")
+        print(self.__secret)
 
 o = ShyThing("Wallflower", 1)
 o.tell_secret()
@@ -134,6 +141,9 @@ except AttributeError:
 
 # __secret actually gets mangled into _<class>_<attribute>; _ShyThing__secret in this case
 print(o._ShyThing__secret) # Aha!
+o.tell_secret_or_else() # Threaten the object
+
+
 
 
 
