@@ -114,4 +114,27 @@ o5.attack()
 o6 = o3.clone()
 o6.attack()
 
+# Let's make some of those semi-private attributes.
+class ShyThing(Thing):
+    def __init__(self, name, limbs):
+        super().__init__(name, limbs)
+        self.__secret = f'my secret is {id(self)}'
+
+    def tell_secret(self):
+        print("No!")
+
+o = ShyThing("Wallflower", 1)
+o.tell_secret()
+try:
+    print(o.__secret)
+except AttributeError:
+    # For variables, we get a NameError when trying to access undefined things.
+    # For object attributes, we get an AttributeError instead.
+    print("Hmmm, how do we find out the secret?")
+
+# __secret actually gets mangled into _<class>_<attribute>; _ShyThing__secret in this case
+print(o._ShyThing__secret) # Aha!
+
+
+
 
