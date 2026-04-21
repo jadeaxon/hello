@@ -33,4 +33,11 @@ r = range(9, 0, -2)
 L = [i for i in r]  # [9, 7, 5, 3, 1]
 print(L)
 
+# Since a range is a sequence, it can be sliced.
+r = range(20)
+r2 = r[::-1] # reverse
+L = list(r2)
+print(L)
+
+
 
