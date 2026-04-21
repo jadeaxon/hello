@@ -34,6 +34,18 @@ print(x)
 # x, y = L # ValueError
 # a, b, c, d = L # ValueError
 
+# But, you can assign a tuple of values to a collector var.
+L = [1, 2, 3, 4, 5]
+print("Using a collector in tuple unpacking:")
+print(L)
+a, b, *c = L
+print(c)
+
+# The collector does not have to be at the end.
+a, *b, c = L
+print(b)
+
+
 # Nested tuple assignment/unpacking.
 ((a, b), (c, d)) = ((1, 2), (3, 4))
 print(d)
