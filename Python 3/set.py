@@ -33,9 +33,21 @@ s = {'a', 'b', 'c'}
 s.add('d')
 print(s)
 
+# However, + is not overloading for sets.
+# NO: s + 'e'
+# NO: s + s2
+
+# update() mutates the original list whereas union() does not.
+# update() is like |=; union() is like |.
 s.update(s2)
 for e in s:
     print(e)
+
+# The shortcut assignment operators for sets do mutate the original set.
+s = {'a', 'b', 'c'}
+s2 = s
+s |= {'e'}
+print(s, s2) # Both have changed since |= did not create a new set.
 
 s.remove('a') # KeyError if DNE
 s.discard('a') # No error if DNE
