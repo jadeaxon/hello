@@ -30,7 +30,20 @@ with open('/etc/hosts') as file:
     chars = file.read(5)
 print(chars)
 
-
 # Append to a file.
 with open('temp.txt', 'a') as f:
     f.write('Appended.\n')
+
+# Open in write mode. Creates new file if DNE.
+# WARNING: This overwrites the file if it already exists.
+with open('temp.txt', 'w') as f:
+    f.write('Overwriting entire file.\n')
+
+# Same as w, but raise error if file already exists.
+try:
+    with open('temp.txt', 'x') as f:
+        f.write('Trying to overwrite entire file.') # We won't get here.
+except FileExistsError:
+    print("No can do: temp.txt already exists.")
+
+
