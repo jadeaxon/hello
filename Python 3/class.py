@@ -89,7 +89,29 @@ if o.disgusting:
 if o2.disgusting:
     print(f"Indeed, {o2.name} is also quite disgusting.")
 
+class ClonableThing(Thing):
+    def __init__(self, name, limbs):
+        super().__init__(name, limbs) # Call the superclass initializer.
+        self.clones = 0
 
+    def clone(self):
+        # No conflict since the clone method is self.clone.
+        print(f"We're doomed! {self.name} has cloned itself!")
+        self.clones += 1
+        clones = self.clones
+        name = self.name
+        if name.startswith("Clone"):
+            name = "c" + name[1:] # In case we have clones of clones.
+        name = f"Clone {clones} of {name}"
+        clone = ClonableThing(name, self.limbs)
+        return clone
 
+o3 = ClonableThing("Zigmort", 2)
+o4 = o3.clone()
+o4.attack()
+o5 = o4.clone() # This is getting out of control!
+o5.attack()
+o6 = o3.clone()
+o6.attack()
 
 
