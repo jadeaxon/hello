@@ -90,11 +90,12 @@ def main():
     files = os.listdir(SWIM_DATA_DIR) # almost the same thing as below
     files = glob.glob(f'{SWIM_DATA_DIR}/*.txt')
 
-    for file in files:
+    for i, file in enumerate(files, start=1):
         path = Path(file) # to get the file basename
-        print(f"Processing {path.name}...")
+        print(f"Processing file {i}: {path.name}...")
         swim_data = read_swim_data(file)
         print(swim_data)
+    print(f"Processed {i} files.")
 
 if __name__ == '__main__':
     main()
