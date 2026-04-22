@@ -12,7 +12,7 @@ import os
 import statistics
 from pathlib import Path
 from pythonplus import StringInteger
-
+from textwrap import dedent
 
 SWIM_DATA_DIR = 'data' # swim data subdir
 time_si = StringInteger(
@@ -85,18 +85,45 @@ def read_swim_data(file):
     # print()
     return (name, age, distance, stroke, str_times, str_average)
 
+def create_bar_chart_html(record):
+    (swimmer, age, distance, stroke, *_) = record
+        
+    title = f"{swimmer} (age {age}) {distance} {stroke}"
+    print(title)
+    html = dedent(f"""
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>{title}</title>
+      </head>
+      <body>
+        <h3>{title}</h3>
+      </body>
+    </html>
+    """)
+    return html
+
 def main():
     print(os.getcwd())
     files = os.listdir(SWIM_DATA_DIR) # almost the same thing as below
     files = glob.glob(f'{SWIM_DATA_DIR}/*.txt')
+    records = []
+    charts = []
 
     for i, file in enumerate(files, start=1):
         path = Path(file) # to get the file basename
         print(f"Processing file {i}: {path.name}...")
         swim_data = read_swim_data(file)
+        records.append(swim_data)
         print(swim_data)
     print(f"Processed {i} files.")
 
+    for record in records:
+        html = create_bar_chart_html(record)
+        print(html)
+        charts.append(html)
+
+    # print(charts)
 if __name__ == '__main__':
     main()
     
