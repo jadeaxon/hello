@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Code to help with swim club administration.
 import glob
 import os
