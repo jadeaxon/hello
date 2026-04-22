@@ -1,12 +1,26 @@
 #!/usr/bin/env python3
 
+# Using .env file instead.
+# It only gets you code completion. IDE not picking it up for import.
+# Brute force it.
+import sys
+sys.path.append(r'C:\Users\jadea\projects\pythonplus')
+
 # Code to help with swim club administration.
 import glob
 import os
 import statistics
 from pathlib import Path
+from pythonplus import StringInteger
+
 
 SWIM_DATA_DIR = 'data' # swim data subdir
+time_si = StringInteger(
+    "0123456789", ":", 
+    "012345", "0123456789", ".",
+    "0123456789", "0123456789")
+time_si.leading_zeros = False
+time_si.zero_pad = 4
 
 def parse_filename(filename):
     L = filename.removesuffix(".txt").split('-')
@@ -16,6 +30,12 @@ def parse_filename(filename):
     return (name, age, distance, stroke)
 
 def time_to_hundredths(time):
+    global time_si
+    time_si.set(time)
+    hundredths = time_si.int()
+    return hundredths 
+
+def time_to_hundredths_old(time):
     if ':' in time:
         minutes, time = time.split(':')
     else:
@@ -29,6 +49,10 @@ def time_to_hundredths(time):
     return hundredths
 
 def hundredths_to_time(h):
+    time_si.set(h)
+    return time_si.str()
+
+def hundredths_to_time_old(h):
     minutes = h // (60 * 100)
     h = h % (60 * 100)
     seconds = h // 100
