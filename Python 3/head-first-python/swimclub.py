@@ -117,6 +117,7 @@ def create_bar_chart_html(record):
       <body>
         <h3>{title}</h3>
         {chart_html}
+        <p>Average time: {average}</p>
       </body>
     </html>
     """)
@@ -126,11 +127,13 @@ def create_bar_chart_svg(time_int, max_time_int, i):
     percent = time_int / max_time_int
     max_width = 400
     width = int(max_width * percent)
+    time_si.set(time_int)
+    time_str = time_si.str()
 
     html = dedent(f"""
     <svg height="30" width="400">
       <rect height="30" width="{width}" style="fill:rgb(0,0,255);" />
-    </svg>Label {i}<br />              
+    </svg>Time {i}: {time_str}<br />              
     """)
     return html
 
@@ -139,7 +142,7 @@ def main():
     files = os.listdir(SWIM_DATA_DIR) # almost the same thing as below
     files = glob.glob(f'{SWIM_DATA_DIR}/*.txt')
     records = []
-    charts = []
+    charts = {}
 
     for i, file in enumerate(files, start=1):
         path = Path(file) # to get the file basename
@@ -150,11 +153,17 @@ def main():
     print(f"Processed {i} files.")
 
     for record in records:
+        (swimmer, age, distance, stroke, *_) = record
+        filename = f"{swimmer}-{age}-{distance}-{stroke}-chart.html"
         html = create_bar_chart_html(record)
         print(html)
-        charts.append(html)
+        charts[filename] = html
 
-    # print(charts)
+    for filename, html in charts.items():
+        print(f"Writing {filename}.")
+        with open(f"charts/{filename}", "w") as file:
+            file.write(html)
+
 if __name__ == '__main__':
     main()
     
