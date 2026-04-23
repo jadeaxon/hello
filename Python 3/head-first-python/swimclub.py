@@ -95,14 +95,18 @@ def create_bar_chart_html(record):
         t_int = time_si.int()
         if t_int > max_time_int: max_time_int = t_int
 
-    for t in times:
+    for i, t in enumerate(reversed(times)):
         time_si.set(t)
         t_int = time_si.int()
-        chart_html += create_bar_chart_svg(t_int, max_time_int)
+        chart_html += create_bar_chart_svg(t_int, max_time_int, len(times) - i)
 
     title = f"{swimmer} (age {age}) {distance} {stroke}"
     print(title)
     
+    # Match indent level.
+    # No way to do this via format spec.
+    # You have to use full value, not value after dedent.
+    chart_html = chart_html.replace("\n", "\n" + " " * 8)
     
     html = dedent(f"""
     <!DOCTYPE html>
@@ -118,7 +122,7 @@ def create_bar_chart_html(record):
     """)
     return html
 
-def create_bar_chart_svg(time_int, max_time_int):
+def create_bar_chart_svg(time_int, max_time_int, i):
     percent = time_int / max_time_int
     max_width = 400
     width = int(max_width * percent)
@@ -126,7 +130,7 @@ def create_bar_chart_svg(time_int, max_time_int):
     html = dedent(f"""
     <svg height="30" width="400">
       <rect height="30" width="{width}" style="fill:rgb(0,0,255);" />
-    </svg>Label 1<br />              
+    </svg>Label {i}<br />              
     """)
     return html
 
