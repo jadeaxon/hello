@@ -15,6 +15,8 @@ from pythonplus import StringInteger
 from textwrap import dedent
 
 SWIM_DATA_DIR = 'data' # swim data subdir
+CHARTS_DIR = 'charts'
+
 time_si = StringInteger(
     "0123456789", ":", 
     "012345", "0123456789", ".",
@@ -67,7 +69,8 @@ def hundredths_to_time_old(h):
 def read_swim_data(file):
     with open(file) as f:
         lines = f.readlines() 
-    file = file.removeprefix(f'{SWIM_DATA_DIR}\\')
+    file = file.removeprefix(f'{SWIM_DATA_DIR}')
+    file = file[1:] # Remove the \ or /
     r = parse_filename(file)
     (name, age, distance, stroke) = r
     # print(r)
@@ -123,6 +126,17 @@ def create_bar_chart_html(record):
     """)
     return html
 
+# Create HTML bar chart file give a single swim data file.
+def produce_bar_chart(data_file):
+    record = read_swim_data(data_file)
+    html = create_bar_chart_html(record)
+    (swimmer, age, distance, stroke, *_) = record
+    filename = f"{swimmer}-{age}-{distance}-{stroke}-chart.html"
+    filename = f"charts/{filename}"
+    with open(filename, "w") as file:
+            file.write(html)
+    return filename
+
 def create_bar_chart_svg(time_int, max_time_int, i):
     percent = time_int / max_time_int
     max_width = 350
@@ -161,7 +175,7 @@ def main():
 
     for filename, html in charts.items():
         print(f"Writing {filename}.")
-        with open(f"charts/{filename}", "w") as file:
+        with open(f"{CHARTS_DIR}/{filename}", "w") as file:
             file.write(html)
 
 if __name__ == '__main__':
