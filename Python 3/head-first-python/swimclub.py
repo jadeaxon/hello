@@ -125,7 +125,7 @@ def create_bar_chart_html(record):
 
 def create_bar_chart_svg(time_int, max_time_int, i):
     percent = time_int / max_time_int
-    max_width = 400
+    max_width = 350
     width = int(max_width * percent)
     time_si.set(time_int)
     time_str = time_si.str()
