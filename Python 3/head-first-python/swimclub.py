@@ -86,10 +86,24 @@ def read_swim_data(file):
     return (name, age, distance, stroke, str_times, str_average)
 
 def create_bar_chart_html(record):
-    (swimmer, age, distance, stroke, *_) = record
+    (swimmer, age, distance, stroke, times, average) = record
         
+    chart_html = ""
+    max_time_int = 0
+    for t in times:
+        time_si.set(t)
+        t_int = time_si.int()
+        if t_int > max_time_int: max_time_int = t_int
+
+    for t in times:
+        time_si.set(t)
+        t_int = time_si.int()
+        chart_html += create_bar_chart_svg(t_int, max_time_int)
+
     title = f"{swimmer} (age {age}) {distance} {stroke}"
     print(title)
+    
+    
     html = dedent(f"""
     <!DOCTYPE html>
     <html>
@@ -98,8 +112,21 @@ def create_bar_chart_html(record):
       </head>
       <body>
         <h3>{title}</h3>
+        {chart_html}
       </body>
     </html>
+    """)
+    return html
+
+def create_bar_chart_svg(time_int, max_time_int):
+    percent = time_int / max_time_int
+    max_width = 400
+    width = int(max_width * percent)
+
+    html = dedent(f"""
+    <svg height="30" width="400">
+      <rect height="30" width="{width}" style="fill:rgb(0,0,255);" />
+    </svg>Label 1<br />              
     """)
     return html
 
