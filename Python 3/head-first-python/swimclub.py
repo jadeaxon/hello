@@ -13,9 +13,12 @@ import statistics
 from pathlib import Path
 from pythonplus import StringInteger
 from textwrap import dedent
+from pprint import pprint
 
 SWIM_DATA_DIR = 'data' # swim data subdir
 CHARTS_DIR = 'charts'
+
+swimmers = {}
 
 time_si = StringInteger(
     "0123456789", ":", 
@@ -170,13 +173,18 @@ def main():
         (swimmer, age, distance, stroke, *_) = record
         filename = f"{swimmer}-{age}-{distance}-{stroke}-chart.html"
         html = create_bar_chart_html(record)
-        print(html)
+        # print(html)
         charts[filename] = html
+        if swimmer not in swimmers:
+            swimmers[swimmer] = []
+        swimmers[swimmer].append(filename)
 
     for filename, html in charts.items():
         print(f"Writing {filename}.")
         with open(f"{CHARTS_DIR}/{filename}", "w") as file:
             file.write(html)
+
+    pprint(swimmers)
 
 if __name__ == '__main__':
     main()
