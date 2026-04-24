@@ -15,6 +15,11 @@ from pythonplus import StringInteger
 from textwrap import dedent
 from pprint import pprint
 
+# Gets the directory where your script is located.
+# Visual Studio seems to be using the project root folder as
+# the cwd, not the subfolder where the webapp lives.
+base_dir = Path(__file__).resolve().parent
+
 SWIM_DATA_DIR = 'data' # swim data subdir
 FOLDER = 'data'
 CHARTS_DIR = 'charts'
@@ -134,12 +139,15 @@ def create_bar_chart_html(record):
 
 # Create HTML bar chart file give a single swim data file.
 def produce_bar_chart(data_file, location=CHARTS_DIR):
+    func = "produce_bar_char()"
     record = read_swim_data(data_file)
     html = create_bar_chart_html(record)
     location = location.rstrip('/')
     (swimmer, age, distance, stroke, *_) = record
     filename = f"{swimmer}-{age}-{distance}-{stroke}-chart.html"
-    filename = f"{location}/{filename}"
+    filename = base_dir / location / filename # works due to / overload
+    filename = str(filename).replace("\\", "/")
+    print(f"{func}: Writing {filename}.")
     with open(filename, "w") as file:
             file.write(html)
     return filename
