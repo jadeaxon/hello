@@ -16,6 +16,7 @@ from textwrap import dedent
 from pprint import pprint
 
 SWIM_DATA_DIR = 'data' # swim data subdir
+FOLDER = 'data'
 CHARTS_DIR = 'charts'
 
 swimmers = {}
@@ -70,6 +71,8 @@ def hundredths_to_time_old(h):
     return r
 
 def read_swim_data(file):
+    if not file.startswith(SWIM_DATA_DIR):
+        file = f"{SWIM_DATA_DIR}/{file}"
     with open(file) as f:
         lines = f.readlines() 
     file = file.removeprefix(f'{SWIM_DATA_DIR}')
@@ -130,12 +133,13 @@ def create_bar_chart_html(record):
     return html
 
 # Create HTML bar chart file give a single swim data file.
-def produce_bar_chart(data_file):
+def produce_bar_chart(data_file, location=CHARTS_DIR):
     record = read_swim_data(data_file)
     html = create_bar_chart_html(record)
+    location = location.rstrip('/')
     (swimmer, age, distance, stroke, *_) = record
     filename = f"{swimmer}-{age}-{distance}-{stroke}-chart.html"
-    filename = f"charts/{filename}"
+    filename = f"{location}/{filename}"
     with open(filename, "w") as file:
             file.write(html)
     return filename

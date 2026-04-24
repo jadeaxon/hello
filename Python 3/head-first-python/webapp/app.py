@@ -19,7 +19,6 @@ def index():
 def populate_data():
     if "swimmers" not in session:
         swim_files = os.listdir(swimclub.FOLDER)
-        swim_files.remove(".DS_Store")
         session["swimmers"] = {}
         for file in swim_files:
             name, *_ = swimclub.read_swim_data(file)
