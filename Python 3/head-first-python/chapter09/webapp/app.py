@@ -12,13 +12,14 @@ app.secret_key = "You will never guess..."
 def index():
     return render_template(
         "index.html",
-        title="Welcome to Swim Club",
+        title="Welcome to Swimclub",
     )
 
 
 def populate_data():
     if "swimmers" not in session:
         swim_files = os.listdir(swimclub.FOLDER)
+        swim_files.remove(".DS_Store")
         session["swimmers"] = {}
         for file in swim_files:
             name, *_ = swimclub.read_swim_data(file)
