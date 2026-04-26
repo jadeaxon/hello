@@ -7,8 +7,10 @@ from dataclasses import field
 class Card:
     summary: str = None
     owner: str = None
-    state: str = "todo"
-    id: int = field(default=None, compare=False)
+    #state: str = "todo"
+    state: str = None
+    #id: int = field(default=None, compare=False)
+    id: int = field(default=None, compare=True)
 
     @classmethod
     def from_dict(cls, d):
@@ -24,6 +26,18 @@ def test_field_access():
     assert c.owner == "brian"
     assert c.state == "todo"
     assert c.id == 123
+
+
+def test_field_assignment():
+    c = Card("something", "brian", "todo", 123)
+    c.summary = "changed summary"
+    c.owner = "changed owner"
+    c.state = "changed state"
+    c.id = 124
+    assert c.summary == "changed summary"
+    assert c.owner == "changed owner"
+    assert c.state == "changed state"
+    assert c.id == 124
 
 
 def test_defaults():
