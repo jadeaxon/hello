@@ -24,6 +24,9 @@ def test_foo():
     assert foo() == "foo"
 
 
+def test_bar():
+    assert bar() == "bar"
+
 def test_baz():
     assert baz() == "baz"
 
