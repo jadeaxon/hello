@@ -13,3 +13,11 @@
 
 }
 
+; You can make hotkeys word only in certain windows.
+; This one will only run in Notepad.
+#HotIf WinActive("ahk_class Notepad")
+^+n::
+{
+	MsgBox("Should only trigger in Notepad")
+}
+
