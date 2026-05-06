@@ -16,6 +16,12 @@ ss := SubStr(s, 1, 3) ; "imp"
 s := "  extra whitespace   "
 s := Trim(s) ; trim off the extra whitespace
 
+; Split string.
+; 3rd arg is chars to omit from either side of fragment (so, it's like a trim).
+s := "some, delimited, text."
+fragments := StrSplit(s, ",", " .")
+MsgBox(fragments[3]) ; should be just "text"
+
 ; Convert single char to Unicode code point integer and back.
 code_point := Ord("t")
 character := Chr(code_point)
