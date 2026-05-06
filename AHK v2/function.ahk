@@ -10,6 +10,13 @@ my_second_function(greeting) {
 
 }
 
+; A function can have parameters and return a value.
+add(x, y) {
+	r := x + y
+	return r
+}
+sum := add(1, 2)
+
 my_function()
 my_second_function("Hi")
 
