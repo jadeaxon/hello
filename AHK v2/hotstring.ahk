@@ -11,6 +11,9 @@
 	MsgBox("Message box summoned by hotstring")
 }
 
+; Use the * hotstring modifier to instantly trigger it as soon as typed.
+:*:btw::by the way
+
 
 
 
